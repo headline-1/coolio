@@ -1,0 +1,42 @@
+{
+  "name": "@coolio/http",
+  "version": "0.1.0",
+  "description": "HTTP networking client",
+  "keywords": [
+    "http",
+    "networking",
+    "client"
+  ],
+  "author": "Krzysztof Miemiec <krzysztof.miemiec@gmail.com>",
+  "homepage": "https://github.com/headline-1/coolio/tree/master/packages/http#readme",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "start": "tsc -w --preserveWatchOutput",
+    "build": "tsc",
+    "clean": "rimraf dist",
+    "lint": "tslint --config ../../tslint.json --project ./",
+    "test": "jest --config='./jest.config.js' --json --outputFile='./reports/test.json' --testLocationInResults --runInBand --coverage",
+    "test:watch": "jest --config='./jest.config.js' --watch",
+    "prepack": "cp ../../README.md ./"
+  },
+  "files": [
+    "dist/"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/headline-1/coolio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/headline-1/coolio/issues"
+  },
+  "dependencies": {
+    "@types/qs": "^6.5.2",
+    "lodash": "^4.17.11",
+    "qs": "^6.7.0"
+  }
+}

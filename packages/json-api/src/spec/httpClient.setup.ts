@@ -1,0 +1,54 @@
+import {
+  BodyCasing,
+  bodyParser,
+  ContentType,
+  handleRequest,
+  HttpClient,
+  HttpCode,
+  mockRequestHandler,
+} from '@coolio/http';
+import { MockHttpRequestHandler } from '@coolio/http';
+import { DELETE_MOCK, GET_LIST_MOCK, GET_MOCK, PATCH_MOCK, POST_MOCK, PUT_MOCK } from './jsonApi.mocks';
+
+export interface HttpMock {
+  requestHandler: MockHttpRequestHandler;
+  httpClient: HttpClient;
+}
+
+export const createHttpMock = (): HttpMock => {
+  const ok = (body: any) => () => handleRequest(HttpCode.OK, body, ContentType.VND_JSON);
+  const requestHandler = mockRequestHandler({
+    endpoints: [
+      {
+        match: GET_MOCK.URI,
+        handler: ok(GET_MOCK.RAW),
+      },
+      {
+        match: GET_LIST_MOCK.URI,
+        handler: ok(GET_LIST_MOCK.RAW),
+      },
+      {
+        match: PUT_MOCK.URI,
+        handler: ok(GET_MOCK.RAW),
+      },
+      {
+        match: PATCH_MOCK.URI,
+        handler: ok(GET_MOCK.RAW),
+      },
+      {
+        match: DELETE_MOCK.URI,
+        handler: ok(GET_MOCK.RAW),
+      },
+      {
+        match: POST_MOCK.URI,
+        handler: ok(GET_MOCK.RAW),
+      },
+    ],
+  });
+  const httpClient = new HttpClient({
+    requestHandler,
+    parser: bodyParser({ bodyCasing: BodyCasing.CAMEL_CASE }),
+  });
+
+  return { httpClient, requestHandler };
+};

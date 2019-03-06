@@ -1,0 +1,10 @@
+# Node.js
+node_modules
+
+# Build directory
+.jest
+dist
+reports
+
+# Misc
+*.log

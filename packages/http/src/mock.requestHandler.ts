@@ -1,0 +1,51 @@
+import isObject from 'lodash/isObject';
+import { ContentType, HttpRequestHandler, NormalizedHttpOptions } from './httpClient.types';
+import { HttpStatusText } from './httpCodes';
+
+export const handleRequest = (code: number, body: any, contentType: string = ContentType.TEXT): Promise<Response> => {
+  if (isObject(body)) {
+    body = JSON.stringify(body);
+    contentType = contentType || ContentType.JSON;
+  } else {
+    body = String(body);
+  }
+  return Promise.resolve(new Response(body, {
+    headers: {
+      'Content-Type': contentType,
+      'Content-Length': body.length,
+    },
+    status: code,
+    statusText: HttpStatusText[code],
+  }));
+};
+
+export interface Endpoint {
+  match: string | RegExp;
+  handler: (request: NormalizedHttpOptions) => Promise<Response>;
+}
+
+export interface MockOptions {
+  endpoints: Endpoint[];
+}
+
+export type MockHttpRequestHandler = HttpRequestHandler & {
+  lastRequest: () => NormalizedHttpOptions;
+};
+
+export const mockRequestHandler = (
+  mockOptions: MockOptions,
+): MockHttpRequestHandler => {
+  let lastRequest: NormalizedHttpOptions;
+  const handler = (
+    requestOptions: NormalizedHttpOptions,
+  ): Promise<Response> => {
+    lastRequest = requestOptions;
+    const endpoint = mockOptions.endpoints.find(endpoint => new RegExp(endpoint.match).test(requestOptions.url));
+    if (!endpoint) {
+      return Promise.reject(new Error(`Mock not provided for URI: ${requestOptions.url}`));
+    }
+    return endpoint.handler(requestOptions);
+  };
+  handler.lastRequest = () => lastRequest;
+  return handler;
+};

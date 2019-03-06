@@ -1,0 +1,51 @@
+{
+  "name": "coolio",
+  "version": "0.1.0",
+  "description": "Extendable networking client",
+  "homepage": "https://github.com/headline-1/coolio",
+  "bugs": "https://github.com/headline-1/coolio/issues",
+  "author": "Krzysztof Miemiec <krzysztof.miemiec@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "postinstall": "lerna exec -- yarn && lerna bootstrap",
+    "build": "lerna exec --concurrency 1 -- yarn build",
+    "start": "yarn clean && yarn build && lerna run --parallel start",
+    "clean": "rimraf packages/*/{dist,.jest,reports} && rimraf dist",
+    "purge": "yarn clean && rimraf node_modules",
+    "dist": "chmod 755 ./scripts/pack.sh && ./scripts/pack.sh",
+    "lint": "lerna exec -- yarn lint",
+    "link:all": "lerna exec -- yarn link",
+    "unlink:all": "lerna exec -- yarn unlink",
+    "test": "lerna exec -- yarn test",
+    "test:watch": "lerna exec -- yarn test:watch",
+    "version:new": "yarn version --no-git-tag-version --no-commit-hooks && lerna version --yes --no-git-tag-version --no-commit-hooks",
+    "version:bump": "yarn version --patch --no-git-tag-version --no-commit-hooks && lerna version patch --yes --no-git-tag-version --no-commit-hooks && git add */package.json package.json lerna.json"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn version:bump",
+      "pre-push": "yarn lint"
+    }
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.11",
+    "@types/lodash": "^4.14.122",
+    "@types/node": "^11.9.4",
+    "husky": "^1.3.1",
+    "jest": "^24.5.0",
+    "lerna": "^3.13.1",
+    "ts-jest": "^24.0.0",
+    "ts-loader": "^5.3.3",
+    "tslint": "^5.12.1",
+    "tslint-config-airbnb-base": "^0.2.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-consistent-codestyle": "^1.15.0",
+    "tslint-no-circular-imports": "^0.6.2",
+    "typescript": "^3.3.4000",
+    "whatwg-fetch": "^3.0.0"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
+}
