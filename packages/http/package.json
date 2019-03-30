@@ -19,7 +19,7 @@
     "lint": "tslint --config ../../tslint.json --project ./",
     "test": "jest --config='./jest.config.js' --json --outputFile='./reports/test.json' --testLocationInResults --runInBand --coverage",
     "test:watch": "jest --config='./jest.config.js' --watch",
-    "prepack": "cp ../../README.md ./ && cp ../../assets ./"
+    "prepack": "cp ../../README.md ./ && cp -R ../../assets ./"
   },
   "files": [
     "dist/"
@@ -38,5 +38,6 @@
     "@types/qs": "^6.5.2",
     "lodash": "^4.17.11",
     "qs": "^6.7.0"
-  }
+  },
+  "gitHead": "c7b468581d0801579acfdaef25b47d335219c11e"
 }
