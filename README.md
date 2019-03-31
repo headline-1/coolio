@@ -1,4 +1,4 @@
-![Coolio](https://raw.githubusercontent.com/headline-1/coolio/master/assets/coolio.svg)
+![Coolio](./assets/coolio.svg?sanitize=true)
 
 Networking client for web apps
 
