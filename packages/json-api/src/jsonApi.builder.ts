@@ -1,6 +1,8 @@
-import { HttpOptions } from '@coolio/http';
+import { HttpOptions, HttpResponse } from '@coolio/http';
 import isNil from 'lodash/isNil';
-import { FilterOperator, SortOrder } from './jsonApi.interface';
+import { resolveRelationships } from './jsonApi.common';
+import { FilterOperator, RawResponse, SortOrder } from './jsonApi.interface';
+import { JsonResponse } from './jsonApi.response';
 
 const DEFAULT_RESOURCE_LIMIT = 10;
 
@@ -11,6 +13,7 @@ interface Options {
 
 export abstract class RequestBuilder<ResponseType> {
   public uri: string;
+  protected resolveIncludedRelationships = false;
   protected queryParams: Record<string, string> = {};
   protected sortParams: string[] = [];
   protected limit = DEFAULT_RESOURCE_LIMIT;
@@ -44,6 +47,11 @@ export abstract class RequestBuilder<ResponseType> {
         }
       });
     }
+  }
+
+  public resolveIncluded(resolveIncluded?: boolean): this {
+    this.resolveIncludedRelationships = resolveIncluded === undefined ? true : resolveIncluded;
+    return this;
   }
 
   public filter(
@@ -104,5 +112,18 @@ export abstract class RequestBuilder<ResponseType> {
       .map(([key, value]) => `${key}=${unescapedKeys.includes(key) ? value : encodeURIComponent(value)}`)
       .join('&');
     return this.uri + (queryString ? '?' + queryString : '');
+  }
+
+  protected async parseResponse<Raw extends RawResponse<any, any>>(response: HttpResponse): Promise<JsonResponse<Raw>> {
+    const body = await response.parsedBody();
+    let responseData = body.data;
+
+    if (this.resolveIncludedRelationships && body.included) {
+      responseData = resolveRelationships(responseData, body.included);
+    }
+
+    body.data = responseData;
+
+    return new JsonResponse(body);
   }
 }

@@ -22,7 +22,8 @@
     "prepack": "cp ../../README.md ./ && cp -R ../../assets ./"
   },
   "files": [
-    "dist/"
+    "dist/",
+    "assets/"
   ],
   "publishConfig": {
     "access": "public"

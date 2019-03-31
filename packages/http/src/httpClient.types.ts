@@ -18,12 +18,13 @@ export class HttpError<T = any> extends Error {
   }
 }
 
-export interface HttpResponse extends Response {
+export interface HttpResponse<T = any> extends Response {
+  parsedBody: () => Promise<T>;
 }
 
-export type ResponseParser<T> = (response: HttpResponse) => T;
+export type ResponseParser<T = unknown> = (response: HttpResponse) => HttpResponse<T>;
 
-export type HttpFetch<Body> = () => Promise<HttpResponse>;
+export type HttpFetch<Body> = () => Promise<HttpResponse<Body>>;
 
 export type HttpBody = object | TypedArray | string;
 
@@ -58,4 +59,4 @@ export interface NormalizedHttpOptions {
   bypassResponseHandler?: boolean;
 }
 
-export type HttpRequestHandler = (requestOptions: NormalizedHttpOptions) => Promise<Response>;
+export type HttpRequestHandler = (requestOptions: NormalizedHttpOptions) => Promise<HttpResponse>;

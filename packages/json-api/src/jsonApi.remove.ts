@@ -14,6 +14,6 @@ export class RemoveBuilder<Raw extends RawResponse<any, any>> extends RequestBui
       ...options,
       headers: { ...Headers, ...options.headers },
     })
-      .then((body: Raw) => new JsonResponse(body));
+      .then(response => this.parseResponse(response));
   }
 }

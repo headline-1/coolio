@@ -42,7 +42,7 @@
     "tslint-config-prettier": "^1.18.0",
     "tslint-consistent-codestyle": "^1.15.0",
     "tslint-no-circular-imports": "^0.6.2",
-    "typescript": "^3.3.4000",
+    "typescript": "^3.4.1",
     "whatwg-fetch": "^3.0.0"
   },
   "workspaces": [

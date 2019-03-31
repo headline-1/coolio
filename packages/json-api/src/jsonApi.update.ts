@@ -46,8 +46,8 @@ export class UpdateBuilder<Raw extends RawResponse<any, any>> extends RequestBui
     }
 
     const handlerMap = {
-      'PUT': this.httpClient.put,
-      'PATCH': this.httpClient.patch,
+      'PUT': this.httpClient.put.bind(this.httpClient),
+      'PATCH': this.httpClient.patch.bind(this.httpClient),
     };
 
     const handler = handlerMap[this.method];
@@ -64,6 +64,6 @@ export class UpdateBuilder<Raw extends RawResponse<any, any>> extends RequestBui
       },
       headers: { ...Headers, ...options.headers },
     })
-      .then((body: Raw) => new JsonResponse(body));
+      .then(response => this.parseResponse(response));
   }
 }

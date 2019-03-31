@@ -1,6 +1,6 @@
-import { DEFAULT_HEADERS_MOCK, DELETE_MOCK } from './jsonApi.mocks';
 import { JsonApiClient } from '../jsonApi.client';
 import { createHttpMock, HttpMock } from './httpClient.setup';
+import { DEFAULT_HEADERS_MOCK, DELETE_MOCK } from './jsonApi.mocks';
 
 describe('JSON API Remove', () => {
   let mock: HttpMock;

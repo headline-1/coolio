@@ -18,9 +18,12 @@ export interface HttpClientConfig<T = HttpResponse> {
   parser?: ResponseParser<T>;
 }
 
-const passthroughParser = (response: HttpResponse) => response;
+const passthroughParser = (response: HttpResponse) => {
+  response.parsedBody = response.parsedBody || (() => response.arrayBuffer());
+  return response;
+};
 
-export class HttpClient<T = HttpResponse> {
+export class HttpClient<T = unknown> {
   private readonly handle: HttpRequestHandler;
   private readonly defaultHeadersProvider?: HeadersProvider;
   private readonly interceptors: HttpInterceptor[] = [];
@@ -37,34 +40,44 @@ export class HttpClient<T = HttpResponse> {
     return this;
   }
 
-  get = <Result = Response>(uri: string, options: HttpOptions) => this.request<Result>(uri, {
-    ...options,
-    body: undefined,
-    method: HttpMethod.GET,
-  });
+  get<Body extends T = any>(uri: string, options: HttpOptions) {
+    return this.request<Body>(uri, {
+      ...options,
+      body: undefined,
+      method: HttpMethod.GET,
+    });
+  }
 
-  post = <Result = Response>(uri: string, options: HttpOptions) => this.request<Result>(uri, {
-    ...options,
-    method: HttpMethod.POST,
-  });
+  post<Body extends T = any>(uri: string, options: HttpOptions) {
+    return this.request<Body>(uri, {
+      ...options,
+      method: HttpMethod.POST,
+    });
+  }
 
-  put = <Result = Response>(uri: string, options: HttpOptions) => this.request<Result>(uri, {
-    ...options,
-    method: HttpMethod.PUT,
-  });
+  put<Body extends T = any>(uri: string, options: HttpOptions) {
+    return this.request<Body>(uri, {
+      ...options,
+      method: HttpMethod.PUT,
+    });
+  }
 
-  patch = <Result = Response>(uri: string, options: HttpOptions) => this.request<Result>(uri, {
-    ...options,
-    method: HttpMethod.PATCH,
-  });
+  patch<Body extends T = any>(uri: string, options: HttpOptions) {
+    return this.request<Body>(uri, {
+      ...options,
+      method: HttpMethod.PATCH,
+    });
+  }
 
-  remove = <Result = Response>(uri: string, options: HttpOptions) => this.request<Result>(uri, {
-    ...options,
-    body: undefined,
-    method: HttpMethod.DELETE,
-  });
+  remove<Body extends T = any>(uri: string, options: HttpOptions) {
+    return this.request<Body>(uri, {
+      ...options,
+      body: undefined,
+      method: HttpMethod.DELETE,
+    });
+  }
 
-  request = <Result = Response>(url: string, options: HttpOptions): Promise<Result> => {
+  request<Body extends T>(url: string, options: HttpOptions): Promise<HttpResponse<Body>> {
     const headers = HttpClientHelper.sanitizeHeaders({
       ...this.defaultHeadersProvider && this.defaultHeadersProvider(new URL(url).hostname),
       ...options.headers,
@@ -77,9 +90,9 @@ export class HttpClient<T = HttpResponse> {
         headers,
         // TODO extract body serialization out and add support for: form, urlencoded string & typed arrays
         body: isString(options.body) ? options.body : JSON.stringify(options.body),
-      }),
+      }).then(response => this.parser(response) as HttpResponse<Body>),
     );
-    return chain().then(response => this.parser(response) as any);
-  };
+    return chain();
+  }
 
 }

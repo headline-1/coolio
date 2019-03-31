@@ -34,20 +34,28 @@ export const bodyParser = ({
   bodyCasing,
 }: BodyParserOptions) => {
   const caseConverter = getCaseConverter(bodyCasing);
-  return (response: HttpResponse) => {
+  return (response: HttpResponse): HttpResponse => {
+    if (response.parsedBody) {
+      return response;
+    }
     switch (response.headers.get('content-type')) {
       case ContentType.JSON:
       case ContentType.VND_JSON:
-        return response.json()
+        response.parsedBody = () => response.json()
           .then(caseConverter);
+        break;
       case ContentType.URL_ENCODED:
-        return response.text()
+        response.parsedBody = () => response.text()
           .then(parseUrlEncodedBody)
           .then(caseConverter);
+        break;
       case ContentType.TEXT:
-        return response.text();
+        response.parsedBody = () => response.text();
+        break;
       default:
-        return response;
+        response.parsedBody = () => response.arrayBuffer();
+        break;
     }
+    return response;
   };
 };

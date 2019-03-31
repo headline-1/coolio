@@ -1,4 +1,4 @@
-import { HttpRequestHandler, NormalizedHttpOptions } from './httpClient.types';
+import { HttpRequestHandler, HttpResponse, NormalizedHttpOptions } from './httpClient.types';
 
 export interface FetchOptions {
   defaultRequestOptions?: RequestInit;
@@ -6,7 +6,11 @@ export interface FetchOptions {
 
 export const fetchRequestHandler = (
   fetchOptions: FetchOptions = {},
-): HttpRequestHandler => (
+): HttpRequestHandler => async (
   requestOptions: NormalizedHttpOptions,
-): Promise<Response> =>
-  fetch(requestOptions.url, { ...fetchOptions.defaultRequestOptions, ...requestOptions });
+): Promise<HttpResponse> => {
+  return await fetch(requestOptions.url, {
+    ...fetchOptions.defaultRequestOptions,
+    ...requestOptions,
+  }) as HttpResponse;
+};

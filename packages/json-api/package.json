@@ -23,7 +23,8 @@
     "test:watch": "jest --config='./jest.config.js' --watch"
   },
   "files": [
-    "dist/"
+    "dist/",
+    "assets/"
   ],
   "publishConfig": {
     "access": "public"

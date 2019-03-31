@@ -1,5 +1,4 @@
-import { HttpClient } from '@coolio/http';
-import { HttpOptions } from '@coolio/http';
+import { HttpClient, HttpOptions } from '@coolio/http';
 import { RequestBuilder } from './jsonApi.builder';
 import { Headers, RawResponse } from './jsonApi.interface';
 import { JsonResponse } from './jsonApi.response';
@@ -50,6 +49,6 @@ export class PostBuilder<Raw extends RawResponse<any, any>> extends RequestBuild
       },
       headers: { ...Headers, ...options.headers },
     })
-      .then((body: Raw) => new JsonResponse(body));
+      .then(response => this.parseResponse(response));
   }
 }

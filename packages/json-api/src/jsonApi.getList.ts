@@ -32,7 +32,6 @@ export class GetListBuilder<Raw extends RawListResponse<any, any>, I extends Inc
   extends RequestBuilder<JsonListResponse<Raw, I>> {
 
   private previousResponse?: JsonListResponse<Raw, I>;
-  private resolveIncludedRelationships = false;
   private includedGroups: IncludedGroupsSchema = {};
 
   constructor(private readonly httpClient: HttpClient, uri: string) {
@@ -61,13 +60,13 @@ export class GetListBuilder<Raw extends RawListResponse<any, any>, I extends Inc
       ...options,
       headers: { ...Headers, ...options && options.headers },
     })
-      .then((body: Raw) => {
+      .then(async response => {
         const { limit, offset } = this;
-        const { included } = body;
+        const body = await response.parsedBody();
         let newData = body.data;
 
-        if (this.resolveIncludedRelationships && included) {
-          newData = resolveRelationships(newData, included);
+        if (this.resolveIncludedRelationships && body.included) {
+          newData = resolveRelationships(newData, body.included);
         }
 
         if (this.previousResponse && !isNil(offset)) {
