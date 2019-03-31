@@ -40,7 +40,7 @@ export class HttpClient<T = unknown> {
     return this;
   }
 
-  get<Body extends T = any>(uri: string, options: HttpOptions) {
+  get<Body extends T = any>(uri: string, options?: HttpOptions) {
     return this.request<Body>(uri, {
       ...options,
       body: undefined,
@@ -48,28 +48,28 @@ export class HttpClient<T = unknown> {
     });
   }
 
-  post<Body extends T = any>(uri: string, options: HttpOptions) {
+  post<Body extends T = any>(uri: string, options?: HttpOptions) {
     return this.request<Body>(uri, {
       ...options,
       method: HttpMethod.POST,
     });
   }
 
-  put<Body extends T = any>(uri: string, options: HttpOptions) {
+  put<Body extends T = any>(uri: string, options?: HttpOptions) {
     return this.request<Body>(uri, {
       ...options,
       method: HttpMethod.PUT,
     });
   }
 
-  patch<Body extends T = any>(uri: string, options: HttpOptions) {
+  patch<Body extends T = any>(uri: string, options?: HttpOptions) {
     return this.request<Body>(uri, {
       ...options,
       method: HttpMethod.PATCH,
     });
   }
 
-  remove<Body extends T = any>(uri: string, options: HttpOptions) {
+  remove<Body extends T = any>(uri: string, options?: HttpOptions) {
     return this.request<Body>(uri, {
       ...options,
       body: undefined,
@@ -77,10 +77,10 @@ export class HttpClient<T = unknown> {
     });
   }
 
-  request<Body extends T>(url: string, options: HttpOptions): Promise<HttpResponse<Body>> {
+  request<Body extends T>(url: string, options?: HttpOptions): Promise<HttpResponse<Body>> {
     const headers = HttpClientHelper.sanitizeHeaders({
       ...this.defaultHeadersProvider && this.defaultHeadersProvider(new URL(url).hostname),
-      ...options.headers,
+      ...(options && options.headers),
     });
     const chain = this.interceptors.reduce(
       (req, interceptor) => interceptor(req),
@@ -89,7 +89,7 @@ export class HttpClient<T = unknown> {
         url,
         headers,
         // TODO extract body serialization out and add support for: form, urlencoded string & typed arrays
-        body: isString(options.body) ? options.body : JSON.stringify(options.body),
+        body: options && (isString(options.body) ? options.body : JSON.stringify(options.body)),
       }).then(response => this.parser(response) as HttpResponse<Body>),
     );
     return chain();
