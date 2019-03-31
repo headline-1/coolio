@@ -1,4 +1,4 @@
-![Cool IO](./assets/coolio.svg)
+<img src="https://github.com/headline-1/coolio/blob/master/assets/coolio.svg?raw=true" width="320" alt="Cool IO" />
 
 Networking client for web apps
 

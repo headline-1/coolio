@@ -13,6 +13,7 @@
     "start": "yarn clean && yarn build && lerna run --parallel start",
     "clean": "rimraf packages/*/{dist,.jest,reports} && rimraf dist",
     "purge": "yarn clean && rimraf node_modules",
+    "release": "lerna publish --force-publish=*",
     "dist": "chmod 755 ./scripts/pack.sh && ./scripts/pack.sh",
     "lint": "lerna exec -- yarn lint",
     "link:all": "lerna exec -- yarn link",
