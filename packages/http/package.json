@@ -22,7 +22,7 @@
     "lint": "tslint --config ../../tslint.json --project ./",
     "test": "jest --config='./jest.config.js' --json --outputFile='./reports/test.json' --testLocationInResults --runInBand --coverage",
     "test:watch": "jest --config='./jest.config.js' --watch",
-    "prepack": "cp ../../README.md ./"
+    "prepack": "cp ../../README.md ./ && yarn lint && yarn test && yarn build"
   },
   "files": [
     "dist/",
