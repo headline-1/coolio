@@ -3,11 +3,14 @@
   "version": "0.1.7",
   "description": "JSON API wrapper for Coolio HTTP Client",
   "keywords": [
+    "json-api",
     "jsonapi",
     "json",
+    "api",
     "http",
     "client",
-    "coolio"
+    "coolio",
+    "@coolio"
   ],
   "author": "Krzysztof Miemiec <krzysztof.miemiec@gmail.com>",
   "homepage": "https://github.com/headline-1/coolio/tree/master/packages/json-api#readme",
@@ -20,8 +23,7 @@
     "clean": "rimraf dist",
     "lint": "tslint --config ../../tslint.json --project ./",
     "test": "jest --config='./jest.config.js' --json --outputFile='./reports/test.json' --testLocationInResults --runInBand --coverage",
-    "test:watch": "jest --config='./jest.config.js' --watch",
-    "prepack": "cp -R ../../assets ./"
+    "test:watch": "jest --config='./jest.config.js' --watch"
   },
   "files": [
     "dist/",

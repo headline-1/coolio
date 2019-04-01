@@ -5,7 +5,10 @@
   "keywords": [
     "http",
     "networking",
-    "client"
+    "api",
+    "client",
+    "coolio",
+    "@coolio"
   ],
   "author": "Krzysztof Miemiec <krzysztof.miemiec@gmail.com>",
   "homepage": "https://github.com/headline-1/coolio/tree/master/packages/http#readme",
@@ -19,7 +22,7 @@
     "lint": "tslint --config ../../tslint.json --project ./",
     "test": "jest --config='./jest.config.js' --json --outputFile='./reports/test.json' --testLocationInResults --runInBand --coverage",
     "test:watch": "jest --config='./jest.config.js' --watch",
-    "prepack": "cp ../../README.md ./ && cp -R ../../assets ./"
+    "prepack": "cp ../../README.md ./"
   },
   "files": [
     "dist/",

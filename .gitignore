@@ -7,7 +7,6 @@ dist
 reports
 
 # Generated files
-/packages/http/assets
 /packages/http/README.md
 
 # Misc
