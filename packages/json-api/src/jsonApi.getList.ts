@@ -5,7 +5,7 @@ import { RequestBuilder } from './jsonApi.builder';
 import { mergeElementData, resolveRelationships } from './jsonApi.common';
 import { Headers, IncludedGroups, IncludedGroupsSchema, MergedData, RawListResponse } from './jsonApi.interface';
 
-export class JsonListResponse<Raw extends RawListResponse<any, any>, I extends IncludedGroups> {
+export class JsonListResponse<Raw extends RawListResponse<any, any>, I extends IncludedGroups = {}> {
 
   constructor(
     readonly raw: Raw,
