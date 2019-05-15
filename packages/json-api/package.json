@@ -1,6 +1,6 @@
 {
   "name": "@coolio/json-api",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "JSON API wrapper for Coolio HTTP Client",
   "keywords": [
     "json-api",
