@@ -30,8 +30,14 @@ const sanitizeHeaders = (headers: Record<string, any>): Record<string, string> =
   return headers;
 };
 
+export const getHostname = (url: string): string => {
+  const match = url && url.match(/^.+:\/\/([^/]+)/);
+  return match ? match[1] : '';
+};
+
 export const HttpClientHelper = {
   defaultHeaders,
   toUrlEncoded,
   sanitizeHeaders,
+  getHostname,
 };

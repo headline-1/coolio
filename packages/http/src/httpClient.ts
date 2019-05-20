@@ -79,7 +79,9 @@ export class HttpClient<T = unknown> {
 
   request<Body extends T>(url: string, options?: HttpOptions): Promise<HttpResponse<Body>> {
     const headers = HttpClientHelper.sanitizeHeaders({
-      ...this.defaultHeadersProvider && this.defaultHeadersProvider(new URL(url).hostname),
+      ...this.defaultHeadersProvider && this.defaultHeadersProvider(
+        HttpClientHelper.getHostname(url),
+      ),
       ...(options && options.headers),
     });
     const chain = this.interceptors.reduce(
