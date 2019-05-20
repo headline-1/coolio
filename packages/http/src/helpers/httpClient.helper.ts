@@ -1,3 +1,4 @@
+import get from 'lodash/get';
 import isNil from 'lodash/isNil';
 import { ContentType } from '../httpClient.types';
 
@@ -30,8 +31,19 @@ const sanitizeHeaders = (headers: Record<string, any>): Record<string, string> =
   return headers;
 };
 
+const getHostname = (url: string): string => {
+  let hostname = '';
+  try {
+    hostname = new URL(url).hostname;
+  } catch (e) {
+    hostname = get(new RegExp(/https?:\/\/[^/]+/).exec(url), '[0]', '');
+  }
+  return hostname;
+};
+
 export const HttpClientHelper = {
   defaultHeaders,
   toUrlEncoded,
   sanitizeHeaders,
+  getHostname,
 };
