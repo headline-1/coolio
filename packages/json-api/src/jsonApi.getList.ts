@@ -38,7 +38,7 @@ export class GetListBuilder<Raw extends RawListResponse<any, any>, I extends Inc
     super(uri, { sort: true, pagination: true });
   }
 
-  addToResponse(response: JsonListResponse<Raw, I>): this {
+  addToResponse(response: JsonListResponse<Raw, I> | undefined): this {
     this.previousResponse = response;
     return this;
   }
