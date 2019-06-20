@@ -87,7 +87,7 @@ export class GetListBuilder<Raw extends RawListResponse<any, any>, I extends Inc
         if (body.included) {
           const groups = Object.entries(this.includedGroups);
           for (const [name, { type }] of groups) {
-            includedGroups[name] = body.included.filter(i => i.type === type);
+            includedGroups[name as keyof I] = body.included.filter(i => i.type === type) as any;
           }
         }
 

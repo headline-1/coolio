@@ -7,7 +7,7 @@ export class UpdateBuilder<Raw extends RawResponse<any, any>> extends RequestBui
   id?: string;
   type?: string;
   attributes?: object;
-  relationships?: Record<string, { data: { id: string, type: string } }>;
+  relationships?: Record<string, { data: { id: string; type: string } }>;
 
   constructor(
     private httpClient: HttpClient,
@@ -32,7 +32,7 @@ export class UpdateBuilder<Raw extends RawResponse<any, any>> extends RequestBui
     return this;
   }
 
-  withRelationship({ name, uuid, type }: { name: string, uuid: string, type: string }): this {
+  withRelationship({ name, uuid, type }: { name: string; uuid: string; type: string }): this {
     if (!this.relationships) {
       this.relationships = {};
     }

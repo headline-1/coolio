@@ -1,6 +1,6 @@
 {
   "name": "@coolio/json-api",
-  "version": "0.1.15",
+  "version": "0.1.17",
   "description": "JSON API wrapper for Coolio HTTP Client",
   "keywords": [
     "json-api",
@@ -20,10 +20,6 @@
   "scripts": {
     "start": "tsc -w --preserveWatchOutput",
     "build": "tsc",
-    "clean": "rimraf dist",
-    "lint": "tslint --config ../../tslint.json --project ./",
-    "test": "jest --config='./jest.config.js' --json --outputFile='./reports/test.json' --testLocationInResults --runInBand --coverage",
-    "test:watch": "jest --config='./jest.config.js' --watch",
     "prepack": "yarn lint && yarn test && yarn build"
   },
   "files": [
@@ -44,7 +40,7 @@
     "@coolio/http": "^0.1.0"
   },
   "devDependencies": {
-    "@coolio/http": "^0.1.15"
+    "@coolio/http": "^0.1.17"
   },
   "dependencies": {
     "lodash": "^4.17.11"

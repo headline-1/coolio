@@ -10,8 +10,6 @@ Add the JSON API package, assuming that you already have `@coolio/http` installe
 
 ```bash
 npm install @coolio/json-api
-# or if you're using fancy stuff:
-yarn add @coolio/json-api
 ```
 
 Declare `httpClient` as described in [@coolio/http's README.md](/packages/http/README.md) and then build JSON API Client:
