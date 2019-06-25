@@ -18,7 +18,7 @@
   "scripts": {
     "start": "tsc -w --preserveWatchOutput",
     "build": "tsc",
-    "prepack": "cp ../../README.md ./ && yarn lint && yarn test && yarn build"
+    "prepack": "yarn build"
   },
   "files": [
     "dist/",
@@ -39,5 +39,5 @@
     "lodash": "^4.17.11",
     "qs": "^6.7.0"
   },
-  "gitHead": "c7b468581d0801579acfdaef25b47d335219c11e"
+  "gitHead": "df3e4ca748cf0eba95323a60ae934ac5afed495b"
 }
