@@ -2,12 +2,9 @@
 node_modules
 
 # Build directory
-.jest
+/.jest
 dist
-reports
-
-# Generated files
-/packages/http/README.md
+/reports
 
 # Misc
 *.log

@@ -6,7 +6,7 @@ import { JsonResponse } from './jsonApi.response';
 export class PostBuilder<Raw extends RawResponse<any, any>> extends RequestBuilder<JsonResponse<Raw>> {
   type?: string;
   attributes?: object;
-  relationships?: Record<string, { data: { id: string, type: string } }>;
+  relationships?: Record<string, { data: { id: string; type: string } }>;
 
   constructor(private httpClient: HttpClient, uri: string) {
     super(uri, {});
@@ -22,7 +22,7 @@ export class PostBuilder<Raw extends RawResponse<any, any>> extends RequestBuild
     return this;
   }
 
-  withRelationship(rel?: { name: string, uuid: string, type: string }): this {
+  withRelationship(rel?: { name: string; uuid: string; type: string }): this {
     if (!this.relationships) {
       this.relationships = {};
     }

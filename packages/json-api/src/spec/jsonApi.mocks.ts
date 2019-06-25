@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/camelcase */
+
 export const DEFAULT_HEADERS_MOCK = {
   'Accept': 'application/vnd.api+json',
   'Content-Type': 'application/vnd.api+json',

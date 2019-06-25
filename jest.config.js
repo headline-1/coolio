@@ -1,8 +1,7 @@
 module.exports = {
   cacheDirectory: '.jest/cache',
   collectCoverageFrom: [
-    '<rootDir>/src/**/*.ts',
-    '!<rootDir>/node_modules/',
+    '<rootDir>/packages/*/src/**/*.ts',
     '!<rootDir>/src/**/index.ts',
     '!<rootDir>/src/**/*.d.ts',
   ],
@@ -14,13 +13,13 @@ module.exports = {
     'json',
   ],
   setupFiles: [
-    '<rootDir>/../../spec/spec.setup.ts',
+    '<rootDir>/spec/spec.setup.ts',
   ],
   testMatch: [
-    '<rootDir>/src/**/*.(spec|test).ts',
+    '<rootDir>/packages/*/src/**/*.spec.ts',
   ],
   transform: {
-    '^.+\\.(js|jsx|json)$': '<rootDir>/../../node_modules/babel-jest',
+    '^.+\\.(js|jsx|json)$': '<rootDir>/node_modules/babel-jest',
     '^.+\\.tsx?$': 'ts-jest',
   },
 };

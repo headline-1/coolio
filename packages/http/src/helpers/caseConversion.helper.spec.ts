@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/camelcase */
+
 import { noConversion, splitWords, toCamelCase, toKebabCase, toPascalCase, toSnakeCase } from './caseConversion.helper';
 
 const conversionMockup = {
