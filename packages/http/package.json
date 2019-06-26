@@ -15,11 +15,6 @@
   "license": "MIT",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "scripts": {
-    "start": "tsc -w --preserveWatchOutput",
-    "build": "tsc",
-    "prepack": "yarn build"
-  },
   "files": [
     "dist/",
     "assets/"

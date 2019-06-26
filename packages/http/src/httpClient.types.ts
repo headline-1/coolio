@@ -50,9 +50,11 @@ export interface HttpOptions {
   bypassResponseHandler?: boolean;
 }
 
+export type NormalizedHttpBody = string | TypedArray | undefined;
+
 export interface NormalizedHttpOptions {
   url: string;
-  body?: string | TypedArray;
+  body?: NormalizedHttpBody;
   method?: HttpMethod;
   headers?: Record<string, string>;
   mode?: RequestMode;

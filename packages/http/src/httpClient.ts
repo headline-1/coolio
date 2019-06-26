@@ -1,4 +1,3 @@
-import isString from 'lodash/isString';
 import { HttpClientHelper } from './helpers';
 import {
   HttpHeaders,
@@ -9,6 +8,7 @@ import {
   HttpResponse,
   ResponseParser,
 } from './httpClient.types';
+import { serializeBody } from './bodySerializer';
 
 type HeadersProvider = (host: string) => Promise<HttpHeaders> | HttpHeaders;
 
@@ -78,7 +78,7 @@ export class HttpClient<T = unknown> {
   }
 
   request<Body extends T>(url: string, options?: HttpOptions): Promise<HttpResponse<Body>> {
-    const headers = HttpClientHelper.sanitizeHeaders({
+    const sanitizeHeaders = () => HttpClientHelper.sanitizeHeaders({
       ...this.defaultHeadersProvider && this.defaultHeadersProvider(
         HttpClientHelper.getHostname(url),
       ),
@@ -89,9 +89,8 @@ export class HttpClient<T = unknown> {
       () => this.handle({
         ...options,
         url,
-        headers,
-        // TODO extract body serialization out and add support for: form, urlencoded string & typed arrays
-        body: options && (isString(options.body) ? options.body : JSON.stringify(options.body)),
+        headers: sanitizeHeaders(),
+        body: serializeBody(options && options.body),
       }).then(response => this.parser(response) as HttpResponse<Body>),
     );
     return chain();
