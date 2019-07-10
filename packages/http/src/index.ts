@@ -1,6 +1,7 @@
 export * from './helpers';
 export * from './httpClient.types';
 export * from './httpClient';
+export * from './httpResponse';
 export * from './httpCodes';
 export * from './httpResponseError';
 export * from './fetch.requestHandler';

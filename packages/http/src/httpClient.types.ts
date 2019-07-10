@@ -24,13 +24,15 @@ export interface HttpResponse<T = any> extends Response {
 
 export type ResponseParser<T = unknown> = (response: HttpResponse) => HttpResponse<T>;
 
+export type BodySerializer = (request: HttpOptions) => NormalizedHttpBody;
+
 export type HttpFetch<Body> = () => Promise<HttpResponse<Body>>;
 
 export type HttpBody = object | TypedArray | string;
 
 export type HttpHeaders = Record<string, string | number | boolean | undefined | null>;
 
-export type HttpInterceptor = <Body>(request: HttpFetch<Body>) => HttpFetch<Body>;
+export type HttpInterceptor = <Body>(request: HttpFetch<Body>, options: NormalizedHttpOptions) => HttpFetch<Body>;
 
 export enum HttpMethod {
   POST = 'POST',

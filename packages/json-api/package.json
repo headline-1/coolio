@@ -1,6 +1,6 @@
 {
   "name": "@coolio/json-api",
-  "version": "0.1.21",
+  "version": "0.1.22",
   "description": "JSON API wrapper for Coolio HTTP Client",
   "keywords": [
     "json-api",
@@ -35,7 +35,7 @@
     "@coolio/http": "^0.1.0"
   },
   "devDependencies": {
-    "@coolio/http": "^0.1.21"
+    "@coolio/http": "^0.1.22"
   },
   "dependencies": {
     "lodash": "^4.17.11"

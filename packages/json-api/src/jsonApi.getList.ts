@@ -1,4 +1,4 @@
-import { HttpClient, HttpOptions } from '@coolio/http';
+import { HttpClient, HttpOptions, HttpResponse } from '@coolio/http';
 import isNil from 'lodash/isNil';
 import mapValues from 'lodash/mapValues';
 import { RequestBuilder } from './jsonApi.builder';
@@ -12,6 +12,7 @@ export class JsonListResponse<Raw extends RawListResponse<any, any>, I extends I
     readonly limit: number,
     readonly offset: number | undefined,
     private readonly rawIncludedGroups: I,
+    readonly response: HttpResponse<Raw>,
   ) {
   }
 
@@ -91,7 +92,7 @@ export class GetListBuilder<Raw extends RawListResponse<any, any>, I extends Inc
           }
         }
 
-        return new JsonListResponse<Raw, I>(body, limit, offset, includedGroups);
+        return new JsonListResponse<Raw, I>(body, limit, offset, includedGroups, response);
       });
   }
 }

@@ -124,6 +124,6 @@ export abstract class RequestBuilder<ResponseType> {
 
     body.data = responseData;
 
-    return new JsonResponse(body);
+    return new JsonResponse(body, response);
   }
 }

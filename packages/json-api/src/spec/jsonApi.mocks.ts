@@ -120,15 +120,15 @@ export const POST_MOCK = {
   BODY: {
     data: {
       type: 'testType',
-      attributes: { attributeOne: 'value1', attribute_two: 'value2' },
+      attributes: { attribute_one: 'value1', attribute_two: 'value2' },
       relationships: {
-        relName: {
+        rel_name: {
           data: {
             id: 'uuid',
             type: 'relType',
           },
         },
-        relName2: {
+        rel_name2: {
           data: {
             id: 'uuid2',
             type: 'relType2',
@@ -153,15 +153,15 @@ export const PUT_MOCK = {
     data: {
       id: 'testId',
       type: 'testType',
-      attributes: { attributeOne: 'value1', attribute_two: 'value2' },
+      attributes: { attribute_one: 'value1', attribute_two: 'value2' },
       relationships: {
-        relName: {
+        rel_name: {
           data: {
             id: 'uuid',
             type: 'relType',
           },
         },
-        relName2: {
+        rel_name2: {
           data: {
             id: 'uuid2',
             type: 'relType2',

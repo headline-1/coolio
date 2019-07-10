@@ -1,3 +1,4 @@
+import { ContentType, createHttpResponse, HttpCode } from '@coolio/http';
 import { FilterOperator, JsonApiClient, SortOrder } from '../';
 import { JsonListResponse } from '../jsonApi.getList';
 import { Data } from '../jsonApi.interface';
@@ -14,7 +15,11 @@ describe('JSON API Get List', () => {
   });
 
   it('should correctly parse List JSON API response', () => {
-    const { raw, elements, offset, limit } = new JsonListResponse(GET_LIST_MOCK.RAW, 10, 15, {});
+    const { raw, elements, offset, limit } = new JsonListResponse(GET_LIST_MOCK.RAW, 10, 15, {}, createHttpResponse({
+      headers: new Headers({ 'content-type': ContentType.VND_JSON }),
+      status: HttpCode.OK,
+      body: JSON.stringify(GET_LIST_MOCK.RAW),
+    }));
     expect(raw).toEqual(GET_LIST_MOCK.RAW);
     expect(elements).toEqual(GET_LIST_MOCK.PARSED);
     expect(offset).toEqual(15);
@@ -86,7 +91,11 @@ describe('JSON API Get List', () => {
   });
 
   it('should correctly merge previous results with GetListBuilder when #addToResponse is used', async () => {
-    const responseWithOneElement = new JsonListResponse(GET_LIST_MOCK.RAW, 1, 0, {});
+    const responseWithOneElement = new JsonListResponse(GET_LIST_MOCK.RAW, 1, 0, {}, createHttpResponse({
+      headers: new Headers({ 'content-type': ContentType.VND_JSON }),
+      status: HttpCode.OK,
+      body: JSON.stringify(GET_LIST_MOCK.RAW),
+    }));
     const result = await new JsonApiClient(mock.httpClient).getList<Data<{}, {}>>(GET_LIST_MOCK.URI)
       .pageLimit(1)
       .pageOffset(1)

@@ -1,3 +1,4 @@
+import { ContentType, createHttpResponse, HttpCode } from '@coolio/http';
 import { FilterOperator, JsonApiClient, SortOrder } from '..';
 import { Data } from '../jsonApi.interface';
 import { JsonResponse } from '../jsonApi.response';
@@ -12,7 +13,11 @@ describe('JSON API Get', () => {
   });
 
   it('should correctly parse Get JSON API response', () => {
-    const { raw, element } = new JsonResponse(GET_MOCK.RAW);
+    const { raw, element } = new JsonResponse(GET_MOCK.RAW, createHttpResponse({
+      headers: new Headers({ 'content-type': ContentType.VND_JSON }),
+      status: HttpCode.OK,
+      body: JSON.stringify(GET_MOCK.RAW),
+    }));
     expect(raw).toEqual(GET_MOCK.RAW);
     expect(element).toEqual(GET_MOCK.PARSED);
   });

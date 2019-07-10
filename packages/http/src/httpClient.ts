@@ -1,21 +1,23 @@
 import { HttpClientHelper } from './helpers';
 import {
+  BodySerializer,
   HttpHeaders,
   HttpInterceptor,
   HttpMethod,
   HttpOptions,
   HttpRequestHandler,
-  HttpResponse,
+  HttpResponse, NormalizedHttpOptions,
   ResponseParser,
 } from './httpClient.types';
-import { serializeBody } from './bodySerializer';
+import { bodySerializer } from './bodySerializer';
 
 type HeadersProvider = (host: string) => Promise<HttpHeaders> | HttpHeaders;
 
 export interface HttpClientConfig<T = HttpResponse> {
   requestHandler: HttpRequestHandler;
   defaultHeadersProvider?: HeadersProvider;
-  parser?: ResponseParser<T>;
+  responseParser?: ResponseParser<T>;
+  bodySerializer?: BodySerializer;
 }
 
 const passthroughParser = (response: HttpResponse) => {
@@ -28,10 +30,12 @@ export class HttpClient<T = unknown> {
   private readonly defaultHeadersProvider?: HeadersProvider;
   private readonly interceptors: HttpInterceptor[] = [];
   private readonly parser: ResponseParser<T>;
+  private readonly bodySerializer: BodySerializer;
 
   constructor(config: HttpClientConfig<T>) {
     this.handle = config.requestHandler;
-    this.parser = config.parser || passthroughParser as any;
+    this.parser = config.responseParser || passthroughParser as any;
+    this.bodySerializer = config.bodySerializer || bodySerializer();
     this.defaultHeadersProvider = config.defaultHeadersProvider;
   }
 
@@ -84,14 +88,17 @@ export class HttpClient<T = unknown> {
       ),
       ...(options && options.headers),
     });
+
+    const normalizedOptions: NormalizedHttpOptions = {
+      ...options,
+      url,
+      headers: sanitizeHeaders(),
+      body: options && this.bodySerializer(options),
+    };
+
     const chain = this.interceptors.reduce(
-      (req, interceptor) => interceptor(req),
-      () => this.handle({
-        ...options,
-        url,
-        headers: sanitizeHeaders(),
-        body: serializeBody(options && options.body),
-      }).then(response => this.parser(response) as HttpResponse<Body>),
+      (req, interceptor) => interceptor(req, normalizedOptions),
+      () => this.handle(normalizedOptions).then(response => this.parser(response) as HttpResponse<Body>),
     );
     return chain();
   }

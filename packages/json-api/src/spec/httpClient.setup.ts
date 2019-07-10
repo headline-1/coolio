@@ -1,13 +1,14 @@
 import {
   BodyCasing,
   bodyParser,
+  bodySerializer,
   ContentType,
   handleRequest,
   HttpClient,
   HttpCode,
+  MockHttpRequestHandler,
   mockRequestHandler,
 } from '@coolio/http';
-import { MockHttpRequestHandler } from '@coolio/http';
 import { DELETE_MOCK, GET_LIST_MOCK, GET_MOCK, PATCH_MOCK, POST_MOCK, PUT_MOCK } from './jsonApi.mocks';
 
 export interface HttpMock {
@@ -47,7 +48,8 @@ export const createHttpMock = (): HttpMock => {
   });
   const httpClient = new HttpClient({
     requestHandler,
-    parser: bodyParser({ bodyCasing: BodyCasing.CAMEL_CASE }),
+    responseParser: bodyParser({ bodyCasing: BodyCasing.CAMEL_CASE }),
+    bodySerializer: bodySerializer({ bodyCasing: BodyCasing.SNAKE_CASE }),
   });
 
   return { httpClient, requestHandler };
