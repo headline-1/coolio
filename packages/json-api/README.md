@@ -30,9 +30,21 @@ Make sure that httpClient uses standard `bodyParser` or a parser that returns co
 An instance of `JsonApiClient` exposes a collection of `get()`, `getList()`, `post()`, `remove()`, `put()` and `patch()` methods. Each method returns a request builder. For example:
 
 ```typescript
-import { Data, FilterOperator, MergedData } from '@coolio/json-api';
+import { Data, FilterOperator, MergedData, ResolvedRelationship, RelationshipArray } from '@coolio/json-api';
 import { Config } from './config';
 import { jsonApiClient } from './apiClient';
+
+// First, define Attributes and Relationships for your API models
+export interface AddressAttributes {
+  street: string;
+  buildingNumber: string;
+  city: string;
+  zipCode: string;
+  state?: string;
+  country: string;
+}
+
+export type AddressData = Data<AddressAttributes>;
 
 export interface UserAttributes {
   name: string;
@@ -41,11 +53,36 @@ export interface UserAttributes {
 }
 
 export interface UserRelationships {
-  // TODO
+  address: ResolvedRelationship<AddressData>; // This relationship will be merged as a field into User.
+  devices: RelationshipArray; // The result is only an array of identifiers
 }
 
+// JSON API-compatible type:
 export type UserData = Data<UserAttributes, UserRelationships>;
+// Parsed type, for easier use in your code:
 export type User = MergedData<UserData>;
+
+// The above `User` type is equal to such structure:
+interface UserDefinedManually {
+  id: string;  // Identifier from JSON API
+  type: string; // Type from JSON API
+  self: string; // Self field from JSON API
+  name: string;
+  surname: string;
+  email: string;
+  address: {
+    id: string; // Identifier from JSON API
+    type: string; // Type from JSON API
+    self: string; // Self field from JSON API
+    street: string;
+    buildingNumber: string;
+    city: string;
+    zipCode: string;
+    state?: string;
+    country: string;
+  }
+  devices: string[]; // Array of identifiers extracted from JSON API's relationships
+}
 
 const getUsers = jsonApiClient.getList<UserAttributes>(`${Config.API_BASE_URL}/users`)
   .filter('name', 'John', FilterOperator.LIKE)

@@ -10,6 +10,7 @@ import {
   ResponseParser,
 } from './httpClient.types';
 import { bodySerializer } from './bodySerializer';
+import { cacheParsedBody } from './helpers/parsedBodyCache.helper';
 
 type HeadersProvider = (host: string) => Promise<HttpHeaders> | HttpHeaders;
 
@@ -29,12 +30,12 @@ export class HttpClient<T = unknown> {
   private readonly handle: HttpRequestHandler;
   private readonly defaultHeadersProvider?: HeadersProvider;
   private readonly interceptors: HttpInterceptor[] = [];
-  private readonly parser: ResponseParser<T>;
+  private readonly responseParser: ResponseParser<T>;
   private readonly bodySerializer: BodySerializer;
 
   constructor(config: HttpClientConfig<T>) {
     this.handle = config.requestHandler;
-    this.parser = config.responseParser || passthroughParser as any;
+    this.responseParser = config.responseParser || passthroughParser as any;
     this.bodySerializer = config.bodySerializer || bodySerializer();
     this.defaultHeadersProvider = config.defaultHeadersProvider;
   }
@@ -98,7 +99,11 @@ export class HttpClient<T = unknown> {
 
     const chain = this.interceptors.reduce(
       (req, interceptor) => interceptor(req, normalizedOptions),
-      () => this.handle(normalizedOptions).then(response => this.parser(response) as HttpResponse<Body>),
+      () => this.handle(normalizedOptions).then(response => {
+        const parsedResponse = this.responseParser(response) as HttpResponse<Body>;
+        parsedResponse.parsedBody = cacheParsedBody(parsedResponse.parsedBody);
+        return parsedResponse;
+      }),
     );
     return chain();
   }

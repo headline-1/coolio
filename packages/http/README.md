@@ -17,7 +17,7 @@ npm install @coolio/http
 Initialize a HttpClient and configure it as below:
 
 ```typescript
-import { bodyParser, BodyCasing, ContentType, HttpClient, fetchRequestHandler } from '@coolio/http';
+import { bodyParser, bodySerializer, BodyCasing, ContentType, HttpClient, fetchRequestHandler } from '@coolio/http';
 import { Config } from './config';
 
 export const httpClient = new HttpClient({
@@ -26,8 +26,11 @@ export const httpClient = new HttpClient({
     'Content-Type': ContentType.JSON,
     'Authorization': host === Config.API_DOMAIN ? 'Bearer abcdef1234567890' : undefined,
   }),
-  parser: bodyParser({ 
+  responseParser: bodyParser({ 
     bodyCasing: BodyCasing.CAMEL_CASE
+  }),
+  bodySerializer: bodySerializer({
+    bodyCasing: BodyCasing.SNAKE_CASE
   }),
 });
 
@@ -66,7 +69,8 @@ After doing the following, you can simply call `UserRepository.getProfile()` to 
 | --- | --- | --- |
 | `requestHandler` | yes | Abstraction layer for the standard `fetch` mechanism or any other transport you can think of. By default you can use `fetchRequestHandler`, which uses `fetch` underneath. You can also use built-in `mockRequestHandler` for testing purposes. |
 | `defaultHeadersProvider` | no | Function returning common headers for all request sent by your client. Host argument can be used to pass authorization data, but only for specific domain. |
-| `parser` | no | Adds a custom parser that processes the response body. Parsed body can be always accessed via `parsedBody` Promise in `HttpResponse`. By default it returns an `ArrayBuffer`. If you pass the standard `bodyParser`, it will decode JSON, URL-encoded body and plain text responses. It also supports case conversion, which is useful if your API returns responses in a convention that doesn't match your needs. |
+| `responseParser` | no | Adds a custom parser that processes the response body. Parsed body can be always accessed via `parsedBody` Promise in `HttpResponse`. By default it returns an `ArrayBuffer`. If you pass the standard `bodyParser`, it will decode JSON, URL-encoded body and plain text responses. It also supports case conversion, which is useful if your API returns responses in a convention that doesn't match your needs. |
+| `bodySerializer` | no | Adds a custom serializer that can process body before sending. It supports case conversion. |
 
 ### Interceptors
 
@@ -78,10 +82,13 @@ Quite often we need to do something "in-between" while our API requests are runn
 The first case is described below:
 
 ```typescript
-import { HttpFetch, HttpCode, ResponseError } from '@coolio/http';
+import { HttpFetch, HttpCode, ResponseError, NormalizedHttpOptions } from '@coolio/http';
 
-export const errorInterceptor = async <Body>(request: HttpFetch<Body>): HttpFetch<Body> => {
-  return request().then(response => {
+export const errorInterceptor = <Body>(
+  request: HttpFetch<Body>,
+  options: NormalizedHttpOptions,
+): HttpFetch<Body> => {
+  return () => request().then(response => {
     // You can always use `HttpCode` enum as in this case, however
     // `response.status < 400` would be better in this case
     if(response.status === HttpCode.OK){
@@ -96,6 +103,10 @@ export const errorInterceptor = async <Body>(request: HttpFetch<Body>): HttpFetc
 httpClient.addInterceptor(errorInterceptor);
 
 ```
+
+As you can see, interceptors accept two arguments:
+ - `HttpFetch` - a function that returns a Promise that performs http request. It allows to queue or delay multiple requests, retry them etc.
+ - `NormalizedHttpOptions` - options that can be modified before request is made, i.e. you can add `Authorization` header in your `authInterceptor`.
 
 ## Advanced Use Cases
 
