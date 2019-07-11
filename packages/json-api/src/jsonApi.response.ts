@@ -12,6 +12,6 @@ export class JsonResponse<Raw extends RawResponse<any, any>> {
   }
 
   get meta(): Raw['meta'] {
-    return this.meta;
+    return this.raw.meta;
   }
 }
