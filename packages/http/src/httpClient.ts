@@ -6,7 +6,8 @@ import {
   HttpMethod,
   HttpOptions,
   HttpRequestHandler,
-  HttpResponse, NormalizedHttpOptions,
+  HttpResponse,
+  NormalizedHttpOptions,
   ResponseParser,
 } from './httpClient.types';
 import { bodySerializer } from './bodySerializer';
@@ -19,6 +20,7 @@ export interface HttpClientConfig<T = HttpResponse> {
   defaultHeadersProvider?: HeadersProvider;
   responseParser?: ResponseParser<T>;
   bodySerializer?: BodySerializer;
+  baseUrl?: string;
 }
 
 const passthroughParser = (response: HttpResponse) => {
@@ -32,12 +34,14 @@ export class HttpClient<T = unknown> {
   private readonly interceptors: HttpInterceptor[] = [];
   private readonly responseParser: ResponseParser<T>;
   private readonly bodySerializer: BodySerializer;
+  private readonly baseUrl?: string;
 
   constructor(config: HttpClientConfig<T>) {
     this.handle = config.requestHandler;
     this.responseParser = config.responseParser || passthroughParser as any;
     this.bodySerializer = config.bodySerializer || bodySerializer();
     this.defaultHeadersProvider = config.defaultHeadersProvider;
+    this.baseUrl = config.baseUrl ? config.baseUrl.replace(/\/+$/, '') : undefined;
   }
 
   addInterceptor(interceptor: HttpInterceptor) {
@@ -83,6 +87,10 @@ export class HttpClient<T = unknown> {
   }
 
   request<Body extends T>(url: string, options?: HttpOptions): Promise<HttpResponse<Body>> {
+    if (this.baseUrl && url.startsWith('/')) {
+      url = `${this.baseUrl}${url}`;
+    }
+
     const sanitizeHeaders = () => HttpClientHelper.sanitizeHeaders({
       ...this.defaultHeadersProvider && this.defaultHeadersProvider(
         HttpClientHelper.getHostname(url),
