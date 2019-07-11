@@ -30,8 +30,8 @@
     "url": "https://github.com/headline-1/coolio/issues"
   },
   "dependencies": {
-    "@types/qs": "^6.5.2",
-    "lodash": "^4.17.11",
+    "@types/qs": "^6.5.3",
+    "lodash": "^4.17.14",
     "qs": "^6.7.0"
   },
   "gitHead": "df3e4ca748cf0eba95323a60ae934ac5afed495b"

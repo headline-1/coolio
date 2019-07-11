@@ -32,13 +32,13 @@
     "url": "https://github.com/headline-1/coolio/issues"
   },
   "peerDependencies": {
-    "@coolio/http": "^0.1.0"
+    "@coolio/http": "^0.3.3"
   },
   "devDependencies": {
-    "@coolio/http": "^0.3.4"
+    "@coolio/http": "^0.3.3"
   },
   "dependencies": {
-    "lodash": "^4.17.11"
+    "lodash": "^4.17.14"
   },
   "gitHead": "df3e4ca748cf0eba95323a60ae934ac5afed495b"
 }
