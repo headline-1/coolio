@@ -102,8 +102,10 @@ export class HttpClient<T = unknown> {
       ...options,
       url,
       headers: sanitizeHeaders(),
-      body: options && this.bodySerializer(options),
+      body: options && options.body as any,
     };
+
+    normalizedOptions.body = this.bodySerializer(normalizedOptions);
 
     const chain = this.interceptors.reduce(
       (req, interceptor) => interceptor(req, normalizedOptions),
