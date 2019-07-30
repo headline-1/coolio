@@ -115,15 +115,16 @@ export abstract class RequestBuilder<ResponseType> {
   }
 
   protected async parseResponse<Raw extends RawResponse<any, any>>(response: HttpResponse): Promise<JsonResponse<Raw>> {
-    const body = await response.parsedBody();
-    let responseData = body.data;
+    const body = (await response.parsedBody()) || undefined;
+    if (body) {
+      let responseData = body.data;
 
-    if (this.resolveIncludedRelationships && body.included) {
-      responseData = resolveRelationships(responseData, body.included);
+      if (this.resolveIncludedRelationships && body.included) {
+        responseData = resolveRelationships(responseData, body.included);
+      }
+
+      body.data = responseData;
     }
-
-    body.data = responseData;
-
     return new JsonResponse(body, response);
   }
 }

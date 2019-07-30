@@ -1,4 +1,5 @@
 import isObject from 'lodash/isObject';
+import isNil from 'lodash/isNil';
 import { ContentType, HttpRequestHandler, HttpResponse, NormalizedHttpOptions } from './httpClient.types';
 import { HttpStatusText } from './httpCodes';
 
@@ -6,13 +7,13 @@ export const handleRequest = (code: number, body: any, contentType: string = Con
   if (isObject(body)) {
     body = JSON.stringify(body);
     contentType = contentType || ContentType.JSON;
-  } else {
+  } else if (!isNil(body)) {
     body = String(body);
   }
   return Promise.resolve(new Response(body, {
     headers: {
       'Content-Type': contentType,
-      'Content-Length': body.length,
+      'Content-Length': body && body.length,
     },
     status: code,
     statusText: HttpStatusText[code],
@@ -36,7 +37,7 @@ export const mockRequestHandler = (
   mockOptions: MockOptions,
 ): MockHttpRequestHandler => {
   let lastRequest: NormalizedHttpOptions;
-  const handler = async  (
+  const handler = async (
     requestOptions: NormalizedHttpOptions,
   ): Promise<HttpResponse> => {
     lastRequest = requestOptions;

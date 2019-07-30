@@ -8,10 +8,10 @@ export class JsonResponse<Raw extends RawResponse<any, any>> {
   }
 
   get element(): MergedData<Raw['data']> {
-    return mergeElementData(this.raw.data);
+    return this.raw && mergeElementData(this.raw.data);
   }
 
   get meta(): Raw['meta'] {
-    return this.raw.meta;
+    return this.raw && this.raw.meta;
   }
 }
