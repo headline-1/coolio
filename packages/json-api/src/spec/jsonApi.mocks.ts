@@ -139,6 +139,11 @@ export const POST_MOCK = {
   },
 };
 
+export const POST_EMPTY_MOCK = {
+  ...POST_MOCK,
+  URI: 'https://example.com/post-empty',
+};
+
 export const PUT_MOCK = {
   URI: 'https://example.com/put',
   ID: 'testId',

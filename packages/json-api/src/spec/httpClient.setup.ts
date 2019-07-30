@@ -9,7 +9,15 @@ import {
   MockHttpRequestHandler,
   mockRequestHandler,
 } from '@coolio/http';
-import { DELETE_MOCK, GET_LIST_MOCK, GET_MOCK, PATCH_MOCK, POST_MOCK, PUT_MOCK } from './jsonApi.mocks';
+import {
+  DELETE_MOCK,
+  GET_LIST_MOCK,
+  GET_MOCK,
+  PATCH_MOCK,
+  POST_EMPTY_MOCK,
+  POST_MOCK,
+  PUT_MOCK
+} from './jsonApi.mocks';
 
 export interface HttpMock {
   requestHandler: MockHttpRequestHandler;
@@ -23,6 +31,10 @@ export const createHttpMock = (): HttpMock => {
       {
         match: GET_MOCK.URI,
         handler: ok(GET_MOCK.RAW),
+      },
+      {
+        match: POST_EMPTY_MOCK.URI,
+        handler: () => handleRequest(HttpCode.ACCEPTED, undefined, ContentType.VND_JSON),
       },
       {
         match: GET_LIST_MOCK.URI,
