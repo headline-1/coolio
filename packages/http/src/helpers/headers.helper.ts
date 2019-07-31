@@ -8,3 +8,9 @@ export const getHeader = (headers: HttpHeaders | undefined, header: string): str
   const foundKey = Object.keys(headers).find(key => key.toLowerCase() === lowercaseHeader);
   return foundKey ? String(headers[foundKey]) : undefined;
 };
+
+export const parseHeaders = (headers: Headers): Record<string, string> => {
+  const result: Record<string, string> = {};
+  headers.forEach((value, key) => result[key] = value);
+  return result;
+};

@@ -1,6 +1,8 @@
 import { HttpClient } from '../httpClient';
 import { handleRequest, mockRequestHandler } from '../mock.requestHandler';
 import { bodyParser } from '../bodyParser';
+import { parseHeaders } from '../helpers';
+import { ContentType } from '../httpClient.types';
 
 describe('HttpClient', () => {
   describe('baseUrl support', () => {
@@ -74,4 +76,67 @@ describe('HttpClient', () => {
       expect(log).toHaveBeenNthCalledWith(2, '1');
     });
   });
+
+  describe('response parsing', () =>{
+    const client = new HttpClient({
+      requestHandler: mockRequestHandler({
+        endpoints: [
+          {
+            match: 'https://fakeland.com/endpoint',
+            handler: () => handleRequest(200, {
+              test: 'abc',
+            }, ContentType.JSON),
+          },
+        ],
+      }),
+      baseUrl: 'https://fakeland.com/',
+      responseParser: bodyParser(),
+    });
+
+    const expectedBody = {
+      test: 'abc',
+    };
+    const expectedHeaders = {
+      'content-length': '14',
+      'content-type': 'application/json',
+      'x-is-mock': 'true',
+    };
+
+    it('processes GET request', async () => {
+      const result = await client.get('/endpoint');
+      expect(result.status).toEqual(200);
+      expect(await result.parsedBody()).toEqual(expectedBody);
+      expect(parseHeaders(result.headers)).toEqual(expectedHeaders);
+    });
+
+    it('processes PATCH request', async () => {
+      const result = await client.patch('/endpoint');
+      expect(result.status).toEqual(200);
+      expect(await result.parsedBody()).toEqual(expectedBody);
+      expect(parseHeaders(result.headers)).toEqual(expectedHeaders);
+    });
+
+    it('processes POST request', async () => {
+      const result = await client.post('/endpoint');
+      expect(result.status).toEqual(200);
+      expect(await result.parsedBody()).toEqual(expectedBody);
+      expect(parseHeaders(result.headers)).toEqual(expectedHeaders);
+    });
+
+    it('processes PUT request', async () => {
+      const result = await client.put('/endpoint');
+      expect(result.status).toEqual(200);
+      expect(await result.parsedBody()).toEqual(expectedBody);
+      expect(parseHeaders(result.headers)).toEqual(expectedHeaders);
+    });
+
+    it('processes DELETE request', async () => {
+      const result = await client.remove('/endpoint');
+      expect(result.status).toEqual(200);
+      expect(await result.parsedBody()).toEqual(expectedBody);
+      expect(parseHeaders(result.headers)).toEqual(expectedHeaders);
+    });
+
+  });
+
 });

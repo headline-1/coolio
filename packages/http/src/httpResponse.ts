@@ -2,7 +2,7 @@ import { HttpResponse, NormalizedHttpBody } from './httpClient.types';
 import { bodyParser } from './bodyParser';
 
 interface HttpResponseOptions {
-  headers?: Headers;
+  headers?: HeadersInit;
   status: number;
   body?: NormalizedHttpBody;
 }

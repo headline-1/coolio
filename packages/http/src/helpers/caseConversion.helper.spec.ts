@@ -1,6 +1,15 @@
 /* eslint-disable @typescript-eslint/camelcase */
 
-import { noConversion, splitWords, toCamelCase, toKebabCase, toPascalCase, toSnakeCase } from './caseConversion.helper';
+import {
+  BodyCasing,
+  getCaseConverter,
+  noConversion,
+  splitWords,
+  toCamelCase,
+  toKebabCase,
+  toPascalCase,
+  toSnakeCase
+} from './caseConversion.helper';
 
 const conversionMockup = {
   first_field: 'x',
@@ -139,6 +148,33 @@ describe('caseConversion.helper', () => {
   describe('#noConversion', () => {
     it('is just a bypass', () => {
       expect(noConversion(conversionMockup)).toEqual(conversionMockup);
+    });
+  });
+
+  describe('#getCaseConverter', () => {
+    it('provides converter for BodyCasing.CAMEL_CASE', () => {
+      const converter = getCaseConverter(BodyCasing.CAMEL_CASE);
+      expect(converter).toEqual(toCamelCase);
+    });
+
+    it('provides converter for BodyCasing.CAMEL_CASE', () => {
+      const converter = getCaseConverter(BodyCasing.KEBAB_CASE);
+      expect(converter).toEqual(toKebabCase);
+    });
+
+    it('provides converter for BodyCasing.CAMEL_CASE', () => {
+      const converter = getCaseConverter(BodyCasing.PASCAL_CASE);
+      expect(converter).toEqual(toPascalCase);
+    });
+
+    it('provides converter for BodyCasing.CAMEL_CASE', () => {
+      const converter = getCaseConverter(BodyCasing.SNAKE_CASE);
+      expect(converter).toEqual(toSnakeCase);
+    });
+
+    it('provides pass-through converter if no BodyCasing was specified', () => {
+      const converter = getCaseConverter();
+      expect(converter).toEqual(noConversion);
     });
   });
 

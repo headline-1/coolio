@@ -12,8 +12,9 @@ export const handleRequest = (code: number, body: any, contentType: string = Con
   }
   return Promise.resolve(new Response(body, {
     headers: {
+      'X-Is-Mock': 'true',
       'Content-Type': contentType,
-      'Content-Length': body && body.length,
+      'Content-Length': String(body && body.length),
     },
     status: code,
     statusText: HttpStatusText[code],

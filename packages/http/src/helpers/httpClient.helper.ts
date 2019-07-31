@@ -17,17 +17,13 @@ const toUrlEncoded = (obj: object) => {
 };
 
 const sanitizeHeaders = (headers: Record<string, any>): Record<string, string> => {
+  const result: Record<string, string> = {};
   for (const key in headers) {
-    if (!headers.hasOwnProperty(key)) {
-      continue;
-    }
-    if (isNil(headers[key])) {
-      delete headers[key];
-    } else {
-      headers[key] = headers[key].toString();
+    if (headers.hasOwnProperty(key) && !isNil(headers[key])) {
+      result[key] = headers[key].toString();
     }
   }
-  return headers;
+  return result;
 };
 
 export const getHostname = (url: string): string => {
