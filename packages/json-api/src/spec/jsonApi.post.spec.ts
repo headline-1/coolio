@@ -29,11 +29,9 @@ describe('JSON API Post', () => {
   });
 
   it('should produce correct request with PostBuilder', async () => {
-    const postBuilder = new JsonApiClient(mock.httpClient).post('');
-    expect(postBuilder.requestUriString).toEqual('');
-    postBuilder.uri = POST_MOCK.URI;
+    const postBuilder = new JsonApiClient(mock.httpClient).post(POST_MOCK.URI);
+    expect(postBuilder.uri).toEqual(POST_MOCK.URI);
     expect(postBuilder.parameters).toEqual({});
-    expect(postBuilder.requestUriString).toEqual(POST_MOCK.URI);
 
     postBuilder
       .ofType('testType')
@@ -46,7 +44,8 @@ describe('JSON API Post', () => {
 
     expect(result.raw).toEqual(GET_MOCK.RAW);
     expect(mock.requestHandler.lastRequest()).toEqual({
-      url: postBuilder.requestUriString,
+      url: postBuilder.uri,
+      query: {},
       method: 'POST',
       headers: DEFAULT_HEADERS_MOCK,
       body: JSON.stringify(POST_MOCK.BODY),

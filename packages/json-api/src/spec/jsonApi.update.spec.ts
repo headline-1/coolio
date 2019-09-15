@@ -15,11 +15,9 @@ describe('JSON API Put', () => {
   });
 
   it('should produce correct request with PutBuilder', async () => {
-    const putBuilder = new JsonApiClient(mock.httpClient).put('');
-    expect(putBuilder.requestUriString).toEqual('');
-    putBuilder.uri = PUT_MOCK.URI;
+    const putBuilder = new JsonApiClient(mock.httpClient).put(PUT_MOCK.URI);
+    expect(putBuilder.uri).toEqual(PUT_MOCK.URI);
     expect(putBuilder.parameters).toEqual({});
-    expect(putBuilder.requestUriString).toEqual(PUT_MOCK.URI);
 
     putBuilder
       .ofType(PUT_MOCK.TYPE)
@@ -32,7 +30,8 @@ describe('JSON API Put', () => {
 
     expect(result.raw).toEqual(GET_MOCK.RAW);
     expect(mock.requestHandler.lastRequest()).toEqual({
-      url: putBuilder.requestUriString,
+      url: putBuilder.uri,
+      query: {},
       method: 'PUT',
       headers: DEFAULT_HEADERS_MOCK,
       body: JSON.stringify(PUT_MOCK.BODY),
@@ -40,11 +39,9 @@ describe('JSON API Put', () => {
   });
 
   it('should produce correct request with PatchBuilder', async () => {
-    const patchBuilder = new JsonApiClient(mock.httpClient).patch('');
-    expect(patchBuilder.requestUriString).toEqual('');
-    patchBuilder.uri = PATCH_MOCK.URI;
+    const patchBuilder = new JsonApiClient(mock.httpClient).patch(PATCH_MOCK.URI);
+    expect(patchBuilder.uri).toEqual(PATCH_MOCK.URI);
     expect(patchBuilder.parameters).toEqual({});
-    expect(patchBuilder.requestUriString).toEqual(PATCH_MOCK.URI);
 
     patchBuilder
       .ofType(PATCH_MOCK.TYPE)
@@ -57,7 +54,8 @@ describe('JSON API Put', () => {
 
     expect(result.raw).toEqual(GET_MOCK.RAW);
     expect(mock.requestHandler.lastRequest()).toEqual({
-      url: patchBuilder.requestUriString,
+      url: patchBuilder.uri,
+      query: {},
       method: 'PATCH',
       headers: DEFAULT_HEADERS_MOCK,
       body: JSON.stringify(PATCH_MOCK.BODY),

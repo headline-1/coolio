@@ -45,7 +45,12 @@ import { Config } from './config';
 import { User } from './user.types';
 
 const getUsers = async (): Promise<User[]> => {
-  const response = await httpClient.get(`${Config.API_BASE_URL}/users`);
+  const response = await httpClient.get(`${Config.API_BASE_URL}/users`, {
+    query: {
+      page: 3,
+      limit: 10,
+    },
+  });
   const body = await response.parsedBody();
   return body.data;
 };

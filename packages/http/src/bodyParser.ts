@@ -1,12 +1,10 @@
-import * as qs from 'qs';
 import { BodyCasing, getCaseConverter } from './helpers';
 import { ContentType, HttpResponse } from './httpClient.types';
+import { urlDecode } from './helpers/urlEncoding.helper';
 
 export interface BodyParserOptions {
   bodyCasing?: BodyCasing;
 }
-
-const parseUrlEncodedBody = (body: string) => qs.parse(body);
 
 export const bodyParser = ({
   bodyCasing,
@@ -29,7 +27,7 @@ export const bodyParser = ({
         break;
       case ContentType.URL_ENCODED:
         response.parsedBody = () => response.text()
-          .then(parseUrlEncodedBody)
+          .then(urlDecode)
           .then(caseConverter);
         break;
       case ContentType.TEXT:

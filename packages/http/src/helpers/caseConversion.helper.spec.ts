@@ -12,8 +12,8 @@ import {
 } from './caseConversion.helper';
 
 const conversionMockup = {
-  first_field: 'x',
-  three_word_field: 'b',
+  'first_field': 'x',
+  'three_word_field': 'b',
   'kebab-case-field': {
     'an array': [
       'a',
@@ -127,16 +127,16 @@ describe('caseConversion.helper', () => {
   describe('#toSnakeCase', () => {
     it('converts mixed case object to snake_case', () => {
       expect(toSnakeCase(conversionMockup)).toEqual({
-        'first_field': 'x',
-        'three_word_field': 'b',
-        'kebab_case_field': {
-          'an_array': [
+        first_field: 'x',
+        three_word_field: 'b',
+        kebab_case_field: {
+          an_array: [
             'a',
             'b',
             {
-              'pascal_case': {
-                'value': 'x',
-                'value_two': 'y',
+              pascal_case: {
+                value: 'x',
+                value_two: 'y',
               },
             },
           ],

@@ -5,8 +5,6 @@ import { Data } from '../jsonApi.interface';
 import { createHttpMock, HttpMock } from './httpClient.setup';
 import { DEFAULT_HEADERS_MOCK, GET_LIST_MOCK } from './jsonApi.mocks';
 
-const DEFAULT_PARAMS_QUERY_STRING = '?page[limit]=10&page[number]=1';
-
 describe('JSON API Get List', () => {
   let mock: HttpMock;
 
@@ -27,15 +25,13 @@ describe('JSON API Get List', () => {
   });
 
   it('should produce correct request with GetListBuilder', async () => {
-    const getListBuilder = new JsonApiClient(mock.httpClient).getList<Data<{}>>('');
+    const getListBuilder = new JsonApiClient(mock.httpClient).getList<Data<{}>>(GET_LIST_MOCK.URI);
     // Default page limit and offset is always applied
-    expect(getListBuilder.requestUriString).toEqual(DEFAULT_PARAMS_QUERY_STRING);
-    getListBuilder.uri = GET_LIST_MOCK.URI;
+    expect(getListBuilder.uri).toEqual(GET_LIST_MOCK.URI);
     expect(getListBuilder.parameters).toEqual({
       'page[limit]': '10',
       'page[number]': '1',
     });
-    expect(getListBuilder.requestUriString).toEqual(GET_LIST_MOCK.URI + DEFAULT_PARAMS_QUERY_STRING);
 
     getListBuilder
       .filter('element', 'value')
@@ -66,25 +62,39 @@ describe('JSON API Get List', () => {
       'page[offset]': '30',
     });
 
-    expect(getListBuilder.requestUriString).toEqual(
-      GET_LIST_MOCK.URI +
-      '?filter[element]=value' +
-      '&filter[elementEq][EQ]=valueEq' +
-      '&filter[elementNeq][NEQ]=valueNeq' +
-      '&filter[elementLike][LIKE]=valueLike' +
-      '&filter[elementGt][GT]=3' +
-      '&filter[elementGte][GE]=5' +
-      '&filter[elementLt][LT]=-3' +
-      '&filter[elementLt][LE]=-5' +
-      '&sort=sortAsc,-sortDesc' +
-      '&page[limit]=10' +
-      '&page[offset]=30',
-    );
-
     const result = await getListBuilder.send();
     expect(result.raw).toEqual(GET_LIST_MOCK.RAW);
     expect(mock.requestHandler.lastRequest()).toEqual({
-      url: getListBuilder.requestUriString,
+      url: 'https://example.com/list?filter[element]=value&filter[elementEq][EQ]=valueEq&filter[elementNeq][NEQ]=valueNeq&filter[elementLike][LIKE]=valueLike&filter[elementGt][GT]=3&filter[elementGte][GE]=5&filter[elementLt][LT]=-3&filter[elementLt][LE]=-5&sort=sortAsc%2C-sortDesc&page[limit]=10&page[offset]=30',
+      query: {
+        filter: {
+          element: 'value',
+          elementEq: {
+            EQ: 'valueEq'
+          },
+          elementGt: {
+            GT: '3'
+          },
+          elementGte: {
+            GE: '5'
+          },
+          elementLike: {
+            LIKE: 'valueLike'
+          },
+          elementLt: {
+            LE: '-5',
+            LT: '-3'
+          },
+          elementNeq: {
+            NEQ: 'valueNeq'
+          }
+        },
+        page: {
+          limit: '10',
+          offset: '30'
+        },
+        sort: 'sortAsc,-sortDesc'
+      },
       method: 'GET',
       headers: DEFAULT_HEADERS_MOCK,
     });

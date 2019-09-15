@@ -10,17 +10,16 @@ describe('JSON API Remove', () => {
   });
 
   it('should produce correct request with RemoveBuilder', async () => {
-    const builder = new JsonApiClient(mock.httpClient).remove('');
-    expect(builder.requestUriString).toEqual('');
-    builder.uri = DELETE_MOCK.URI;
+    const builder = new JsonApiClient(mock.httpClient).remove(DELETE_MOCK.URI);
+    expect(builder.uri).toEqual(DELETE_MOCK.URI);
     expect(builder.parameters).toEqual({});
-    expect(builder.requestUriString).toEqual(DELETE_MOCK.URI);
 
     await builder.send();
 
     expect(mock.requestHandler.lastRequest()).toEqual({
       url: DELETE_MOCK.URI,
       method: 'DELETE',
+      query: {},
       headers: DEFAULT_HEADERS_MOCK,
     });
   });

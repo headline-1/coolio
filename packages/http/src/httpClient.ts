@@ -12,6 +12,7 @@ import {
 } from './httpClient.types';
 import { bodySerializer } from './bodySerializer';
 import { cacheParsedBody } from './helpers/parsedBodyCache.helper';
+import { urlCombine, urlDestruct } from './helpers/urlEncoding.helper';
 
 type HeadersProvider = (host: string) => Promise<HttpHeaders> | HttpHeaders;
 
@@ -98,9 +99,12 @@ export class HttpClient<T = unknown> {
       ...(options && options.headers),
     });
 
+    const urlBreakdown = urlDestruct(urlCombine(url, options && options.query));
+
     const normalizedOptions: NormalizedHttpOptions = {
       ...options,
-      url,
+      url: urlBreakdown.url,
+      query: urlBreakdown.query,
       headers: sanitizeHeaders(),
       body: options && options.body as any,
     };
@@ -109,11 +113,14 @@ export class HttpClient<T = unknown> {
 
     const chain = this.interceptors.reduce(
       (req, interceptor) => interceptor(req, normalizedOptions),
-      () => this.handle(normalizedOptions).then(response => {
+      async () => {
+        // In the end, even if interceptors modify both URL & Query, it gets reconciled here
+        normalizedOptions.url = urlCombine(normalizedOptions.url, normalizedOptions.query);
+        const response = await this.handle(normalizedOptions);
         const parsedResponse = this.responseParser(response) as HttpResponse<Body>;
         parsedResponse.parsedBody = cacheParsedBody(parsedResponse.parsedBody);
         return parsedResponse;
-      }),
+      },
     );
     return chain();
   }

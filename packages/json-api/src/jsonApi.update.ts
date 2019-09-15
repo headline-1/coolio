@@ -46,14 +46,15 @@ export class UpdateBuilder<Raw extends RawResponse<any, any>> extends RequestBui
     }
 
     const handlerMap = {
-      'PUT': this.httpClient.put.bind(this.httpClient),
-      'PATCH': this.httpClient.patch.bind(this.httpClient),
+      PUT: this.httpClient.put.bind(this.httpClient),
+      PATCH: this.httpClient.patch.bind(this.httpClient),
     };
 
     const handler = handlerMap[this.method];
 
-    return handler<Raw>(this.requestUriString, {
+    return handler<Raw>(this.uri, {
       ...options,
+      query: this.parameters,
       body: {
         data: {
           id: this.id,

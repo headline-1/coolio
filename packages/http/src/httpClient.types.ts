@@ -45,6 +45,7 @@ export enum HttpMethod {
 export type RequestMode = 'navigate' | 'same-origin' | 'no-cors' | 'cors';
 
 export interface HttpOptions {
+  query?: object;
   mode?: RequestMode;
   method?: HttpMethod;
   headers?: HttpHeaders;
@@ -56,6 +57,7 @@ export type NormalizedHttpBody = string | TypedArray | undefined;
 
 export interface NormalizedHttpOptions {
   url: string;
+  query: any;
   body?: NormalizedHttpBody;
   method?: HttpMethod;
   headers?: Record<string, string>;

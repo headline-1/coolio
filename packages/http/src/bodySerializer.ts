@@ -1,11 +1,10 @@
 import isNil from 'lodash/isNil';
 import isString from 'lodash/isString';
 import isBuffer from 'lodash/isBuffer';
-import * as qs from 'qs';
 import { BodySerializer, ContentType, HttpOptions, NormalizedHttpBody } from './httpClient.types';
 import { BodyCasing, getCaseConverter, getHeader } from './helpers';
+import { urlEncode } from './helpers/urlEncoding.helper';
 
-const serializeUrlEncodedBody = (body: any) => qs.stringify(body);
 
 export interface BodySerializerOptions {
   bodyCasing?: BodyCasing;
@@ -31,7 +30,7 @@ export const bodySerializer = ({
           case ContentType.VND_JSON:
             return JSON.stringify(caseConverter(options.body));
           case ContentType.URL_ENCODED:
-            return serializeUrlEncodedBody(caseConverter(options.body));
+            return urlEncode(caseConverter(options.body));
           case ContentType.TEXT:
             return String(body);
           default:
