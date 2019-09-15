@@ -38,8 +38,9 @@ export class PostBuilder<Raw extends RawResponse<any, any>> extends RequestBuild
     if (!this.type) {
       throw new Error('Missing object type');
     }
-    return this.httpClient.post<Raw>(this.requestUriString, {
+    return this.httpClient.post<Raw>(this.uri, {
       ...options,
+      query: this.parameters,
       body: {
         data: {
           type: this.type,

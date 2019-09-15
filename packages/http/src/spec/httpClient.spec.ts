@@ -1,3 +1,4 @@
+import cloneDeep from 'lodash/cloneDeep';
 import { HttpClient } from '../httpClient';
 import { handleRequest, mockRequestHandler } from '../mock.requestHandler';
 import { bodyParser } from '../bodyParser';
@@ -54,30 +55,42 @@ describe('HttpClient', () => {
       baseUrl: 'https://fakeland.com/',
       responseParser: bodyParser(),
     }).addInterceptor((request, options) => {
-      log(options);
+      log(cloneDeep(options));
       return async () => {
         const result = await request();
+        log(cloneDeep(options));
         log(await result.parsedBody());
         return result;
       };
     });
 
     it('intercepts a call', async () => {
-      const result = await client.get('/endpoint');
+      const result = await client.get('/endpoint?param=value');
       expect(result.status).toEqual(200);
       expect(await result.parsedBody()).toEqual('1');
-      expect(log).toHaveBeenCalledTimes(2);
+      expect(log).toHaveBeenCalledTimes(3);
       expect(log).toHaveBeenNthCalledWith(1, {
         body: undefined,
         headers: {},
+        query: { param: 'value' },
         method: 'GET',
+        // URL is stripped down from query parameters before making a request
         url: 'https://fakeland.com/endpoint',
       });
-      expect(log).toHaveBeenNthCalledWith(2, '1');
+
+      expect(log).toHaveBeenNthCalledWith(2, {
+        body: undefined,
+        headers: {},
+        query: { param: 'value' },
+        method: 'GET',
+        // URL contains all query parameters after making a request
+        url: 'https://fakeland.com/endpoint?param=value',
+      });
+      expect(log).toHaveBeenNthCalledWith(3, '1');
     });
   });
 
-  describe('response parsing', () =>{
+  describe('response parsing', () => {
     const client = new HttpClient({
       requestHandler: mockRequestHandler({
         endpoints: [

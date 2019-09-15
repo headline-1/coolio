@@ -30,6 +30,6 @@ module.exports = {
     'import/order': ['error', {
       'groups': ['external', 'internal'],
     }],
-
+    'quote-props': ['error', 'consistent-as-needed'],
   },
 };

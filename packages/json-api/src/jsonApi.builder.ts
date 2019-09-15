@@ -105,15 +105,6 @@ export abstract class RequestBuilder<ResponseType> {
     return params;
   }
 
-  public get requestUriString() {
-    const unescapedKeys = ['sort'];
-
-    const queryString = Object.entries(this.parameters)
-      .map(([key, value]) => `${key}=${unescapedKeys.includes(key) ? value : encodeURIComponent(value)}`)
-      .join('&');
-    return this.uri + (queryString ? '?' + queryString : '');
-  }
-
   protected async parseResponse<Raw extends RawResponse<any, any>>(response: HttpResponse): Promise<JsonResponse<Raw>> {
     const body = (await response.parsedBody()) || undefined;
     if (body) {

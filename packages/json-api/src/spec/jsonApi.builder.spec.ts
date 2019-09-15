@@ -58,6 +58,7 @@ describe('JSON API RequestBuilder', () => {
     expect(mock.requestHandler.lastRequest()).toEqual({
       url: GET_MOCK.URI,
       method: 'GET',
+      query: {},
       headers: { ...DEFAULT_HEADERS_MOCK, ...CUSTOM_HEADERS },
     });
   });

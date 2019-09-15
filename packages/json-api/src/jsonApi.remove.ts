@@ -10,8 +10,9 @@ export class RemoveBuilder<Raw extends RawResponse<any, any>> extends RequestBui
   }
 
   send(options: HttpOptions = {}): Promise<JsonResponse<Raw>> {
-    return this.httpClient.remove<Raw>(this.requestUriString, {
+    return this.httpClient.remove<Raw>(this.uri, {
       ...options,
+      query: this.parameters,
       headers: { ...Headers, ...options.headers },
     })
       .then(response => this.parseResponse(response));

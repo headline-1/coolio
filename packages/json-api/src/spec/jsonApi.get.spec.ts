@@ -24,11 +24,9 @@ describe('JSON API Get', () => {
 
   it('should produce correct request with GetBuilder', async () => {
     const client = new JsonApiClient(mock.httpClient);
-    const getBuilder = client.get<Data<{}>>('');
-    expect(getBuilder.requestUriString).toEqual('');
-    getBuilder.uri = GET_MOCK.URI;
+    const getBuilder = client.get<Data<{}>>(GET_MOCK.URI);
+    expect(getBuilder.uri).toEqual(GET_MOCK.URI);
     expect(getBuilder.parameters).toEqual({});
-    expect(getBuilder.requestUriString).toEqual(GET_MOCK.URI);
 
     getBuilder
       .filter('element', 'value')
@@ -54,23 +52,35 @@ describe('JSON API Get', () => {
       'sort': 'sortAsc,-sortDesc',
     });
 
-    expect(getBuilder.requestUriString).toEqual(
-      GET_MOCK.URI +
-      '?filter[element]=value' +
-      '&filter[elementEq][EQ]=valueEq' +
-      '&filter[elementNeq][NEQ]=valueNeq' +
-      '&filter[elementLike][LIKE]=valueLike' +
-      '&filter[elementGt][GT]=3' +
-      '&filter[elementGte][GE]=5' +
-      '&filter[elementLt][LT]=-3' +
-      '&filter[elementLt][LE]=-5' +
-      '&sort=sortAsc,-sortDesc',
-    );
-
     const result = await getBuilder.send();
     expect(result.raw).toEqual(GET_MOCK.RAW);
     expect(mock.requestHandler.lastRequest()).toEqual({
-      url: getBuilder.requestUriString,
+      url: 'https://example.com/list/123?filter[element]=value&filter[elementEq][EQ]=valueEq&filter[elementNeq][NEQ]=valueNeq&filter[elementLike][LIKE]=valueLike&filter[elementGt][GT]=3&filter[elementGte][GE]=5&filter[elementLt][LT]=-3&filter[elementLt][LE]=-5&sort=sortAsc%2C-sortDesc',
+      query: {
+        filter: {
+          element: 'value',
+          elementEq: {
+            EQ: 'valueEq'
+          },
+          elementGt: {
+            GT: '3'
+          },
+          elementGte: {
+            GE: '5'
+          },
+          elementLike: {
+            LIKE: 'valueLike'
+          },
+          elementLt: {
+            LE: '-5',
+            LT: '-3'
+          },
+          elementNeq: {
+            NEQ: 'valueNeq'
+          }
+        },
+        sort: 'sortAsc,-sortDesc'
+      },
       method: 'GET',
       headers: DEFAULT_HEADERS_MOCK,
     });

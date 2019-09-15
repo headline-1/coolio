@@ -57,8 +57,9 @@ export class GetListBuilder<Raw extends RawListResponse<any, any>, I extends Inc
   }
 
   send(options?: HttpOptions): Promise<JsonListResponse<Raw, I>> {
-    return this.httpClient.get<Raw>(this.requestUriString, {
+    return this.httpClient.get<Raw>(this.uri, {
       ...options,
+      query: this.parameters,
       headers: { ...Headers, ...options && options.headers },
     })
       .then(async response => {

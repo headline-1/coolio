@@ -10,8 +10,9 @@ export class GetBuilder<Raw extends RawResponse<any, any>> extends RequestBuilde
   }
 
   send(options?: HttpOptions): Promise<JsonResponse<Raw>> {
-    return this.httpClient.get<Raw>(this.requestUriString, {
+    return this.httpClient.get<Raw>(this.uri, {
       ...options,
+      query: this.parameters,
       headers: { ...Headers, ...options && options.headers },
     })
       .then(response => this.parseResponse(response));
