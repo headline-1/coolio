@@ -31,8 +31,8 @@
   },
   "dependencies": {
     "@types/qs": "^6.5.3",
-    "lodash": "^4.17.14",
-    "qs": "^6.7.0"
+    "lodash": "^4.17.15",
+    "qs": "^6.9.0"
   },
   "gitHead": "df3e4ca748cf0eba95323a60ae934ac5afed495b"
 }
