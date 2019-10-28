@@ -1,0 +1,31 @@
+{
+  "name": "@coolio/auth-interceptor",
+  "version": "0.4.0",
+  "description": "Authentication interceptor for Coolio",
+  "keywords": [
+    "auth",
+    "authentication",
+    "interceptor",
+    "coolio",
+    "http"
+  ],
+  "author": "Krzysztof Miemiec <krzysztof.miemiec@gmail.com>",
+  "homepage": "https://github.com/headline-1/coolio/tree/master/packages/http#readme",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/",
+    "assets/"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/headline-1/coolio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/headline-1/coolio/issues"
+  }
+}

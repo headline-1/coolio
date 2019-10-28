@@ -10,3 +10,5 @@ export class HttpResponseError<T = HttpResponse<any>> extends Error {
     this.name = 'HttpResponseError';
   }
 }
+
+export const isHttpResponseError = (error: any): error is HttpResponseError => error instanceof HttpResponseError;
