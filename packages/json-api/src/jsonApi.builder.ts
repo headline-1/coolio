@@ -20,8 +20,6 @@ export abstract class RequestBuilder<ResponseType> {
   protected offset: undefined | number;
   protected page = 1;
 
-  public abstract send(options?: HttpOptions): Promise<ResponseType>;
-
   protected constructor(uri: string, protected options: Options) {
     let params;
     [this.uri, params] = uri.split('?');
@@ -49,21 +47,49 @@ export abstract class RequestBuilder<ResponseType> {
     }
   }
 
+  public get parameters(): Record<string, string> {
+    const params = { ...this.queryParams };
+    if (this.options.sort && this.sortParams.length) {
+      params.sort = this.sortParams.join(',');
+    }
+    if (this.options.pagination) {
+      params['page[limit]'] = this.limit.toString();
+
+      if (isNil(this.offset)) {
+        params['page[number]'] = this.page.toString();
+      } else {
+        params['page[offset]'] = (this.offset * this.limit).toString(); // @TODO: currently not supported by API
+      }
+    }
+    return params;
+  }
+
+  public abstract send(options?: HttpOptions): Promise<ResponseType>;
+
   public resolveIncluded(resolveIncluded?: boolean): this {
     this.resolveIncludedRelationships = resolveIncluded === undefined ? true : resolveIncluded;
     return this;
   }
 
+  public parameter(
+    key: string,
+    value: string | number | boolean | undefined,
+  ): this {
+    if (key && !isNil(value)) {
+      this.queryParams[key] = value.toString();
+    }
+    return this;
+  }
+
   public filter(
-    key: string | undefined,
+    key: string | string[] | undefined,
     value: string | number | boolean | undefined,
     operator?: FilterOperator,
   ): this {
-    if (!isNil(key) && !isNil(value)) {
-      const queryKey = `filter[${key.split('.').join('][')}]${operator ? `[${operator}]` : ''}`;
-      this.queryParams[queryKey] = value.toString();
-    }
-    return this;
+    const queryKey = Array.isArray(key)
+      ? (key.length ? `filter[${key.join('][')}]` : '')
+      : `filter[${key}]${operator ? `[${operator}]` : ''}`;
+    return this.parameter(queryKey, value);
   }
 
   public sort(key: string | undefined, order: SortOrder): this {
@@ -86,23 +112,6 @@ export abstract class RequestBuilder<ResponseType> {
   public pageNumber(page: number | string | undefined): this {
     this.page = page ? Number(page) : 1;
     return this;
-  }
-
-  public get parameters(): Record<string, string> {
-    const params = { ...this.queryParams };
-    if (this.options.sort && this.sortParams.length) {
-      params.sort = this.sortParams.join(',');
-    }
-    if (this.options.pagination) {
-      params['page[limit]'] = this.limit.toString();
-
-      if (isNil(this.offset)) {
-        params['page[number]'] = this.page.toString();
-      } else {
-        params['page[offset]'] = (this.offset * this.limit).toString(); // @TODO: currently not supported by API
-      }
-    }
-    return params;
   }
 
   protected async parseResponse<Raw extends RawResponse<any, any>>(response: HttpResponse): Promise<JsonResponse<Raw>> {

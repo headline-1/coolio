@@ -18,6 +18,14 @@ describe('urlEncoding.helper', () => {
       const combinedUrl = urlCombine('http://example.com', {});
       expect(combinedUrl).toEqual('http://example.com');
     });
+    it('correctly writes dotted keys in square bracket notation', () => {
+      const combinedUrl = urlCombine('http://example.com', {
+        obj: {
+          'parent.child': 'value',
+        },
+      });
+      expect(combinedUrl).toEqual('http://example.com?obj[parent.child]=value');
+    });
   });
 
   describe('urlDestruct', () => {
@@ -36,6 +44,17 @@ describe('urlEncoding.helper', () => {
     it('returns empty query object when there is no query', () => {
       expect(urlDestruct('http://example.com/path').query).toEqual({});
       expect(urlDestruct('http://example.com/path?').query).toEqual({});
+    });
+    it('treats text in square brackets as key', () => {
+      const breakdown = urlDestruct('http://example.com/path?obj[parent.child]=value');
+      expect(breakdown).toEqual({
+        url: 'http://example.com/path',
+        query: {
+          obj: {
+            'parent.child': 'value',
+          },
+        },
+      });
     });
   });
 });

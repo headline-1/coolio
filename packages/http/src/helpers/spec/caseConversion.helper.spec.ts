@@ -9,7 +9,7 @@ import {
   toKebabCase,
   toPascalCase,
   toSnakeCase
-} from './caseConversion.helper';
+} from '../caseConversion.helper';
 
 const conversionMockup = {
   'first_field': 'x',

@@ -139,6 +139,9 @@ export const Headers = {
   'Accept': ContentType.VND_JSON,
 };
 
+/**
+ * @deprecated It is not part of JSON API and is not supported in when array of keys is passed
+ */
 export enum FilterOperator {
   EQUALS = 'EQ',
   NOT_EQUALS = 'NEQ',
