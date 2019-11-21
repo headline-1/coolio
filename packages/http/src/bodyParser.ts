@@ -1,5 +1,5 @@
 import { BodyCasing, getCaseConverter } from './helpers';
-import { ContentType, HttpResponse } from './httpClient.types';
+import { ContentType, HttpResponse, RawHttpResponse } from './httpClient.types';
 import { urlDecode } from './helpers/urlEncoding.helper';
 
 export interface BodyParserOptions {
@@ -10,8 +10,8 @@ export const bodyParser = ({
   bodyCasing,
 }: BodyParserOptions = {}) => {
   const caseConverter = getCaseConverter(bodyCasing);
-  return (response: HttpResponse): HttpResponse => {
-    const contentType = (response.headers.get('content-type') || '')
+  return (rawResponse: RawHttpResponse): HttpResponse => {
+    const contentType = (rawResponse.headers.get('content-type') || '')
       .split(';')[0]
       .trim()
       .toLowerCase();
@@ -19,24 +19,25 @@ export const bodyParser = ({
     switch (contentType) {
       case ContentType.JSON:
       case ContentType.VND_JSON:
-        response.parsedBody = () => response.text()
-          .then(body => body ? caseConverter(JSON.parse(body)) : null)
-          .catch((err) => {
-            throw new Error(`Response body that was passed to bodyParser is invalid. ${err}`);
-          });
-        break;
+        return {
+          ...rawResponse,
+          parsedBody: () => rawResponse.text()
+            .then(body => body ? caseConverter(JSON.parse(body)) : null)
+            .catch((err) => {
+              throw new Error(`Response body that was passed to bodyParser is invalid. ${err}`);
+            }),
+        };
       case ContentType.URL_ENCODED:
-        response.parsedBody = () => response.text()
-          .then(urlDecode)
-          .then(caseConverter);
-        break;
+        return {
+          ...rawResponse,
+          parsedBody: () => rawResponse.text()
+            .then(urlDecode)
+            .then(caseConverter),
+        };
       case ContentType.TEXT:
-        response.parsedBody = () => response.text();
-        break;
+        return { ...rawResponse, parsedBody: () => rawResponse.text() };
       default:
-        response.parsedBody = () => response.arrayBuffer();
-        break;
+        return { ...rawResponse, parsedBody: () => rawResponse.arrayBuffer() };
     }
-    return response;
   };
 };

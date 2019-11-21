@@ -1,5 +1,6 @@
 import { HttpClientHelper } from './helpers';
 import {
+  BodyParser,
   BodySerializer,
   HttpHeaders,
   HttpInterceptor,
@@ -8,7 +9,6 @@ import {
   HttpRequestHandler,
   HttpResponse,
   NormalizedHttpOptions,
-  ResponseParser,
 } from './httpClient.types';
 import { bodySerializer } from './bodySerializer';
 import { cacheParsedBody } from './helpers/parsedBodyCache.helper';
@@ -19,7 +19,7 @@ type HeadersProvider = (host: string) => Promise<HttpHeaders> | HttpHeaders;
 export interface HttpClientConfig<T = HttpResponse> {
   requestHandler: HttpRequestHandler;
   defaultHeadersProvider?: HeadersProvider;
-  responseParser?: ResponseParser<T>;
+  bodyParser?: BodyParser<T>;
   bodySerializer?: BodySerializer;
   baseUrl?: string;
 }
@@ -33,13 +33,13 @@ export class HttpClient<T = unknown> {
   private readonly handle: HttpRequestHandler;
   private readonly defaultHeadersProvider?: HeadersProvider;
   private readonly interceptors: HttpInterceptor[] = [];
-  private readonly responseParser: ResponseParser<T>;
+  private readonly bodyParser: BodyParser<T>;
   private readonly bodySerializer: BodySerializer;
   private readonly baseUrl?: string;
 
   constructor(config: HttpClientConfig<T>) {
     this.handle = config.requestHandler;
-    this.responseParser = config.responseParser || passthroughParser as any;
+    this.bodyParser = config.bodyParser || passthroughParser as any;
     this.bodySerializer = config.bodySerializer || bodySerializer();
     this.defaultHeadersProvider = config.defaultHeadersProvider;
     this.baseUrl = config.baseUrl ? config.baseUrl.replace(/\/+$/, '') : undefined;
@@ -117,7 +117,7 @@ export class HttpClient<T = unknown> {
         // In the end, even if interceptors modify both URL & Query, it gets reconciled here
         normalizedOptions.url = urlCombine(normalizedOptions.url, normalizedOptions.query);
         const response = await this.handle(normalizedOptions);
-        const parsedResponse = this.responseParser(response) as HttpResponse<Body>;
+        const parsedResponse = this.bodyParser(response) as HttpResponse<Body>;
         parsedResponse.parsedBody = cacheParsedBody(parsedResponse.parsedBody);
         return parsedResponse;
       },

@@ -1,6 +1,6 @@
 import isObject from 'lodash/isObject';
 import isNil from 'lodash/isNil';
-import { ContentType, HttpRequestHandler, HttpResponse, NormalizedHttpOptions } from './httpClient.types';
+import { ContentType, HttpRequestHandler, NormalizedHttpOptions, RawHttpResponse } from './httpClient.types';
 import { HttpStatusText } from './httpCodes';
 
 export const handleRequest = (code: number, body: any, contentType: string = ContentType.TEXT): Promise<Response> => {
@@ -23,7 +23,7 @@ export const handleRequest = (code: number, body: any, contentType: string = Con
 
 export interface Endpoint {
   match: string | RegExp;
-  handler: (request: NormalizedHttpOptions) => Promise<Response>;
+  handler: (request: NormalizedHttpOptions) => Promise<RawHttpResponse>;
 }
 
 export interface MockOptions {
@@ -40,13 +40,13 @@ export const mockRequestHandler = (
   let lastRequest: NormalizedHttpOptions;
   const handler = async (
     requestOptions: NormalizedHttpOptions,
-  ): Promise<HttpResponse> => {
+  ): Promise<RawHttpResponse> => {
     lastRequest = requestOptions;
     const endpoint = mockOptions.endpoints.find(endpoint => new RegExp(endpoint.match).test(requestOptions.url));
     if (!endpoint) {
       return Promise.reject(new Error(`Mock not provided for URI: ${requestOptions.url}`));
     }
-    return await endpoint.handler(requestOptions) as HttpResponse;
+    return await endpoint.handler(requestOptions);
   };
   handler.lastRequest = () => lastRequest;
   return handler;
