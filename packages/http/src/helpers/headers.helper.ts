@@ -11,6 +11,6 @@ export const getHeader = (headers: HttpHeaders | undefined, header: string): str
 
 export const parseHeaders = (headers: Headers): Record<string, string> => {
   const result: Record<string, string> = {};
-  headers.forEach((value, key) => result[key] = value);
+  headers.forEach((value, key) => result[key.toLowerCase()] = value);
   return result;
 };

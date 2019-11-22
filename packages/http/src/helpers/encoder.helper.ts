@@ -5,7 +5,7 @@ const charsetBits = {
   'utf-16': 16,
 };
 
-const encodeTypedArray = (buffer: ArrayBuffer, bits: number) => {
+const encodeTypedArray = (buffer: ArrayBuffer, bits: number): Uint8Array | Uint16Array => {
   switch (bits) {
     case 16:
       return new Uint16Array(buffer);

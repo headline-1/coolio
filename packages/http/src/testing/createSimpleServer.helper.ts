@@ -32,7 +32,7 @@ export const createSimpleServer = ({
     port: address.port,
     host: address.address,
     fullAddress: `http://127.0.0.1:${address.port}`,
-    close: () => new Promise((resolve, reject) => server.close(err => err ? reject(err) : resolve())),
+    close: () => new Promise((resolve, reject) => server.close((err: any) => err ? reject(err) : resolve())),
   };
 };
 

@@ -27,7 +27,7 @@ export const httpClient = new HttpClient({
     'Content-Type': ContentType.JSON,
     'Authorization': host === Config.API_DOMAIN ? 'Bearer abcdef1234567890' : undefined,
   }),
-  responseParser: bodyParser({ 
+  bodyParser: bodyParser({ 
     bodyCasing: BodyCasing.CAMEL_CASE
   }),
   bodySerializer: bodySerializer({
@@ -76,7 +76,7 @@ After doing the following, you can simply call `UserRepository.getProfile()` to 
 | `baseUrl` | no | Base path for making all relative requests.  |
 | `requestHandler` | yes | Abstraction layer for the standard `fetch` mechanism or any other transport you can think of. By default you can use `fetchRequestHandler`, which uses `fetch` underneath. You can also use built-in `mockRequestHandler` for testing purposes. |
 | `defaultHeadersProvider` | no | Function returning common headers for all request sent by your client. Host argument can be used to pass authorization data, but only for specific domain. |
-| `responseParser` | no | Adds a custom parser that processes the response body. Parsed body can be always accessed via `parsedBody` Promise in `HttpResponse`. By default it returns an `ArrayBuffer`. If you pass the standard `bodyParser`, it will decode JSON, URL-encoded body and plain text responses. It also supports case conversion, which is useful if your API returns responses in a convention that doesn't match your needs. |
+| `bodyParser` | no | Adds a custom parser that processes the response body. Parsed body can be always accessed via `parsedBody` Promise in `HttpResponse`. By default it returns an `ArrayBuffer`. If you pass the standard `bodyParser`, it will decode JSON, URL-encoded body and plain text responses. It also supports case conversion, which is useful if your API returns responses in a convention that doesn't match your needs. |
 | `bodySerializer` | no | Adds a custom serializer that can process body before sending. It supports case conversion. |
 
 ### Interceptors

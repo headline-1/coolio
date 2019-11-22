@@ -12,14 +12,14 @@ export class HttpResponseHeaders {
           const [key, value] = header
             .split(':')
             .map(element => decodeURIComponent(element.trim()));
-          map[key] = value;
+          map[key.toLowerCase()] = value;
           return map;
         }, {});
     } else if (headers instanceof Headers) {
       this.map = parseHeaders(headers);
     } else {
       this.map = Object.keys(headers).reduce((result, key) => {
-        result[key] = headers[key];
+        result[key.toLowerCase()] = headers[key];
         return result;
       }, {});
     }

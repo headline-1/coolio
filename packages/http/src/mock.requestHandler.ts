@@ -1,23 +1,29 @@
 import isObject from 'lodash/isObject';
 import isNil from 'lodash/isNil';
-import { ContentType, HttpRequestHandler, NormalizedHttpOptions, RawHttpResponse } from './httpClient.types';
-import { HttpStatusText } from './httpCodes';
+import {
+  ContentType,
+  HttpRequestHandler,
+  HttpResponse,
+  NormalizedHttpOptions,
+  RawHttpResponse
+} from './httpClient.types';
+import { createHttpResponse } from './httpResponse';
 
-export const handleRequest = (code: number, body: any, contentType: string = ContentType.TEXT): Promise<Response> => {
+export const handleRequest = (code: number, body: any, contentType: string = ContentType.TEXT): Promise<HttpResponse> => {
   if (isObject(body)) {
     body = JSON.stringify(body);
     contentType = contentType || ContentType.JSON;
   } else if (!isNil(body)) {
     body = String(body);
   }
-  return Promise.resolve(new Response(body, {
+  return Promise.resolve(createHttpResponse({
+    body,
     headers: {
       'X-Is-Mock': 'true',
       'Content-Type': contentType,
       'Content-Length': String(body && body.length),
     },
     status: code,
-    statusText: HttpStatusText[code],
   }));
 };
 
