@@ -13,7 +13,7 @@ install:
   - yarn
 
 before_script:
-  - yarn build
+  - yarn compile
 
 jobs:
   include:

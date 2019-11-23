@@ -9,10 +9,9 @@
   "private": true,
   "scripts": {
     "postinstall": "lerna bootstrap",
-    "build": "lerna run build",
-    "build:watch": "lerna exec --parallel 'tsc -w --preserveWatchOutput'",
+    "compile:watch": "lerna exec --parallel 'yarn compile:watch'",
     "compile": "lerna run compile",
-    "start": "yarn build && yarn build:watch",
+    "start": "yarn compile && yarn compile:watch",
     "clean": "rimraf packages/*/{dist} && rimraf {dist,.jest,reports}",
     "purge": "yarn clean && rimraf node_modules",
     "prepack": "yarn clean && yarn compile && yarn verify",

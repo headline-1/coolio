@@ -14,7 +14,7 @@ describe('JSON API Get', () => {
 
   it('should correctly parse Get JSON API response', () => {
     const { raw, element } = new JsonResponse(GET_MOCK.RAW, createHttpResponse({
-      headers: new Headers({ 'content-type': ContentType.VND_JSON }),
+      headers: { 'content-type': ContentType.VND_JSON },
       status: HttpCode.OK,
       body: JSON.stringify(GET_MOCK.RAW),
     }));

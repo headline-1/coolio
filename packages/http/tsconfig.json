@@ -4,8 +4,7 @@
     "baseUrl": ".",
     "rootDir": "src",
     "typeRoots": ["./node_modules/@types", "../../node_modules/@types"],
-    "outDir": "./dist",
-    "declarationDir": "./dist/types"
+    "noEmit": true
   },
   "include": [
     "./src"
