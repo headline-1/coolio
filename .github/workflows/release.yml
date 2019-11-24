@@ -22,6 +22,8 @@ jobs:
     - name: Build packages
       run: yarn compile
     - name: Release
-      run: yarn release
+      run: |
+        npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
+        yarn release
       env:
         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
