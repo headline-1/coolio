@@ -14,7 +14,7 @@ describe('JSON API Get List', () => {
 
   it('should correctly parse List JSON API response', () => {
     const { raw, elements, offset, limit } = new JsonListResponse(GET_LIST_MOCK.RAW, 10, 15, {}, createHttpResponse({
-      headers: new Headers({ 'content-type': ContentType.VND_JSON }),
+      headers: { 'content-type': ContentType.VND_JSON },
       status: HttpCode.OK,
       body: JSON.stringify(GET_LIST_MOCK.RAW),
     }));
@@ -102,7 +102,7 @@ describe('JSON API Get List', () => {
 
   it('should correctly merge previous results with GetListBuilder when #addToResponse is used', async () => {
     const responseWithOneElement = new JsonListResponse(GET_LIST_MOCK.RAW, 1, 0, {}, createHttpResponse({
-      headers: new Headers({ 'content-type': ContentType.VND_JSON }),
+      headers: { 'content-type': ContentType.VND_JSON },
       status: HttpCode.OK,
       body: JSON.stringify(GET_LIST_MOCK.RAW),
     }));

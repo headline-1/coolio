@@ -2,7 +2,6 @@ import cloneDeep from 'lodash/cloneDeep';
 import { HttpClient } from '../httpClient';
 import { handleRequest, mockRequestHandler } from '../mock.requestHandler';
 import { bodyParser } from '../bodyParser';
-import { parseHeaders } from '../helpers';
 import { ContentType } from '../httpClient.types';
 
 describe('HttpClient', () => {
@@ -21,7 +20,7 @@ describe('HttpClient', () => {
         ],
       }),
       baseUrl: 'https://fakeland.com/',
-      responseParser: bodyParser(),
+      bodyParser: bodyParser(),
     });
 
     it('uses baseUrl when URL is relative', async () => {
@@ -53,7 +52,7 @@ describe('HttpClient', () => {
         ],
       }),
       baseUrl: 'https://fakeland.com/',
-      responseParser: bodyParser(),
+      bodyParser: bodyParser(),
     }).addInterceptor((request, options) => {
       log(cloneDeep(options));
       return async () => {
@@ -103,7 +102,7 @@ describe('HttpClient', () => {
         ],
       }),
       baseUrl: 'https://fakeland.com/',
-      responseParser: bodyParser(),
+      bodyParser: bodyParser(),
     });
 
     const expectedBody = {
@@ -119,37 +118,35 @@ describe('HttpClient', () => {
       const result = await client.get('/endpoint');
       expect(result.status).toEqual(200);
       expect(await result.parsedBody()).toEqual(expectedBody);
-      expect(parseHeaders(result.headers)).toEqual(expectedHeaders);
+      expect(result.headers.map).toEqual(expectedHeaders);
     });
 
     it('processes PATCH request', async () => {
       const result = await client.patch('/endpoint');
       expect(result.status).toEqual(200);
       expect(await result.parsedBody()).toEqual(expectedBody);
-      expect(parseHeaders(result.headers)).toEqual(expectedHeaders);
+      expect(result.headers.map).toEqual(expectedHeaders);
     });
 
     it('processes POST request', async () => {
       const result = await client.post('/endpoint');
       expect(result.status).toEqual(200);
       expect(await result.parsedBody()).toEqual(expectedBody);
-      expect(parseHeaders(result.headers)).toEqual(expectedHeaders);
+      expect(result.headers.map).toEqual(expectedHeaders);
     });
 
     it('processes PUT request', async () => {
       const result = await client.put('/endpoint');
       expect(result.status).toEqual(200);
       expect(await result.parsedBody()).toEqual(expectedBody);
-      expect(parseHeaders(result.headers)).toEqual(expectedHeaders);
+      expect(result.headers.map).toEqual(expectedHeaders);
     });
 
     it('processes DELETE request', async () => {
       const result = await client.remove('/endpoint');
       expect(result.status).toEqual(200);
       expect(await result.parsedBody()).toEqual(expectedBody);
-      expect(parseHeaders(result.headers)).toEqual(expectedHeaders);
+      expect(result.headers.map).toEqual(expectedHeaders);
     });
-
   });
-
 });

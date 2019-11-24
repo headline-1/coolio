@@ -60,7 +60,7 @@ export const createHttpMock = (): HttpMock => {
   });
   const httpClient = new HttpClient({
     requestHandler,
-    responseParser: bodyParser({ bodyCasing: BodyCasing.CAMEL_CASE }),
+    bodyParser: bodyParser({ bodyCasing: BodyCasing.CAMEL_CASE }),
     bodySerializer: bodySerializer({ bodyCasing: BodyCasing.SNAKE_CASE }),
   });
 

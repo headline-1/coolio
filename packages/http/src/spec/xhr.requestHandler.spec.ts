@@ -1,9 +1,9 @@
 import { createSimpleServer, SimpleServer } from '../testing/createSimpleServer.helper';
 import { ContentType } from '../httpClient.types';
 import { HttpClient } from '../httpClient';
-import { fetchRequestHandler } from '../fetch.requestHandler';
+import { xhrRequestHandler } from '../xhr.requestHandler';
 
-describe('fetch.requestHandler', () => {
+describe('xhr.requestHandler', () => {
   let server: SimpleServer;
   beforeAll(() => {
     server = createSimpleServer({
@@ -19,7 +19,7 @@ describe('fetch.requestHandler', () => {
 
   it('handles a request', async () => {
     const client = new HttpClient({
-      requestHandler: fetchRequestHandler(),
+      requestHandler: xhrRequestHandler(),
       baseUrl: server.fullAddress,
     });
     const result = await client.get('/');

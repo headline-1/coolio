@@ -5,7 +5,6 @@ import { BodySerializer, ContentType, HttpOptions, NormalizedHttpBody } from './
 import { BodyCasing, getCaseConverter, getHeader } from './helpers';
 import { urlEncode } from './helpers/urlEncoding.helper';
 
-
 export interface BodySerializerOptions {
   bodyCasing?: BodyCasing;
 }

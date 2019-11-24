@@ -1,4 +1,4 @@
-import { HttpCode } from './httpCodes';
+import { HttpResponseHeaders } from './httpResponseHeaders';
 import TypedArray = NodeJS.TypedArray;
 
 export enum ContentType {
@@ -8,21 +8,26 @@ export enum ContentType {
   URL_ENCODED = 'application/x-www-form-urlencoded',
 }
 
-export class HttpError<T = any> extends Error {
-  constructor(
-    public readonly message: string,
-    public readonly status?: HttpCode,
-    public readonly response?: T,
-  ) {
-    super(`HttpError: ${message}`);
-  }
+export interface RawHttpResponse {
+  readonly headers: HttpResponseHeaders;
+  readonly ok: boolean;
+  readonly redirected: boolean;
+  readonly status: number;
+  readonly statusText: string;
+  readonly url: string;
+
+  arrayBuffer(): Promise<ArrayBuffer>;
+
+  text(): Promise<string>;
+
+  abort(): void;
 }
 
-export interface HttpResponse<T = any> extends Response {
-  parsedBody: () => Promise<T>;
+export interface HttpResponse<T = any> extends RawHttpResponse {
+  parsedBody(): Promise<T>;
 }
 
-export type ResponseParser<T = unknown> = (response: HttpResponse) => HttpResponse<T>;
+export type BodyParser<T = unknown> = (response: RawHttpResponse) => HttpResponse<T>;
 
 export type BodySerializer = (request: HttpOptions) => NormalizedHttpBody;
 
@@ -65,4 +70,4 @@ export interface NormalizedHttpOptions {
   bypassResponseHandler?: boolean;
 }
 
-export type HttpRequestHandler = (requestOptions: NormalizedHttpOptions) => Promise<HttpResponse>;
+export type HttpRequestHandler = (requestOptions: NormalizedHttpOptions) => Promise<RawHttpResponse>;

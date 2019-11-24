@@ -59,31 +59,31 @@ export type RelationshipsOf<D> = D extends { relationships: Relationships } ? D[
 
 export type MergedData<D> =
   D extends AnyData ? (
-      & AttributesOf<D>
-      & (
-      RelationshipsOf<D> extends Relationships
-        ? { [k in keyof RelationshipsOf<D>]: MergedData<RelationshipsOf<D>[k]['data']> }
-        : RelationshipsOf<D>
-      )
-      & ({
-        id: string;
-        type: string;
-        self: string;
-      })
+    & AttributesOf<D>
+    & (
+    RelationshipsOf<D> extends Relationships
+      ? { [k in keyof RelationshipsOf<D>]: MergedData<RelationshipsOf<D>[k]['data']> }
+      : RelationshipsOf<D>
+    )
+    & ({
+    id: string;
+    type: string;
+    self: string;
+  })
     ) : D extends AnyData[] ? (
-      & AttributesOf<D[0]>
-      & (
-      RelationshipsOf<D[0]> extends Relationships
-        ? { [k in keyof RelationshipsOf<D[0]>]: MergedData<RelationshipsOf<D[0]>[k]['data']> }
-        : RelationshipsOf<D[0]>
-      )
-      & ({
-        id: string;
-        type: string;
-        self: string;
-      })
+    & AttributesOf<D[0]>
+    & (
+    RelationshipsOf<D[0]> extends Relationships
+      ? { [k in keyof RelationshipsOf<D[0]>]: MergedData<RelationshipsOf<D[0]>[k]['data']> }
+      : RelationshipsOf<D[0]>
+    )
+    & ({
+    id: string;
+    type: string;
+    self: string;
+  })
     )[] : (
-      D extends RelationshipData ? D['id'] : D extends RelationshipData[] ? D[0]['id'][] : never
+    D extends RelationshipData ? D['id'] : D extends RelationshipData[] ? D[0]['id'][] : never
     );
 
 export interface ListMetaData {

@@ -6,10 +6,10 @@ export const cacheParsedBody = <T>(parsedBody: PromiseFunction<T>): PromiseFunct
   const onReady: (() => void)[] = [];
 
   return async (): Promise<T> => {
-    if(cache){
+    if (cache) {
       return cache;
     }
-    if(called) {
+    if (called) {
       return new Promise(resolve => {
         onReady.push(() => {
           resolve(cache);

@@ -1,6 +1,6 @@
 {
   "name": "@coolio/json-api",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "JSON API wrapper for Coolio HTTP Client",
   "keywords": [
     "json-api",
@@ -15,8 +15,15 @@
   "author": "Krzysztof Miemiec <krzysztof.miemiec@gmail.com>",
   "homepage": "https://github.com/headline-1/coolio/tree/master/packages/json-api#readme",
   "license": "MIT",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm5/index.js",
+  "es2015": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
+  "sideEffects": false,
+  "scripts": {
+    "compile": "tsc -b ./tsconfig.cjs.json ./tsconfig.esm.json ./tsconfig.esm5.json ./tsconfig.types.json",
+    "compile:watch": "yarn compile -w --preserveWatchOutput"
+  },
   "files": [
     "dist/",
     "assets/"
@@ -32,10 +39,10 @@
     "url": "https://github.com/headline-1/coolio/issues"
   },
   "peerDependencies": {
-    "@coolio/http": "^0.4.0"
+    "@coolio/http": "^0.6.0"
   },
   "devDependencies": {
-    "@coolio/http": "^0.5.0"
+    "@coolio/http": "^0.6.0"
   },
   "dependencies": {
     "lodash": "^4.17.15"

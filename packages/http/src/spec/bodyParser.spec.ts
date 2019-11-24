@@ -1,5 +1,6 @@
 import { createHttpResponse } from '../httpResponse';
 import { ContentType } from '../httpClient.types';
+import { encodeText } from '../helpers/encoder.helper';
 
 describe('bodyParser', () => {
   it('parses response with JSON body', async () => {
@@ -62,7 +63,7 @@ describe('bodyParser', () => {
       status: 200,
     });
     const buffer: ArrayBuffer = await response.parsedBody();
-    const body = String.fromCharCode(...new Uint8Array(buffer));
+    const body = encodeText(buffer);
 
     expect(body).toEqual('some stream');
   });
