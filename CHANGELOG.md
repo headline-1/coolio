@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.7](https://github.com/headline-1/coolio/compare/v0.6.6...v0.6.7) (2019-11-25)
+
+
+### Bug Fixes
+
+* **action:** workspace fix ([fd8ab6b](https://github.com/headline-1/coolio/commit/fd8ab6b959d91851067a6871de4647a0d6bd6b31))
+
+
+
+
+
 ## [0.6.6](https://github.com/headline-1/coolio/compare/v0.6.5...v0.6.6) (2019-11-25)
 
 
