@@ -20,6 +20,10 @@ jobs:
         git remote set-url origin https://automation:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}
         git remote -v
         git checkout "${GITHUB_REF:11}"
+        echo $(pwd)
+        ls -la
+        cd ..
+        ls -la
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Use Node.js ${{ matrix.node_version }}
