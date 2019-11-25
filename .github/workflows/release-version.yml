@@ -1,4 +1,4 @@
-name: Release
+name: Release Version
 
 on:
   push:
@@ -17,7 +17,7 @@ jobs:
       run: |
         git config --global user.name "Headline1 Automation"
         git config --global user.email "automation@headline-1.dev"
-        git remote set-url origin https://user:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}
+        git remote set-url origin https://automation:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}
         git remote -v
         git checkout "${GITHUB_REF:11}"
       env:
@@ -30,10 +30,7 @@ jobs:
       run: yarn
     - name: Build packages
       run: yarn compile
-    - name: Create release & publish package
-      run: |
-        npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
-        yarn release --yes
+    - name: Create release
+      run: yarn release:version --yes
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
