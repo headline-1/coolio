@@ -5,6 +5,10 @@
   "homepage": "https://github.com/headline-1/coolio",
   "bugs": "https://github.com/headline-1/coolio/issues",
   "author": "Krzysztof Miemiec <krzysztof.miemiec@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/headline-1/coolio.git"
+  },
   "license": "MIT",
   "private": true,
   "scripts": {
@@ -15,7 +19,7 @@
     "clean": "rimraf packages/*/{dist} && rimraf {dist,.jest,reports}",
     "purge": "yarn clean && rimraf node_modules",
     "prepack": "yarn clean && yarn compile && yarn verify",
-    "release": "lerna publish --force-publish=*",
+    "release": "lerna publish --conventional-commits --create-release github -m 'chore(release): publish %s' --npm-client=npm --force-publish=*",
     "lint": "eslint ./packages/*/src/**/*.ts",
     "link:all": "lerna exec -- yarn link",
     "unlink:all": "lerna exec -- yarn unlink",
@@ -25,10 +29,21 @@
   },
   "husky": {
     "hooks": {
-      "pre-push": "yarn lint"
+      "pre-commit": "yarn lint",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "release": {
+    "branch": "master"
+  },
   "devDependencies": {
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
     "@types/jest": "^24.0.23",
     "@types/lodash": "^4.14.149",
     "@types/node": "^12.12.11",
