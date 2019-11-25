@@ -57,6 +57,6 @@ jobs:
     - name: Create release & publish package
       run: |
         npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
-        yarn release:publish --yes
+        ./script/retry.sh yarn release:publish --yes --no-verify-access
       env:
         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
