@@ -19,7 +19,7 @@
     "clean": "rimraf packages/*/{dist} && rimraf {dist,.jest,reports}",
     "purge": "yarn clean && rimraf node_modules",
     "prepack": "yarn clean && yarn compile && yarn verify",
-    "release": "lerna publish --conventional-commits --create-release github -m 'chore(release): publish %s' --npm-client=npm --force-publish=*",
+    "release": "lerna publish --conventional-commits --create-release github -m 'chore(release): publish %s' --force-publish=*",
     "lint": "eslint ./packages/*/src/**/*.ts",
     "link:all": "lerna exec -- yarn link",
     "unlink:all": "lerna exec -- yarn unlink",

@@ -13,6 +13,8 @@ jobs:
         node_version: ['12']
     steps:
     - uses: actions/checkout@v1
+    - name: Prepare repository (resolves detached HEAD issue)
+      run: git checkout "${GITHUB_REF:11}"
     - name: Use Node.js ${{ matrix.node_version }}
       uses: actions/setup-node@v1
       with:
@@ -22,7 +24,7 @@ jobs:
     - name: Build packages
       run: yarn compile
     - name: Create release & publish package
-      run: yarn release --yes
+      run: npm run release --yes
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
