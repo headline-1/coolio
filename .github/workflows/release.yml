@@ -1,4 +1,4 @@
-name: Release Version
+name: Release
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
     - master
 
 jobs:
-  build:
+  github-release:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -33,4 +33,30 @@ jobs:
     - name: Create release
       run: yarn release:version --yes
       env:
+        GH_TOKEN: ${{ secrets.GITHUB_PERSONAL_TOKEN }}
+  npm-publish:
+    runs-on: ubuntu-latest
+    needs: github-release
+    strategy:
+      matrix:
+        node_version: ['12']
+    steps:
+    - uses: actions/checkout@v1
+    - name: Checkout Hack (Attach Head)
+      run: git checkout "${GITHUB_REF:11}"
+      env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Use Node.js ${{ matrix.node_version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Install dependencies
+      run: yarn
+    - name: Build packages
+      run: yarn compile
+    - name: Create release & publish package
+      run: |
+        npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
+        yarn release:publish --yes
+      env:
+        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
