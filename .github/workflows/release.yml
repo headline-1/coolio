@@ -21,8 +21,6 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: Install dependencies
       run: yarn
-    - name: Build packages
-      run: yarn compile
     - name: Create release & publish package
       run: npm run release --yes
       env:

@@ -18,7 +18,7 @@
     "start": "yarn compile && yarn compile:watch",
     "clean": "rimraf packages/*/{dist} && rimraf {dist,.jest,reports}",
     "purge": "yarn clean && rimraf node_modules",
-    "prepack": "yarn clean && yarn compile && yarn verify",
+    "prepack": "yarn clean && yarn compile",
     "release": "lerna publish --conventional-commits --create-release github -m 'chore(release): publish %s' --force-publish=*",
     "lint": "eslint ./packages/*/src/**/*.ts",
     "link:all": "lerna exec -- yarn link",
