@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.6](https://github.com/headline-1/coolio/compare/v0.6.5...v0.6.6) (2019-11-25)
+
+
+### Bug Fixes
+
+* **release:** retry npm publish ([cd5860f](https://github.com/headline-1/coolio/commit/cd5860fcd1ea09c41a74f795a8b7eaeafd6cf09e))
+
+
+
+
+
 ## [0.6.5](https://github.com/headline-1/coolio/compare/v0.6.4...v0.6.5) (2019-11-25)
 
 
