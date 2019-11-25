@@ -22,7 +22,7 @@ jobs:
     - name: Install dependencies
       run: yarn
     - name: Create release & publish package
-      run: npm run release --yes
+      run: yarn release --yes
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
