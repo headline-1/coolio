@@ -1,3 +1,23 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## [0.6.1](https://github.com/headline-1/coolio/compare/v0.5.0...v0.6.1) (2019-11-25)
+
+
+### Bug Fixes
+
+* **build:** build & vulnerability fix ([6c3399a](https://github.com/headline-1/coolio/commit/6c3399a7feb25628dac432588ec607620b9fc6e6))
+* **release:** added git credentials ([c5f3163](https://github.com/headline-1/coolio/commit/c5f3163655b77737d47696831e182b6102d11a63))
+* **release:** invalid command args ([3d87c3d](https://github.com/headline-1/coolio/commit/3d87c3d855eabf9a44dcba2a36f5e2f34ea5111f))
+* **workflow:** yet another release fix ([c4cb917](https://github.com/headline-1/coolio/commit/c4cb917879e85ce728ec0863e6e13ad03a7bebf5))
+* **workflows:** run release with yarn, but use npm underneath ([9442197](https://github.com/headline-1/coolio/commit/944219781da883ece5e04f5e94bccd08bef4672a))
+
+
+
+
+
 # [0.6.0](https://github.com/headline-1/coolio/compare/v0.5.0...v0.6.0) (2019-11-25)
 
 
@@ -115,6 +135,3 @@
 
 
 # 0.1.0 (2019-03-30)
-
-
-

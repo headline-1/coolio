@@ -1,3 +1,19 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## [0.6.1](https://github.com/headline-1/coolio/compare/v0.5.0...v0.6.1) (2019-11-25)
+
+
+### Bug Fixes
+
+* **build:** build & vulnerability fix ([6c3399a](https://github.com/headline-1/coolio/commit/6c3399a7feb25628dac432588ec607620b9fc6e6))
+
+
+
+
+
 # [0.6.0](https://github.com/headline-1/coolio/compare/v0.5.0...v0.6.0) (2019-11-25)
 
 
@@ -110,6 +126,3 @@
 
 
 # 0.1.0 (2019-03-30)
-
-
-
