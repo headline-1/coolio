@@ -11,6 +11,10 @@ export class SimpleQueue {
   private readonly items: QueueItem[] = [];
   private isRunning = false;
 
+  get length() {
+    return this.items.length;
+  }
+
   /**
    * Queues specified promise and returns when it's done
    */
@@ -29,11 +33,10 @@ export class SimpleQueue {
     return result;
   }
 
-  get length(){
-    return this.items.length;
-  }
-
-  clean() {
+  clean(reason: any) {
+    for (const item of this.items) {
+      item.fail(reason);
+    }
     this.items.splice(0, this.items.length);
   }
 

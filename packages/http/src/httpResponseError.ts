@@ -3,7 +3,7 @@ import { HttpCode } from './httpCodes';
 
 const symbol = Symbol('HttpResponseError');
 
-export class HttpResponseError<T = HttpResponse<any>> extends Error {
+export class HttpResponseError<T = any> extends Error {
   readonly status: HttpCode;
   private readonly __symbol = symbol;
 

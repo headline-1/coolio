@@ -9,11 +9,12 @@ import {
   mockRequestHandler,
   NormalizedHttpOptions
 } from '@coolio/http';
-import { createAuthInterceptor } from '../authInterceptor';
+import { AuthInterceptor, createAuthInterceptor } from '../authInterceptor';
 
 describe('AuthInterceptor', () => {
   let lastRequest = 0;
   let requiredAuthorization = '';
+  let reauthorize: () => void;
 
   const authHeaderHandler = (options: NormalizedHttpOptions) => {
     if (requiredAuthorization !== options.headers['Authorization']) {
@@ -25,40 +26,10 @@ describe('AuthInterceptor', () => {
     }, ContentType.JSON);
   };
 
-  const reauthorize = jest.fn(() => {
-    storage.auth = requiredAuthorization;
-  });
 
-  const storage: any = {};
-  const authInterceptor = createAuthInterceptor({
-    setAuthorizationData: (options) => {
-      options.headers['Authorization'] = storage.auth;
-    },
-    reauthorize,
-    onAuthorizationFailure: error => {
-      throw error;
-    },
-    canAuthorize: (options) => getHostname(options.url) === 'my-domain.org',
-  });
-
-  const client = new HttpClient({
-    baseUrl: 'http://my-domain.org/',
-    bodySerializer: bodySerializer(),
-    bodyParser: bodyParser(),
-    requestHandler: mockRequestHandler({
-      endpoints: [
-        {
-          match: /my-domain\.org/,
-          handler: authHeaderHandler,
-        },
-        {
-          match: /example\.com/,
-          handler: authHeaderHandler,
-        },
-      ]
-    })
-  })
-    .addInterceptor(authInterceptor);
+  let storage: any = {};
+  let authInterceptor; AuthInterceptor;
+  const client: HttpClient;
 
   const makeAuthRequest = async (url: string, header: string) => {
     requiredAuthorization = storage.auth = header;
@@ -69,6 +40,40 @@ describe('AuthInterceptor', () => {
 
   beforeEach(() => {
     jest.clearAllMocks();
+    lastRequest = 0;
+    requiredAuthorization = '';
+    reauthorize = jest.fn(() => {
+      storage.auth = requiredAuthorization;
+    });
+    storage = {};
+    authInterceptor = createAuthInterceptor({
+      setAuthorizationData: (options) => {
+        options.headers['Authorization'] = storage.auth;
+      },
+      reauthorize,
+      onAuthorizationFailure: error => {
+        throw error;
+      },
+      canAuthorize: (options) => getHostname(options.url) === 'my-domain.org',
+    });
+    client = new HttpClient({
+      baseUrl: 'http://my-domain.org/',
+      bodySerializer: bodySerializer(),
+      bodyParser: bodyParser(),
+      requestHandler: mockRequestHandler({
+        endpoints: [
+          {
+            match: /my-domain\.org/,
+            handler: authHeaderHandler,
+          },
+          {
+            match: /example\.com/,
+            handler: authHeaderHandler,
+          },
+        ]
+      })
+    })
+      .addInterceptor(authInterceptor)
   });
 
   it('passes Authorization header to authorized domain', async () => {
@@ -122,4 +127,12 @@ describe('AuthInterceptor', () => {
       200, 200, 200, 200,
     ]);
   });
+
+  it('removes all queued requests with an error and calls onAuthorizationFailure when reauthorization error occurs', async () => {
+    reauthorize
+  });
+
+  it('passes all unrelated, non-unauthorized errors further', async () => {
+
+  })
 });

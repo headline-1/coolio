@@ -28,6 +28,12 @@
   "publishConfig": {
     "access": "public"
   },
+  "peerDependencies": {
+    "@coolio/http": "^0.6.9"
+  },
+  "devDependencies": {
+    "@coolio/http": "^0.6.9"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/headline-1/coolio.git"
