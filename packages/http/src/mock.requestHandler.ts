@@ -8,8 +8,10 @@ import {
   RawHttpResponse
 } from './httpClient.types';
 import { createHttpResponse } from './httpResponse';
+import { sleep } from './helpers/sleep.helper';
 
-export const handleRequest = (code: number, body: any, contentType: string = ContentType.TEXT): Promise<HttpResponse> => {
+export const handleRequest = (
+  code: number, body: any, contentType: string = ContentType.TEXT): Promise<HttpResponse> => {
   if (isObject(body)) {
     body = JSON.stringify(body);
     contentType = contentType || ContentType.JSON;
@@ -47,6 +49,7 @@ export const mockRequestHandler = (
   const handler = async (
     requestOptions: NormalizedHttpOptions,
   ): Promise<RawHttpResponse> => {
+    await sleep(Math.random() * 5);
     lastRequest = requestOptions;
     const endpoint = mockOptions.endpoints.find(endpoint => new RegExp(endpoint.match).test(requestOptions.url));
     if (!endpoint) {

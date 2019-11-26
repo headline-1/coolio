@@ -2,11 +2,14 @@ import { HttpClientHelper } from './helpers';
 import {
   BodyParser,
   BodySerializer,
+  HttpFetch,
   HttpHeaders,
   HttpInterceptor,
+  HttpInterceptorInterface,
   HttpMethod,
   HttpOptions,
   HttpRequestHandler,
+  HttpRequestOptions,
   HttpResponse,
   NormalizedHttpOptions,
 } from './httpClient.types';
@@ -23,6 +26,21 @@ export interface HttpClientConfig<T = HttpResponse> {
   bodySerializer?: BodySerializer;
   baseUrl?: string;
 }
+
+const isHttpInterceptorInterface = (interceptor: HttpInterceptor): interceptor is HttpInterceptorInterface => {
+  const method = (interceptor as any).onIntercept;
+  return method !== null && method !== undefined;
+};
+
+const useInterceptor = (normalizedOptions: NormalizedHttpOptions) => <Body>(
+  req: HttpFetch<Body>,
+  interceptor: HttpInterceptor,
+) => {
+  if (isHttpInterceptorInterface(interceptor)) {
+    return interceptor.onIntercept(req, normalizedOptions);
+  }
+  return interceptor(req, normalizedOptions);
+};
 
 const passthroughParser = (response: HttpResponse) => {
   response.parsedBody = response.parsedBody || (() => response.arrayBuffer());
@@ -87,12 +105,12 @@ export class HttpClient<T = unknown> {
     });
   }
 
-  request<Body extends T>(url: string, options?: HttpOptions): Promise<HttpResponse<Body>> {
+  request<Body extends T>(url: string, options: HttpRequestOptions): Promise<HttpResponse<Body>> {
     if (this.baseUrl && url.startsWith('/')) {
       url = `${this.baseUrl}${url}`;
     }
 
-    const sanitizeHeaders = () => HttpClientHelper.sanitizeHeaders({
+    const headers = HttpClientHelper.sanitizeHeaders({
       ...this.defaultHeadersProvider && this.defaultHeadersProvider(
         HttpClientHelper.getHostname(url),
       ),
@@ -103,16 +121,17 @@ export class HttpClient<T = unknown> {
 
     const normalizedOptions: NormalizedHttpOptions = {
       ...options,
+      method: options.method,
       url: urlBreakdown.url,
       query: urlBreakdown.query,
-      headers: sanitizeHeaders(),
+      headers,
       body: options && options.body as any,
     };
 
     normalizedOptions.body = this.bodySerializer(normalizedOptions);
 
     const chain = this.interceptors.reduce(
-      (req, interceptor) => interceptor(req, normalizedOptions),
+      useInterceptor(normalizedOptions),
       async () => {
         // In the end, even if interceptors modify both URL & Query, it gets reconciled here
         normalizedOptions.url = urlCombine(normalizedOptions.url, normalizedOptions.query);

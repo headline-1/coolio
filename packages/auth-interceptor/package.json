@@ -10,14 +10,21 @@
     "http"
   ],
   "author": "Krzysztof Miemiec <krzysztof.miemiec@gmail.com>",
-  "homepage": "https://github.com/headline-1/coolio/tree/master/packages/http#readme",
+  "homepage": "https://github.com/headline-1/coolio/tree/master/packages/auth-interceptor#readme",
   "license": "MIT",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm5/index.js",
+  "es2015": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
+  "sideEffects": false,
   "files": [
     "dist/",
     "assets/"
   ],
+  "scripts": {
+    "compile": "tsc -b ./tsconfig.cjs.json ./tsconfig.esm.json ./tsconfig.esm5.json ./tsconfig.types.json",
+    "compile:watch": "yarn compile -w --preserveWatchOutput"
+  },
   "publishConfig": {
     "access": "public"
   },

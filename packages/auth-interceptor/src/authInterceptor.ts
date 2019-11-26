@@ -1,93 +1,61 @@
 import {
   HttpCode,
   HttpFetch,
-  HttpInterceptor,
+  HttpInterceptorInterface,
   HttpResponse,
   HttpResponseError,
   isHttpResponseError,
   NormalizedHttpOptions
 } from '@coolio/http';
 import { AuthInterceptorOptions } from './authInterceptor.types';
+import { SimpleQueue } from './simpleQueue';
 
-export const isUnauthorizedError = (error: HttpResponseError) => error.response.status === HttpCode.UNAUTHORIZED;
+export const hasUnauthorizedResponseCode = (response: HttpResponse) => response.status === HttpCode.UNAUTHORIZED;
+export const isUnauthorizedError = (error: any) => isHttpResponseError(error) && hasUnauthorizedResponseCode(
+  error.response);
 
-export const createAuthInterceptor = ({
-  reauthorize,
-  onAuthorizationFailure,
-  canAuthorize,
-  setAuthorizationData,
-}: AuthInterceptorOptions): HttpInterceptor => {
-  const pendingRequests: (() => void)[] = [];
-  let isAuthInProgress = false;
-  let isRequestInProgress = false;
+export class AuthInterceptor implements HttpInterceptorInterface {
+  private readonly queue = new SimpleQueue();
 
-  const deferRequest = <T extends any>(promise: () => Promise<T>): Promise<T> =>
-    new Promise((resolve, reject) => {
-      pendingRequests.push(() => {
-        promise().then(resolve, reject);
-      });
-    });
+  constructor(private readonly options: AuthInterceptorOptions) {
+  }
 
-  const requestAuth = async () => {
+  get pendingRequestCount() {
+    return this.queue.length;
+  }
+
+  async requestReauthorization() {
     try {
-      isAuthInProgress = true;
-      await reauthorize();
-      isAuthInProgress = false;
+      await Promise.resolve(this.options.reauthorize());
     } catch (err) {
-      pendingRequests.splice(0, pendingRequests.length);
-      isAuthInProgress = isRequestInProgress = false;
-      await onAuthorizationFailure(err);
+      this.queue.clean();
+      await this.options.onAuthorizationFailure(err);
     }
   };
 
-  const resume = () => {
-    if (isRequestInProgress) {
-      return;
+  onIntercept<Body>(request: HttpFetch<Body>, options: NormalizedHttpOptions): HttpFetch<Body> {
+    if (this.options.canAuthorize(options)) {
+      return () => this.queue.put(async () => {
+        await Promise.resolve(this.options.setAuthorizationData(options));
+        try {
+          const response = await request();
+          if (hasUnauthorizedResponseCode(response)) {
+            throw new HttpResponseError(response);
+          }
+          return response;
+        } catch (error) {
+          if (!isUnauthorizedError(error)) {
+            throw error;
+          }
+          await this.requestReauthorization();
+          await Promise.resolve(this.options.setAuthorizationData(options));
+          return await request();
+        }
+      });
     }
-    const pendingRequest = pendingRequests.shift();
-    if (pendingRequest) {
-      pendingRequest();
-    }
-  };
+    // Don't queue anything if request is not "authorizable"
+    return request;
+  }
+}
 
-  const processRequest = async <T extends any>(
-    promise: HttpFetch<T>,
-    options: NormalizedHttpOptions,
-  ): Promise<HttpResponse<T>> => {
-    if (isAuthInProgress || isRequestInProgress) {
-      return deferRequest(() => processRequest(promise, options));
-    }
-    isRequestInProgress = true;
-    try {
-      if (await Promise.resolve(canAuthorize(options))) {
-        await Promise.resolve(setAuthorizationData(options));
-      }
-      const response = await promise();
-
-      // Resume pending requests
-      isRequestInProgress = false;
-      resume();
-      return response;
-    } catch (error) {
-      // Mark request not in progress on failure
-      isRequestInProgress = false;
-      throw error;
-    }
-  };
-
-  return <T extends any>(
-    promise: HttpFetch<T>,
-    options: NormalizedHttpOptions,
-  ): HttpFetch<T> => async () => {
-    try {
-      return await processRequest(promise, options);
-    } catch (error) {
-      if (!isHttpResponseError(error) || !isUnauthorizedError(error)) {
-        resume();
-        throw error;
-      }
-      await requestAuth();
-    }
-    return await processRequest(promise, options);
-  };
-};
+export const createAuthInterceptor = (options: AuthInterceptorOptions) => new AuthInterceptor(options);

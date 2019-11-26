@@ -1,8 +1,11 @@
 import { HttpResponse } from './httpClient.types';
 import { HttpCode } from './httpCodes';
 
+const symbol = Symbol('HttpResponseError');
+
 export class HttpResponseError<T = HttpResponse<any>> extends Error {
-  public readonly status: HttpCode;
+  readonly status: HttpCode;
+  private readonly __symbol = symbol;
 
   constructor(public readonly response: HttpResponse<T>) {
     super(`${response.status} ${response.statusText}: ${response.url}`);
@@ -11,4 +14,4 @@ export class HttpResponseError<T = HttpResponse<any>> extends Error {
   }
 }
 
-export const isHttpResponseError = (error: any): error is HttpResponseError => error instanceof HttpResponseError;
+export const isHttpResponseError = (error: any): error is HttpResponseError => error?.__symbol === symbol;
