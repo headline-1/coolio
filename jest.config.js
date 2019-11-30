@@ -2,8 +2,8 @@ module.exports = {
   cacheDirectory: '.jest/cache',
   collectCoverageFrom: [
     '<rootDir>/packages/*/src/**/*.ts',
-    '!<rootDir>/src/**/index.ts',
-    '!<rootDir>/src/**/*.d.ts',
+    '!<rootDir>/packages/*/src/**/index.ts',
+    '!<rootDir>/packages/*/src/**/*.d.ts',
   ],
   coverageDirectory: '<rootDir>/reports/coverage',
   coverageReporters: ['json', 'lcov'],

@@ -39,7 +39,7 @@
     "url": "https://github.com/headline-1/coolio/issues"
   },
   "peerDependencies": {
-    "@coolio/http": "^0.6.0"
+    "@coolio/http": "^0.6.9"
   },
   "devDependencies": {
     "@coolio/http": "^0.6.9"
