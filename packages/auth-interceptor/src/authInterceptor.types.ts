@@ -1,5 +1,6 @@
-import { HttpInterceptor, NormalizedHttpOptions } from '@coolio/http';
+import { NormalizedHttpOptions } from '@coolio/http';
 import { Promisable } from './promisable';
+import { AuthError } from './authError';
 
 export interface AuthInterceptorOptions {
   /**
@@ -20,7 +21,7 @@ export interface AuthInterceptorOptions {
    * - authorize() function throws an error,
    * - a second call to an api endpoint results in 401.
    */
-  onAuthorizationFailure: (err: Error) => Promisable;
+  onAuthorizationFailure: (err: AuthError) => Promisable;
 
   /**
    * Determine if request should be processed, by checking request's options (i.e. check for a domain match)

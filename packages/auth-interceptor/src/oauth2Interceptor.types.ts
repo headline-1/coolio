@@ -1,10 +1,12 @@
 import { ContentType, HttpClientConfig, NormalizedHttpOptions } from '@coolio/http';
 import { Promisable } from './promisable';
 import { AuthStorage } from './storage/authStorage.types';
+import { AuthError } from './authError';
 
-export interface OAuth2RefreshTokenResponse {
+export interface OAuth2TokenResponse {
   accessToken: string;
   tokenType: string;
+  idToken?: string;
   expires?: string;
   expiresIn?: string;
   refreshToken: string;
@@ -12,40 +14,46 @@ export interface OAuth2RefreshTokenResponse {
 }
 
 export interface OAuth2InterceptorOptions {
-  httpClientOptions?: HttpClientConfig;
+  oauth: {
+    /**
+     * Options that are used in a HttpClient underneath, can be used for customization.
+     * This HttpClient is used to call OAuth refresh token endpoint.
+     */
+    httpClientOptions?: HttpClientConfig;
 
-  /**
-   * OAuth2 Client Id
-   */
-  clientId: string;
+    /**
+     * Content-Type used for refreshing token
+     */
+    contentType?: ContentType;
 
-  /**
-   * OAuth2 Client Secret
-   */
-  clientSecret?: string;
+    /**
+     * OAuth2 Client Id
+     */
+    clientId: string;
 
-  /**
-   * Content-Type used for refreshing token
-   */
-  contentType?: ContentType;
+    /**
+     * OAuth2 Client Secret
+     */
+    clientSecret?: string;
 
-  /**
-   * API endpoint used for refreshing token
-   */
-  refreshTokenUrl: string;
+    /**
+     * API endpoint used for refreshing token
+     */
+    refreshTokenUrl: string;
+  };
 
   /**
    * Data storage for OAuth credentials. Uses InMemoryAuthStorage by default.
    * One can implement their own storage, i.e. backed by Redux or LocalStorage.
    */
-  authStorage?: AuthStorage<OAuth2RefreshTokenResponse>;
+  authStorage: AuthStorage<OAuth2TokenResponse>;
 
   /**
    * This function is called when:
    * - authorize() function throws an error,
    * - a second call to an api endpoint results in 401.
    */
-  onAuthorizationFailure: (err: Error) => Promisable;
+  onAuthorizationFailure: (err: AuthError) => Promisable;
 
   /**
    * Determine if request should be processed, by checking request's options (i.e. check for a domain match)

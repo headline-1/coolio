@@ -8,19 +8,20 @@ import {
   NormalizedHttpOptions
 } from '@coolio/http';
 import { createAuthInterceptor } from './authInterceptor';
-import { OAuth2InterceptorOptions, OAuth2RefreshTokenResponse } from './oauth2Interceptor.types';
-import { InMemoryAuthStorage } from './storage/inMemory.authStorage';
+import { OAuth2InterceptorOptions, OAuth2TokenResponse } from './oauth2Interceptor.types';
 import { AuthError } from './authError';
 
 export const createOAuth2Interceptor = ({
-  clientId,
-  clientSecret,
-  contentType,
-  authStorage = new InMemoryAuthStorage(),
+  oauth: {
+    clientId,
+    clientSecret,
+    contentType,
+    refreshTokenUrl,
+    httpClientOptions,
+  },
+  authStorage,
   canAuthorize,
-  refreshTokenUrl,
   onAuthorizationFailure,
-  httpClientOptions,
 }: OAuth2InterceptorOptions) => {
   const authHttpClient = new HttpClient({
     requestHandler: fetchRequestHandler(),
@@ -29,12 +30,16 @@ export const createOAuth2Interceptor = ({
     ...httpClientOptions,
   });
 
+  const getAuthData = async () => {
+    const authData = await Promise.resolve(authStorage.getData());
+    if (!authData) {
+      throw new AuthError('Data received from AuthStorage is undefined.');
+    }
+    return authData;
+  };
+
   return createAuthInterceptor({
     reauthorize: async () => {
-      const authData = await Promise.resolve(authStorage.getData());
-      if (!authData) {
-        throw new AuthError('Reauthorize: Data received from AuthStorage is undefined.');
-      }
       const response = await authHttpClient.post(refreshTokenUrl, {
         headers: {
           'Content-Type': contentType || ContentType.URL_ENCODED,
@@ -43,23 +48,16 @@ export const createOAuth2Interceptor = ({
           clientId,
           clientSecret,
           grantType: 'refresh_token',
-          refreshToken: authData.refreshToken,
+          refreshToken: (await getAuthData()).refreshToken,
         },
       });
-      const oauth2Data: OAuth2RefreshTokenResponse = await response.parsedBody();
+      const oauth2Data: OAuth2TokenResponse = await response.parsedBody();
 
       await Promise.resolve(authStorage.setData(oauth2Data));
     },
     setAuthorizationData: async (options: NormalizedHttpOptions) => {
       // Get previously stored tokens
-      const authData = await Promise.resolve(authStorage.getData());
-      if (!authData) {
-        throw new AuthError('setAuthorizationData: Data received from AuthStorage is undefined.');
-      }
-      const { accessToken, tokenType } = authData;
-      if (!options.headers) {
-        options.headers = {};
-      }
+      const { accessToken, tokenType } = await getAuthData();
       options.headers['Authorization'] = `${tokenType} ${accessToken}`;
     },
     onAuthorizationFailure,

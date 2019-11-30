@@ -63,47 +63,47 @@ export class HttpClient<T = unknown> {
     this.baseUrl = config.baseUrl ? config.baseUrl.replace(/\/+$/, '') : undefined;
   }
 
-  addInterceptor(interceptor: HttpInterceptor) {
+  addInterceptor = (interceptor: HttpInterceptor) => {
     this.interceptors.push(interceptor);
     return this;
-  }
+  };
 
-  get<Body extends T = any>(uri: string, options?: HttpOptions) {
+  get = <Body extends T = any>(uri: string, options?: HttpOptions) => {
     return this.request<Body>(uri, {
       ...options,
       body: undefined,
       method: HttpMethod.GET,
     });
-  }
+  };
 
-  post<Body extends T = any>(uri: string, options?: HttpOptions) {
+  post = <Body extends T = any>(uri: string, options?: HttpOptions) => {
     return this.request<Body>(uri, {
       ...options,
       method: HttpMethod.POST,
     });
-  }
+  };
 
-  put<Body extends T = any>(uri: string, options?: HttpOptions) {
+  put = <Body extends T = any>(uri: string, options?: HttpOptions) => {
     return this.request<Body>(uri, {
       ...options,
       method: HttpMethod.PUT,
     });
-  }
+  };
 
-  patch<Body extends T = any>(uri: string, options?: HttpOptions) {
+  patch = <Body extends T = any>(uri: string, options?: HttpOptions) => {
     return this.request<Body>(uri, {
       ...options,
       method: HttpMethod.PATCH,
     });
-  }
+  };
 
-  remove<Body extends T = any>(uri: string, options?: HttpOptions) {
+  remove = <Body extends T = any>(uri: string, options?: HttpOptions) => {
     return this.request<Body>(uri, {
       ...options,
       body: undefined,
       method: HttpMethod.DELETE,
     });
-  }
+  };
 
   request<Body extends T>(url: string, options: HttpRequestOptions): Promise<HttpResponse<Body>> {
     if (this.baseUrl && url.startsWith('/')) {

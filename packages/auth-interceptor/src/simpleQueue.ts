@@ -24,8 +24,8 @@ export class SimpleQueue {
         run: async () => {
           await item().then(resolve, reject);
         },
-        fail: () => {
-          reject(new Error());
+        fail: (error: Error) => {
+          reject(error);
         },
       });
     });

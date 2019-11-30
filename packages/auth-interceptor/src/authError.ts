@@ -1,6 +1,9 @@
 export class AuthError extends Error {
-  constructor(message: string, public readonly cause?: Error) {
+  public readonly cause?: Error;
+
+  constructor(message: string, cause?: Error) {
     super(message);
     this.name = 'AuthError';
+    this.cause = cause;
   }
 }
