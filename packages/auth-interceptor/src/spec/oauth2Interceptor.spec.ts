@@ -152,7 +152,7 @@ describe('OAuth2 Interceptor', () => {
     expect(response.status).toEqual(200);
   });
 
-  it('throws an error when auth data is missing', ()=> {
+  it('throws an error when auth data is missing', () => {
     const clientId = 'abcdef';
     const clientSecret = 'ghijkl';
     const requestHandler = createMockHandler({

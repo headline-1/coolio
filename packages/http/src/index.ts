@@ -4,7 +4,7 @@ export * from './httpClient';
 export * from './httpResponse';
 export * from './httpCodes';
 export * from './httpResponseError';
-export * from './fetch.requestHandler';
+export * from './requestHandlers';
 export * from './mock.requestHandler';
 export * from './bodyParser';
 export * from './bodySerializer';

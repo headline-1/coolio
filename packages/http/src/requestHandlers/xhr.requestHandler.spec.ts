@@ -1,7 +1,7 @@
 import { createSimpleServer, SimpleServer } from '../testing/createSimpleServer.helper';
 import { ContentType } from '../httpClient.types';
 import { HttpClient } from '../httpClient';
-import { xhrRequestHandler } from '../xhr.requestHandler';
+import { xhrRequestHandler } from './xhr.requestHandler';
 
 describe('xhr.requestHandler', () => {
   let server: SimpleServer;
