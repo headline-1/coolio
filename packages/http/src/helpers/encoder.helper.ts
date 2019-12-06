@@ -1,4 +1,5 @@
 import TypedArray = NodeJS.TypedArray;
+import { HttpResponseHeaders } from '../httpResponseHeaders';
 
 const charsetBits = {
   'utf-8': 8,
@@ -18,6 +19,14 @@ const encodeTypedArray = (buffer: ArrayBuffer, bits: number): Uint8Array | Uint1
 export const encodeArrayBuffer = (data: TypedArray | string | undefined) => data
   ? typeof data === 'string' ? Buffer.from(data, 'utf8') : Buffer.from(data)
   : Buffer.from('');
+
+export const getEncodingFromHeaders = (headers: HttpResponseHeaders | undefined, fallback = 'utf-8') => (
+  headers?.get('content-type')
+    ?.split(';')
+    ?.find(element => element.trim().startsWith('charset'))
+    ?.split('=')[1]
+  ?? fallback
+).trim().toLowerCase();
 
 export const encodeText = (buffer: ArrayBuffer, charset = 'utf-8') => {
   const array = encodeTypedArray(buffer, charsetBits[charset]);

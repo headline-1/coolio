@@ -1,10 +1,11 @@
 import { getHeader, parseHeaders } from './helpers';
 import { HttpHeaders } from './httpClient.types';
+import { IncomingHttpHeaders } from 'http';
 
 export class HttpResponseHeaders {
   public readonly map: Record<string, string>;
 
-  constructor(headers: HttpHeaders | Headers | string = {}) {
+  constructor(headers: IncomingHttpHeaders | HttpHeaders | Headers | string = {}) {
     if (typeof headers === 'string') {
       this.map = headers
         .split('\n')
@@ -15,8 +16,8 @@ export class HttpResponseHeaders {
           map[key.toLowerCase()] = value;
           return map;
         }, {});
-    } else if (headers instanceof Headers) {
-      this.map = parseHeaders(headers);
+    } else if (headers.forEach) {
+      this.map = parseHeaders(headers as Headers);
     } else {
       this.map = Object.keys(headers).reduce((result, key) => {
         result[key.toLowerCase()] = headers[key];

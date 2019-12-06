@@ -62,6 +62,7 @@ export interface HttpRequestOptions {
   headers?: HttpHeaders;
   body?: HttpBody;
   bypassResponseHandler?: boolean;
+  timeout?: number;
 }
 
 export type HttpOptions = Partial<HttpRequestOptions>;
@@ -76,6 +77,7 @@ export interface NormalizedHttpOptions {
   headers: Record<string, string>;
   mode?: RequestMode;
   bypassResponseHandler?: boolean;
+  timeout?: number;
 }
 
 export type HttpRequestHandler = (requestOptions: NormalizedHttpOptions) => Promise<RawHttpResponse>;

@@ -24,7 +24,7 @@ export const createOAuth2Interceptor = ({
   onAuthorizationFailure,
 }: OAuth2InterceptorOptions) => {
   const authHttpClient = new HttpClient({
-    requestHandler: fetchRequestHandler(),
+    requestHandler: httpClientOptions?.requestHandler || fetchRequestHandler(),
     bodyParser: bodyParser({ bodyCasing: BodyCasing.CAMEL_CASE }),
     bodySerializer: bodySerializer({ bodyCasing: BodyCasing.SNAKE_CASE }),
     ...httpClientOptions,
