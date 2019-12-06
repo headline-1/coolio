@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/headline-1/coolio/compare/v0.7.0...v0.8.0) (2019-12-06)
+
+
+### Features
+
+* **http:** native request handler for node.js ([c0351c5](https://github.com/headline-1/coolio/commit/c0351c5e479884ffcd03fd0380816a55a61a074a))
+
+
+
+
+
 # [0.7.0](https://github.com/headline-1/coolio/compare/v0.6.9...v0.7.0) (2019-11-30)
 
 
