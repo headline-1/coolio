@@ -1,5 +1,5 @@
 import { createSimpleServer, SimpleServer } from '../testing/createSimpleServer.helper';
-import { ContentType } from '../httpClient.types';
+import { ContentType, HttpMethod } from '../httpClient.types';
 import { HttpClient } from '../httpClient';
 import { httpRequestHandler } from './http.requestHandler';
 
@@ -8,7 +8,13 @@ describe('http.requestHandler', () => {
   beforeAll(() => {
     server = createSimpleServer({
       status: 200,
-      body: 'test body',
+      endpoints: [
+        {
+          method: HttpMethod.POST,
+          route: '/test-route',
+          response: 'post',
+        },
+      ],
       headers: { 'content-type': ContentType.TEXT, },
     });
   });
@@ -22,7 +28,7 @@ describe('http.requestHandler', () => {
       requestHandler: httpRequestHandler(),
       baseUrl: server.fullAddress,
     });
-    const result = await client.get('/');
+    const result = await client.post('/test-route?query=param');
     expect(result.status).toBe(200);
     expect(result.headers.map).toEqual({
       'access-control-allow-origin': '*',
@@ -31,6 +37,6 @@ describe('http.requestHandler', () => {
       'content-type': ContentType.TEXT,
       'transfer-encoding': 'chunked',
     });
-    expect(await result.text()).toEqual('test body');
+    expect(await result.text()).toEqual('post');
   });
 });
