@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.1](https://github.com/headline-1/coolio/compare/v0.8.0...v0.8.1) (2019-12-06)
+
+
+### Bug Fixes
+
+* **http-request-handler:** fix for node.js path/query support ([d99449c](https://github.com/headline-1/coolio/commit/d99449c8a1090010a54f4fc99db05278da69f0ff))
+
+
+
+
+
 # [0.8.0](https://github.com/headline-1/coolio/compare/v0.7.0...v0.8.0) (2019-12-06)
 
 
