@@ -36,15 +36,13 @@ export const httpRequestHandler = (
       auth,
       hostname,
       port,
-      pathname,
-      search,
+      path,
     } = url.parse(urlString);
 
     const requestModule = protocol === 'https:' ? https : http;
     const request = requestModule.request({
       ...requestHandlerOptions.defaultRequestOptions,
-      pathname,
-      search,
+      path,
       method,
       port,
       hostname,

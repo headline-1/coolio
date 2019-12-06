@@ -1,5 +1,5 @@
 import { createSimpleServer, SimpleServer } from '../testing/createSimpleServer.helper';
-import { ContentType } from '../httpClient.types';
+import { ContentType, HttpMethod } from '../httpClient.types';
 import { HttpClient } from '../httpClient';
 import { xhrRequestHandler } from './xhr.requestHandler';
 
@@ -8,7 +8,13 @@ describe('xhr.requestHandler', () => {
   beforeAll(() => {
     server = createSimpleServer({
       status: 200,
-      body: 'test body',
+      endpoints: [
+        {
+          method: HttpMethod.GET,
+          route: '/',
+          response: 'test body',
+        },
+      ],
       headers: { 'content-type': ContentType.TEXT, },
     });
   });
