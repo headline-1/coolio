@@ -17,6 +17,7 @@ describe('HttpClient Helpers #cacheParsedBody', () => {
     await expect(parsedBody()).resolves.toEqual({ a: 1 });
     await expect(parsedBody()).resolves.toEqual({ a: 1 });
   });
+
   it('works correctly when multiple calls are made before Promise resolves', async () => {
     let resolve: any;
     const f = () => new Promise(r => {
