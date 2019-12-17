@@ -1,3 +1,4 @@
+import merge from 'lodash/merge';
 import { HttpRequestHandler, NormalizedHttpOptions, RawHttpResponse } from '../httpClient.types';
 import { HttpResponseHeaders } from '../httpResponseHeaders';
 
@@ -26,8 +27,7 @@ export const fetchRequestHandler = (
   ): Promise<RawHttpResponse> => {
     const abortController = new AbortController();
     const response = await fetch(requestOptions.url, {
-      ...fetchRequestHandlerOptions.defaultRequestOptions,
-      ...requestOptions,
+      ...mergeRequestOptions(fetchRequestHandlerOptions.defaultRequestOptions, requestOptions),
       signal: abortController.signal,
     });
 
@@ -43,4 +43,11 @@ export const fetchRequestHandler = (
       abort: () => abortController.abort(),
     };
   };
+};
+
+export const mergeRequestOptions = (
+  defaultRequestOptions: RequestInit | undefined,
+  requestOptions: NormalizedHttpOptions
+) => {
+  return merge({}, defaultRequestOptions, requestOptions);
 };

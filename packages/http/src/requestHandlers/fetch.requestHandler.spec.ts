@@ -1,7 +1,7 @@
 import { createSimpleServer, SimpleServer } from '../testing/createSimpleServer.helper';
 import { ContentType, HttpMethod } from '../httpClient.types';
 import { HttpClient } from '../httpClient';
-import { fetchRequestHandler } from './fetch.requestHandler';
+import { fetchRequestHandler, mergeRequestOptions } from './fetch.requestHandler';
 
 describe('fetch.requestHandler', () => {
   let server: SimpleServer;
@@ -43,4 +43,42 @@ describe('fetch.requestHandler', () => {
     expect(await result.text()).toEqual('test body');
   });
 
+});
+
+describe('#mergeRequestOptions', () => {
+
+  it('properly merges request options', () => {
+    const defaultRequestOptions = {
+      method: HttpMethod.GET,
+      headers: {
+        'content-type': ContentType.JSON,
+        'connection': 'keep-alive',
+        'accept-encoding': 'gzip',
+      },
+      keepalive: true,
+    };
+
+    const requestOptions = {
+      url: '/',
+      query: {},
+      method: HttpMethod.PUT,
+      headers: {
+        'content-type': ContentType.TEXT,
+        'accept-language': 'en-US',
+      },
+    };
+
+    const result = mergeRequestOptions(defaultRequestOptions, requestOptions);
+
+    expect(result).toEqual({
+      ...defaultRequestOptions,
+      ...requestOptions,
+      headers: {
+        'content-type': ContentType.TEXT,
+        'accept-language': 'en-US',
+        'connection': 'keep-alive',
+        'accept-encoding': 'gzip',
+      },
+    });
+  });
 });
