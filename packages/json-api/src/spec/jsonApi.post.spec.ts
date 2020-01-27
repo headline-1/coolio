@@ -17,6 +17,7 @@ describe('JSON API Post', () => {
     const postBuilder = new JsonApiClient(mock.httpClient)
       .post(POST_EMPTY_MOCK.URI)
       .ofType('testType')
+      .withId('testId')
       .withAttributes(POST_MOCK.ATTRIBUTES)
       .withRelationship()
       .withRelationship(POST_MOCK.RELATIONSHIP)
@@ -35,6 +36,7 @@ describe('JSON API Post', () => {
 
     postBuilder
       .ofType('testType')
+      .withId('testId')
       .withAttributes(POST_MOCK.ATTRIBUTES)
       .withRelationship()
       .withRelationship(POST_MOCK.RELATIONSHIP)

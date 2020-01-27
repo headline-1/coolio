@@ -5,6 +5,7 @@ import { JsonResponse } from './jsonApi.response';
 
 export class PostBuilder<Raw extends RawResponse<any, any>> extends RequestBuilder<JsonResponse<Raw>> {
   type?: string;
+  id?: string;
   attributes?: object;
   relationships?: Record<string, { data: { id: string; type: string } }>;
 
@@ -14,6 +15,11 @@ export class PostBuilder<Raw extends RawResponse<any, any>> extends RequestBuild
 
   ofType(type: string): this {
     this.type = type;
+    return this;
+  }
+
+  withId(id: string): this {
+    this.id = id;
     return this;
   }
 
@@ -43,6 +49,7 @@ export class PostBuilder<Raw extends RawResponse<any, any>> extends RequestBuild
       query: this.parameters,
       body: {
         data: {
+          id: this.id,
           type: this.type,
           attributes: this.attributes,
           relationships: this.relationships,
