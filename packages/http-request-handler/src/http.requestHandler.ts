@@ -1,9 +1,8 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-import { HttpRequestHandler, NormalizedHttpOptions, RawHttpResponse } from '../httpClient.types';
-import { HttpResponseHeaders } from '../httpResponseHeaders';
+import { HttpRequestHandler, NormalizedHttpOptions, RawHttpResponse, HttpStatusText } from '@coolio/http';
+import { HttpResponseHeaders } from './httpResponseHeaders';
 import { ClientRequestArgs, IncomingMessage } from 'http';
-import { HttpStatusText } from '../httpCodes';
-import { encodeText, getEncodingFromHeaders } from '../helpers/encoder.helper';
+import { encodeText, getEncodingFromHeaders } from './helpers/encoder.helper';
 
 export interface HttpRequestHandlerOptions {
   defaultRequestOptions?: ClientRequestArgs;
