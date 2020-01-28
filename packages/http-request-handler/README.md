@@ -11,3 +11,14 @@ Add the Http Request Handler package, assuming that you already have `@coolio/ht
 ```bash
 npm install @coolio/http-request-handler
 ```
+
+```typescript
+import { httpRequestHandler } from '@coolio/http-request-handler';
+
+const client = new HttpClient(
+ //...
+  requestHandler: httpRequestHandler({
+    // Any options here
+  }),
+);
+```

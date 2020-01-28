@@ -1,5 +1,5 @@
-import http from 'http';
-import url from 'url';
+import * as http from 'http';
+import * as url from 'url';
 import { AddressInfo } from 'net';
 import { HttpMethod } from '../httpClient.types';
 
@@ -22,6 +22,7 @@ export interface SimpleServer {
   close: () => Promise<void>;
 }
 
+// TODO replace it with express for testing
 export const createSimpleServer = ({
   status,
   endpoints,
@@ -61,4 +62,3 @@ export const createSimpleServer = ({
     close: () => new Promise((resolve, reject) => server.close((err: any) => err ? reject(err) : resolve())),
   };
 };
-

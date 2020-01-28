@@ -3,11 +3,11 @@
   "version": "0.8.3",
   "description": "Http request handler for Coolio",
   "keywords": [
-    "auth",
-    "authentication",
-    "interceptor",
-    "coolio",
-    "http"
+    "http",
+    "request-handler",
+    "request",
+    "handler",
+    "coolio"
   ],
   "author": "Krzysztof Miemiec <krzysztof.miemiec@gmail.com>",
   "homepage": "https://github.com/headline-1/coolio/tree/master/packages/http-request-handler#readme",
