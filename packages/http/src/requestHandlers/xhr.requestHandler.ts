@@ -46,6 +46,7 @@ const createAsyncBodyHandler = <T>() => {
   };
 };
 
+// TODO Extract to '@coolio/xhr-request-handler'
 export const xhrRequestHandler = (): HttpRequestHandler => async (
   requestOptions: NormalizedHttpOptions,
 ): Promise<RawHttpResponse> => {

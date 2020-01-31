@@ -6,6 +6,7 @@ export interface FetchRequestHandlerOptions {
   defaultRequestOptions?: RequestInit;
 }
 
+// TODO Extract to '@coolio/fetch-request-handler'
 /**
  * Creates a new {@link HttpRequestHandler} that uses [Fetch API]{@link https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API} underneath.
  * Does not support *timeout* property.

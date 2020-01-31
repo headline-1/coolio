@@ -119,6 +119,7 @@ export const POST_MOCK = {
   RELATIONSHIP_2: { name: 'relName2', uuid: 'uuid2', type: 'relType2' },
   BODY: {
     data: {
+      id: 'testId',
       type: 'testType',
       attributes: { attribute_one: 'value1', attribute_two: 'value2' },
       relationships: {
