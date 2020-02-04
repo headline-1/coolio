@@ -38,6 +38,7 @@
   },
   "dependencies": {
     "@types/qs": "^6.9.0",
+    "buffer": "^5.4.3",
     "lodash": "^4.17.15",
     "qs": "^6.9.1"
   },
