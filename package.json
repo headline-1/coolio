@@ -12,9 +12,10 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "postinstall": "lerna bootstrap",
+    "postinstall": "lerna bootstrap && yarn bind",
     "compile:watch": "lerna exec --parallel 'yarn compile:watch'",
-    "compile": "lerna run compile",
+    "bind": "node ./scripts/generate-package-bindings.js",
+    "compile": "lerna run compile && yarn bind",
     "start": "yarn compile && yarn compile:watch",
     "clean": "rimraf packages/*/{dist} && rimraf {dist,.jest,reports}",
     "purge": "yarn clean && rimraf node_modules",

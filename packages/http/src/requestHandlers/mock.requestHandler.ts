@@ -1,14 +1,14 @@
 import isObject from 'lodash/isObject';
 import isNil from 'lodash/isNil';
 import {
-  ContentType,
   HttpRequestHandler,
   HttpResponse,
   NormalizedHttpOptions,
   RawHttpResponse
-} from './httpClient.types';
-import { createHttpResponse } from './httpResponse';
-import { sleep } from './helpers/sleep.helper';
+} from '../httpClient.types';
+import { createHttpResponse } from '../httpResponse';
+import { sleep } from '../helpers/sleep.helper';
+import { ContentType } from '../contentType';
 
 export const handleRequest = (
   code: number, body: any, contentType: string = ContentType.TEXT): Promise<HttpResponse> => {

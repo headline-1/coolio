@@ -1,12 +1,6 @@
 import { HttpResponseHeaders } from './httpResponseHeaders';
 import TypedArray = NodeJS.TypedArray;
 
-export enum ContentType {
-  TEXT = 'text/plain',
-  JSON = 'application/json',
-  VND_JSON = 'application/vnd.api+json',
-  URL_ENCODED = 'application/x-www-form-urlencoded',
-}
 
 export interface RawHttpResponse {
   readonly headers: HttpResponseHeaders;

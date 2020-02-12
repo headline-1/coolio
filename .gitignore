@@ -6,6 +6,9 @@ node_modules
 dist
 /reports
 
+/packages/http/helpers/
+/packages/http/request-handlers/
+
 # Misc
 *.tsbuildinfo
 *.log

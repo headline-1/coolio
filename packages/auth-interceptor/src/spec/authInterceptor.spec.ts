@@ -1,13 +1,14 @@
 import {
   bodyParser,
   bodySerializer,
-  ContentType, createErrorInterceptor,
+  ContentType,
   getHostname,
   handleRequest,
   HttpClient,
   HttpCode, HttpInterceptor, HttpRequestHandler,
   mockRequestHandler,
-  NormalizedHttpOptions
+  NormalizedHttpOptions,
+  Interceptors
 } from '@coolio/http';
 import { createAuthInterceptor } from '../authInterceptor';
 import { Promisable } from '../promisable';
@@ -300,7 +301,7 @@ describe('Auth Interceptor', () => {
         httpClientParams.token = '123';
       }),
       token: 'abcdef',
-      preAuthInterceptors: [createErrorInterceptor()],
+      preAuthInterceptors: [Interceptors.createErrorInterceptor()],
     };
     const { client } = createHttpClient(httpClientParams);
 

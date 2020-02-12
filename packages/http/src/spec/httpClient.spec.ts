@@ -1,8 +1,8 @@
 import cloneDeep from 'lodash/cloneDeep';
 import { HttpClient } from '../httpClient';
-import { handleRequest, mockRequestHandler } from '../mock.requestHandler';
+import { handleRequest, mockRequestHandler } from '../requestHandlers/mock.requestHandler';
 import { bodyParser } from '../bodyParser';
-import { ContentType } from '../httpClient.types';
+import { ContentType } from '../contentType';
 
 describe('HttpClient', () => {
   describe('baseUrl support', () => {

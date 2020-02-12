@@ -26,6 +26,10 @@ export class HttpResponseHeaders {
     }
   }
 
+  set(key: string, value: any) {
+    this.map[key.toLowerCase()] = value;
+  }
+
   get(key: string) {
     return getHeader(this.map, key);
   }

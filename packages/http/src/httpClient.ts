@@ -25,6 +25,7 @@ export interface HttpClientConfig<T = HttpResponse> {
   bodyParser?: BodyParser<T>;
   bodySerializer?: BodySerializer;
   baseUrl?: string;
+  followRedirections?: boolean;
 }
 
 const isHttpInterceptorInterface = (interceptor: HttpInterceptor): interceptor is HttpInterceptorInterface => {
@@ -53,6 +54,7 @@ export class HttpClient<T = unknown> {
   private readonly interceptors: HttpInterceptor[] = [];
   private readonly bodyParser: BodyParser<T>;
   private readonly bodySerializer: BodySerializer;
+  private readonly followRedirections: boolean;
   private readonly baseUrl?: string;
 
   constructor(config: HttpClientConfig<T>) {
@@ -61,6 +63,7 @@ export class HttpClient<T = unknown> {
     this.bodySerializer = config.bodySerializer || bodySerializer();
     this.defaultHeadersProvider = config.defaultHeadersProvider;
     this.baseUrl = config.baseUrl ? config.baseUrl.replace(/\/+$/, '') : undefined;
+    this.followRedirections = config.followRedirections ?? true;
   }
 
   addInterceptor = (interceptor: HttpInterceptor) => {

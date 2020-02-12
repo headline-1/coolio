@@ -1,5 +1,5 @@
 import isNil from 'lodash/isNil';
-import { ContentType } from '../httpClient.types';
+import { ContentType } from '../contentType';
 
 const defaultHeaders = (_host = '') => ({
   'Accept': 'application/json,application/vnd.api+json',
