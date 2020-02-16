@@ -3,6 +3,32 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0](https://github.com/headline-1/coolio/compare/v0.9.0...v1.0.0) (2020-02-16)
+
+
+### Bug Fixes
+
+* **request-handlers:** all request handlers are available from bindings ([bec0b26](https://github.com/headline-1/coolio/commit/bec0b26d7b2eebbc3f1817f03b178a0d7c54e9a1))
+* **url-encoding:** url string should override query passed in object ([b8419f8](https://github.com/headline-1/coolio/commit/b8419f80d9fef68e17371d2edb31172e2d308586))
+
+
+### Features
+
+* **case-conversion:** body casing enum has now string names ([44c5c43](https://github.com/headline-1/coolio/commit/44c5c43c23d8c96baaddf2d1b9ad2bb4124c4ab8))
+* **http-module:** exposed request-handlers separately ([d6d4646](https://github.com/headline-1/coolio/commit/d6d46463fedb3e76f2aff6bc846918e943facc9a))
+* **query-string-options:** one can configure query string options ([cc97360](https://github.com/headline-1/coolio/commit/cc97360300e2776985ae30c33bd3385ca10d1db0))
+* **redirection-interceptor:** built-in support for redirections ([b472e13](https://github.com/headline-1/coolio/commit/b472e1313f485031c0a071edfc3c2121e95146c9))
+* **redirections:** redirection support ([cf392d7](https://github.com/headline-1/coolio/commit/cf392d7d1acc599ba2fb1d1e89d1ef2cef3661d0))
+
+
+### BREAKING CHANGES
+
+* **url-encoding:** url string has now bigger priority than query passed in object, which results in better composability (parameters from url are always merged into object)
+
+
+
+
+
 # [0.9.0](https://github.com/headline-1/coolio/compare/v0.8.3...v0.9.0) (2020-02-04)
 
 

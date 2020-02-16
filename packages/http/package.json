@@ -1,6 +1,6 @@
 {
   "name": "@coolio/http",
-  "version": "0.9.0",
+  "version": "1.0.0",
   "description": "HTTP networking client",
   "keywords": [
     "http",
