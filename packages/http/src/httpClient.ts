@@ -12,7 +12,8 @@ import {
   HttpRequestHandler,
   HttpRequestOptions,
   HttpResponse,
-  NormalizedHttpOptions, RawHttpResponse,
+  NormalizedHttpOptions,
+  RawHttpResponse,
 } from './httpClient.types';
 import { bodySerializer } from './bodySerializer';
 import { cacheParsedBody } from './helpers/parsedBodyCache.helper';

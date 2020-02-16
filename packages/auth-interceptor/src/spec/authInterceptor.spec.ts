@@ -5,10 +5,12 @@ import {
   getHostname,
   handleRequest,
   HttpClient,
-  HttpCode, HttpInterceptor, HttpRequestHandler,
+  HttpCode,
+  HttpInterceptor,
+  HttpRequestHandler,
+  Interceptors,
   mockRequestHandler,
-  NormalizedHttpOptions,
-  Interceptors
+  NormalizedHttpOptions
 } from '@coolio/http';
 import { createAuthInterceptor } from '../authInterceptor';
 import { Promisable } from '../promisable';

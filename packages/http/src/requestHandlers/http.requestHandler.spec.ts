@@ -1,4 +1,4 @@
-import { HttpClient, ContentType, HttpMethod } from '@coolio/http';
+import { ContentType, HttpClient, HttpMethod } from '@coolio/http';
 import { createSimpleServer, SimpleServer } from '@coolio/http/dist/cjs/testing/createSimpleServer.helper';
 import { httpRequestHandler } from './http.requestHandler';
 

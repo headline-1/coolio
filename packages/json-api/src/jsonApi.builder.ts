@@ -58,7 +58,7 @@ export abstract class RequestBuilder<ResponseType> {
       if (isNil(this.offset)) {
         params['page[number]'] = this.page.toString();
       } else {
-        params['page[offset]'] = (this.offset * this.limit).toString(); // @TODO: currently not supported by API
+        params['page[offset]'] = (this.offset * this.limit).toString();
       }
     }
     return params;
@@ -67,7 +67,7 @@ export abstract class RequestBuilder<ResponseType> {
   public abstract send(options?: HttpOptions): Promise<ResponseType>;
 
   public resolveIncluded(resolveIncluded?: boolean): this {
-    this.resolveIncludedRelationships = resolveIncluded === undefined ? true : resolveIncluded;
+    this.resolveIncludedRelationships = resolveIncluded === undefined || resolveIncluded;
     return this;
   }
 

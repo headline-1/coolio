@@ -4,7 +4,8 @@ import { handleRequest, mockRequestHandler } from '../requestHandlers/mock.reque
 import { bodyParser } from '../bodyParser';
 import { ContentType } from '../contentType';
 import {
-  HttpFetch, HttpInterceptor,
+  HttpFetch,
+  HttpInterceptor,
   HttpInterceptorFunction,
   HttpInterceptorInterface,
   NormalizedHttpOptions
@@ -44,21 +45,21 @@ describe('HttpClient', () => {
 
   describe('interceptor', () => {
     const createClient = () => new HttpClient({
-        requestHandler: mockRequestHandler({
-          endpoints: [
-            {
-              match: 'https://fakeland.com/endpoint',
-              handler: () => handleRequest(200, '1'),
-            },
-            {
-              match: 'https://fakeland2.com/endpoint',
-              handler: () => handleRequest(200, '2'),
-            }
-          ],
-        }),
-        baseUrl: 'https://fakeland.com/',
-        bodyParser: bodyParser(),
-      });
+      requestHandler: mockRequestHandler({
+        endpoints: [
+          {
+            match: 'https://fakeland.com/endpoint',
+            handler: () => handleRequest(200, '1'),
+          },
+          {
+            match: 'https://fakeland2.com/endpoint',
+            handler: () => handleRequest(200, '2'),
+          }
+        ],
+      }),
+      baseUrl: 'https://fakeland.com/',
+      bodyParser: bodyParser(),
+    });
 
     const createFunctionInterceptor = () => {
       const log = jest.fn();
@@ -93,8 +94,8 @@ describe('HttpClient', () => {
     }
 
     it.each([
-      ['function-based', createFunctionInterceptor() ],
-      ['class-based', new ClassInterceptor() ],
+      ['function-based', createFunctionInterceptor()],
+      ['class-based', new ClassInterceptor()],
     ] as [string, HttpInterceptor][])('%s interceptor intercepts a call', async (_, interceptor) => {
       const log = (interceptor as any).log;
       const client = createClient().addInterceptor(interceptor);

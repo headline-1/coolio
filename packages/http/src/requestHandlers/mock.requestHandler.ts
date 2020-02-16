@@ -1,11 +1,6 @@
 import isObject from 'lodash/isObject';
 import isNil from 'lodash/isNil';
-import {
-  HttpRequestHandler,
-  HttpResponse,
-  NormalizedHttpOptions,
-  RawHttpResponse
-} from '../httpClient.types';
+import { HttpRequestHandler, HttpResponse, NormalizedHttpOptions, RawHttpResponse } from '../httpClient.types';
 import { createHttpResponse } from '../httpResponse';
 import { sleep } from '../helpers/sleep.helper';
 import { ContentType } from '../contentType';

@@ -1,7 +1,6 @@
 import { HttpResponseHeaders } from './httpResponseHeaders';
 import TypedArray = NodeJS.TypedArray;
 
-
 export interface RawHttpResponse {
   readonly headers: HttpResponseHeaders;
   readonly ok: boolean;
@@ -35,7 +34,10 @@ export interface HttpInterceptorInterface {
   onIntercept<Body>(request: HttpFetch<Body>, options: NormalizedHttpOptions): HttpFetch<Body>;
 }
 
-export type HttpInterceptorFunction = <Body>(request: HttpFetch<Body>, options: NormalizedHttpOptions) => HttpFetch<Body>;
+export type HttpInterceptorFunction = <Body>(
+  request: HttpFetch<Body>,
+  options: NormalizedHttpOptions,
+) => HttpFetch<Body>;
 
 export type HttpInterceptor = HttpInterceptorFunction | HttpInterceptorInterface;
 
