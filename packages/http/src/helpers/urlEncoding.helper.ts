@@ -14,7 +14,7 @@ export const urlDestruct = (url: string): {
 
 export const urlCombine = (sourceUrl: string, sourceQuery?: object) => {
   const { url, query } = urlDestruct(sourceUrl);
-  const queryString = urlEncode(merge(query, sourceQuery), {
+  const queryString = urlEncode(merge(sourceQuery, query), {
     addQueryPrefix: false,
   });
   return url + (queryString ? `?${queryString}` : '');
