@@ -28,7 +28,7 @@
     "access": "public"
   },
   "peerDependencies": {
-    "@coolio/http": "^0.8.3"
+    "@coolio/http": "*"
   },
   "devDependencies": {
     "@coolio/http": "^0.9.0"

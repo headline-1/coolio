@@ -31,8 +31,9 @@ const processPackage = (projectDir) => {
   writeTsconfig('types', { compilerOptions: { declarationDir: './dist/types' } });
 };
 
-for (const project of fs.readdirSync(packagesDir)) {
-  console.log(`Processing tsconfig "${project}"...`);
+for (const project of fs.readdirSync(packagesDir).filter(dir => !dir.startsWith('.'))) {
+
+  console.log(`Generating tsconfig files for "${project}"...`);
   try {
     const projectDir = path.join(packagesDir, project);
     processPackage(projectDir);

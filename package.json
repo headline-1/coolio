@@ -17,7 +17,7 @@
     "generate": "yarn generate:tsconfig && yarn generate:bindings",
     "generate:bindings": "node ./scripts/generate-bindings.js",
     "generate:tsconfig": "node ./scripts/generate-tsconfig.js",
-    "compile": "lerna run compile && yarn generate",
+    "compile": "lerna run compile",
     "start": "yarn compile && yarn compile:watch",
     "clean": "rimraf packages/*/{dist} && rimraf {dist,.jest,reports}",
     "purge": "yarn clean && rimraf node_modules",

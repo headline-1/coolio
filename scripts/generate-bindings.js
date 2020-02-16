@@ -3,6 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 const packagesDir = path.resolve('packages');
+const posixify = path => path.replace(/\\/g, '/');
 
 const processPackage = (projectDir, packageJson) => {
   if (!packageJson.bindings) {
@@ -33,13 +34,13 @@ const processPackage = (projectDir, packageJson) => {
     const normalizedBaseDistDir = path.relative(baseKeyDir, path.resolve(baseDistDir));
 
     console.log(`${key} -> ${target}`);
-    const sourceTypes = path.join(normalizedBaseTypesDir, target);
+    const sourceTypes = posixify(path.join(normalizedBaseTypesDir, target));
     const bindingPathTypes = path.join(projectDir, key + '.d.ts');
     const typesTemplate = `export * from '${sourceTypes}';\n`;
     fs.mkdirSync(path.dirname(bindingPathTypes), { recursive: true });
     fs.writeFileSync(bindingPathTypes, typesTemplate, { encoding: 'utf8' });
 
-    const sourceDist = path.join(normalizedBaseDistDir, target);
+    const sourceDist = posixify(path.join(normalizedBaseDistDir, target));
     const bindingPathDist = path.join(projectDir, key + '.js');
     const distTemplate = `module.exports = require('${sourceDist}');\n`;
     fs.mkdirSync(path.dirname(bindingPathDist), { recursive: true });
@@ -47,7 +48,7 @@ const processPackage = (projectDir, packageJson) => {
   }
 };
 
-for (const project of fs.readdirSync(packagesDir)) {
+for (const project of fs.readdirSync(packagesDir).filter(dir => !dir.startsWith('.'))) {
   console.log(`Processing package "${project}"...`);
   try {
     const projectDir = path.join(packagesDir, project);
