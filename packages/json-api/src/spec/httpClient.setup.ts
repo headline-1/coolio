@@ -3,12 +3,10 @@ import {
   bodyParser,
   bodySerializer,
   ContentType,
-  handleRequest,
   HttpClient,
   HttpCode,
-  MockHttpRequestHandler,
-  mockRequestHandler,
 } from '@coolio/http';
+import { mockRequestHandler, handleRequest, MockHttpRequestHandler } from '@coolio/http/request-handlers/mock';
 import {
   DELETE_MOCK,
   GET_LIST_MOCK,

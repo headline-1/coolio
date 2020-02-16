@@ -1,13 +1,6 @@
 import { HttpResponseHeaders } from './httpResponseHeaders';
 import TypedArray = NodeJS.TypedArray;
 
-export enum ContentType {
-  TEXT = 'text/plain',
-  JSON = 'application/json',
-  VND_JSON = 'application/vnd.api+json',
-  URL_ENCODED = 'application/x-www-form-urlencoded',
-}
-
 export interface RawHttpResponse {
   readonly headers: HttpResponseHeaders;
   readonly ok: boolean;
@@ -41,7 +34,10 @@ export interface HttpInterceptorInterface {
   onIntercept<Body>(request: HttpFetch<Body>, options: NormalizedHttpOptions): HttpFetch<Body>;
 }
 
-export type HttpInterceptorFunction = <Body>(request: HttpFetch<Body>, options: NormalizedHttpOptions) => HttpFetch<Body>;
+export type HttpInterceptorFunction = <Body>(
+  request: HttpFetch<Body>,
+  options: NormalizedHttpOptions,
+) => HttpFetch<Body>;
 
 export type HttpInterceptor = HttpInterceptorFunction | HttpInterceptorInterface;
 

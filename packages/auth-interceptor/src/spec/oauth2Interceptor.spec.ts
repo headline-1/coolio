@@ -3,13 +3,12 @@ import {
   bodyParser,
   bodySerializer,
   ContentType,
-  handleRequest,
   HttpClient,
   HttpCode,
   HttpRequestHandler,
-  mockRequestHandler
 } from '@coolio/http';
 import { isEqual } from 'lodash';
+import { mockRequestHandler, handleRequest } from '@coolio/http/request-handlers/mock';
 import { createOAuth2Interceptor } from '../oauth2Interceptor';
 import { OAuth2TokenResponse } from '../oauth2Interceptor.types';
 import { InMemoryAuthStorage } from '../storage/inMemory.authStorage';

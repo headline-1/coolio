@@ -7,8 +7,8 @@ export class HttpResponseError<T = any> extends Error {
   readonly status: HttpCode;
   private readonly __symbol = symbol;
 
-  constructor(public readonly response: HttpResponse<T>) {
-    super(`${response.status} ${response.statusText}: ${response.url}`);
+  constructor(public readonly response: HttpResponse<T>, message?: string) {
+    super(`${response.status} ${response.statusText}: ${response.url}${message ? `, ${message}` : ''}`);
     this.status = response.status;
     this.name = 'HttpResponseError';
   }

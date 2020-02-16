@@ -2,7 +2,8 @@ import {
   HttpCode,
   HttpFetch,
   HttpInterceptorInterface,
-  HttpResponse, HttpResponseError,
+  HttpResponse,
+  HttpResponseError,
   isHttpResponseError,
   NormalizedHttpOptions
 } from '@coolio/http';

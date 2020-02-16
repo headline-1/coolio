@@ -3,10 +3,6 @@
   "compilerOptions": {
     "module": "esnext",
     "importHelpers": true,
-    "declaration": true,
     "target": "es5"
-  },
-  "exclude": [
-    "**/*.spec.ts"
-  ]
+  }
 }

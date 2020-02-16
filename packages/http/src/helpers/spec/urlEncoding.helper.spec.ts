@@ -8,11 +8,11 @@ describe('urlEncoding.helper', () => {
     });
 
     it('overrides and merges nested parameters in URL by query params object', () => {
-      const combinedUrl = urlCombine('http://example.com/path?obj[a]=a&obj[b]=b', {
-        obj: { b: 'override', c: 'c' },
+      const combinedUrl = urlCombine('http://example.com/path?obj[a]=a&obj[b]=override', {
+        obj: { b: 'b', c: 'c' },
         d: 1
       });
-      expect(combinedUrl).toEqual('http://example.com/path?obj[a]=a&obj[b]=override&obj[c]=c&d=1');
+      expect(combinedUrl).toEqual('http://example.com/path?obj[b]=override&obj[c]=c&obj[a]=a&d=1');
     });
     it('doesn\'t add query string when query is empty', () => {
       const combinedUrl = urlCombine('http://example.com', {});

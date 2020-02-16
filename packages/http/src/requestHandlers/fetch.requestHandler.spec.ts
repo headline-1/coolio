@@ -1,7 +1,8 @@
 import { createSimpleServer, SimpleServer } from '../testing/createSimpleServer.helper';
-import { ContentType, HttpMethod } from '../httpClient.types';
+import { HttpMethod } from '../httpClient.types';
 import { HttpClient } from '../httpClient';
 import { fetchRequestHandler, mergeRequestOptions } from './fetch.requestHandler';
+import { ContentType } from '../contentType';
 
 describe('fetch.requestHandler', () => {
   let server: SimpleServer;

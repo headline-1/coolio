@@ -19,9 +19,19 @@
   "types": "./dist/types/index.d.ts",
   "sideEffects": false,
   "files": [
-    "dist/",
-    "assets/"
+    "dist/**/!(*.tsbuildinfo)",
+    "request-handlers/"
   ],
+  "bindings": {
+    "baseDistDir": "dist/cjs",
+    "baseTypesDir": "dist/types",
+    "map": {
+      "request-handlers/fetch": "requestHandlers/fetch.requestHandler",
+      "request-handlers/http": "requestHandlers/http.requestHandler",
+      "request-handlers/mock": "requestHandlers/mock.requestHandler",
+      "request-handlers/xhr": "requestHandlers/xhr.requestHandler"
+    }
+  },
   "scripts": {
     "compile": "tsc -b ./tsconfig.cjs.json ./tsconfig.esm.json ./tsconfig.esm5.json ./tsconfig.types.json",
     "compile:watch": "yarn compile -w --preserveWatchOutput"

@@ -1,7 +1,8 @@
 import { createSimpleServer, SimpleServer } from '../testing/createSimpleServer.helper';
-import { ContentType, HttpMethod } from '../httpClient.types';
+import { HttpMethod } from '../httpClient.types';
 import { HttpClient } from '../httpClient';
 import { xhrRequestHandler } from './xhr.requestHandler';
+import { ContentType } from '../contentType';
 
 describe('xhr.requestHandler', () => {
   let server: SimpleServer;
@@ -15,7 +16,7 @@ describe('xhr.requestHandler', () => {
           response: 'test body',
         },
       ],
-      headers: { 'content-type': ContentType.TEXT, },
+      headers: { 'content-type': ContentType.TEXT },
     });
   });
 

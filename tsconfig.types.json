@@ -8,8 +8,5 @@
     "declaration": true,
     "declarationMap": true,
     "emitDeclarationOnly": true
-  },
-  "exclude": [
-    "**/*.spec.ts"
-  ]
+  }
 }

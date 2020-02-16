@@ -18,8 +18,7 @@
   "types": "./dist/types/index.d.ts",
   "sideEffects": false,
   "files": [
-    "dist/",
-    "assets/"
+    "dist/**/!(*.tsbuildinfo)"
   ],
   "scripts": {
     "compile": "tsc -b ./tsconfig.cjs.json ./tsconfig.esm.json ./tsconfig.esm5.json ./tsconfig.types.json",
@@ -29,7 +28,7 @@
     "access": "public"
   },
   "peerDependencies": {
-    "@coolio/http": "^0.8.3"
+    "@coolio/http": "*"
   },
   "devDependencies": {
     "@coolio/http": "^0.9.0"

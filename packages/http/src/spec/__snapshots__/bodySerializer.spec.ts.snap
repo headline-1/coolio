@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`bodySerializer serializes request with application/json body and CAMEL_CASE casing: application/json-with-CAMEL_CASE 1`] = `"{\\"body\\":{\\"test\\":{\\"nested\\":[1,2,3]},\\"casing\\":{\\"snakeCase\\":1,\\"camelCase\\":2,\\"pascalCase\\":3,\\"kebabCase\\":4},\\"b\\":\\"test\\",\\"c\\":0,\\"d\\":false,\\"e\\":null,\\"f\\":\\"\\"}}"`;
+
+exports[`bodySerializer serializes request with application/json body and KEBAB_CASE casing: application/json-with-KEBAB_CASE 1`] = `"{\\"body\\":{\\"test\\":{\\"nested\\":[1,2,3]},\\"casing\\":{\\"snake-case\\":1,\\"camel-case\\":2,\\"pascal-case\\":3,\\"kebab-case\\":4},\\"b\\":\\"test\\",\\"c\\":0,\\"d\\":false,\\"e\\":null,\\"f\\":\\"\\"}}"`;
+
+exports[`bodySerializer serializes request with application/json body and PASCAL_CASE casing: application/json-with-PASCAL_CASE 1`] = `"{\\"Body\\":{\\"Test\\":{\\"Nested\\":[1,2,3]},\\"Casing\\":{\\"SnakeCase\\":1,\\"CamelCase\\":2,\\"PascalCase\\":3,\\"KebabCase\\":4},\\"B\\":\\"test\\",\\"C\\":0,\\"D\\":false,\\"E\\":null,\\"F\\":\\"\\"}}"`;
+
+exports[`bodySerializer serializes request with application/json body and SNAKE_CASE casing: application/json-with-SNAKE_CASE 1`] = `"{\\"body\\":{\\"test\\":{\\"nested\\":[1,2,3]},\\"casing\\":{\\"snake_case\\":1,\\"camel_case\\":2,\\"pascal_case\\":3,\\"kebab_case\\":4},\\"b\\":\\"test\\",\\"c\\":0,\\"d\\":false,\\"e\\":null,\\"f\\":\\"\\"}}"`;
+
+exports[`bodySerializer serializes request with application/x-www-form-urlencoded body and CAMEL_CASE casing: application/x-www-form-urlencoded-with-CAMEL_CASE 1`] = `"body[test][nested][0]=1&body[test][nested][1]=2&body[test][nested][2]=3&body[casing][snakeCase]=1&body[casing][camelCase]=2&body[casing][pascalCase]=3&body[casing][kebabCase]=4&body[b]=test&body[c]=0&body[d]=false&body[e]=&body[f]="`;
+
+exports[`bodySerializer serializes request with application/x-www-form-urlencoded body and KEBAB_CASE casing: application/x-www-form-urlencoded-with-KEBAB_CASE 1`] = `"body[test][nested][0]=1&body[test][nested][1]=2&body[test][nested][2]=3&body[casing][snake-case]=1&body[casing][camel-case]=2&body[casing][pascal-case]=3&body[casing][kebab-case]=4&body[b]=test&body[c]=0&body[d]=false&body[e]=&body[f]="`;
+
+exports[`bodySerializer serializes request with application/x-www-form-urlencoded body and PASCAL_CASE casing: application/x-www-form-urlencoded-with-PASCAL_CASE 1`] = `"Body[Test][Nested][0]=1&Body[Test][Nested][1]=2&Body[Test][Nested][2]=3&Body[Casing][SnakeCase]=1&Body[Casing][CamelCase]=2&Body[Casing][PascalCase]=3&Body[Casing][KebabCase]=4&Body[B]=test&Body[C]=0&Body[D]=false&Body[E]=&Body[F]="`;
+
+exports[`bodySerializer serializes request with application/x-www-form-urlencoded body and SNAKE_CASE casing: application/x-www-form-urlencoded-with-SNAKE_CASE 1`] = `"body[test][nested][0]=1&body[test][nested][1]=2&body[test][nested][2]=3&body[casing][snake_case]=1&body[casing][camel_case]=2&body[casing][pascal_case]=3&body[casing][kebab_case]=4&body[b]=test&body[c]=0&body[d]=false&body[e]=&body[f]="`;

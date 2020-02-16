@@ -1,5 +1,5 @@
 import { createHttpResponse } from '../httpResponse';
-import { ContentType } from '../httpClient.types';
+import { ContentType } from '../contentType';
 import { encodeText } from '../helpers/encoder.helper';
 
 describe('bodyParser', () => {
