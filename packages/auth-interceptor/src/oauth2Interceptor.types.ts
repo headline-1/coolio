@@ -19,7 +19,7 @@ export interface OAuth2InterceptorOptions {
      * Options that are used in a HttpClient underneath, can be used for customization.
      * This HttpClient is used to call OAuth refresh token endpoint.
      */
-    httpClientOptions?: HttpClientConfig;
+    httpClientOptions: HttpClientConfig;
 
     /**
      * Content-Type used for refreshing token

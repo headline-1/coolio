@@ -18,8 +18,7 @@
   "types": "./dist/types/index.d.ts",
   "sideEffects": false,
   "files": [
-    "dist/",
-    "assets/"
+    "dist/**/!(*.tsbuildinfo)"
   ],
   "scripts": {
     "compile": "tsc -b ./tsconfig.cjs.json ./tsconfig.esm.json ./tsconfig.esm5.json ./tsconfig.types.json",

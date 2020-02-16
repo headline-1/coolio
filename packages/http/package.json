@@ -20,8 +20,6 @@
   "sideEffects": false,
   "files": [
     "dist/**/!(*.tsbuildinfo)",
-    "assets/",
-    "helpers",
     "request-handlers/"
   ],
   "bindings": {

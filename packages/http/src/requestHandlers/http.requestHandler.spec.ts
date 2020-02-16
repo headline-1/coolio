@@ -1,6 +1,8 @@
-import { ContentType, HttpClient, HttpMethod } from '@coolio/http';
-import { createSimpleServer, SimpleServer } from '@coolio/http/dist/cjs/testing/createSimpleServer.helper';
+import { HttpMethod } from '../httpClient.types';
+import { createSimpleServer, SimpleServer } from '../testing/createSimpleServer.helper';
 import { httpRequestHandler } from './http.requestHandler';
+import { ContentType } from '../contentType';
+import { HttpClient } from '../httpClient';
 
 describe('http.requestHandler', () => {
   let server: SimpleServer;

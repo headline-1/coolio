@@ -3,7 +3,6 @@ import {
   bodyParser,
   bodySerializer,
   ContentType,
-  fetchRequestHandler,
   HttpClient,
   NormalizedHttpOptions
 } from '@coolio/http';
@@ -24,7 +23,7 @@ export const createOAuth2Interceptor = ({
   onAuthorizationFailure,
 }: OAuth2InterceptorOptions) => {
   const authHttpClient = new HttpClient({
-    requestHandler: httpClientOptions?.requestHandler || fetchRequestHandler(),
+    requestHandler: httpClientOptions.requestHandler,
     bodyParser: bodyParser({ bodyCasing: BodyCasing.CAMEL_CASE }),
     bodySerializer: bodySerializer({ bodyCasing: BodyCasing.SNAKE_CASE }),
     ...httpClientOptions,
