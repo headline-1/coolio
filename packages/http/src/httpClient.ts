@@ -1,3 +1,4 @@
+import * as qs from 'qs';
 import { HttpClientHelper } from './helpers';
 import {
   BodyParser,
@@ -11,7 +12,7 @@ import {
   HttpRequestHandler,
   HttpRequestOptions,
   HttpResponse,
-  NormalizedHttpOptions,
+  NormalizedHttpOptions, RawHttpResponse,
 } from './httpClient.types';
 import { bodySerializer } from './bodySerializer';
 import { cacheParsedBody } from './helpers/parsedBodyCache.helper';
@@ -26,6 +27,8 @@ export interface HttpClientConfig<T = HttpResponse> {
   bodySerializer?: BodySerializer;
   baseUrl?: string;
   followRedirections?: boolean;
+  queryParserOptions?: qs.IParseOptions;
+  querySerializerOptions?: qs.IStringifyOptions;
 }
 
 const isHttpInterceptorInterface = (interceptor: HttpInterceptor): interceptor is HttpInterceptorInterface => {
@@ -43,10 +46,10 @@ const useInterceptor = (normalizedOptions: NormalizedHttpOptions) => <Body>(
   return interceptor(req, normalizedOptions);
 };
 
-const passthroughParser = (response: HttpResponse) => {
-  response.parsedBody = response.parsedBody || (() => response.arrayBuffer());
-  return response;
-};
+const passthroughParser: BodyParser<any> = (response: RawHttpResponse) => ({
+  ...response,
+  parsedBody: (response as any).parsedBody || (() => response.arrayBuffer()),
+});
 
 export class HttpClient<T = unknown> {
   private readonly handle: HttpRequestHandler;
@@ -54,6 +57,8 @@ export class HttpClient<T = unknown> {
   private readonly interceptors: HttpInterceptor[] = [];
   private readonly bodyParser: BodyParser<T>;
   private readonly bodySerializer: BodySerializer;
+  private readonly queryParserOptions?: qs.IParseOptions;
+  private readonly querySerializerOptions?: qs.IStringifyOptions;
   private readonly followRedirections: boolean;
   private readonly baseUrl?: string;
 
@@ -64,6 +69,8 @@ export class HttpClient<T = unknown> {
     this.defaultHeadersProvider = config.defaultHeadersProvider;
     this.baseUrl = config.baseUrl ? config.baseUrl.replace(/\/+$/, '') : undefined;
     this.followRedirections = config.followRedirections ?? true;
+    this.queryParserOptions = config.queryParserOptions;
+    this.querySerializerOptions = config.querySerializerOptions;
   }
 
   addInterceptor = (interceptor: HttpInterceptor) => {
@@ -120,7 +127,7 @@ export class HttpClient<T = unknown> {
       ...(options && options.headers),
     });
 
-    const urlBreakdown = urlDestruct(urlCombine(url, options && options.query));
+    const urlBreakdown = urlDestruct(urlCombine(url, options && options.query), this.queryParserOptions);
 
     const normalizedOptions: NormalizedHttpOptions = {
       ...options,
@@ -137,7 +144,7 @@ export class HttpClient<T = unknown> {
       useInterceptor(normalizedOptions),
       async () => {
         // In the end, even if interceptors modify both URL & Query, it gets reconciled here
-        normalizedOptions.url = urlCombine(normalizedOptions.url, normalizedOptions.query);
+        normalizedOptions.url = urlCombine(normalizedOptions.url, normalizedOptions.query, this.querySerializerOptions);
         const response = await this.handle(normalizedOptions);
         const parsedResponse = this.bodyParser(response) as HttpResponse<Body>;
         parsedResponse.parsedBody = cacheParsedBody(parsedResponse.parsedBody);
