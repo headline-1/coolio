@@ -3,15 +3,14 @@ import {
   bodySerializer,
   ContentType,
   getHostname,
-  handleRequest,
   HttpClient,
   HttpCode,
   HttpInterceptor,
   HttpRequestHandler,
   Interceptors,
-  mockRequestHandler,
   NormalizedHttpOptions
 } from '@coolio/http';
+import { mockRequestHandler, handleRequest } from '@coolio/http/request-handlers/mock';
 import { createAuthInterceptor } from '../authInterceptor';
 import { Promisable } from '../promisable';
 import { AuthError } from '../authError';

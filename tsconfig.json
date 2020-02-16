@@ -20,11 +20,16 @@
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "importHelpers": true,
-    "suppressImplicitAnyIndexErrors": true
+    "suppressImplicitAnyIndexErrors": true,
+    "typeRoots": ["./node_modules/@types"]
   },
   "include": [
     "./spec/*.ts",
-    "./packages/**/*.ts",
-    "./packages/**/*.json"
+    "./packages/*/src/**/*.ts",
+    "./packages/*/src/**/*.json"
+  ],
+  "exclude": [
+    "./packages/*/src/**/spec/**",
+    "./packages/*/src/**/*.spec.ts"
   ]
 }

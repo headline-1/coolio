@@ -4,8 +4,5 @@
     "module": "esnext",
     "importHelpers": true,
     "target": "es5"
-  },
-  "exclude": [
-    "**/*.spec.ts"
-  ]
+  }
 }

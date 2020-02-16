@@ -6,6 +6,7 @@ node_modules
 dist
 /reports
 
+/packages/*/tsconfig*.json
 /packages/http/helpers/
 /packages/http/request-handlers/
 
