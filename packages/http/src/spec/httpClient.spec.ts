@@ -3,6 +3,12 @@ import { HttpClient } from '../httpClient';
 import { handleRequest, mockRequestHandler } from '../requestHandlers/mock.requestHandler';
 import { bodyParser } from '../bodyParser';
 import { ContentType } from '../contentType';
+import {
+  HttpFetch, HttpInterceptor,
+  HttpInterceptorFunction,
+  HttpInterceptorInterface,
+  NormalizedHttpOptions
+} from '../httpClient.types';
 
 describe('HttpClient', () => {
   describe('baseUrl support', () => {
@@ -37,33 +43,62 @@ describe('HttpClient', () => {
   });
 
   describe('interceptor', () => {
-    const log = jest.fn();
-    const client = new HttpClient({
-      requestHandler: mockRequestHandler({
-        endpoints: [
-          {
-            match: 'https://fakeland.com/endpoint',
-            handler: () => handleRequest(200, '1'),
-          },
-          {
-            match: 'https://fakeland2.com/endpoint',
-            handler: () => handleRequest(200, '2'),
-          }
-        ],
-      }),
-      baseUrl: 'https://fakeland.com/',
-      bodyParser: bodyParser(),
-    }).addInterceptor((request, options) => {
-      log(cloneDeep(options));
-      return async () => {
-        const result = await request();
-        log(cloneDeep(options));
-        log(await result.parsedBody());
-        return result;
-      };
-    });
+    const createClient = () => new HttpClient({
+        requestHandler: mockRequestHandler({
+          endpoints: [
+            {
+              match: 'https://fakeland.com/endpoint',
+              handler: () => handleRequest(200, '1'),
+            },
+            {
+              match: 'https://fakeland2.com/endpoint',
+              handler: () => handleRequest(200, '2'),
+            }
+          ],
+        }),
+        baseUrl: 'https://fakeland.com/',
+        bodyParser: bodyParser(),
+      });
 
-    it('intercepts a call', async () => {
+    const createFunctionInterceptor = () => {
+      const log = jest.fn();
+      const interceptor: HttpInterceptorFunction = (request, options) => {
+        log(cloneDeep(options));
+        return async () => {
+          const result = await request();
+          log(cloneDeep(options));
+          log(await result.parsedBody());
+          return result;
+        };
+      };
+      (interceptor as any).log = log;
+      return interceptor;
+    };
+
+    class ClassInterceptor implements HttpInterceptorInterface {
+      log = jest.fn();
+
+      onIntercept<Body>(
+        request: HttpFetch<Body>,
+        options: NormalizedHttpOptions,
+      ) {
+        this.log(cloneDeep(options));
+        return async () => {
+          const result = await request();
+          this.log(cloneDeep(options));
+          this.log(await result.parsedBody());
+          return result;
+        };
+      }
+    }
+
+    it.each([
+      ['function-based', createFunctionInterceptor() ],
+      ['class-based', new ClassInterceptor() ],
+    ] as [string, HttpInterceptor][])('%s interceptor intercepts a call', async (_, interceptor) => {
+      const log = (interceptor as any).log;
+      const client = createClient().addInterceptor(interceptor);
+
       const result = await client.get('/endpoint?param=value');
       expect(result.status).toEqual(200);
       expect(await result.parsedBody()).toEqual('1');
