@@ -2,10 +2,10 @@ import isArray from 'lodash/isArray';
 import isPlainObject from 'lodash/isPlainObject';
 
 export enum BodyCasing {
-  CAMEL_CASE,
-  SNAKE_CASE,
-  PASCAL_CASE,
-  KEBAB_CASE,
+  CAMEL_CASE = 'CAMEL_CASE',
+  SNAKE_CASE = 'SNAKE_CASE',
+  PASCAL_CASE = 'PASCAL_CASE',
+  KEBAB_CASE = 'KEBAB_CASE',
 }
 
 export const splitWords = (text: string): string[] => {
