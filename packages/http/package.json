@@ -1,6 +1,6 @@
 {
   "name": "@coolio/http",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "HTTP networking client",
   "keywords": [
     "http",
@@ -18,7 +18,11 @@
   "es2015": "./dist/esm/index.js",
   "types": "./dist/types/index.d.ts",
   "typesVersions": {
-    "<3.7": { "*": ["dist/types-compat/*"] }
+    "<3.7": {
+      "*": [
+        "dist/types-compat/*"
+      ]
+    }
   },
   "sideEffects": false,
   "scripts": {

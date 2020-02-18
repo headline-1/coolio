@@ -1,6 +1,6 @@
 {
   "name": "@coolio/json-api",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "JSON API wrapper for Coolio HTTP Client",
   "keywords": [
     "json-api",
@@ -20,7 +20,11 @@
   "es2015": "./dist/esm/index.js",
   "types": "./dist/types/index.d.ts",
   "typesVersions": {
-    "<3.7": { "*": ["dist/types-compat/*"] }
+    "<3.7": {
+      "*": [
+        "dist/types-compat/*"
+      ]
+    }
   },
   "sideEffects": false,
   "scripts": {
@@ -44,7 +48,7 @@
     "@coolio/http": "*"
   },
   "devDependencies": {
-    "@coolio/http": "^1.0.2"
+    "@coolio/http": "^1.0.3"
   },
   "dependencies": {
     "lodash": "^4.17.15"

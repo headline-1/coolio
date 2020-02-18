@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.3](https://github.com/headline-1/coolio/compare/v1.0.2...v1.0.3) (2020-02-18)
+
+
+### Bug Fixes
+
+* **types:** properly arranged types for typescript<3.7 ([875ca12](https://github.com/headline-1/coolio/commit/875ca128be935136cdaf38cb134c695fe5899509))
+
+
+
+
+
 ## [1.0.2](https://github.com/headline-1/coolio/compare/v1.0.1...v1.0.2) (2020-02-18)
 
 **Note:** Version bump only for package @coolio/json-api
