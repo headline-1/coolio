@@ -1,6 +1,6 @@
 {
   "name": "@coolio/auth-interceptor",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Authentication interceptor for Coolio",
   "keywords": [
     "auth",
@@ -17,7 +17,11 @@
   "es2015": "./dist/esm/index.js",
   "types": "./dist/types/index.d.ts",
   "typesVersions": {
-    "<3.7": { "*": ["./dist/types-compat/*"] }
+    "<3.7": {
+      "*": [
+        "./dist/types-compat/*"
+      ]
+    }
   },
   "sideEffects": false,
   "scripts": {
@@ -34,7 +38,7 @@
     "@coolio/http": "*"
   },
   "devDependencies": {
-    "@coolio/http": "^1.0.0"
+    "@coolio/http": "^1.0.1"
   },
   "repository": {
     "type": "git",

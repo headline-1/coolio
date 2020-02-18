@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.1](https://github.com/headline-1/coolio/compare/v1.0.0...v1.0.1) (2020-02-18)
+
+
+### Bug Fixes
+
+* **typings:** using downlevel-dts to bring back TS<3.7 support ([0d6aff9](https://github.com/headline-1/coolio/commit/0d6aff9f8814a4d06cbc97008d2d51848428de3e))
+
+
+
+
+
 # [1.0.0](https://github.com/headline-1/coolio/compare/v0.9.0...v1.0.0) (2020-02-16)
 
 
