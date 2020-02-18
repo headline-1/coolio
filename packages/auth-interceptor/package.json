@@ -16,14 +16,17 @@
   "module": "./dist/esm5/index.js",
   "es2015": "./dist/esm/index.js",
   "types": "./dist/types/index.d.ts",
+  "typesVersions": {
+    "<3.7": { "*": ["./dist/types-compat/*"] }
+  },
   "sideEffects": false,
+  "scripts": {
+    "compile": "tsc -b ./tsconfig.cjs.json ./tsconfig.esm.json ./tsconfig.esm5.json ./tsconfig.types.json && downlevel-dts ./dist/types ./dist/types-compat",
+    "compile:watch": "yarn compile -w --preserveWatchOutput"
+  },
   "files": [
     "dist/**/!(*.tsbuildinfo)"
   ],
-  "scripts": {
-    "compile": "tsc -b ./tsconfig.cjs.json ./tsconfig.esm.json ./tsconfig.esm5.json ./tsconfig.types.json",
-    "compile:watch": "yarn compile -w --preserveWatchOutput"
-  },
   "publishConfig": {
     "access": "public"
   },
