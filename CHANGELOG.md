@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.2](https://github.com/headline-1/coolio/compare/v1.0.1...v1.0.2) (2020-02-18)
+
+
+### Bug Fixes
+
+* **clean:** clean should not remove node_modules ([9d768e5](https://github.com/headline-1/coolio/commit/9d768e593c0f48137200a820e91815e5e3e47a02))
+
+
+
+
+
 ## [1.0.1](https://github.com/headline-1/coolio/compare/v1.0.0...v1.0.1) (2020-02-18)
 
 
