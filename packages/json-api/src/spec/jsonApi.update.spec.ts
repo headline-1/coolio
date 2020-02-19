@@ -1,3 +1,4 @@
+import { DEFAULT_REQUEST_TIMEOUT_MS } from '@coolio/http';
 import { JsonApiClient } from '../jsonApi.client';
 import { createHttpMock, HttpMock } from './httpClient.setup';
 import { DEFAULT_HEADERS_MOCK, GET_MOCK, PATCH_MOCK, PUT_MOCK } from './jsonApi.mocks';
@@ -34,6 +35,7 @@ describe('JSON API Put', () => {
       query: {},
       method: 'PUT',
       headers: DEFAULT_HEADERS_MOCK,
+      timeout: DEFAULT_REQUEST_TIMEOUT_MS,
       body: JSON.stringify(PUT_MOCK.BODY),
     });
   });
@@ -58,6 +60,7 @@ describe('JSON API Put', () => {
       query: {},
       method: 'PATCH',
       headers: DEFAULT_HEADERS_MOCK,
+      timeout: DEFAULT_REQUEST_TIMEOUT_MS,
       body: JSON.stringify(PATCH_MOCK.BODY),
     });
   });

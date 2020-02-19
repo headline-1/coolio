@@ -1,5 +1,5 @@
 import cloneDeep from 'lodash/cloneDeep';
-import { HttpClient } from '../httpClient';
+import { DEFAULT_REQUEST_TIMEOUT_MS, HttpClient } from '../httpClient';
 import { handleRequest, mockRequestHandler } from '../requestHandlers/mock.requestHandler';
 import { bodyParser } from '../bodyParser';
 import { ContentType } from '../contentType';
@@ -109,6 +109,7 @@ describe('HttpClient', () => {
         headers: {},
         query: { param: 'value' },
         method: 'GET',
+        timeout: DEFAULT_REQUEST_TIMEOUT_MS,
         // URL is stripped down from query parameters before making a request
         url: 'https://fakeland.com/endpoint',
       });
@@ -118,6 +119,7 @@ describe('HttpClient', () => {
         headers: {},
         query: { param: 'value' },
         method: 'GET',
+        timeout: DEFAULT_REQUEST_TIMEOUT_MS,
         // URL contains all query parameters after making a request
         url: 'https://fakeland.com/endpoint?param=value',
       });

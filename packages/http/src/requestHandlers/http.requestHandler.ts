@@ -4,6 +4,7 @@ import { encodeText, getEncodingFromHeaders } from '../helpers/encoder.helper';
 import { ClientRequestArgs, IncomingMessage } from 'http';
 import { HttpResponseHeaders } from '../httpResponseHeaders';
 import { HttpStatusText } from '../httpCodes';
+import { HttpRequestError } from '../httpRequestError';
 
 export interface HttpRequestHandlerOptions {
   defaultRequestOptions?: ClientRequestArgs;
@@ -23,13 +24,14 @@ export const httpRequestHandler = (
   const http = require('http');
   const https = require('https');
 
-  return ({
-    url: urlString,
-    method,
-    headers,
-    body,
-    timeout,
-  }: NormalizedHttpOptions): Promise<RawHttpResponse> => new Promise((resolve, reject) => {
+  return (requestOptions: NormalizedHttpOptions): Promise<RawHttpResponse> => new Promise((resolve, reject) => {
+    const {
+      url: urlString,
+      method,
+      headers,
+      body,
+      timeout,
+    } = requestOptions;
 
     const {
       protocol,
@@ -78,6 +80,8 @@ export const httpRequestHandler = (
       });
     }).once('error', (error: Error) => {
       reject(error);
+    }).once('timeout', () => {
+      reject(new HttpRequestError(requestOptions, `Request timed out after ${timeout}ms.`));
     });
 
     for (const key in headers) {
