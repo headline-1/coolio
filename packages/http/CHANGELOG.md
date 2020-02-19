@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/headline-1/coolio/compare/v1.0.3...v1.1.0) (2020-02-19)
+
+
+### Features
+
+* **timeout support:** full timeout support for all request handlers ([ef5f6d9](https://github.com/headline-1/coolio/commit/ef5f6d93f1dca1009fec62c817a7d4c5cdd11199))
+
+
+
+
+
 ## [1.0.3](https://github.com/headline-1/coolio/compare/v1.0.2...v1.0.3) (2020-02-18)
 
 
