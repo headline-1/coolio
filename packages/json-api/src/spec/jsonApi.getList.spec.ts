@@ -1,4 +1,4 @@
-import { ContentType, createHttpResponse, HttpCode } from '@coolio/http';
+import { ContentType, createHttpResponse, DEFAULT_REQUEST_TIMEOUT_MS, HttpCode } from '@coolio/http';
 import { FilterOperator, JsonApiClient, SortOrder } from '../';
 import { JsonListResponse } from '../jsonApi.getList';
 import { Data } from '../jsonApi.interface';
@@ -96,6 +96,7 @@ describe('JSON API Get List', () => {
         sort: 'sortAsc,-sortDesc'
       },
       method: 'GET',
+      timeout: DEFAULT_REQUEST_TIMEOUT_MS,
       headers: DEFAULT_HEADERS_MOCK,
     });
   });

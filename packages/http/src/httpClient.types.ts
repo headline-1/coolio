@@ -73,7 +73,7 @@ export interface NormalizedHttpOptions {
   headers: Record<string, string>;
   mode?: RequestMode;
   bypassResponseHandler?: boolean;
-  timeout?: number;
+  timeout: number;
 }
 
 export type HttpRequestHandler = (requestOptions: NormalizedHttpOptions) => Promise<RawHttpResponse>;

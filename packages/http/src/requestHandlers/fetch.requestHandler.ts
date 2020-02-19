@@ -1,6 +1,7 @@
 import merge from 'lodash/merge';
 import { HttpRequestHandler, NormalizedHttpOptions, RawHttpResponse } from '../httpClient.types';
 import { HttpResponseHeaders } from '../httpResponseHeaders';
+import { HttpRequestError } from '../httpRequestError';
 
 export interface FetchRequestHandlerOptions {
   defaultRequestOptions?: RequestInit;
@@ -27,9 +28,21 @@ export const fetchRequestHandler = (
     requestOptions: NormalizedHttpOptions,
   ): Promise<RawHttpResponse> => {
     const abortController = new AbortController();
-    const response = await fetch(requestOptions.url, {
-      ...mergeRequestOptions(fetchRequestHandlerOptions.defaultRequestOptions, requestOptions),
-      signal: abortController.signal,
+    const response = await new Promise<Response>((resolve, reject) => {
+      const timer = setTimeout(() => {
+        abortController.abort();
+        reject(new HttpRequestError(requestOptions, `Request timed out after ${requestOptions.timeout}ms.`));
+      }, requestOptions.timeout);
+      fetch(requestOptions.url, {
+        ...mergeRequestOptions(fetchRequestHandlerOptions.defaultRequestOptions, requestOptions),
+        signal: abortController.signal,
+      }).then(response => {
+        clearTimeout(timer);
+        resolve(response);
+      }, error => {
+        clearTimeout(timer);
+        reject(error);
+      });
     });
 
     return {

@@ -19,6 +19,8 @@ import { bodySerializer } from './bodySerializer';
 import { cacheParsedBody } from './helpers/parsedBodyCache.helper';
 import { urlCombine, urlDestruct } from './helpers/urlEncoding.helper';
 
+export const DEFAULT_REQUEST_TIMEOUT_MS = 5 * 60 * 1000;
+
 type HeadersProvider = (host: string) => Promise<HttpHeaders> | HttpHeaders;
 
 export interface HttpClientConfig<T = HttpResponse> {
@@ -30,6 +32,7 @@ export interface HttpClientConfig<T = HttpResponse> {
   followRedirections?: boolean;
   queryParserOptions?: qs.IParseOptions;
   querySerializerOptions?: qs.IStringifyOptions;
+  requestTimeout?: number;
 }
 
 const isHttpInterceptorInterface = (interceptor: HttpInterceptor): interceptor is HttpInterceptorInterface => {
@@ -62,6 +65,7 @@ export class HttpClient<T = unknown> {
   private readonly querySerializerOptions?: qs.IStringifyOptions;
   private readonly followRedirections: boolean;
   private readonly baseUrl?: string;
+  private readonly defaultRequestTimeout: number;
 
   constructor(config: HttpClientConfig<T>) {
     this.handle = config.requestHandler;
@@ -72,6 +76,7 @@ export class HttpClient<T = unknown> {
     this.followRedirections = config.followRedirections ?? true;
     this.queryParserOptions = config.queryParserOptions;
     this.querySerializerOptions = config.querySerializerOptions;
+    this.defaultRequestTimeout = config.requestTimeout || DEFAULT_REQUEST_TIMEOUT_MS;
   }
 
   addInterceptor = (interceptor: HttpInterceptor) => {
@@ -132,6 +137,7 @@ export class HttpClient<T = unknown> {
 
     const normalizedOptions: NormalizedHttpOptions = {
       ...options,
+      timeout: options.timeout || this.defaultRequestTimeout,
       method: options.method,
       url: urlBreakdown.url,
       query: urlBreakdown.query,

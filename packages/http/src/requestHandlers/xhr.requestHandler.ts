@@ -1,6 +1,7 @@
 import { HttpRequestHandler, NormalizedHttpOptions, RawHttpResponse } from '../httpClient.types';
 import { HttpResponseHeaders } from '../httpResponseHeaders';
 import { encodeText, getEncodingFromHeaders } from '../helpers/encoder.helper';
+import { HttpRequestError } from '../httpRequestError';
 
 const HEADERS_RECEIVED = 2;
 const DONE = 4;
@@ -64,12 +65,10 @@ export const xhrRequestHandler = (): HttpRequestHandler => async (
     }
     req.open(requestOptions.method!, requestOptions.url, true);
     req.responseType = 'arraybuffer';
-    if (requestOptions.timeout) {
-      req.timeout = requestOptions.timeout;
-      req.ontimeout = () => {
-        reject(new Error('TimeoutError'));
-      };
-    }
+    req.timeout = requestOptions.timeout;
+    req.ontimeout = () => {
+      reject(new HttpRequestError(requestOptions, `Request timed out after ${requestOptions.timeout}ms.`));
+    };
 
     for (const key in requestOptions.headers) {
       if (requestOptions.headers.hasOwnProperty(key)) {

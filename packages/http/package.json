@@ -26,8 +26,9 @@
   },
   "sideEffects": false,
   "scripts": {
-    "compile": "tsc -b ./tsconfig.cjs.json ./tsconfig.esm.json ./tsconfig.esm5.json ./tsconfig.types.json && downlevel-dts . ./dist/types-compat",
-    "compile:watch": "yarn compile -w --preserveWatchOutput"
+    "compile": "tsc -b ./tsconfig.cjs.json ./tsconfig.esm.json ./tsconfig.esm5.json ./tsconfig.types.json && yarn compile:types-compat",
+    "compile:types-compat": "downlevel-dts . ./dist/types-compat",
+    "compile:watch": "tsc-watch -b ./tsconfig.cjs.json ./tsconfig.esm.json ./tsconfig.esm5.json ./tsconfig.types.json --noClear --onSuccess 'yarn compile:types-compat'"
   },
   "files": [
     "dist/**/!(*.tsbuildinfo)",
