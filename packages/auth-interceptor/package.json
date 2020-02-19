@@ -1,6 +1,6 @@
 {
   "name": "@coolio/auth-interceptor",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Authentication interceptor for Coolio",
   "keywords": [
     "auth",
@@ -39,7 +39,7 @@
     "@coolio/http": "*"
   },
   "devDependencies": {
-    "@coolio/http": "^1.1.0"
+    "@coolio/http": "^1.1.1"
   },
   "repository": {
     "type": "git",
