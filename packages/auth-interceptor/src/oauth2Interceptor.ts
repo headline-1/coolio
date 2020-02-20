@@ -57,7 +57,7 @@ export const createOAuth2Interceptor = ({
     setAuthorizationData: async (options: NormalizedHttpOptions) => {
       // Get previously stored tokens
       const { accessToken, tokenType } = await getAuthData();
-      options.headers['Authorization'] = `${tokenType} ${accessToken}`;
+      options.headers['Authorization'] = tokenType ? `${tokenType} ${accessToken}` : accessToken;
     },
     onAuthorizationFailure,
     canAuthorize,

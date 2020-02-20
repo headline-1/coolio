@@ -5,7 +5,7 @@ import { AuthError } from './authError';
 
 export interface OAuth2TokenResponse {
   accessToken: string;
-  tokenType: string;
+  tokenType?: string;
   idToken?: string;
   expires?: string;
   expiresIn?: string;
