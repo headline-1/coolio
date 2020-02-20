@@ -61,7 +61,7 @@ const authInterceptor = createAuthInterceptor({
     if (!options.headers) {
       options.headers = {};
     }
-    options.headers['Authorization'] = `${tokenType} ${accessToken}`;
+    options.headers['Authorization'] = tokenType ? `${tokenType} ${accessToken}` : accessToken;
   },
   onAuthorizationFailure: (error: Error) => {
     console.log(error.message);
@@ -83,7 +83,7 @@ export const httpClient = new HttpClient({
 
 Now each request directed to `my-domain.org` has a proper `Authorization` header.
 In case of `401` response, all requests are paused and token refresh happens.
-When token is fresh, all requests are resumed. 
+When token is fresh, all requests are resumed.
 The whole process is transparent and doesn't affect calls.
 
 ## OAuth2 Usage
