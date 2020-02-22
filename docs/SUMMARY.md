@@ -1,7 +1,7 @@
 # Table of contents
 
 * [Coolio](README.md)
-* [Changelog](changelog.md)
+* [Changelog](../CHANGELOG.md)
 
 ## HTTP
 
