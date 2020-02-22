@@ -32,9 +32,11 @@ const processPackage = (projectDir) => {
     compilerOptions: { noEmit: true },
     typedocOptions: {
       inputFiles: ['./src/index.ts'],
-      mode: 'modules',
+      exclude: ['**/*.spec.ts', '**/spec/*.ts'],
+      mode: 'file',
       out: `../../docs/${packageName}/api`,
       readme: 'none',
+      theme: 'gitbook',
       excludeNotExported: true,
     },
   });
