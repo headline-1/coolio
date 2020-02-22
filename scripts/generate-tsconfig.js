@@ -6,6 +6,7 @@ const { merge } = require('lodash');
 const packagesDir = path.resolve('packages');
 
 const processPackage = (projectDir) => {
+  const packageName = path.basename(projectDir);
   const writeTsconfig = (base, overrides) => {
     const baseFile = base ? `tsconfig.${base}.json` : 'tsconfig.json';
     const location = path.join(projectDir, baseFile);
@@ -27,7 +28,16 @@ const processPackage = (projectDir) => {
   writeTsconfig('cjs');
   writeTsconfig('esm');
   writeTsconfig('esm5');
-  writeTsconfig(undefined, { compilerOptions: { noEmit: true } });
+  writeTsconfig(undefined, {
+    compilerOptions: { noEmit: true },
+    typedocOptions: {
+      inputFiles: ['./src/index.ts'],
+      mode: 'modules',
+      out: `../../docs/${packageName}/api`,
+      readme: 'none',
+      excludeNotExported: true,
+    },
+  });
   writeTsconfig('types', { compilerOptions: { declarationDir: './dist/types' } });
 };
 

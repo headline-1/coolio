@@ -27,7 +27,8 @@
   "scripts": {
     "compile": "tsc -b ./tsconfig.cjs.json ./tsconfig.esm.json ./tsconfig.esm5.json ./tsconfig.types.json && yarn compile:types-compat",
     "compile:types-compat": "downlevel-dts . ./dist/types-compat",
-    "compile:watch": "tsc-watch -b ./tsconfig.cjs.json ./tsconfig.esm.json ./tsconfig.esm5.json ./tsconfig.types.json --noClear --onSuccess 'yarn compile:types-compat'"
+    "compile:watch": "tsc-watch -b ./tsconfig.cjs.json ./tsconfig.esm.json ./tsconfig.esm5.json ./tsconfig.types.json --noClear --onSuccess 'yarn compile:types-compat'",
+    "docs": "rimraf ../../docs/auth-interceptor/api && typedoc src"
   },
   "files": [
     "dist/**/!(*.tsbuildinfo)"
