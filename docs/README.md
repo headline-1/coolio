@@ -3,14 +3,16 @@ description: 'Networking client for Node.js, React Native & browser web apps'
 ---
 
 # Coolio
+Coolio is an environment-agnostic networking client for Node.js, React Native & browser web apps. The aim of Coolio is to abstract out the technical stuff and let developers query APIs in DRY manner. Usually such approach makes simple things easier while making complex use-cases impossible. Coolio gives users more control over networking, allowing to customize almost every step of it's networking pipeline:
+- sending and handling requests,
+- body normalization,
+- pre and postprocessing.
 
-![](../.gitbook/assets/coolio.svg)
-
- [![Codecov Badge](https://codecov.io/gh/headline-1/coolio/branch/master/graph/badge.svg)](https://codecov.io/gh/headline-1/coolio) [![Github Actions Release Badge](https://github.com/headline-1/coolio/workflows/Release/badge.svg)](https://github.com/headline-1/coolio/actions?query=workflow%3ARelease) [![HTTP module on NPM](https://badge.fury.io/js/%40coolio%2Fhttp.svg)](https://www.npmjs.com/package/@coolio/http)
-
- Networking client for Node.js, React Native & browser web apps
+This is achieved by using interceptors concept and providing pluggable interfaces whenever possible.
 
 ## Packages
+
+Coolio is broken down into several packages, allowing you to pick what's really needed.
 
 | Package | Description |
 | :--- | :--- |
