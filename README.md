@@ -1,27 +1,22 @@
----
-description: 'Networking client for Node.js, React Native & browser web apps'
----
-
 # Coolio
 
 ![](.gitbook/assets/coolio.svg)
 
- [![Codecov Badge](https://codecov.io/gh/headline-1/coolio/branch/master/graph/badge.svg)](https://codecov.io/gh/headline-1/coolio) [![Github Actions Release Badge](https://github.com/headline-1/coolio/workflows/Release/badge.svg)](https://github.com/headline-1/coolio/actions?query=workflow%3ARelease) [![HTTP module on NPM](https://badge.fury.io/js/%40coolio%2Fhttp.svg)](https://www.npmjs.com/package/@coolio/http)
+ [![codecov](https://img.shields.io/codecov/c/github/headline-1/coolio)](https://codecov.io/gh/headline-1/coolio)
+ [![github workflow status](https://img.shields.io/github/workflow/status/headline-1/coolio/Release)](https://github.com/headline-1/coolio/actions?query=workflow%3ARelease)
+ [![npm version](https://img.shields.io/npm/v/@coolio/http)](https://www.npmjs.com/package/@coolio/http)
+ [![npm downloads](https://img.shields.io/npm/dm/@coolio/http)](https://www.npmjs.com/package/@coolio/http)
+ [![npm bundle size](https://img.shields.io/bundlephobia/minzip/@coolio/http?label=min%20gzipped%20size)](https://www.npmjs.com/package/@coolio/http)
 
  Networking client for Node.js, React Native & browser web apps
+
+* 📝 Check out documentation on [GitBook](https://coolio.headline-1.dev).
+* 👉 Review latest changes [here](./CHANGELOG.md)
 
 ## Packages
 
 | Package | Description |
 | :--- | :--- |
-| [@coolio/auth-interceptor](https://github.com/headline-1/coolio/tree/master/packages/auth-interceptor) | Auth Interceptor with OAuth2 refresh token support for `@coolio/http` |
-| [@coolio/http](https://github.com/headline-1/coolio/tree/master/packages/http) | HTTP networking client |
-| [@coolio/json-api](https://github.com/headline-1/coolio/tree/master/packages/json-api) | JSON API client |
-
-## Contributing
-
-Most important `yarn` scripts during development:
-
-* `start` - runs builds for all packages in watch mode
-* `verify` - runs lint & tests
-
+| [@coolio/auth-interceptor](auth-interceptor/getting-started.md) | Auth Interceptor with OAuth2 refresh token support for `@coolio/http` |
+| [@coolio/http](http/getting-started.md) | HTTP networking client |
+| [@coolio/json-api](json-api/getting-started.md) | JSON API client |
