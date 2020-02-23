@@ -26,8 +26,6 @@
 
 \+ **new AuthError**(`message`: string, `cause?`: [Error](autherror.md#static-error)): *[AuthError](autherror.md)*
 
-*Defined in [packages/auth-interceptor/src/authError.ts:2](https://github.com/headline-1/coolio/blob/0131267/packages/auth-interceptor/src/authError.ts#L2)*
-
 **Parameters:**
 
 Name | Type |
@@ -43,8 +41,6 @@ Name | Type |
 
 • **cause**? : *[Error](autherror.md#static-error)*
 
-*Defined in [packages/auth-interceptor/src/authError.ts:2](https://github.com/headline-1/coolio/blob/0131267/packages/auth-interceptor/src/authError.ts#L2)*
-
 ___
 
 ###  message
@@ -53,8 +49,6 @@ ___
 
 *Inherited from [AuthError](autherror.md).[message](autherror.md#message)*
 
-Defined in node_modules/typescript/lib/lib.es5.d.ts:974
-
 ___
 
 ###  name
@@ -62,8 +56,6 @@ ___
 • **name**: *string*
 
 *Inherited from [AuthError](autherror.md).[name](autherror.md#name)*
-
-Defined in node_modules/typescript/lib/lib.es5.d.ts:973
 
 ___
 
@@ -75,12 +67,8 @@ ___
 
 *Overrides [AuthError](autherror.md).[stack](autherror.md#optional-stack)*
 
-Defined in node_modules/typescript/lib/lib.es5.d.ts:975
-
 ___
 
 ### `Static` Error
 
 ▪ **Error**: *ErrorConstructor*
-
-Defined in node_modules/typescript/lib/lib.es5.d.ts:984

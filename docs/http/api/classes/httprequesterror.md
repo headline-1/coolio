@@ -30,8 +30,6 @@
 
 \+ **new HttpRequestError**(`options`: [NormalizedHttpOptions](../interfaces/normalizedhttpoptions.md), `message?`: undefined | string): *[HttpRequestError](httprequesterror.md)*
 
-*Defined in [packages/http/src/httpRequestError.ts:6](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpRequestError.ts#L6)*
-
 **Parameters:**
 
 Name | Type |
@@ -49,8 +47,6 @@ Name | Type |
 
 *Inherited from [HttpRequestError](httprequesterror.md).[message](httprequesterror.md#message)*
 
-Defined in node_modules/typescript/lib/lib.es5.d.ts:974
-
 ___
 
 ###  name
@@ -59,15 +55,11 @@ ___
 
 *Inherited from [HttpRequestError](httprequesterror.md).[name](httprequesterror.md#name)*
 
-Defined in node_modules/typescript/lib/lib.es5.d.ts:973
-
 ___
 
 ###  options
 
 • **options**: *[NormalizedHttpOptions](../interfaces/normalizedhttpoptions.md)*
-
-*Defined in [packages/http/src/httpRequestError.ts:8](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpRequestError.ts#L8)*
 
 ___
 
@@ -79,12 +71,8 @@ ___
 
 *Overrides [HttpRequestError](httprequesterror.md).[stack](httprequesterror.md#optional-stack)*
 
-Defined in node_modules/typescript/lib/lib.es5.d.ts:975
-
 ___
 
 ### `Static` Error
 
 ▪ **Error**: *ErrorConstructor*
-
-Defined in node_modules/typescript/lib/lib.es5.d.ts:984

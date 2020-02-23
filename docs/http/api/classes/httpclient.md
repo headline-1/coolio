@@ -6,6 +6,8 @@ Base class in Coolio http package, which allows to perform API calls.
 
 ▪ **T**
 
+Common body shape defined by bodyParser passed in [HttpClientConfig](../interfaces/httpclientconfig.md).
+
 ## Hierarchy
 
 * **HttpClient**
@@ -33,8 +35,6 @@ Base class in Coolio http package, which allows to perform API calls.
 
 \+ **new HttpClient**(`config`: [HttpClientConfig](../interfaces/httpclientconfig.md)‹T›): *[HttpClient](httpclient.md)*
 
-*Defined in [packages/http/src/httpClient.ts:122](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpClient.ts#L122)*
-
 **Parameters:**
 
 Name | Type |
@@ -48,8 +48,6 @@ Name | Type |
 ###  addInterceptor
 
 ▸ **addInterceptor**(`interceptor`: [HttpInterceptor](../README.md#httpinterceptor)): *this*
-
-*Defined in [packages/http/src/httpClient.ts:148](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpClient.ts#L148)*
 
 Adds an interceptor to the client. Interceptor can be written either as class or as a function,
 which may mutate request options and post-process response from server.
@@ -75,8 +73,6 @@ ___
 
 ▸ **delete**<**Body**>(`uri`: string, `options?`: [HttpOptions](../README.md#httpoptions)): *Promise‹[HttpResponse](../interfaces/httpresponse.md)‹Body››*
 
-*Defined in [packages/http/src/httpClient.ts:212](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpClient.ts#L212)*
-
 Performs a DELETE request.
 
 **Type parameters:**
@@ -97,8 +93,6 @@ ___
 ###  get
 
 ▸ **get**<**Body**>(`uri`: string, `options?`: [HttpOptions](../README.md#httpoptions)): *Promise‹[HttpResponse](../interfaces/httpresponse.md)‹Body››*
-
-*Defined in [packages/http/src/httpClient.ts:159](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpClient.ts#L159)*
 
 Performs a GET request.
 
@@ -121,8 +115,6 @@ ___
 
 ▸ **patch**<**Body**>(`uri`: string, `options?`: [HttpOptions](../README.md#httpoptions)): *Promise‹[HttpResponse](../interfaces/httpresponse.md)‹Body››*
 
-*Defined in [packages/http/src/httpClient.ts:199](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpClient.ts#L199)*
-
 Performs a PATCH request.
 
 **Type parameters:**
@@ -143,8 +135,6 @@ ___
 ###  post
 
 ▸ **post**<**Body**>(`uri`: string, `options?`: [HttpOptions](../README.md#httpoptions)): *Promise‹[HttpResponse](../interfaces/httpresponse.md)‹Body››*
-
-*Defined in [packages/http/src/httpClient.ts:173](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpClient.ts#L173)*
 
 Performs a POST request.
 
@@ -167,8 +157,6 @@ ___
 
 ▸ **put**<**Body**>(`uri`: string, `options?`: [HttpOptions](../README.md#httpoptions)): *Promise‹[HttpResponse](../interfaces/httpresponse.md)‹Body››*
 
-*Defined in [packages/http/src/httpClient.ts:186](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpClient.ts#L186)*
-
 Performs a PUT request.
 
 **Type parameters:**
@@ -190,8 +178,6 @@ ___
 
 ▸ **remove**<**Body**>(`uri`: string, `options?`: [HttpOptions](../README.md#httpoptions)): *Promise‹[HttpResponse](../interfaces/httpresponse.md)‹any››*
 
-*Defined in [packages/http/src/httpClient.ts:227](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpClient.ts#L227)*
-
 Performs a DELETE request.
 
 **Type parameters:**
@@ -212,8 +198,6 @@ ___
 ###  request
 
 ▸ **request**<**Body**>(`url`: string, `options`: [HttpRequestOptions](../interfaces/httprequestoptions.md)): *Promise‹[HttpResponse](../interfaces/httpresponse.md)‹Body››*
-
-*Defined in [packages/http/src/httpClient.ts:229](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpClient.ts#L229)*
 
 **Type parameters:**
 

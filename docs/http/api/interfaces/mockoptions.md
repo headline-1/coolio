@@ -15,5 +15,3 @@
 ###  endpoints
 
 • **endpoints**: *[Endpoint](endpoint.md)[]*
-
-*Defined in [packages/http/src/requestHandlers/mock.requestHandler.ts:33](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/requestHandlers/mock.requestHandler.ts#L33)*

@@ -15,5 +15,3 @@
 ### `Optional` defaultRequestOptions
 
 • **defaultRequestOptions**? : *ClientRequestArgs*
-
-*Defined in [packages/http/src/requestHandlers/http.requestHandler.ts:10](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/requestHandlers/http.requestHandler.ts#L10)*

@@ -27,8 +27,6 @@
 
 *Implementation of [AuthStorage](../interfaces/authstorage.md)*
 
-*Defined in [packages/auth-interceptor/src/storage/inMemory.authStorage.ts:6](https://github.com/headline-1/coolio/blob/0131267/packages/auth-interceptor/src/storage/inMemory.authStorage.ts#L6)*
-
 **Returns:** *T | undefined*
 
 ___
@@ -38,8 +36,6 @@ ___
 ▸ **setData**(`data`: T): *void*
 
 *Implementation of [AuthStorage](../interfaces/authstorage.md)*
-
-*Defined in [packages/auth-interceptor/src/storage/inMemory.authStorage.ts:10](https://github.com/headline-1/coolio/blob/0131267/packages/auth-interceptor/src/storage/inMemory.authStorage.ts#L10)*
 
 **Parameters:**
 

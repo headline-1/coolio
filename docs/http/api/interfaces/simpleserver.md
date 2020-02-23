@@ -19,8 +19,6 @@
 
 • **close**: *function*
 
-*Defined in [packages/http/src/testing/createSimpleServer.helper.ts:22](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/testing/createSimpleServer.helper.ts#L22)*
-
 #### Type declaration:
 
 ▸ (): *Promise‹void›*
@@ -31,20 +29,14 @@ ___
 
 • **fullAddress**: *string*
 
-*Defined in [packages/http/src/testing/createSimpleServer.helper.ts:21](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/testing/createSimpleServer.helper.ts#L21)*
-
 ___
 
 ###  host
 
 • **host**: *string*
 
-*Defined in [packages/http/src/testing/createSimpleServer.helper.ts:20](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/testing/createSimpleServer.helper.ts#L20)*
-
 ___
 
 ###  port
 
 • **port**: *number*
-
-*Defined in [packages/http/src/testing/createSimpleServer.helper.ts:19](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/testing/createSimpleServer.helper.ts#L19)*

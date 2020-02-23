@@ -36,8 +36,6 @@
 
 *Inherited from [RawHttpResponse](rawhttpresponse.md).[headers](rawhttpresponse.md#headers)*
 
-*Defined in [packages/http/src/httpClient.types.ts:5](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpClient.types.ts#L5)*
-
 ___
 
 ###  ok
@@ -45,8 +43,6 @@ ___
 • **ok**: *boolean*
 
 *Inherited from [RawHttpResponse](rawhttpresponse.md).[ok](rawhttpresponse.md#ok)*
-
-*Defined in [packages/http/src/httpClient.types.ts:6](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpClient.types.ts#L6)*
 
 ___
 
@@ -56,8 +52,6 @@ ___
 
 *Inherited from [RawHttpResponse](rawhttpresponse.md).[redirected](rawhttpresponse.md#redirected)*
 
-*Defined in [packages/http/src/httpClient.types.ts:7](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpClient.types.ts#L7)*
-
 ___
 
 ###  status
@@ -65,8 +59,6 @@ ___
 • **status**: *number*
 
 *Inherited from [RawHttpResponse](rawhttpresponse.md).[status](rawhttpresponse.md#status)*
-
-*Defined in [packages/http/src/httpClient.types.ts:8](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpClient.types.ts#L8)*
 
 ___
 
@@ -76,8 +68,6 @@ ___
 
 *Inherited from [RawHttpResponse](rawhttpresponse.md).[statusText](rawhttpresponse.md#statustext)*
 
-*Defined in [packages/http/src/httpClient.types.ts:9](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpClient.types.ts#L9)*
-
 ___
 
 ###  url
@@ -86,8 +76,6 @@ ___
 
 *Inherited from [RawHttpResponse](rawhttpresponse.md).[url](rawhttpresponse.md#url)*
 
-*Defined in [packages/http/src/httpClient.types.ts:10](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpClient.types.ts#L10)*
-
 ## Methods
 
 ###  abort
@@ -95,8 +83,6 @@ ___
 ▸ **abort**(): *void*
 
 *Inherited from [RawHttpResponse](rawhttpresponse.md).[abort](rawhttpresponse.md#abort)*
-
-*Defined in [packages/http/src/httpClient.types.ts:16](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpClient.types.ts#L16)*
 
 **Returns:** *void*
 
@@ -108,8 +94,6 @@ ___
 
 *Inherited from [RawHttpResponse](rawhttpresponse.md).[arrayBuffer](rawhttpresponse.md#arraybuffer)*
 
-*Defined in [packages/http/src/httpClient.types.ts:12](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpClient.types.ts#L12)*
-
 **Returns:** *Promise‹ArrayBuffer›*
 
 ___
@@ -117,8 +101,6 @@ ___
 ###  parsedBody
 
 ▸ **parsedBody**(): *Promise‹T›*
-
-*Defined in [packages/http/src/httpClient.types.ts:20](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpClient.types.ts#L20)*
 
 **Returns:** *Promise‹T›*
 
@@ -129,7 +111,5 @@ ___
 ▸ **text**(): *Promise‹string›*
 
 *Inherited from [RawHttpResponse](rawhttpresponse.md).[text](rawhttpresponse.md#text)*
-
-*Defined in [packages/http/src/httpClient.types.ts:14](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpClient.types.ts#L14)*
 
 **Returns:** *Promise‹string›*

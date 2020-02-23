@@ -15,15 +15,11 @@
 
 • **CAMEL_CASE**: = "CAMEL_CASE"
 
-*Defined in [packages/http/src/helpers/caseConversion.helper.ts:5](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/helpers/caseConversion.helper.ts#L5)*
-
 ___
 
 ###  KEBAB_CASE
 
 • **KEBAB_CASE**: = "KEBAB_CASE"
-
-*Defined in [packages/http/src/helpers/caseConversion.helper.ts:8](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/helpers/caseConversion.helper.ts#L8)*
 
 ___
 
@@ -31,12 +27,8 @@ ___
 
 • **PASCAL_CASE**: = "PASCAL_CASE"
 
-*Defined in [packages/http/src/helpers/caseConversion.helper.ts:7](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/helpers/caseConversion.helper.ts#L7)*
-
 ___
 
 ###  SNAKE_CASE
 
 • **SNAKE_CASE**: = "SNAKE_CASE"
-
-*Defined in [packages/http/src/helpers/caseConversion.helper.ts:6](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/helpers/caseConversion.helper.ts#L6)*

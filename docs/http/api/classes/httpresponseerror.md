@@ -31,8 +31,6 @@
 
 \+ **new HttpResponseError**(`response`: [HttpResponse](../interfaces/httpresponse.md)‹T›, `message?`: undefined | string): *[HttpResponseError](httpresponseerror.md)*
 
-*Defined in [packages/http/src/httpResponseError.ts:8](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpResponseError.ts#L8)*
-
 **Parameters:**
 
 Name | Type |
@@ -50,8 +48,6 @@ Name | Type |
 
 *Inherited from [HttpRequestError](httprequesterror.md).[message](httprequesterror.md#message)*
 
-Defined in node_modules/typescript/lib/lib.es5.d.ts:974
-
 ___
 
 ###  name
@@ -60,15 +56,11 @@ ___
 
 *Inherited from [HttpRequestError](httprequesterror.md).[name](httprequesterror.md#name)*
 
-Defined in node_modules/typescript/lib/lib.es5.d.ts:973
-
 ___
 
 ###  response
 
 • **response**: *[HttpResponse](../interfaces/httpresponse.md)‹T›*
-
-*Defined in [packages/http/src/httpResponseError.ts:10](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpResponseError.ts#L10)*
 
 ___
 
@@ -80,20 +72,14 @@ ___
 
 *Overrides [HttpRequestError](httprequesterror.md).[stack](httprequesterror.md#optional-stack)*
 
-Defined in node_modules/typescript/lib/lib.es5.d.ts:975
-
 ___
 
 ###  status
 
 • **status**: *[HttpCode](../enums/httpcode.md)*
 
-*Defined in [packages/http/src/httpResponseError.ts:7](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpResponseError.ts#L7)*
-
 ___
 
 ### `Static` Error
 
 ▪ **Error**: *ErrorConstructor*
-
-Defined in node_modules/typescript/lib/lib.es5.d.ts:984

@@ -26,23 +26,17 @@
 
 • **attributes**: *Attrs*
 
-*Defined in [jsonApi.interface.ts:39](https://github.com/headline-1/coolio/blob/0131267/packages/json-api/src/jsonApi.interface.ts#L39)*
-
 ___
 
 ###  id
 
 • **id**: *string*
 
-*Defined in [jsonApi.interface.ts:37](https://github.com/headline-1/coolio/blob/0131267/packages/json-api/src/jsonApi.interface.ts#L37)*
-
 ___
 
 ###  links
 
 • **links**: *object*
-
-*Defined in [jsonApi.interface.ts:41](https://github.com/headline-1/coolio/blob/0131267/packages/json-api/src/jsonApi.interface.ts#L41)*
 
 #### Type declaration:
 
@@ -54,12 +48,8 @@ ___
 
 • **relationships**: *Rels*
 
-*Defined in [jsonApi.interface.ts:40](https://github.com/headline-1/coolio/blob/0131267/packages/json-api/src/jsonApi.interface.ts#L40)*
-
 ___
 
 ###  type
 
 • **type**: *string*
-
-*Defined in [jsonApi.interface.ts:38](https://github.com/headline-1/coolio/blob/0131267/packages/json-api/src/jsonApi.interface.ts#L38)*

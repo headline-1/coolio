@@ -57,8 +57,6 @@
 
 \+ **new RequestBuilder**(`uri`: string, `options`: [Options](../interfaces/options.md)): *[RequestBuilder](requestbuilder.md)*
 
-*Defined in [jsonApi.builder.ts:21](https://github.com/headline-1/coolio/blob/0131267/packages/json-api/src/jsonApi.builder.ts#L21)*
-
 **Parameters:**
 
 Name | Type |
@@ -74,15 +72,11 @@ Name | Type |
 
 • **limit**: *number* = DEFAULT_RESOURCE_LIMIT
 
-*Defined in [jsonApi.builder.ts:19](https://github.com/headline-1/coolio/blob/0131267/packages/json-api/src/jsonApi.builder.ts#L19)*
-
 ___
 
 ### `Protected` offset
 
 • **offset**: *undefined | number*
-
-*Defined in [jsonApi.builder.ts:20](https://github.com/headline-1/coolio/blob/0131267/packages/json-api/src/jsonApi.builder.ts#L20)*
 
 ___
 
@@ -90,15 +84,11 @@ ___
 
 • **options**: *[Options](../interfaces/options.md)*
 
-*Defined in [jsonApi.builder.ts:23](https://github.com/headline-1/coolio/blob/0131267/packages/json-api/src/jsonApi.builder.ts#L23)*
-
 ___
 
 ### `Protected` page
 
 • **page**: *number* = 1
-
-*Defined in [jsonApi.builder.ts:21](https://github.com/headline-1/coolio/blob/0131267/packages/json-api/src/jsonApi.builder.ts#L21)*
 
 ___
 
@@ -106,15 +96,11 @@ ___
 
 • **queryParams**: *Record‹string, string›*
 
-*Defined in [jsonApi.builder.ts:17](https://github.com/headline-1/coolio/blob/0131267/packages/json-api/src/jsonApi.builder.ts#L17)*
-
 ___
 
 ### `Protected` resolveIncludedRelationships
 
 • **resolveIncludedRelationships**: *boolean* = false
-
-*Defined in [jsonApi.builder.ts:16](https://github.com/headline-1/coolio/blob/0131267/packages/json-api/src/jsonApi.builder.ts#L16)*
 
 ___
 
@@ -122,23 +108,17 @@ ___
 
 • **sortParams**: *string[]* = []
 
-*Defined in [jsonApi.builder.ts:18](https://github.com/headline-1/coolio/blob/0131267/packages/json-api/src/jsonApi.builder.ts#L18)*
-
 ___
 
 ###  uri
 
 • **uri**: *string*
 
-*Defined in [jsonApi.builder.ts:15](https://github.com/headline-1/coolio/blob/0131267/packages/json-api/src/jsonApi.builder.ts#L15)*
-
 ## Accessors
 
 ###  parameters
 
 • **get parameters**(): *Record‹string, string›*
-
-*Defined in [jsonApi.builder.ts:50](https://github.com/headline-1/coolio/blob/0131267/packages/json-api/src/jsonApi.builder.ts#L50)*
 
 **Returns:** *Record‹string, string›*
 
@@ -147,8 +127,6 @@ ___
 ###  filter
 
 ▸ **filter**(`key`: string | string[] | undefined, `value`: string | number | boolean | undefined, `operator?`: [FilterOperator](../enums/filteroperator.md)): *this*
-
-*Defined in [jsonApi.builder.ts:84](https://github.com/headline-1/coolio/blob/0131267/packages/json-api/src/jsonApi.builder.ts#L84)*
 
 **Parameters:**
 
@@ -166,8 +144,6 @@ ___
 
 ▸ **pageLimit**(`limit`: number): *this*
 
-*Defined in [jsonApi.builder.ts:102](https://github.com/headline-1/coolio/blob/0131267/packages/json-api/src/jsonApi.builder.ts#L102)*
-
 **Parameters:**
 
 Name | Type |
@@ -181,8 +157,6 @@ ___
 ###  pageNumber
 
 ▸ **pageNumber**(`page`: number | string | undefined): *this*
-
-*Defined in [jsonApi.builder.ts:112](https://github.com/headline-1/coolio/blob/0131267/packages/json-api/src/jsonApi.builder.ts#L112)*
 
 **Parameters:**
 
@@ -198,8 +172,6 @@ ___
 
 ▸ **pageOffset**(`offset`: number): *this*
 
-*Defined in [jsonApi.builder.ts:107](https://github.com/headline-1/coolio/blob/0131267/packages/json-api/src/jsonApi.builder.ts#L107)*
-
 **Parameters:**
 
 Name | Type |
@@ -213,8 +185,6 @@ ___
 ###  parameter
 
 ▸ **parameter**(`key`: string, `value`: string | number | boolean | undefined): *this*
-
-*Defined in [jsonApi.builder.ts:74](https://github.com/headline-1/coolio/blob/0131267/packages/json-api/src/jsonApi.builder.ts#L74)*
 
 **Parameters:**
 
@@ -230,8 +200,6 @@ ___
 ### `Protected` parseResponse
 
 ▸ **parseResponse**<**Raw**>(`response`: HttpResponse): *Promise‹[JsonResponse](jsonresponse.md)‹Raw››*
-
-*Defined in [jsonApi.builder.ts:117](https://github.com/headline-1/coolio/blob/0131267/packages/json-api/src/jsonApi.builder.ts#L117)*
 
 **Type parameters:**
 
@@ -251,8 +219,6 @@ ___
 
 ▸ **resolveIncluded**(`resolveIncluded?`: undefined | false | true): *this*
 
-*Defined in [jsonApi.builder.ts:69](https://github.com/headline-1/coolio/blob/0131267/packages/json-api/src/jsonApi.builder.ts#L69)*
-
 **Parameters:**
 
 Name | Type |
@@ -267,8 +233,6 @@ ___
 
 ▸ **send**(`options?`: HttpOptions): *Promise‹ResponseType›*
 
-*Defined in [jsonApi.builder.ts:67](https://github.com/headline-1/coolio/blob/0131267/packages/json-api/src/jsonApi.builder.ts#L67)*
-
 **Parameters:**
 
 Name | Type |
@@ -282,8 +246,6 @@ ___
 ###  sort
 
 ▸ **sort**(`key`: string | undefined, `order`: [SortOrder](../enums/sortorder.md)): *this*
-
-*Defined in [jsonApi.builder.ts:95](https://github.com/headline-1/coolio/blob/0131267/packages/json-api/src/jsonApi.builder.ts#L95)*
 
 **Parameters:**
 
