@@ -74,7 +74,7 @@
 
 Ƭ **AnyData**: *[Data](interfaces/data.md)‹any, any›*
 
-*Defined in [jsonApi.interface.ts:46](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.interface.ts#L46)*
+*Defined in [jsonApi.interface.ts:46](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.interface.ts#L46)*
 
 ___
 
@@ -82,7 +82,7 @@ ___
 
 Ƭ **AttributesOf**: *D extends object ? D["attributes"] : EmptyRecord*
 
-*Defined in [jsonApi.interface.ts:49](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.interface.ts#L49)*
+*Defined in [jsonApi.interface.ts:49](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.interface.ts#L49)*
 
 ___
 
@@ -90,7 +90,7 @@ ___
 
 Ƭ **EmptyRecord**: *object*
 
-*Defined in [jsonApi.interface.ts:48](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.interface.ts#L48)*
+*Defined in [jsonApi.interface.ts:48](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.interface.ts#L48)*
 
 #### Type declaration:
 
@@ -102,7 +102,7 @@ ___
 
 Ƭ **IncludedGroups**: *object*
 
-*Defined in [jsonApi.interface.ts:108](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.interface.ts#L108)*
+*Defined in [jsonApi.interface.ts:108](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.interface.ts#L108)*
 
 #### Type declaration:
 
@@ -112,7 +112,7 @@ ___
 
 Ƭ **IncludedGroupsSchema**: *Record‹string, [IncludedGroup](interfaces/includedgroup.md)›*
 
-*Defined in [jsonApi.interface.ts:106](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.interface.ts#L106)*
+*Defined in [jsonApi.interface.ts:106](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.interface.ts#L106)*
 
 ___
 
@@ -120,7 +120,7 @@ ___
 
 Ƭ **IncludedRelationships**: *D[]*
 
-*Defined in [jsonApi.interface.ts:34](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.interface.ts#L34)*
+*Defined in [jsonApi.interface.ts:34](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.interface.ts#L34)*
 
 ___
 
@@ -128,7 +128,7 @@ ___
 
 Ƭ **MergedData**:
 
-*Defined in [jsonApi.interface.ts:60](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.interface.ts#L60)*
+*Defined in [jsonApi.interface.ts:60](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.interface.ts#L60)*
 
 MergeData type
 --------------
@@ -142,7 +142,7 @@ ___
 
 Ƭ **MergedIncludedGroups**: *object*
 
-*Defined in [jsonApi.interface.ts:111](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.interface.ts#L111)*
+*Defined in [jsonApi.interface.ts:111](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.interface.ts#L111)*
 
 #### Type declaration:
 
@@ -152,7 +152,7 @@ ___
 
 Ƭ **OptionalRels**: *[Relationships](README.md#relationships) | undefined*
 
-*Defined in [jsonApi.interface.ts:32](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.interface.ts#L32)*
+*Defined in [jsonApi.interface.ts:32](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.interface.ts#L32)*
 
 ___
 
@@ -160,7 +160,7 @@ ___
 
 Ƭ **RawRelationship**: *object*
 
-*Defined in [jsonApi.interface.ts:14](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.interface.ts#L14)*
+*Defined in [jsonApi.interface.ts:14](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.interface.ts#L14)*
 
 #### Type declaration:
 
@@ -176,7 +176,7 @@ ___
 
 Ƭ **Relationship**: *[RawRelationship](README.md#rawrelationship)‹[RelationshipData](README.md#relationshipdata)›*
 
-*Defined in [jsonApi.interface.ts:23](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.interface.ts#L23)*
+*Defined in [jsonApi.interface.ts:23](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.interface.ts#L23)*
 
 ___
 
@@ -184,7 +184,7 @@ ___
 
 Ƭ **RelationshipArray**: *[RawRelationship](README.md#rawrelationship)‹[RelationshipData](README.md#relationshipdata)[]›*
 
-*Defined in [jsonApi.interface.ts:24](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.interface.ts#L24)*
+*Defined in [jsonApi.interface.ts:24](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.interface.ts#L24)*
 
 ___
 
@@ -192,7 +192,7 @@ ___
 
 Ƭ **RelationshipData**: *object*
 
-*Defined in [jsonApi.interface.ts:7](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.interface.ts#L7)*
+*Defined in [jsonApi.interface.ts:7](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.interface.ts#L7)*
 
 #### Type declaration:
 
@@ -206,7 +206,7 @@ ___
 
 Ƭ **RelationshipType**: *[RelationshipData](README.md#relationshipdata)‹Type› | [RelationshipData](README.md#relationshipdata)‹Type›[]*
 
-*Defined in [jsonApi.interface.ts:12](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.interface.ts#L12)*
+*Defined in [jsonApi.interface.ts:12](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.interface.ts#L12)*
 
 ___
 
@@ -214,7 +214,7 @@ ___
 
 Ƭ **Relationships**: *Record‹string, [RawRelationship](README.md#rawrelationship)‹[RelationshipType](README.md#relationshiptype)› | undefined›*
 
-*Defined in [jsonApi.interface.ts:29](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.interface.ts#L29)*
+*Defined in [jsonApi.interface.ts:29](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.interface.ts#L29)*
 
 ___
 
@@ -222,7 +222,7 @@ ___
 
 Ƭ **RelationshipsOf**: *D extends object ? D["relationships"] : EmptyRecord*
 
-*Defined in [jsonApi.interface.ts:50](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.interface.ts#L50)*
+*Defined in [jsonApi.interface.ts:50](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.interface.ts#L50)*
 
 ___
 
@@ -230,7 +230,7 @@ ___
 
 Ƭ **ResolvedRelationship**: *[RawRelationship](README.md#rawrelationship)‹D›*
 
-*Defined in [jsonApi.interface.ts:26](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.interface.ts#L26)*
+*Defined in [jsonApi.interface.ts:26](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.interface.ts#L26)*
 
 ___
 
@@ -238,7 +238,7 @@ ___
 
 Ƭ **ResolvedRelationshipArray**: *[RawRelationship](README.md#rawrelationship)‹D[]›*
 
-*Defined in [jsonApi.interface.ts:27](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.interface.ts#L27)*
+*Defined in [jsonApi.interface.ts:27](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.interface.ts#L27)*
 
 ___
 
@@ -246,7 +246,7 @@ ___
 
 Ƭ **ResolvedRelationships**: *Record‹string, [ResolvedRelationship](README.md#resolvedrelationship) | [ResolvedRelationshipArray](README.md#resolvedrelationshiparray) | undefined›*
 
-*Defined in [jsonApi.interface.ts:31](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.interface.ts#L31)*
+*Defined in [jsonApi.interface.ts:31](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.interface.ts#L31)*
 
 ___
 
@@ -254,7 +254,7 @@ ___
 
 Ƭ **UnresolvedRelationships**: *Record‹string, [Relationship](README.md#relationship) | [RelationshipArray](README.md#relationshiparray)›*
 
-*Defined in [jsonApi.interface.ts:30](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.interface.ts#L30)*
+*Defined in [jsonApi.interface.ts:30](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.interface.ts#L30)*
 
 ## Variables
 
@@ -262,7 +262,7 @@ ___
 
 • **DEFAULT_RESOURCE_LIMIT**: *10* = 10
 
-*Defined in [jsonApi.builder.ts:7](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.builder.ts#L7)*
+*Defined in [jsonApi.builder.ts:7](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.builder.ts#L7)*
 
 ## Functions
 
@@ -270,7 +270,7 @@ ___
 
 ▸ **findIncludedRelationship**(`relationship`: [RelationshipData](README.md#relationshipdata), `included`: [IncludedRelationships](README.md#includedrelationships)): *[AnyData](README.md#anydata) | undefined*
 
-*Defined in [jsonApi.common.ts:41](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.common.ts#L41)*
+*Defined in [jsonApi.common.ts:41](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.common.ts#L41)*
 
 **Parameters:**
 
@@ -287,7 +287,7 @@ ___
 
 ▸ **includedGroup**<**D**>(`type`: string): *[IncludedGroup](interfaces/includedgroup.md)‹D›*
 
-*Defined in [jsonApi.common.ts:90](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.common.ts#L90)*
+*Defined in [jsonApi.common.ts:90](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.common.ts#L90)*
 
 **Type parameters:**
 
@@ -307,7 +307,7 @@ ___
 
 ▸ **isData**<**D**>(`data`: [RelationshipData](README.md#relationshipdata) | D): *data is D*
 
-*Defined in [jsonApi.common.ts:14](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.common.ts#L14)*
+*Defined in [jsonApi.common.ts:14](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.common.ts#L14)*
 
 **Type parameters:**
 
@@ -327,7 +327,7 @@ ___
 
 ▸ **mergeElementData**<**D**>(`data`: D): *[MergedData](README.md#mergeddata)‹D›*
 
-*Defined in [jsonApi.common.ts:19](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.common.ts#L19)*
+*Defined in [jsonApi.common.ts:19](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.common.ts#L19)*
 
 **Type parameters:**
 
@@ -347,7 +347,7 @@ ___
 
 ▸ **resolveRelationships**<**D**>(`data`: D, `included`: [IncludedRelationships](README.md#includedrelationships)): *D*
 
-*Defined in [jsonApi.common.ts:50](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.common.ts#L50)*
+*Defined in [jsonApi.common.ts:50](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.common.ts#L50)*
 
 **Type parameters:**
 
@@ -364,7 +364,7 @@ Name | Type |
 
 ▸ **resolveRelationships**(`data`: [RelationshipData](README.md#relationshipdata)[], `included`: [IncludedRelationships](README.md#includedrelationships)): *object | [Data](interfaces/data.md)‹any, any›[]*
 
-*Defined in [jsonApi.common.ts:54](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.common.ts#L54)*
+*Defined in [jsonApi.common.ts:54](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.common.ts#L54)*
 
 **Parameters:**
 
@@ -377,7 +377,7 @@ Name | Type |
 
 ▸ **resolveRelationships**(`data`: [RelationshipData](README.md#relationshipdata), `included`: [IncludedRelationships](README.md#includedrelationships)): *[AnyData](README.md#anydata) | [RelationshipData](README.md#relationshipdata)*
 
-*Defined in [jsonApi.common.ts:58](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.common.ts#L58)*
+*Defined in [jsonApi.common.ts:58](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.common.ts#L58)*
 
 **Parameters:**
 
@@ -394,16 +394,16 @@ Name | Type |
 
 ### ▪ **Headers**: *object*
 
-*Defined in [jsonApi.interface.ts:137](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.interface.ts#L137)*
+*Defined in [jsonApi.interface.ts:137](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.interface.ts#L137)*
 
 ###  Accept
 
 • **Accept**: *ContentType* = ContentType.VND_JSON
 
-*Defined in [jsonApi.interface.ts:139](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.interface.ts#L139)*
+*Defined in [jsonApi.interface.ts:139](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.interface.ts#L139)*
 
 ###  Content-Type
 
 • **Content-Type**: *ContentType* = ContentType.VND_JSON
 
-*Defined in [jsonApi.interface.ts:138](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.interface.ts#L138)*
+*Defined in [jsonApi.interface.ts:138](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.interface.ts#L138)*

@@ -25,7 +25,7 @@
 
 ▸ **getData**(): *[Promisable](../README.md#promisable)‹T | undefined›*
 
-*Defined in [packages/auth-interceptor/src/storage/authStorage.types.ts:4](https://github.com/headline-1/coolio/blob/c80476b/packages/auth-interceptor/src/storage/authStorage.types.ts#L4)*
+*Defined in [packages/auth-interceptor/src/storage/authStorage.types.ts:4](https://github.com/headline-1/coolio/blob/420fd1d/packages/auth-interceptor/src/storage/authStorage.types.ts#L4)*
 
 **Returns:** *[Promisable](../README.md#promisable)‹T | undefined›*
 
@@ -35,7 +35,7 @@ ___
 
 ▸ **setData**(`t`: T): *[Promisable](../README.md#promisable)*
 
-*Defined in [packages/auth-interceptor/src/storage/authStorage.types.ts:6](https://github.com/headline-1/coolio/blob/c80476b/packages/auth-interceptor/src/storage/authStorage.types.ts#L6)*
+*Defined in [packages/auth-interceptor/src/storage/authStorage.types.ts:6](https://github.com/headline-1/coolio/blob/420fd1d/packages/auth-interceptor/src/storage/authStorage.types.ts#L6)*
 
 **Parameters:**
 

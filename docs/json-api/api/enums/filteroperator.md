@@ -20,7 +20,7 @@
 
 • **EQUALS**: = "EQ"
 
-*Defined in [jsonApi.interface.ts:146](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.interface.ts#L146)*
+*Defined in [jsonApi.interface.ts:146](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.interface.ts#L146)*
 
 ___
 
@@ -28,7 +28,7 @@ ___
 
 • **GREATER**: = "GT"
 
-*Defined in [jsonApi.interface.ts:149](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.interface.ts#L149)*
+*Defined in [jsonApi.interface.ts:149](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.interface.ts#L149)*
 
 ___
 
@@ -36,7 +36,7 @@ ___
 
 • **GREATER_OR_EQUAL**: = "GE"
 
-*Defined in [jsonApi.interface.ts:151](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.interface.ts#L151)*
+*Defined in [jsonApi.interface.ts:151](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.interface.ts#L151)*
 
 ___
 
@@ -44,7 +44,7 @@ ___
 
 • **LIKE**: = "LIKE"
 
-*Defined in [jsonApi.interface.ts:148](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.interface.ts#L148)*
+*Defined in [jsonApi.interface.ts:148](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.interface.ts#L148)*
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 • **LOWER**: = "LT"
 
-*Defined in [jsonApi.interface.ts:150](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.interface.ts#L150)*
+*Defined in [jsonApi.interface.ts:150](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.interface.ts#L150)*
 
 ___
 
@@ -60,7 +60,7 @@ ___
 
 • **LOWER_OR_EQUAL**: = "LE"
 
-*Defined in [jsonApi.interface.ts:152](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.interface.ts#L152)*
+*Defined in [jsonApi.interface.ts:152](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.interface.ts#L152)*
 
 ___
 
@@ -68,4 +68,4 @@ ___
 
 • **NOT_EQUALS**: = "NEQ"
 
-*Defined in [jsonApi.interface.ts:147](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.interface.ts#L147)*
+*Defined in [jsonApi.interface.ts:147](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.interface.ts#L147)*

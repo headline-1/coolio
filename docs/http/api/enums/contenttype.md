@@ -15,7 +15,7 @@
 
 • **JSON**: = "application/json"
 
-*Defined in [packages/http/src/contentType.ts:3](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/contentType.ts#L3)*
+*Defined in [packages/http/src/contentType.ts:3](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/contentType.ts#L3)*
 
 ___
 
@@ -23,7 +23,7 @@ ___
 
 • **TEXT**: = "text/plain"
 
-*Defined in [packages/http/src/contentType.ts:2](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/contentType.ts#L2)*
+*Defined in [packages/http/src/contentType.ts:2](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/contentType.ts#L2)*
 
 ___
 
@@ -31,7 +31,7 @@ ___
 
 • **URL_ENCODED**: = "application/x-www-form-urlencoded"
 
-*Defined in [packages/http/src/contentType.ts:5](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/contentType.ts#L5)*
+*Defined in [packages/http/src/contentType.ts:5](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/contentType.ts#L5)*
 
 ___
 
@@ -39,4 +39,4 @@ ___
 
 • **VND_JSON**: = "application/vnd.api+json"
 
-*Defined in [packages/http/src/contentType.ts:4](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/contentType.ts#L4)*
+*Defined in [packages/http/src/contentType.ts:4](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/contentType.ts#L4)*

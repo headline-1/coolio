@@ -22,7 +22,7 @@
 
 • **body**? : *[HttpBody](../README.md#httpbody)*
 
-*Defined in [packages/http/src/httpClient.types.ts:59](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpClient.types.ts#L59)*
+*Defined in [packages/http/src/httpClient.types.ts:59](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpClient.types.ts#L59)*
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 • **bypassResponseHandler**? : *undefined | false | true*
 
-*Defined in [packages/http/src/httpClient.types.ts:60](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpClient.types.ts#L60)*
+*Defined in [packages/http/src/httpClient.types.ts:60](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpClient.types.ts#L60)*
 
 ___
 
@@ -38,7 +38,7 @@ ___
 
 • **headers**? : *[HttpHeaders](../README.md#httpheaders)*
 
-*Defined in [packages/http/src/httpClient.types.ts:58](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpClient.types.ts#L58)*
+*Defined in [packages/http/src/httpClient.types.ts:58](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpClient.types.ts#L58)*
 
 ___
 
@@ -46,7 +46,7 @@ ___
 
 • **method**: *[HttpMethod](../enums/httpmethod.md)*
 
-*Defined in [packages/http/src/httpClient.types.ts:55](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpClient.types.ts#L55)*
+*Defined in [packages/http/src/httpClient.types.ts:55](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpClient.types.ts#L55)*
 
 ___
 
@@ -54,7 +54,7 @@ ___
 
 • **mode**? : *[RequestMode](../README.md#requestmode)*
 
-*Defined in [packages/http/src/httpClient.types.ts:57](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpClient.types.ts#L57)*
+*Defined in [packages/http/src/httpClient.types.ts:57](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpClient.types.ts#L57)*
 
 ___
 
@@ -62,7 +62,7 @@ ___
 
 • **query**? : *undefined | object*
 
-*Defined in [packages/http/src/httpClient.types.ts:56](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpClient.types.ts#L56)*
+*Defined in [packages/http/src/httpClient.types.ts:56](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpClient.types.ts#L56)*
 
 ___
 
@@ -70,4 +70,4 @@ ___
 
 • **timeout**? : *undefined | number*
 
-*Defined in [packages/http/src/httpClient.types.ts:61](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpClient.types.ts#L61)*
+*Defined in [packages/http/src/httpClient.types.ts:61](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpClient.types.ts#L61)*

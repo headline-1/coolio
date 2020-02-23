@@ -30,7 +30,7 @@
 
 \+ **new JsonResponse**(`raw`: Raw, `response`: HttpResponse‹Raw›): *[JsonResponse](jsonresponse.md)*
 
-*Defined in [jsonApi.response.ts:5](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.response.ts#L5)*
+*Defined in [jsonApi.response.ts:5](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.response.ts#L5)*
 
 **Parameters:**
 
@@ -47,7 +47,7 @@ Name | Type |
 
 • **raw**: *Raw*
 
-*Defined in [jsonApi.response.ts:7](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.response.ts#L7)*
+*Defined in [jsonApi.response.ts:7](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.response.ts#L7)*
 
 ___
 
@@ -55,7 +55,7 @@ ___
 
 • **response**: *HttpResponse‹Raw›*
 
-*Defined in [jsonApi.response.ts:7](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.response.ts#L7)*
+*Defined in [jsonApi.response.ts:7](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.response.ts#L7)*
 
 ## Accessors
 
@@ -63,7 +63,7 @@ ___
 
 • **get element**(): *[MergedData](../README.md#mergeddata)‹Raw["data"]›*
 
-*Defined in [jsonApi.response.ts:10](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.response.ts#L10)*
+*Defined in [jsonApi.response.ts:10](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.response.ts#L10)*
 
 **Returns:** *[MergedData](../README.md#mergeddata)‹Raw["data"]›*
 
@@ -73,6 +73,6 @@ ___
 
 • **get meta**(): *Raw["meta"]*
 
-*Defined in [jsonApi.response.ts:14](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.response.ts#L14)*
+*Defined in [jsonApi.response.ts:14](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.response.ts#L14)*
 
 **Returns:** *Raw["meta"]*

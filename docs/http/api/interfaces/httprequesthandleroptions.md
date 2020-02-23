@@ -16,4 +16,4 @@
 
 • **defaultRequestOptions**? : *ClientRequestArgs*
 
-*Defined in [packages/http/src/requestHandlers/http.requestHandler.ts:10](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/requestHandlers/http.requestHandler.ts#L10)*
+*Defined in [packages/http/src/requestHandlers/http.requestHandler.ts:10](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/requestHandlers/http.requestHandler.ts#L10)*

@@ -126,7 +126,7 @@
 
 Ƭ **BodyParser**: *function*
 
-*Defined in [packages/http/src/httpClient.types.ts:23](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpClient.types.ts#L23)*
+*Defined in [packages/http/src/httpClient.types.ts:23](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpClient.types.ts#L23)*
 
 #### Type declaration:
 
@@ -144,7 +144,7 @@ ___
 
 Ƭ **BodyParserImplementation**: *function*
 
-*Defined in [packages/http/src/bodyParser.ts:6](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/bodyParser.ts#L6)*
+*Defined in [packages/http/src/bodyParser.ts:6](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/bodyParser.ts#L6)*
 
 #### Type declaration:
 
@@ -162,7 +162,7 @@ ___
 
 Ƭ **BodySerializer**: *function*
 
-*Defined in [packages/http/src/httpClient.types.ts:25](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpClient.types.ts#L25)*
+*Defined in [packages/http/src/httpClient.types.ts:25](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpClient.types.ts#L25)*
 
 #### Type declaration:
 
@@ -180,7 +180,7 @@ ___
 
 Ƭ **BufferEncoding**: *"ascii" | "utf8" | "utf-8" | "utf16le" | "ucs2" | "ucs-2" | "base64" | "latin1" | "binary" | "hex"*
 
-*Defined in [packages/http/src/helpers/encoder.helper.ts:5](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/helpers/encoder.helper.ts#L5)*
+*Defined in [packages/http/src/helpers/encoder.helper.ts:5](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/helpers/encoder.helper.ts#L5)*
 
 ___
 
@@ -188,7 +188,7 @@ ___
 
 Ƭ **ContentTypeMap**: *Record‹keyof typeof ContentTypeRegex, T›*
 
-*Defined in [packages/http/src/contentType.ts:14](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/contentType.ts#L14)*
+*Defined in [packages/http/src/contentType.ts:14](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/contentType.ts#L14)*
 
 ___
 
@@ -196,7 +196,7 @@ ___
 
 Ƭ **HeadersProvider**: *function*
 
-*Defined in [packages/http/src/httpClient.ts:24](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpClient.ts#L24)*
+*Defined in [packages/http/src/httpClient.ts:24](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpClient.ts#L24)*
 
 #### Type declaration:
 
@@ -214,7 +214,7 @@ ___
 
 Ƭ **HttpBody**: *object | [TypedArray](README.md#typedarray) | string*
 
-*Defined in [packages/http/src/httpClient.types.ts:29](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpClient.types.ts#L29)*
+*Defined in [packages/http/src/httpClient.types.ts:29](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpClient.types.ts#L29)*
 
 ___
 
@@ -222,7 +222,7 @@ ___
 
 Ƭ **HttpFetch**: *function*
 
-*Defined in [packages/http/src/httpClient.types.ts:27](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpClient.types.ts#L27)*
+*Defined in [packages/http/src/httpClient.types.ts:27](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpClient.types.ts#L27)*
 
 #### Type declaration:
 
@@ -234,7 +234,7 @@ ___
 
 Ƭ **HttpHeaders**: *Record‹string, string | number | boolean | undefined | null›*
 
-*Defined in [packages/http/src/httpClient.types.ts:31](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpClient.types.ts#L31)*
+*Defined in [packages/http/src/httpClient.types.ts:31](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpClient.types.ts#L31)*
 
 ___
 
@@ -242,7 +242,7 @@ ___
 
 Ƭ **HttpInterceptor**: *[HttpInterceptorFunction](README.md#httpinterceptorfunction) | [HttpInterceptorInterface](interfaces/httpinterceptorinterface.md)*
 
-*Defined in [packages/http/src/httpClient.types.ts:42](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpClient.types.ts#L42)*
+*Defined in [packages/http/src/httpClient.types.ts:42](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpClient.types.ts#L42)*
 
 ___
 
@@ -250,7 +250,7 @@ ___
 
 Ƭ **HttpInterceptorFunction**: *function*
 
-*Defined in [packages/http/src/httpClient.types.ts:37](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpClient.types.ts#L37)*
+*Defined in [packages/http/src/httpClient.types.ts:37](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpClient.types.ts#L37)*
 
 #### Type declaration:
 
@@ -273,7 +273,7 @@ ___
 
 Ƭ **HttpOptions**: *Partial‹[HttpRequestOptions](interfaces/httprequestoptions.md)›*
 
-*Defined in [packages/http/src/httpClient.types.ts:64](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpClient.types.ts#L64)*
+*Defined in [packages/http/src/httpClient.types.ts:64](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpClient.types.ts#L64)*
 
 ___
 
@@ -281,7 +281,7 @@ ___
 
 Ƭ **HttpRequestHandler**: *function*
 
-*Defined in [packages/http/src/httpClient.types.ts:79](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpClient.types.ts#L79)*
+*Defined in [packages/http/src/httpClient.types.ts:79](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpClient.types.ts#L79)*
 
 #### Type declaration:
 
@@ -299,7 +299,7 @@ ___
 
 Ƭ **MockHttpRequestHandler**: *[HttpRequestHandler](README.md#httprequesthandler) & object*
 
-*Defined in [packages/http/src/requestHandlers/mock.requestHandler.ts:36](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/requestHandlers/mock.requestHandler.ts#L36)*
+*Defined in [packages/http/src/requestHandlers/mock.requestHandler.ts:36](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/requestHandlers/mock.requestHandler.ts#L36)*
 
 ___
 
@@ -307,7 +307,7 @@ ___
 
 Ƭ **NormalizedHttpBody**: *string | [TypedArray](README.md#typedarray) | undefined*
 
-*Defined in [packages/http/src/httpClient.types.ts:66](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpClient.types.ts#L66)*
+*Defined in [packages/http/src/httpClient.types.ts:66](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpClient.types.ts#L66)*
 
 ___
 
@@ -315,7 +315,7 @@ ___
 
 Ƭ **PromiseFunction**: *function*
 
-*Defined in [packages/http/src/helpers/parsedBodyCache.helper.ts:1](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/helpers/parsedBodyCache.helper.ts#L1)*
+*Defined in [packages/http/src/helpers/parsedBodyCache.helper.ts:1](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/helpers/parsedBodyCache.helper.ts#L1)*
 
 #### Type declaration:
 
@@ -327,7 +327,7 @@ ___
 
 Ƭ **RequestMode**: *"navigate" | "same-origin" | "no-cors" | "cors"*
 
-*Defined in [packages/http/src/httpClient.types.ts:52](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpClient.types.ts#L52)*
+*Defined in [packages/http/src/httpClient.types.ts:52](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpClient.types.ts#L52)*
 
 ## Variables
 
@@ -335,7 +335,7 @@ ___
 
 • **DEFAULT_REQUEST_TIMEOUT_MS**: *number* = 5 * 60 * 1000
 
-*Defined in [packages/http/src/httpClient.ts:22](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpClient.ts#L22)*
+*Defined in [packages/http/src/httpClient.ts:22](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpClient.ts#L22)*
 
 ___
 
@@ -343,7 +343,7 @@ ___
 
 • **DONE**: *4* = 4
 
-*Defined in [packages/http/src/requestHandlers/xhr.requestHandler.ts:7](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/requestHandlers/xhr.requestHandler.ts#L7)*
+*Defined in [packages/http/src/requestHandlers/xhr.requestHandler.ts:7](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/requestHandlers/xhr.requestHandler.ts#L7)*
 
 ___
 
@@ -351,7 +351,7 @@ ___
 
 • **HEADERS_RECEIVED**: *2* = 2
 
-*Defined in [packages/http/src/requestHandlers/xhr.requestHandler.ts:6](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/requestHandlers/xhr.requestHandler.ts#L6)*
+*Defined in [packages/http/src/requestHandlers/xhr.requestHandler.ts:6](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/requestHandlers/xhr.requestHandler.ts#L6)*
 
 ___
 
@@ -359,9 +359,9 @@ ___
 
 • **TypedArray**: *any*
 
-*Defined in [packages/http/src/httpClient.types.ts:2](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpClient.types.ts#L2)*
+*Defined in [packages/http/src/httpClient.types.ts:2](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpClient.types.ts#L2)*
 
-*Defined in [packages/http/src/helpers/encoder.helper.ts:1](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/helpers/encoder.helper.ts#L1)*
+*Defined in [packages/http/src/helpers/encoder.helper.ts:1](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/helpers/encoder.helper.ts#L1)*
 
 ___
 
@@ -369,9 +369,9 @@ ___
 
 • **symbol**: *unique symbol* = Symbol('HttpResponseError')
 
-*Defined in [packages/http/src/httpRequestError.ts:3](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpRequestError.ts#L3)*
+*Defined in [packages/http/src/httpRequestError.ts:3](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpRequestError.ts#L3)*
 
-*Defined in [packages/http/src/httpResponseError.ts:4](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpResponseError.ts#L4)*
+*Defined in [packages/http/src/httpResponseError.ts:4](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpResponseError.ts#L4)*
 
 ## Functions
 
@@ -379,7 +379,7 @@ ___
 
 ▸ **bodyParser**(`__namedParameters`: object): *(Anonymous function)*
 
-*Defined in [packages/http/src/bodyParser.ts:13](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/bodyParser.ts#L13)*
+*Defined in [packages/http/src/bodyParser.ts:13](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/bodyParser.ts#L13)*
 
 **Parameters:**
 
@@ -398,7 +398,7 @@ ___
 
 ▸ **bodySerializer**(`__namedParameters`: object): *[BodySerializer](README.md#bodyserializer)*
 
-*Defined in [packages/http/src/bodySerializer.ts:13](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/bodySerializer.ts#L13)*
+*Defined in [packages/http/src/bodySerializer.ts:13](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/bodySerializer.ts#L13)*
 
 **Parameters:**
 
@@ -416,7 +416,7 @@ ___
 
 ▸ **cacheParsedBody**<**T**>(`parsedBody`: [PromiseFunction](README.md#promisefunction)‹T›): *[PromiseFunction](README.md#promisefunction)‹T›*
 
-*Defined in [packages/http/src/helpers/parsedBodyCache.helper.ts:9](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/helpers/parsedBodyCache.helper.ts#L9)*
+*Defined in [packages/http/src/helpers/parsedBodyCache.helper.ts:9](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/helpers/parsedBodyCache.helper.ts#L9)*
 
 **Type parameters:**
 
@@ -436,7 +436,7 @@ ___
 
 ▸ **createAsyncBodyHandler**<**T**>(): *object*
 
-*Defined in [packages/http/src/requestHandlers/xhr.requestHandler.ts:9](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/requestHandlers/xhr.requestHandler.ts#L9)*
+*Defined in [packages/http/src/requestHandlers/xhr.requestHandler.ts:9](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/requestHandlers/xhr.requestHandler.ts#L9)*
 
 **Type parameters:**
 
@@ -456,7 +456,7 @@ ___
 
 ▸ **createErrorInterceptor**(): *[HttpInterceptorFunction](README.md#httpinterceptorfunction)*
 
-*Defined in [packages/http/src/interceptors/errorInterceptor.ts:4](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/interceptors/errorInterceptor.ts#L4)*
+*Defined in [packages/http/src/interceptors/errorInterceptor.ts:4](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/interceptors/errorInterceptor.ts#L4)*
 
 **Returns:** *[HttpInterceptorFunction](README.md#httpinterceptorfunction)*
 
@@ -466,7 +466,7 @@ ___
 
 ▸ **createHttpResponse**(`__namedParameters`: object): *[HttpResponse](interfaces/httpresponse.md)*
 
-*Defined in [packages/http/src/httpResponse.ts:14](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpResponse.ts#L14)*
+*Defined in [packages/http/src/httpResponse.ts:14](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpResponse.ts#L14)*
 
 **Parameters:**
 
@@ -487,7 +487,7 @@ ___
 
 ▸ **createLoggingInterceptor**(`__namedParameters`: object): *[HttpInterceptorFunction](README.md#httpinterceptorfunction)*
 
-*Defined in [packages/http/src/interceptors/loggingInterceptor.ts:14](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/interceptors/loggingInterceptor.ts#L14)*
+*Defined in [packages/http/src/interceptors/loggingInterceptor.ts:14](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/interceptors/loggingInterceptor.ts#L14)*
 
 **Parameters:**
 
@@ -505,7 +505,7 @@ ___
 
 ▸ **createRedirectionInterceptor**(`__namedParameters`: object): *[HttpInterceptorFunction](README.md#httpinterceptorfunction)*
 
-*Defined in [packages/http/src/interceptors/redirectionInterceptor.ts:8](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/interceptors/redirectionInterceptor.ts#L8)*
+*Defined in [packages/http/src/interceptors/redirectionInterceptor.ts:8](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/interceptors/redirectionInterceptor.ts#L8)*
 
 **Parameters:**
 
@@ -523,7 +523,7 @@ ___
 
 ▸ **createSimpleServer**(`__namedParameters`: object): *[SimpleServer](interfaces/simpleserver.md)*
 
-*Defined in [packages/http/src/testing/createSimpleServer.helper.ts:26](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/testing/createSimpleServer.helper.ts#L26)*
+*Defined in [packages/http/src/testing/createSimpleServer.helper.ts:26](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/testing/createSimpleServer.helper.ts#L26)*
 
 **Parameters:**
 
@@ -543,7 +543,7 @@ ___
 
 ▸ **deepKeyMap**(`object`: any, `mapper`: function): *any*
 
-*Defined in [packages/http/src/helpers/caseConversion.helper.ts:15](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/helpers/caseConversion.helper.ts#L15)*
+*Defined in [packages/http/src/helpers/caseConversion.helper.ts:15](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/helpers/caseConversion.helper.ts#L15)*
 
 **Parameters:**
 
@@ -567,7 +567,7 @@ ___
 
 ▸ **defaultHeaders**(`_host`: string): *object*
 
-*Defined in [packages/http/src/helpers/httpClient.helper.ts:4](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/helpers/httpClient.helper.ts#L4)*
+*Defined in [packages/http/src/helpers/httpClient.helper.ts:4](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/helpers/httpClient.helper.ts#L4)*
 
 **Parameters:**
 
@@ -587,7 +587,7 @@ ___
 
 ▸ **encodeArrayBuffer**(`data`: [TypedArray](README.md#typedarray) | string | undefined, `encoding`: [BufferEncoding](README.md#bufferencoding)): *Uint8Array‹›*
 
-*Defined in [packages/http/src/helpers/encoder.helper.ts:31](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/helpers/encoder.helper.ts#L31)*
+*Defined in [packages/http/src/helpers/encoder.helper.ts:31](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/helpers/encoder.helper.ts#L31)*
 
 **Parameters:**
 
@@ -604,7 +604,7 @@ ___
 
 ▸ **encodeText**(`buffer`: ArrayBuffer, `encoding`: string): *string*
 
-*Defined in [packages/http/src/helpers/encoder.helper.ts:36](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/helpers/encoder.helper.ts#L36)*
+*Defined in [packages/http/src/helpers/encoder.helper.ts:36](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/helpers/encoder.helper.ts#L36)*
 
 **Parameters:**
 
@@ -621,7 +621,7 @@ ___
 
 ▸ **fetchRequestHandler**(`fetchRequestHandlerOptions`: [FetchRequestHandlerOptions](interfaces/fetchrequesthandleroptions.md)): *[HttpRequestHandler](README.md#httprequesthandler)*
 
-*Defined in [packages/http/src/requestHandlers/fetch.requestHandler.ts:17](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/requestHandlers/fetch.requestHandler.ts#L17)*
+*Defined in [packages/http/src/requestHandlers/fetch.requestHandler.ts:17](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/requestHandlers/fetch.requestHandler.ts#L17)*
 
 Creates a new [HttpRequestHandler](README.md#httprequesthandler) that uses [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) underneath.
 Does not support *timeout* property.
@@ -641,7 +641,7 @@ ___
 
 ▸ **getCaseConverter**(`bodyCasing?`: [BodyCasing](enums/bodycasing.md)): *toCamelCase*
 
-*Defined in [packages/http/src/helpers/caseConversion.helper.ts:51](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/helpers/caseConversion.helper.ts#L51)*
+*Defined in [packages/http/src/helpers/caseConversion.helper.ts:51](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/helpers/caseConversion.helper.ts#L51)*
 
 **Parameters:**
 
@@ -657,7 +657,7 @@ ___
 
 ▸ **getEncodingFromHeaders**(`headers`: [HttpResponseHeaders](classes/httpresponseheaders.md) | undefined, `fallback`: string): *string*
 
-*Defined in [packages/http/src/helpers/encoder.helper.ts:23](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/helpers/encoder.helper.ts#L23)*
+*Defined in [packages/http/src/helpers/encoder.helper.ts:23](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/helpers/encoder.helper.ts#L23)*
 
 **Parameters:**
 
@@ -674,7 +674,7 @@ ___
 
 ▸ **getHeader**(`headers`: [HttpHeaders](README.md#httpheaders) | undefined, `header`: string): *string | undefined*
 
-*Defined in [packages/http/src/helpers/headers.helper.ts:3](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/helpers/headers.helper.ts#L3)*
+*Defined in [packages/http/src/helpers/headers.helper.ts:3](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/helpers/headers.helper.ts#L3)*
 
 **Parameters:**
 
@@ -691,7 +691,7 @@ ___
 
 ▸ **getHostname**(`url`: string): *string*
 
-*Defined in [packages/http/src/helpers/httpClient.helper.ts:29](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/helpers/httpClient.helper.ts#L29)*
+*Defined in [packages/http/src/helpers/httpClient.helper.ts:29](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/helpers/httpClient.helper.ts#L29)*
 
 **Parameters:**
 
@@ -707,7 +707,7 @@ ___
 
 ▸ **handleRequest**(`code`: number, `body`: any, `contentType`: string): *Promise‹[HttpResponse](interfaces/httpresponse.md)›*
 
-*Defined in [packages/http/src/requestHandlers/mock.requestHandler.ts:8](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/requestHandlers/mock.requestHandler.ts#L8)*
+*Defined in [packages/http/src/requestHandlers/mock.requestHandler.ts:8](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/requestHandlers/mock.requestHandler.ts#L8)*
 
 **Parameters:**
 
@@ -725,7 +725,7 @@ ___
 
 ▸ **httpRequestHandler**(`requestHandlerOptions`: [HttpRequestHandlerOptions](interfaces/httprequesthandleroptions.md)): *[HttpRequestHandler](README.md#httprequesthandler)*
 
-*Defined in [packages/http/src/requestHandlers/http.requestHandler.ts:19](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/requestHandlers/http.requestHandler.ts#L19)*
+*Defined in [packages/http/src/requestHandlers/http.requestHandler.ts:19](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/requestHandlers/http.requestHandler.ts#L19)*
 
 Creates a new [HttpRequestHandler](README.md#httprequesthandler) that uses native Node.js [HTTP](https://nodejs.org/api/http.html) & [HTTPS](https://nodejs.org/api/https.html) modules underneath.
 Does not support *mode* property.
@@ -744,7 +744,7 @@ ___
 
 ▸ **isHttpInterceptorInterface**(`interceptor`: [HttpInterceptor](README.md#httpinterceptor)): *interceptor is HttpInterceptorInterface*
 
-*Defined in [packages/http/src/httpClient.ts:38](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpClient.ts#L38)*
+*Defined in [packages/http/src/httpClient.ts:38](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpClient.ts#L38)*
 
 **Parameters:**
 
@@ -760,7 +760,7 @@ ___
 
 ▸ **isHttpRequestError**(`error`: any): *error is HttpRequestError*
 
-*Defined in [packages/http/src/httpRequestError.ts:14](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpRequestError.ts#L14)*
+*Defined in [packages/http/src/httpRequestError.ts:14](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpRequestError.ts#L14)*
 
 **Parameters:**
 
@@ -776,7 +776,7 @@ ___
 
 ▸ **isHttpResponseError**(`error`: any): *error is HttpResponseError*
 
-*Defined in [packages/http/src/httpResponseError.ts:17](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpResponseError.ts#L17)*
+*Defined in [packages/http/src/httpResponseError.ts:17](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpResponseError.ts#L17)*
 
 **Parameters:**
 
@@ -792,7 +792,7 @@ ___
 
 ▸ **mergeRequestOptions**(`defaultRequestOptions`: RequestInit | undefined, `requestOptions`: [NormalizedHttpOptions](interfaces/normalizedhttpoptions.md)): *RequestInit & [NormalizedHttpOptions](interfaces/normalizedhttpoptions.md)*
 
-*Defined in [packages/http/src/requestHandlers/fetch.requestHandler.ts:62](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/requestHandlers/fetch.requestHandler.ts#L62)*
+*Defined in [packages/http/src/requestHandlers/fetch.requestHandler.ts:62](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/requestHandlers/fetch.requestHandler.ts#L62)*
 
 **Parameters:**
 
@@ -809,7 +809,7 @@ ___
 
 ▸ **mockRequestHandler**(`mockOptions`: [MockOptions](interfaces/mockoptions.md)): *[MockHttpRequestHandler](README.md#mockhttprequesthandler)*
 
-*Defined in [packages/http/src/requestHandlers/mock.requestHandler.ts:40](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/requestHandlers/mock.requestHandler.ts#L40)*
+*Defined in [packages/http/src/requestHandlers/mock.requestHandler.ts:40](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/requestHandlers/mock.requestHandler.ts#L40)*
 
 **Parameters:**
 
@@ -825,7 +825,7 @@ ___
 
 ▸ **noConversion**(`object`: any): *any*
 
-*Defined in [packages/http/src/helpers/caseConversion.helper.ts:49](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/helpers/caseConversion.helper.ts#L49)*
+*Defined in [packages/http/src/helpers/caseConversion.helper.ts:49](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/helpers/caseConversion.helper.ts#L49)*
 
 **Parameters:**
 
@@ -841,7 +841,7 @@ ___
 
 ▸ **parseHeaders**(`headers`: Headers): *Record‹string, string›*
 
-*Defined in [packages/http/src/helpers/headers.helper.ts:12](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/helpers/headers.helper.ts#L12)*
+*Defined in [packages/http/src/helpers/headers.helper.ts:12](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/helpers/headers.helper.ts#L12)*
 
 **Parameters:**
 
@@ -857,7 +857,7 @@ ___
 
 ▸ **passthroughParser**(`response`: [RawHttpResponse](interfaces/rawhttpresponse.md)): *object*
 
-*Defined in [packages/http/src/httpClient.ts:53](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpClient.ts#L53)*
+*Defined in [packages/http/src/httpClient.ts:53](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpClient.ts#L53)*
 
 **Parameters:**
 
@@ -875,7 +875,7 @@ ___
 
 ▸ **sanitizeHeaders**(`headers`: Record‹string, any›): *Record‹string, string›*
 
-*Defined in [packages/http/src/helpers/httpClient.helper.ts:19](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/helpers/httpClient.helper.ts#L19)*
+*Defined in [packages/http/src/helpers/httpClient.helper.ts:19](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/helpers/httpClient.helper.ts#L19)*
 
 **Parameters:**
 
@@ -891,7 +891,7 @@ ___
 
 ▸ **sleep**(`ms`: number): *Promise‹unknown›*
 
-*Defined in [packages/http/src/helpers/sleep.helper.ts:1](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/helpers/sleep.helper.ts#L1)*
+*Defined in [packages/http/src/helpers/sleep.helper.ts:1](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/helpers/sleep.helper.ts#L1)*
 
 **Parameters:**
 
@@ -907,7 +907,7 @@ ___
 
 ▸ **splitWords**(`text`: string): *string[]*
 
-*Defined in [packages/http/src/helpers/caseConversion.helper.ts:11](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/helpers/caseConversion.helper.ts#L11)*
+*Defined in [packages/http/src/helpers/caseConversion.helper.ts:11](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/helpers/caseConversion.helper.ts#L11)*
 
 **Parameters:**
 
@@ -923,7 +923,7 @@ ___
 
 ▸ **switchContentType**<**T**>(`contentType`: string, `map`: [ContentTypeMap](README.md#contenttypemap)‹T›, `defaultResult`: T): *T*
 
-*Defined in [packages/http/src/contentType.ts:16](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/contentType.ts#L16)*
+*Defined in [packages/http/src/contentType.ts:16](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/contentType.ts#L16)*
 
 **Type parameters:**
 
@@ -941,7 +941,7 @@ Name | Type |
 
 ▸ **switchContentType**<**T**>(`contentType`: string, `map`: [ContentTypeMap](README.md#contenttypemap)‹T›): *T | undefined*
 
-*Defined in [packages/http/src/contentType.ts:17](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/contentType.ts#L17)*
+*Defined in [packages/http/src/contentType.ts:17](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/contentType.ts#L17)*
 
 **Type parameters:**
 
@@ -962,7 +962,7 @@ ___
 
 ▸ **toCamelCase**(`object`: any): *any*
 
-*Defined in [packages/http/src/helpers/caseConversion.helper.ts:31](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/helpers/caseConversion.helper.ts#L31)*
+*Defined in [packages/http/src/helpers/caseConversion.helper.ts:31](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/helpers/caseConversion.helper.ts#L31)*
 
 **Parameters:**
 
@@ -978,7 +978,7 @@ ___
 
 ▸ **toKebabCase**(`object`: any): *any*
 
-*Defined in [packages/http/src/helpers/caseConversion.helper.ts:45](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/helpers/caseConversion.helper.ts#L45)*
+*Defined in [packages/http/src/helpers/caseConversion.helper.ts:45](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/helpers/caseConversion.helper.ts#L45)*
 
 **Parameters:**
 
@@ -994,7 +994,7 @@ ___
 
 ▸ **toPascalCase**(`object`: any): *any*
 
-*Defined in [packages/http/src/helpers/caseConversion.helper.ts:37](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/helpers/caseConversion.helper.ts#L37)*
+*Defined in [packages/http/src/helpers/caseConversion.helper.ts:37](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/helpers/caseConversion.helper.ts#L37)*
 
 **Parameters:**
 
@@ -1010,7 +1010,7 @@ ___
 
 ▸ **toSnakeCase**(`object`: any): *any*
 
-*Defined in [packages/http/src/helpers/caseConversion.helper.ts:41](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/helpers/caseConversion.helper.ts#L41)*
+*Defined in [packages/http/src/helpers/caseConversion.helper.ts:41](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/helpers/caseConversion.helper.ts#L41)*
 
 **Parameters:**
 
@@ -1026,7 +1026,7 @@ ___
 
 ▸ **toUrlEncoded**(`obj`: object): *string*
 
-*Defined in [packages/http/src/helpers/httpClient.helper.ts:9](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/helpers/httpClient.helper.ts#L9)*
+*Defined in [packages/http/src/helpers/httpClient.helper.ts:9](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/helpers/httpClient.helper.ts#L9)*
 
 **Parameters:**
 
@@ -1042,7 +1042,7 @@ ___
 
 ▸ **urlCombine**(`sourceUrl`: string, `sourceQuery?`: undefined | object, `options?`: qs.IStringifyOptions): *string*
 
-*Defined in [packages/http/src/helpers/urlEncoding.helper.ts:15](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/helpers/urlEncoding.helper.ts#L15)*
+*Defined in [packages/http/src/helpers/urlEncoding.helper.ts:15](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/helpers/urlEncoding.helper.ts#L15)*
 
 **Parameters:**
 
@@ -1060,7 +1060,7 @@ ___
 
 ▸ **urlDecode**<**T**>(`value`: string, `options?`: qs.IParseOptions): *T*
 
-*Defined in [packages/http/src/helpers/urlEncoding.helper.ts:28](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/helpers/urlEncoding.helper.ts#L28)*
+*Defined in [packages/http/src/helpers/urlEncoding.helper.ts:28](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/helpers/urlEncoding.helper.ts#L28)*
 
 **Type parameters:**
 
@@ -1081,7 +1081,7 @@ ___
 
 ▸ **urlDestruct**(`url`: string, `options?`: qs.IParseOptions): *object*
 
-*Defined in [packages/http/src/helpers/urlEncoding.helper.ts:4](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/helpers/urlEncoding.helper.ts#L4)*
+*Defined in [packages/http/src/helpers/urlEncoding.helper.ts:4](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/helpers/urlEncoding.helper.ts#L4)*
 
 **Parameters:**
 
@@ -1102,7 +1102,7 @@ ___
 
 ▸ **urlEncode**(`value`: any, `options?`: qs.IStringifyOptions): *string*
 
-*Defined in [packages/http/src/helpers/urlEncoding.helper.ts:24](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/helpers/urlEncoding.helper.ts#L24)*
+*Defined in [packages/http/src/helpers/urlEncoding.helper.ts:24](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/helpers/urlEncoding.helper.ts#L24)*
 
 **Parameters:**
 
@@ -1119,7 +1119,7 @@ ___
 
 ▸ **useInterceptor**(`normalizedOptions`: [NormalizedHttpOptions](interfaces/normalizedhttpoptions.md)): *(Anonymous function)*
 
-*Defined in [packages/http/src/httpClient.ts:43](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpClient.ts#L43)*
+*Defined in [packages/http/src/httpClient.ts:43](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpClient.ts#L43)*
 
 **Parameters:**
 
@@ -1135,7 +1135,7 @@ ___
 
 ▸ **xhrRequestHandler**(): *[HttpRequestHandler](README.md#httprequesthandler)*
 
-*Defined in [packages/http/src/requestHandlers/xhr.requestHandler.ts:51](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/requestHandlers/xhr.requestHandler.ts#L51)*
+*Defined in [packages/http/src/requestHandlers/xhr.requestHandler.ts:51](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/requestHandlers/xhr.requestHandler.ts#L51)*
 
 **Returns:** *[HttpRequestHandler](README.md#httprequesthandler)*
 
@@ -1145,25 +1145,25 @@ ___
 
 ### ▪ **ContentTypeRegex**: *object*
 
-*Defined in [packages/http/src/contentType.ts:8](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/contentType.ts#L8)*
+*Defined in [packages/http/src/contentType.ts:8](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/contentType.ts#L8)*
 
 ###  JSON
 
 • **JSON**: *RegExp‹›* = /^application\/(json|.+\+json)$/
 
-*Defined in [packages/http/src/contentType.ts:10](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/contentType.ts#L10)*
+*Defined in [packages/http/src/contentType.ts:10](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/contentType.ts#L10)*
 
 ###  TEXT
 
 • **TEXT**: *RegExp‹›* = /^text\//
 
-*Defined in [packages/http/src/contentType.ts:9](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/contentType.ts#L9)*
+*Defined in [packages/http/src/contentType.ts:9](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/contentType.ts#L9)*
 
 ###  URL_ENCODED
 
 • **URL_ENCODED**: *RegExp‹›* = /^application\/x-www-form-urlencoded$/
 
-*Defined in [packages/http/src/contentType.ts:11](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/contentType.ts#L11)*
+*Defined in [packages/http/src/contentType.ts:11](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/contentType.ts#L11)*
 
 ___
 
@@ -1171,31 +1171,31 @@ ___
 
 ### ▪ **HttpClientHelper**: *object*
 
-*Defined in [packages/http/src/helpers/httpClient.helper.ts:34](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/helpers/httpClient.helper.ts#L34)*
+*Defined in [packages/http/src/helpers/httpClient.helper.ts:34](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/helpers/httpClient.helper.ts#L34)*
 
 ###  defaultHeaders
 
 • **defaultHeaders**: *[defaultHeaders](README.md#const-defaultheaders)*
 
-*Defined in [packages/http/src/helpers/httpClient.helper.ts:35](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/helpers/httpClient.helper.ts#L35)*
+*Defined in [packages/http/src/helpers/httpClient.helper.ts:35](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/helpers/httpClient.helper.ts#L35)*
 
 ###  getHostname
 
 • **getHostname**: *getHostname*
 
-*Defined in [packages/http/src/helpers/httpClient.helper.ts:38](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/helpers/httpClient.helper.ts#L38)*
+*Defined in [packages/http/src/helpers/httpClient.helper.ts:38](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/helpers/httpClient.helper.ts#L38)*
 
 ###  sanitizeHeaders
 
 • **sanitizeHeaders**: *[sanitizeHeaders](README.md#const-sanitizeheaders)*
 
-*Defined in [packages/http/src/helpers/httpClient.helper.ts:37](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/helpers/httpClient.helper.ts#L37)*
+*Defined in [packages/http/src/helpers/httpClient.helper.ts:37](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/helpers/httpClient.helper.ts#L37)*
 
 ###  toUrlEncoded
 
 • **toUrlEncoded**: *[toUrlEncoded](README.md#const-tourlencoded)*
 
-*Defined in [packages/http/src/helpers/httpClient.helper.ts:36](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/helpers/httpClient.helper.ts#L36)*
+*Defined in [packages/http/src/helpers/httpClient.helper.ts:36](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/helpers/httpClient.helper.ts#L36)*
 
 ___
 
@@ -1203,107 +1203,107 @@ ___
 
 ### ▪ **HttpStatusText**: *object*
 
-*Defined in [packages/http/src/httpCodes.ts:52](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpCodes.ts#L52)*
+*Defined in [packages/http/src/httpCodes.ts:52](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L52)*
 
 ###  __computed
 
 • **__computed**: *string* = "Network Authentication Required"
 
-*Defined in [packages/http/src/httpCodes.ts:53](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpCodes.ts#L53)*
+*Defined in [packages/http/src/httpCodes.ts:53](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L53)*
 
-*Defined in [packages/http/src/httpCodes.ts:54](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpCodes.ts#L54)*
+*Defined in [packages/http/src/httpCodes.ts:54](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L54)*
 
-*Defined in [packages/http/src/httpCodes.ts:55](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpCodes.ts#L55)*
+*Defined in [packages/http/src/httpCodes.ts:55](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L55)*
 
-*Defined in [packages/http/src/httpCodes.ts:56](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpCodes.ts#L56)*
+*Defined in [packages/http/src/httpCodes.ts:56](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L56)*
 
-*Defined in [packages/http/src/httpCodes.ts:57](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpCodes.ts#L57)*
+*Defined in [packages/http/src/httpCodes.ts:57](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L57)*
 
-*Defined in [packages/http/src/httpCodes.ts:58](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpCodes.ts#L58)*
+*Defined in [packages/http/src/httpCodes.ts:58](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L58)*
 
-*Defined in [packages/http/src/httpCodes.ts:59](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpCodes.ts#L59)*
+*Defined in [packages/http/src/httpCodes.ts:59](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L59)*
 
-*Defined in [packages/http/src/httpCodes.ts:60](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpCodes.ts#L60)*
+*Defined in [packages/http/src/httpCodes.ts:60](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L60)*
 
-*Defined in [packages/http/src/httpCodes.ts:61](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpCodes.ts#L61)*
+*Defined in [packages/http/src/httpCodes.ts:61](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L61)*
 
-*Defined in [packages/http/src/httpCodes.ts:62](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpCodes.ts#L62)*
+*Defined in [packages/http/src/httpCodes.ts:62](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L62)*
 
-*Defined in [packages/http/src/httpCodes.ts:63](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpCodes.ts#L63)*
+*Defined in [packages/http/src/httpCodes.ts:63](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L63)*
 
-*Defined in [packages/http/src/httpCodes.ts:64](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpCodes.ts#L64)*
+*Defined in [packages/http/src/httpCodes.ts:64](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L64)*
 
-*Defined in [packages/http/src/httpCodes.ts:65](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpCodes.ts#L65)*
+*Defined in [packages/http/src/httpCodes.ts:65](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L65)*
 
-*Defined in [packages/http/src/httpCodes.ts:66](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpCodes.ts#L66)*
+*Defined in [packages/http/src/httpCodes.ts:66](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L66)*
 
-*Defined in [packages/http/src/httpCodes.ts:67](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpCodes.ts#L67)*
+*Defined in [packages/http/src/httpCodes.ts:67](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L67)*
 
-*Defined in [packages/http/src/httpCodes.ts:68](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpCodes.ts#L68)*
+*Defined in [packages/http/src/httpCodes.ts:68](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L68)*
 
-*Defined in [packages/http/src/httpCodes.ts:69](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpCodes.ts#L69)*
+*Defined in [packages/http/src/httpCodes.ts:69](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L69)*
 
-*Defined in [packages/http/src/httpCodes.ts:70](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpCodes.ts#L70)*
+*Defined in [packages/http/src/httpCodes.ts:70](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L70)*
 
-*Defined in [packages/http/src/httpCodes.ts:71](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpCodes.ts#L71)*
+*Defined in [packages/http/src/httpCodes.ts:71](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L71)*
 
-*Defined in [packages/http/src/httpCodes.ts:72](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpCodes.ts#L72)*
+*Defined in [packages/http/src/httpCodes.ts:72](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L72)*
 
-*Defined in [packages/http/src/httpCodes.ts:73](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpCodes.ts#L73)*
+*Defined in [packages/http/src/httpCodes.ts:73](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L73)*
 
-*Defined in [packages/http/src/httpCodes.ts:74](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpCodes.ts#L74)*
+*Defined in [packages/http/src/httpCodes.ts:74](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L74)*
 
-*Defined in [packages/http/src/httpCodes.ts:75](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpCodes.ts#L75)*
+*Defined in [packages/http/src/httpCodes.ts:75](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L75)*
 
-*Defined in [packages/http/src/httpCodes.ts:76](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpCodes.ts#L76)*
+*Defined in [packages/http/src/httpCodes.ts:76](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L76)*
 
-*Defined in [packages/http/src/httpCodes.ts:77](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpCodes.ts#L77)*
+*Defined in [packages/http/src/httpCodes.ts:77](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L77)*
 
-*Defined in [packages/http/src/httpCodes.ts:78](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpCodes.ts#L78)*
+*Defined in [packages/http/src/httpCodes.ts:78](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L78)*
 
-*Defined in [packages/http/src/httpCodes.ts:79](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpCodes.ts#L79)*
+*Defined in [packages/http/src/httpCodes.ts:79](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L79)*
 
-*Defined in [packages/http/src/httpCodes.ts:80](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpCodes.ts#L80)*
+*Defined in [packages/http/src/httpCodes.ts:80](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L80)*
 
-*Defined in [packages/http/src/httpCodes.ts:81](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpCodes.ts#L81)*
+*Defined in [packages/http/src/httpCodes.ts:81](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L81)*
 
-*Defined in [packages/http/src/httpCodes.ts:82](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpCodes.ts#L82)*
+*Defined in [packages/http/src/httpCodes.ts:82](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L82)*
 
-*Defined in [packages/http/src/httpCodes.ts:83](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpCodes.ts#L83)*
+*Defined in [packages/http/src/httpCodes.ts:83](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L83)*
 
-*Defined in [packages/http/src/httpCodes.ts:84](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpCodes.ts#L84)*
+*Defined in [packages/http/src/httpCodes.ts:84](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L84)*
 
-*Defined in [packages/http/src/httpCodes.ts:85](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpCodes.ts#L85)*
+*Defined in [packages/http/src/httpCodes.ts:85](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L85)*
 
-*Defined in [packages/http/src/httpCodes.ts:86](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpCodes.ts#L86)*
+*Defined in [packages/http/src/httpCodes.ts:86](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L86)*
 
-*Defined in [packages/http/src/httpCodes.ts:87](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpCodes.ts#L87)*
+*Defined in [packages/http/src/httpCodes.ts:87](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L87)*
 
-*Defined in [packages/http/src/httpCodes.ts:88](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpCodes.ts#L88)*
+*Defined in [packages/http/src/httpCodes.ts:88](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L88)*
 
-*Defined in [packages/http/src/httpCodes.ts:89](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpCodes.ts#L89)*
+*Defined in [packages/http/src/httpCodes.ts:89](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L89)*
 
-*Defined in [packages/http/src/httpCodes.ts:90](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpCodes.ts#L90)*
+*Defined in [packages/http/src/httpCodes.ts:90](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L90)*
 
-*Defined in [packages/http/src/httpCodes.ts:91](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpCodes.ts#L91)*
+*Defined in [packages/http/src/httpCodes.ts:91](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L91)*
 
-*Defined in [packages/http/src/httpCodes.ts:92](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpCodes.ts#L92)*
+*Defined in [packages/http/src/httpCodes.ts:92](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L92)*
 
-*Defined in [packages/http/src/httpCodes.ts:93](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpCodes.ts#L93)*
+*Defined in [packages/http/src/httpCodes.ts:93](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L93)*
 
-*Defined in [packages/http/src/httpCodes.ts:94](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpCodes.ts#L94)*
+*Defined in [packages/http/src/httpCodes.ts:94](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L94)*
 
-*Defined in [packages/http/src/httpCodes.ts:95](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpCodes.ts#L95)*
+*Defined in [packages/http/src/httpCodes.ts:95](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L95)*
 
-*Defined in [packages/http/src/httpCodes.ts:96](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpCodes.ts#L96)*
+*Defined in [packages/http/src/httpCodes.ts:96](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L96)*
 
-*Defined in [packages/http/src/httpCodes.ts:97](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpCodes.ts#L97)*
+*Defined in [packages/http/src/httpCodes.ts:97](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L97)*
 
-*Defined in [packages/http/src/httpCodes.ts:98](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpCodes.ts#L98)*
+*Defined in [packages/http/src/httpCodes.ts:98](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L98)*
 
-*Defined in [packages/http/src/httpCodes.ts:99](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpCodes.ts#L99)*
+*Defined in [packages/http/src/httpCodes.ts:99](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L99)*
 
-*Defined in [packages/http/src/httpCodes.ts:100](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpCodes.ts#L100)*
+*Defined in [packages/http/src/httpCodes.ts:100](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L100)*
 
 ___
 
@@ -1311,22 +1311,22 @@ ___
 
 ### ▪ **Interceptors**: *object*
 
-*Defined in [packages/http/src/interceptors/index.ts:5](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/interceptors/index.ts#L5)*
+*Defined in [packages/http/src/interceptors/index.ts:5](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/interceptors/index.ts#L5)*
 
 ###  createErrorInterceptor
 
 • **createErrorInterceptor**: *createErrorInterceptor*
 
-*Defined in [packages/http/src/interceptors/index.ts:6](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/interceptors/index.ts#L6)*
+*Defined in [packages/http/src/interceptors/index.ts:6](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/interceptors/index.ts#L6)*
 
 ###  createLoggingInterceptor
 
 • **createLoggingInterceptor**: *createLoggingInterceptor*
 
-*Defined in [packages/http/src/interceptors/index.ts:7](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/interceptors/index.ts#L7)*
+*Defined in [packages/http/src/interceptors/index.ts:7](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/interceptors/index.ts#L7)*
 
 ###  createRedirectionInterceptor
 
 • **createRedirectionInterceptor**: *createRedirectionInterceptor*
 
-*Defined in [packages/http/src/interceptors/index.ts:8](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/interceptors/index.ts#L8)*
+*Defined in [packages/http/src/interceptors/index.ts:8](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/interceptors/index.ts#L8)*

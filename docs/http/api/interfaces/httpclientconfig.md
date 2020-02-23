@@ -28,7 +28,7 @@
 
 • **baseUrl**? : *undefined | string*
 
-*Defined in [packages/http/src/httpClient.ts:31](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpClient.ts#L31)*
+*Defined in [packages/http/src/httpClient.ts:31](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpClient.ts#L31)*
 
 ___
 
@@ -36,7 +36,7 @@ ___
 
 • **bodyParser**? : *[BodyParser](../README.md#bodyparser)‹T›*
 
-*Defined in [packages/http/src/httpClient.ts:29](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpClient.ts#L29)*
+*Defined in [packages/http/src/httpClient.ts:29](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpClient.ts#L29)*
 
 ___
 
@@ -44,7 +44,7 @@ ___
 
 • **bodySerializer**? : *[BodySerializer](../README.md#bodyserializer)*
 
-*Defined in [packages/http/src/httpClient.ts:30](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpClient.ts#L30)*
+*Defined in [packages/http/src/httpClient.ts:30](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpClient.ts#L30)*
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 • **defaultHeadersProvider**? : *[HeadersProvider](../README.md#headersprovider)*
 
-*Defined in [packages/http/src/httpClient.ts:28](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpClient.ts#L28)*
+*Defined in [packages/http/src/httpClient.ts:28](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpClient.ts#L28)*
 
 ___
 
@@ -60,7 +60,7 @@ ___
 
 • **followRedirections**? : *undefined | false | true*
 
-*Defined in [packages/http/src/httpClient.ts:32](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpClient.ts#L32)*
+*Defined in [packages/http/src/httpClient.ts:32](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpClient.ts#L32)*
 
 ___
 
@@ -68,7 +68,7 @@ ___
 
 • **queryParserOptions**? : *qs.IParseOptions*
 
-*Defined in [packages/http/src/httpClient.ts:33](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpClient.ts#L33)*
+*Defined in [packages/http/src/httpClient.ts:33](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpClient.ts#L33)*
 
 ___
 
@@ -76,7 +76,7 @@ ___
 
 • **querySerializerOptions**? : *qs.IStringifyOptions*
 
-*Defined in [packages/http/src/httpClient.ts:34](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpClient.ts#L34)*
+*Defined in [packages/http/src/httpClient.ts:34](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpClient.ts#L34)*
 
 ___
 
@@ -84,7 +84,7 @@ ___
 
 • **requestHandler**: *[HttpRequestHandler](../README.md#httprequesthandler)*
 
-*Defined in [packages/http/src/httpClient.ts:27](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpClient.ts#L27)*
+*Defined in [packages/http/src/httpClient.ts:27](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpClient.ts#L27)*
 
 ___
 
@@ -92,4 +92,4 @@ ___
 
 • **requestTimeout**? : *undefined | number*
 
-*Defined in [packages/http/src/httpClient.ts:35](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpClient.ts#L35)*
+*Defined in [packages/http/src/httpClient.ts:35](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpClient.ts#L35)*

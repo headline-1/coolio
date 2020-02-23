@@ -24,7 +24,7 @@
 
 • **data**: *D*
 
-*Defined in [jsonApi.interface.ts:120](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.interface.ts#L120)*
+*Defined in [jsonApi.interface.ts:120](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.interface.ts#L120)*
 
 ___
 
@@ -32,7 +32,7 @@ ___
 
 • **included**? : *[IncludedRelationships](../README.md#includedrelationships)*
 
-*Defined in [jsonApi.interface.ts:122](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.interface.ts#L122)*
+*Defined in [jsonApi.interface.ts:122](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.interface.ts#L122)*
 
 ___
 
@@ -40,4 +40,4 @@ ___
 
 • **meta**? : *M*
 
-*Defined in [jsonApi.interface.ts:121](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.interface.ts#L121)*
+*Defined in [jsonApi.interface.ts:121](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.interface.ts#L121)*

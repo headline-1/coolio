@@ -17,7 +17,7 @@
 
 • **pagination**? : *undefined | false | true*
 
-*Defined in [jsonApi.builder.ts:11](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.builder.ts#L11)*
+*Defined in [jsonApi.builder.ts:11](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.builder.ts#L11)*
 
 ___
 
@@ -25,4 +25,4 @@ ___
 
 • **sort**? : *undefined | false | true*
 
-*Defined in [jsonApi.builder.ts:10](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.builder.ts#L10)*
+*Defined in [jsonApi.builder.ts:10](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.builder.ts#L10)*

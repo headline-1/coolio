@@ -16,7 +16,7 @@
 
 ▸ **onIntercept**<**Body**>(`request`: [HttpFetch](../README.md#httpfetch)‹Body›, `options`: [NormalizedHttpOptions](normalizedhttpoptions.md)): *[HttpFetch](../README.md#httpfetch)‹Body›*
 
-*Defined in [packages/http/src/httpClient.types.ts:34](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpClient.types.ts#L34)*
+*Defined in [packages/http/src/httpClient.types.ts:34](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpClient.types.ts#L34)*
 
 **Type parameters:**
 

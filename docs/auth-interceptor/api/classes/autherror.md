@@ -26,7 +26,7 @@
 
 \+ **new AuthError**(`message`: string, `cause?`: [Error](autherror.md#static-error)): *[AuthError](autherror.md)*
 
-*Defined in [packages/auth-interceptor/src/authError.ts:2](https://github.com/headline-1/coolio/blob/c80476b/packages/auth-interceptor/src/authError.ts#L2)*
+*Defined in [packages/auth-interceptor/src/authError.ts:2](https://github.com/headline-1/coolio/blob/420fd1d/packages/auth-interceptor/src/authError.ts#L2)*
 
 **Parameters:**
 
@@ -43,7 +43,7 @@ Name | Type |
 
 • **cause**? : *[Error](autherror.md#static-error)*
 
-*Defined in [packages/auth-interceptor/src/authError.ts:2](https://github.com/headline-1/coolio/blob/c80476b/packages/auth-interceptor/src/authError.ts#L2)*
+*Defined in [packages/auth-interceptor/src/authError.ts:2](https://github.com/headline-1/coolio/blob/420fd1d/packages/auth-interceptor/src/authError.ts#L2)*
 
 ___
 

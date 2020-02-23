@@ -38,6 +38,9 @@ const processPackage = (projectDir) => {
       readme: 'none',
       theme: 'gitbook',
       excludeNotExported: true,
+      excludePrivate: true,
+      hideGenerator: true,
+      hideSources: true,
     },
   });
   writeTsconfig('types', { compilerOptions: { declarationDir: './dist/types' } });

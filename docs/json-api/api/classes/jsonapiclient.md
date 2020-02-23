@@ -29,7 +29,7 @@
 
 \+ **new JsonApiClient**(`httpClient`: HttpClient): *[JsonApiClient](jsonapiclient.md)*
 
-*Defined in [jsonApi.client.ts:9](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.client.ts#L9)*
+*Defined in [jsonApi.client.ts:9](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.client.ts#L9)*
 
 **Parameters:**
 
@@ -45,7 +45,7 @@ Name | Type |
 
 • **httpClient**: *HttpClient*
 
-*Defined in [jsonApi.client.ts:10](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.client.ts#L10)*
+*Defined in [jsonApi.client.ts:10](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.client.ts#L10)*
 
 ## Methods
 
@@ -53,7 +53,7 @@ Name | Type |
 
 ▸ **get**<**D**, **M**>(`uri`: string): *[GetBuilder](getbuilder.md)‹[RawResponse](../interfaces/rawresponse.md)‹D, M››*
 
-*Defined in [jsonApi.client.ts:13](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.client.ts#L13)*
+*Defined in [jsonApi.client.ts:13](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.client.ts#L13)*
 
 **Type parameters:**
 
@@ -75,7 +75,7 @@ ___
 
 ▸ **getList**<**D**, **M**>(`uri`: string): *[GetListBuilder](getlistbuilder.md)‹[RawListResponse](../interfaces/rawlistresponse.md)‹D, M›, object›*
 
-*Defined in [jsonApi.client.ts:17](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.client.ts#L17)*
+*Defined in [jsonApi.client.ts:17](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.client.ts#L17)*
 
 **Type parameters:**
 
@@ -97,7 +97,7 @@ ___
 
 ▸ **patch**<**D**, **M**>(`uri`: string): *[UpdateBuilder](updatebuilder.md)‹[RawResponse](../interfaces/rawresponse.md)‹D, M››*
 
-*Defined in [jsonApi.client.ts:33](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.client.ts#L33)*
+*Defined in [jsonApi.client.ts:33](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.client.ts#L33)*
 
 **Type parameters:**
 
@@ -119,7 +119,7 @@ ___
 
 ▸ **post**<**D**, **M**>(`uri`: string): *[PostBuilder](postbuilder.md)‹[RawResponse](../interfaces/rawresponse.md)‹D, M››*
 
-*Defined in [jsonApi.client.ts:21](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.client.ts#L21)*
+*Defined in [jsonApi.client.ts:21](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.client.ts#L21)*
 
 **Type parameters:**
 
@@ -141,7 +141,7 @@ ___
 
 ▸ **put**<**D**, **M**>(`uri`: string): *[UpdateBuilder](updatebuilder.md)‹[RawResponse](../interfaces/rawresponse.md)‹D, M››*
 
-*Defined in [jsonApi.client.ts:29](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.client.ts#L29)*
+*Defined in [jsonApi.client.ts:29](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.client.ts#L29)*
 
 **Type parameters:**
 
@@ -163,7 +163,7 @@ ___
 
 ▸ **remove**<**D**, **M**>(`uri`: string): *[RemoveBuilder](removebuilder.md)‹[RawResponse](../interfaces/rawresponse.md)‹D, M››*
 
-*Defined in [jsonApi.client.ts:25](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.client.ts#L25)*
+*Defined in [jsonApi.client.ts:25](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.client.ts#L25)*
 
 **Type parameters:**
 

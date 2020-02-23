@@ -20,13 +20,10 @@
 
 ### Properties
 
-* [httpClient](getlistbuilder.md#private-httpclient)
-* [includedGroups](getlistbuilder.md#private-includedgroups)
 * [limit](getlistbuilder.md#protected-limit)
 * [offset](getlistbuilder.md#protected-offset)
 * [options](getlistbuilder.md#protected-options)
 * [page](getlistbuilder.md#protected-page)
-* [previousResponse](getlistbuilder.md#private-optional-previousresponse)
 * [queryParams](getlistbuilder.md#protected-queryparams)
 * [resolveIncludedRelationships](getlistbuilder.md#protected-resolveincludedrelationships)
 * [sortParams](getlistbuilder.md#protected-sortparams)
@@ -58,7 +55,7 @@
 
 *Overrides [RequestBuilder](requestbuilder.md).[constructor](requestbuilder.md#protected-constructor)*
 
-*Defined in [jsonApi.getList.ts:36](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.getList.ts#L36)*
+*Defined in [jsonApi.getList.ts:36](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.getList.ts#L36)*
 
 **Parameters:**
 
@@ -71,29 +68,13 @@ Name | Type |
 
 ## Properties
 
-### `Private` httpClient
-
-• **httpClient**: *HttpClient*
-
-*Defined in [jsonApi.getList.ts:38](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.getList.ts#L38)*
-
-___
-
-### `Private` includedGroups
-
-• **includedGroups**: *[IncludedGroupsSchema](../README.md#includedgroupsschema)*
-
-*Defined in [jsonApi.getList.ts:36](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.getList.ts#L36)*
-
-___
-
 ### `Protected` limit
 
 • **limit**: *number* = DEFAULT_RESOURCE_LIMIT
 
 *Inherited from [RequestBuilder](requestbuilder.md).[limit](requestbuilder.md#protected-limit)*
 
-*Defined in [jsonApi.builder.ts:19](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.builder.ts#L19)*
+*Defined in [jsonApi.builder.ts:19](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.builder.ts#L19)*
 
 ___
 
@@ -103,7 +84,7 @@ ___
 
 *Inherited from [RequestBuilder](requestbuilder.md).[offset](requestbuilder.md#protected-offset)*
 
-*Defined in [jsonApi.builder.ts:20](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.builder.ts#L20)*
+*Defined in [jsonApi.builder.ts:20](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.builder.ts#L20)*
 
 ___
 
@@ -113,7 +94,7 @@ ___
 
 *Inherited from [RequestBuilder](requestbuilder.md).[options](requestbuilder.md#protected-options)*
 
-*Defined in [jsonApi.builder.ts:23](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.builder.ts#L23)*
+*Defined in [jsonApi.builder.ts:23](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.builder.ts#L23)*
 
 ___
 
@@ -123,15 +104,7 @@ ___
 
 *Inherited from [RequestBuilder](requestbuilder.md).[page](requestbuilder.md#protected-page)*
 
-*Defined in [jsonApi.builder.ts:21](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.builder.ts#L21)*
-
-___
-
-### `Private` `Optional` previousResponse
-
-• **previousResponse**? : *[JsonListResponse](jsonlistresponse.md)‹Raw, I›*
-
-*Defined in [jsonApi.getList.ts:35](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.getList.ts#L35)*
+*Defined in [jsonApi.builder.ts:21](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.builder.ts#L21)*
 
 ___
 
@@ -141,7 +114,7 @@ ___
 
 *Inherited from [RequestBuilder](requestbuilder.md).[queryParams](requestbuilder.md#protected-queryparams)*
 
-*Defined in [jsonApi.builder.ts:17](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.builder.ts#L17)*
+*Defined in [jsonApi.builder.ts:17](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.builder.ts#L17)*
 
 ___
 
@@ -151,7 +124,7 @@ ___
 
 *Inherited from [RequestBuilder](requestbuilder.md).[resolveIncludedRelationships](requestbuilder.md#protected-resolveincludedrelationships)*
 
-*Defined in [jsonApi.builder.ts:16](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.builder.ts#L16)*
+*Defined in [jsonApi.builder.ts:16](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.builder.ts#L16)*
 
 ___
 
@@ -161,7 +134,7 @@ ___
 
 *Inherited from [RequestBuilder](requestbuilder.md).[sortParams](requestbuilder.md#protected-sortparams)*
 
-*Defined in [jsonApi.builder.ts:18](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.builder.ts#L18)*
+*Defined in [jsonApi.builder.ts:18](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.builder.ts#L18)*
 
 ___
 
@@ -171,7 +144,7 @@ ___
 
 *Inherited from [RequestBuilder](requestbuilder.md).[uri](requestbuilder.md#uri)*
 
-*Defined in [jsonApi.builder.ts:15](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.builder.ts#L15)*
+*Defined in [jsonApi.builder.ts:15](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.builder.ts#L15)*
 
 ## Accessors
 
@@ -181,7 +154,7 @@ ___
 
 *Inherited from [RequestBuilder](requestbuilder.md).[parameters](requestbuilder.md#parameters)*
 
-*Defined in [jsonApi.builder.ts:50](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.builder.ts#L50)*
+*Defined in [jsonApi.builder.ts:50](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.builder.ts#L50)*
 
 **Returns:** *Record‹string, string›*
 
@@ -191,7 +164,7 @@ ___
 
 ▸ **addToResponse**(`response`: [JsonListResponse](jsonlistresponse.md)‹Raw, I› | undefined): *this*
 
-*Defined in [jsonApi.getList.ts:42](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.getList.ts#L42)*
+*Defined in [jsonApi.getList.ts:42](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.getList.ts#L42)*
 
 **Parameters:**
 
@@ -209,7 +182,7 @@ ___
 
 *Inherited from [RequestBuilder](requestbuilder.md).[filter](requestbuilder.md#filter)*
 
-*Defined in [jsonApi.builder.ts:84](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.builder.ts#L84)*
+*Defined in [jsonApi.builder.ts:84](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.builder.ts#L84)*
 
 **Parameters:**
 
@@ -227,7 +200,7 @@ ___
 
 ▸ **groupIncluded**<**Groups**>(`groups`: Groups): *[GetListBuilder](getlistbuilder.md)‹Raw, [IncludedGroups](../README.md#includedgroups)‹Groups››*
 
-*Defined in [jsonApi.getList.ts:47](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.getList.ts#L47)*
+*Defined in [jsonApi.getList.ts:47](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.getList.ts#L47)*
 
 **Type parameters:**
 
@@ -249,7 +222,7 @@ ___
 
 *Inherited from [RequestBuilder](requestbuilder.md).[pageLimit](requestbuilder.md#pagelimit)*
 
-*Defined in [jsonApi.builder.ts:102](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.builder.ts#L102)*
+*Defined in [jsonApi.builder.ts:102](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.builder.ts#L102)*
 
 **Parameters:**
 
@@ -267,7 +240,7 @@ ___
 
 *Inherited from [RequestBuilder](requestbuilder.md).[pageNumber](requestbuilder.md#pagenumber)*
 
-*Defined in [jsonApi.builder.ts:112](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.builder.ts#L112)*
+*Defined in [jsonApi.builder.ts:112](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.builder.ts#L112)*
 
 **Parameters:**
 
@@ -285,7 +258,7 @@ ___
 
 *Inherited from [RequestBuilder](requestbuilder.md).[pageOffset](requestbuilder.md#pageoffset)*
 
-*Defined in [jsonApi.builder.ts:107](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.builder.ts#L107)*
+*Defined in [jsonApi.builder.ts:107](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.builder.ts#L107)*
 
 **Parameters:**
 
@@ -303,7 +276,7 @@ ___
 
 *Inherited from [RequestBuilder](requestbuilder.md).[parameter](requestbuilder.md#parameter)*
 
-*Defined in [jsonApi.builder.ts:74](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.builder.ts#L74)*
+*Defined in [jsonApi.builder.ts:74](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.builder.ts#L74)*
 
 **Parameters:**
 
@@ -322,7 +295,7 @@ ___
 
 *Inherited from [RequestBuilder](requestbuilder.md).[parseResponse](requestbuilder.md#protected-parseresponse)*
 
-*Defined in [jsonApi.builder.ts:117](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.builder.ts#L117)*
+*Defined in [jsonApi.builder.ts:117](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.builder.ts#L117)*
 
 **Type parameters:**
 
@@ -344,7 +317,7 @@ ___
 
 *Overrides [RequestBuilder](requestbuilder.md).[resolveIncluded](requestbuilder.md#resolveincluded)*
 
-*Defined in [jsonApi.getList.ts:54](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.getList.ts#L54)*
+*Defined in [jsonApi.getList.ts:54](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.getList.ts#L54)*
 
 **Parameters:**
 
@@ -362,7 +335,7 @@ ___
 
 *Overrides [RequestBuilder](requestbuilder.md).[send](requestbuilder.md#abstract-send)*
 
-*Defined in [jsonApi.getList.ts:59](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.getList.ts#L59)*
+*Defined in [jsonApi.getList.ts:59](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.getList.ts#L59)*
 
 **Parameters:**
 
@@ -380,7 +353,7 @@ ___
 
 *Inherited from [RequestBuilder](requestbuilder.md).[sort](requestbuilder.md#sort)*
 
-*Defined in [jsonApi.builder.ts:95](https://github.com/headline-1/coolio/blob/c80476b/packages/json-api/src/jsonApi.builder.ts#L95)*
+*Defined in [jsonApi.builder.ts:95](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.builder.ts#L95)*
 
 **Parameters:**
 

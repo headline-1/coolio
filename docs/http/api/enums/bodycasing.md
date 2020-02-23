@@ -15,7 +15,7 @@
 
 • **CAMEL_CASE**: = "CAMEL_CASE"
 
-*Defined in [packages/http/src/helpers/caseConversion.helper.ts:5](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/helpers/caseConversion.helper.ts#L5)*
+*Defined in [packages/http/src/helpers/caseConversion.helper.ts:5](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/helpers/caseConversion.helper.ts#L5)*
 
 ___
 
@@ -23,7 +23,7 @@ ___
 
 • **KEBAB_CASE**: = "KEBAB_CASE"
 
-*Defined in [packages/http/src/helpers/caseConversion.helper.ts:8](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/helpers/caseConversion.helper.ts#L8)*
+*Defined in [packages/http/src/helpers/caseConversion.helper.ts:8](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/helpers/caseConversion.helper.ts#L8)*
 
 ___
 
@@ -31,7 +31,7 @@ ___
 
 • **PASCAL_CASE**: = "PASCAL_CASE"
 
-*Defined in [packages/http/src/helpers/caseConversion.helper.ts:7](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/helpers/caseConversion.helper.ts#L7)*
+*Defined in [packages/http/src/helpers/caseConversion.helper.ts:7](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/helpers/caseConversion.helper.ts#L7)*
 
 ___
 
@@ -39,4 +39,4 @@ ___
 
 • **SNAKE_CASE**: = "SNAKE_CASE"
 
-*Defined in [packages/http/src/helpers/caseConversion.helper.ts:6](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/helpers/caseConversion.helper.ts#L6)*
+*Defined in [packages/http/src/helpers/caseConversion.helper.ts:6](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/helpers/caseConversion.helper.ts#L6)*

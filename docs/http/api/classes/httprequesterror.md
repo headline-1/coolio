@@ -18,7 +18,6 @@
 
 ### Properties
 
-* [__symbol](httprequesterror.md#private-__symbol)
 * [message](httprequesterror.md#message)
 * [name](httprequesterror.md#name)
 * [options](httprequesterror.md#options)
@@ -31,7 +30,7 @@
 
 \+ **new HttpRequestError**(`options`: [NormalizedHttpOptions](../interfaces/normalizedhttpoptions.md), `message?`: undefined | string): *[HttpRequestError](httprequesterror.md)*
 
-*Defined in [packages/http/src/httpRequestError.ts:6](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpRequestError.ts#L6)*
+*Defined in [packages/http/src/httpRequestError.ts:6](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpRequestError.ts#L6)*
 
 **Parameters:**
 
@@ -43,14 +42,6 @@ Name | Type |
 **Returns:** *[HttpRequestError](httprequesterror.md)*
 
 ## Properties
-
-### `Private` __symbol
-
-• **__symbol**: *symbol* = symbol
-
-*Defined in [packages/http/src/httpRequestError.ts:6](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpRequestError.ts#L6)*
-
-___
 
 ###  message
 
@@ -76,7 +67,7 @@ ___
 
 • **options**: *[NormalizedHttpOptions](../interfaces/normalizedhttpoptions.md)*
 
-*Defined in [packages/http/src/httpRequestError.ts:8](https://github.com/headline-1/coolio/blob/c80476b/packages/http/src/httpRequestError.ts#L8)*
+*Defined in [packages/http/src/httpRequestError.ts:8](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpRequestError.ts#L8)*
 
 ___
 
