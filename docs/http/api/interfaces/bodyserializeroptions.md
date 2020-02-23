@@ -16,4 +16,4 @@
 
 • **bodyCasing**? : *[BodyCasing](../enums/bodycasing.md)*
 
-*Defined in [packages/http/src/bodySerializer.ts:10](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/bodySerializer.ts#L10)*
+*Defined in [packages/http/src/bodySerializer.ts:10](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/bodySerializer.ts#L10)*

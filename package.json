@@ -18,7 +18,7 @@
     "generate:bindings": "node ./scripts/generate-bindings.js",
     "generate:tsconfig": "node ./scripts/generate-tsconfig.js",
     "compile": "lerna run compile",
-    "docs": "lerna run docs && node ./scripts/generate-docs.js",
+    "docs": "lerna run docs && node ./scripts/generate-docs.js && git add docs/*",
     "start": "yarn compile && yarn compile:watch",
     "clean": "rimraf packages/*/dist && rimraf {dist,.jest,reports}",
     "purge": "git clean -xdf",

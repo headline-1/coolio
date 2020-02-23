@@ -19,19 +19,72 @@ import { bodySerializer } from './bodySerializer';
 import { cacheParsedBody } from './helpers/parsedBodyCache.helper';
 import { urlCombine, urlDestruct } from './helpers/urlEncoding.helper';
 
+/**
+ * Default request timeout - 5 minutes.
+ */
 export const DEFAULT_REQUEST_TIMEOUT_MS = 5 * 60 * 1000;
 
 type HeadersProvider = (host: string) => Promise<HttpHeaders> | HttpHeaders;
 
+/**
+ * A set of configuration options, which allows {@link HttpClient} to perform requests and process responses.
+ *
+ * @typeparam T Common body shape defined by {@link bodyParser}.
+ */
 export interface HttpClientConfig<T = HttpResponse> {
+  /**
+   * An implementation of request handler, which handles "low-level" HTTP communication.
+   * Result of executing a request via RequestHandler is a normalized object,
+   * which can be further processed by interceptors and HttpClient.
+   *
+   * - For Node.js environment, use {@link httpRequestHandler}
+   * - For browser environments, use {@link fetchRequestHandler}
+   * - For React Native and any other environment, use {@link xhrRequestHandler}
+   */
   requestHandler: HttpRequestHandler;
+
+  /**
+   * Old way of passing global headers to requests.
+   * To add headers dynamically, you can use an interceptor instead.
+   * To add a set of static headers, pass them to request handler options directly.
+   * @deprecated
+   */
   defaultHeadersProvider?: HeadersProvider;
+
+  /**
+   * A utility that parses and normalizes body of a response received from server.
+   * Can be used to decode JSON object, URL-encoded body or plain text.
+   * Built-in {@link bodyParser} supports case-conversion.
+   */
   bodyParser?: BodyParser<T>;
+
+  /**
+   * A utility that parses and normalizes body of a request sent to server.
+   * Can be used to encode JSON object, URL-encoded body or plain text.
+   * Built-in {@link bodySerializer} supports case-conversion.
+   */
   bodySerializer?: BodySerializer;
+
+  /**
+   * URL that is applied to all requests without specified protocol and domain.
+   */
   baseUrl?: string;
-  followRedirections?: boolean;
+
+  /**
+   * Allow to parse query options in a different way than the standard one.
+   */
   queryParserOptions?: qs.IParseOptions;
+
+  /**
+   * Allow to serialize query options in a different way than the standard one.
+   */
   querySerializerOptions?: qs.IStringifyOptions;
+
+  /**
+   * Standard timeout, triggered when server does not respond with headers within specified period of time.
+   *
+   * @default {@link DEFAULT_REQUEST_TIMEOUT_MS}
+   */
   requestTimeout?: number;
 }
 
@@ -55,6 +108,11 @@ const passthroughParser: BodyParser<any> = (response: RawHttpResponse) => ({
   parsedBody: (response as any).parsedBody || (() => response.arrayBuffer()),
 });
 
+/**
+ * Base class in Coolio http package, which allows to perform API calls.
+ *
+ * @typeparam T Common body shape defined by bodyParser passed in {@link HttpClientConfig}.
+ */
 export class HttpClient<T = unknown> {
   private readonly handle: HttpRequestHandler;
   private readonly defaultHeadersProvider?: HeadersProvider;
@@ -63,7 +121,6 @@ export class HttpClient<T = unknown> {
   private readonly bodySerializer: BodySerializer;
   private readonly queryParserOptions?: qs.IParseOptions;
   private readonly querySerializerOptions?: qs.IStringifyOptions;
-  private readonly followRedirections: boolean;
   private readonly baseUrl?: string;
   private readonly defaultRequestTimeout: number;
 
@@ -73,17 +130,35 @@ export class HttpClient<T = unknown> {
     this.bodySerializer = config.bodySerializer || bodySerializer();
     this.defaultHeadersProvider = config.defaultHeadersProvider;
     this.baseUrl = config.baseUrl ? config.baseUrl.replace(/\/+$/, '') : undefined;
-    this.followRedirections = config.followRedirections ?? true;
     this.queryParserOptions = config.queryParserOptions;
     this.querySerializerOptions = config.querySerializerOptions;
     this.defaultRequestTimeout = config.requestTimeout || DEFAULT_REQUEST_TIMEOUT_MS;
   }
 
+  /**
+   * Adds an interceptor to the client. Interceptor can be written either as class or as a function,
+   * which may mutate request options and post-process response from server.
+   * Multiple interceptors can be added to a single HttpClient. They can perform as:
+   * - cache
+   * - error handler
+   * - authorizer
+   * - logger
+   * - auto-retry
+   * - redirection handler
+   *
+   * @param interceptor Interceptor that will process every request/response in this HttpClient.
+   */
   addInterceptor = (interceptor: HttpInterceptor) => {
     this.interceptors.push(interceptor);
     return this;
   };
 
+  /**
+   * Performs a GET request.
+   *
+   * @param uri Address of HTTP endpoint
+   * @param options Additional {@link HttpOptions} passed with request
+   */
   get = <Body extends T = any>(uri: string, options?: HttpOptions) => {
     return this.request<Body>(uri, {
       ...options,
@@ -92,6 +167,12 @@ export class HttpClient<T = unknown> {
     });
   };
 
+  /**
+   * Performs a POST request.
+   *
+   * @param uri Address of HTTP endpoint
+   * @param options Additional {@link HttpOptions} passed with request
+   */
   post = <Body extends T = any>(uri: string, options?: HttpOptions) => {
     return this.request<Body>(uri, {
       ...options,
@@ -99,6 +180,12 @@ export class HttpClient<T = unknown> {
     });
   };
 
+  /**
+   * Performs a PUT request.
+   *
+   * @param uri Address of HTTP endpoint
+   * @param options Additional {@link HttpOptions} passed with request
+   */
   put = <Body extends T = any>(uri: string, options?: HttpOptions) => {
     return this.request<Body>(uri, {
       ...options,
@@ -106,6 +193,12 @@ export class HttpClient<T = unknown> {
     });
   };
 
+  /**
+   * Performs a PATCH request.
+   *
+   * @param uri Address of HTTP endpoint
+   * @param options Additional {@link HttpOptions} passed with request
+   */
   patch = <Body extends T = any>(uri: string, options?: HttpOptions) => {
     return this.request<Body>(uri, {
       ...options,
@@ -113,13 +206,28 @@ export class HttpClient<T = unknown> {
     });
   };
 
-  remove = <Body extends T = any>(uri: string, options?: HttpOptions) => {
+  /**
+   * Performs a DELETE request.
+   *
+   * @param uri Address of HTTP endpoint
+   * @param options Additional {@link HttpOptions} passed with request
+   */
+  delete = <Body extends T = any>(uri: string, options?: HttpOptions) => {
     return this.request<Body>(uri, {
       ...options,
       body: undefined,
       method: HttpMethod.DELETE,
     });
   };
+
+  /**
+   * Performs a DELETE request.
+   * @deprecated Use delete instead of remove, since it matches HTTP request method.
+   *
+   * @param uri Address of HTTP endpoint
+   * @param options Additional {@link HttpOptions} passed with request
+   */
+  remove = <Body extends T = any>(uri: string, options?: HttpOptions) => this.delete(uri, options);
 
   request<Body extends T>(url: string, options: HttpRequestOptions): Promise<HttpResponse<Body>> {
     if (this.baseUrl && url.startsWith('/')) {

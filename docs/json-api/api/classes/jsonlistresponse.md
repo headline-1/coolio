@@ -35,7 +35,7 @@
 
 \+ **new JsonListResponse**(`raw`: Raw, `limit`: number, `offset`: number | undefined, `rawIncludedGroups`: I, `response`: HttpResponse‹Raw›): *[JsonListResponse](jsonlistresponse.md)*
 
-*Defined in [jsonApi.getList.ts:8](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.getList.ts#L8)*
+*Defined in [jsonApi.getList.ts:8](https://github.com/headline-1/coolio/blob/0131267/packages/json-api/src/jsonApi.getList.ts#L8)*
 
 **Parameters:**
 
@@ -55,7 +55,7 @@ Name | Type |
 
 • **limit**: *number*
 
-*Defined in [jsonApi.getList.ts:12](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.getList.ts#L12)*
+*Defined in [jsonApi.getList.ts:12](https://github.com/headline-1/coolio/blob/0131267/packages/json-api/src/jsonApi.getList.ts#L12)*
 
 ___
 
@@ -63,7 +63,7 @@ ___
 
 • **offset**: *number | undefined*
 
-*Defined in [jsonApi.getList.ts:13](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.getList.ts#L13)*
+*Defined in [jsonApi.getList.ts:13](https://github.com/headline-1/coolio/blob/0131267/packages/json-api/src/jsonApi.getList.ts#L13)*
 
 ___
 
@@ -71,7 +71,7 @@ ___
 
 • **raw**: *Raw*
 
-*Defined in [jsonApi.getList.ts:11](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.getList.ts#L11)*
+*Defined in [jsonApi.getList.ts:11](https://github.com/headline-1/coolio/blob/0131267/packages/json-api/src/jsonApi.getList.ts#L11)*
 
 ___
 
@@ -79,7 +79,7 @@ ___
 
 • **response**: *HttpResponse‹Raw›*
 
-*Defined in [jsonApi.getList.ts:15](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.getList.ts#L15)*
+*Defined in [jsonApi.getList.ts:15](https://github.com/headline-1/coolio/blob/0131267/packages/json-api/src/jsonApi.getList.ts#L15)*
 
 ## Accessors
 
@@ -87,7 +87,7 @@ ___
 
 • **get elements**(): *[MergedData](../README.md#mergeddata)‹Raw["data"]›*
 
-*Defined in [jsonApi.getList.ts:19](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.getList.ts#L19)*
+*Defined in [jsonApi.getList.ts:19](https://github.com/headline-1/coolio/blob/0131267/packages/json-api/src/jsonApi.getList.ts#L19)*
 
 **Returns:** *[MergedData](../README.md#mergeddata)‹Raw["data"]›*
 
@@ -97,7 +97,7 @@ ___
 
 • **get included**(): *object*
 
-*Defined in [jsonApi.getList.ts:27](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.getList.ts#L27)*
+*Defined in [jsonApi.getList.ts:27](https://github.com/headline-1/coolio/blob/0131267/packages/json-api/src/jsonApi.getList.ts#L27)*
 
 **Returns:** *object*
 
@@ -107,6 +107,6 @@ ___
 
 • **get meta**(): *Raw["meta"]*
 
-*Defined in [jsonApi.getList.ts:23](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.getList.ts#L23)*
+*Defined in [jsonApi.getList.ts:23](https://github.com/headline-1/coolio/blob/0131267/packages/json-api/src/jsonApi.getList.ts#L23)*
 
 **Returns:** *Raw["meta"]*

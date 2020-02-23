@@ -23,7 +23,7 @@ Simple queue that executes Promises one by one.
 
 • **get length**(): *number*
 
-*Defined in [packages/auth-interceptor/src/simpleQueue.ts:14](https://github.com/headline-1/coolio/blob/420fd1d/packages/auth-interceptor/src/simpleQueue.ts#L14)*
+*Defined in [packages/auth-interceptor/src/simpleQueue.ts:14](https://github.com/headline-1/coolio/blob/0131267/packages/auth-interceptor/src/simpleQueue.ts#L14)*
 
 **Returns:** *number*
 
@@ -33,7 +33,7 @@ Simple queue that executes Promises one by one.
 
 ▸ **clean**(`reason`: any): *void*
 
-*Defined in [packages/auth-interceptor/src/simpleQueue.ts:36](https://github.com/headline-1/coolio/blob/420fd1d/packages/auth-interceptor/src/simpleQueue.ts#L36)*
+*Defined in [packages/auth-interceptor/src/simpleQueue.ts:36](https://github.com/headline-1/coolio/blob/0131267/packages/auth-interceptor/src/simpleQueue.ts#L36)*
 
 **Parameters:**
 
@@ -49,7 +49,7 @@ ___
 
 ▸ **put**<**T**>(`item`: function): *Promise‹T›*
 
-*Defined in [packages/auth-interceptor/src/simpleQueue.ts:21](https://github.com/headline-1/coolio/blob/420fd1d/packages/auth-interceptor/src/simpleQueue.ts#L21)*
+*Defined in [packages/auth-interceptor/src/simpleQueue.ts:21](https://github.com/headline-1/coolio/blob/0131267/packages/auth-interceptor/src/simpleQueue.ts#L21)*
 
 Queues specified promise and returns when it's done
 

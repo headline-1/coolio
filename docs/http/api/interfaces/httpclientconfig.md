@@ -1,5 +1,7 @@
 # Interface: HttpClientConfig <**T**>
 
+A set of configuration options, which allows [HttpClient](../classes/httpclient.md) to perform
+
 ## Type parameters
 
 ▪ **T**
@@ -16,7 +18,6 @@
 * [bodyParser](httpclientconfig.md#optional-bodyparser)
 * [bodySerializer](httpclientconfig.md#optional-bodyserializer)
 * [defaultHeadersProvider](httpclientconfig.md#optional-defaultheadersprovider)
-* [followRedirections](httpclientconfig.md#optional-followredirections)
 * [queryParserOptions](httpclientconfig.md#optional-queryparseroptions)
 * [querySerializerOptions](httpclientconfig.md#optional-queryserializeroptions)
 * [requestHandler](httpclientconfig.md#requesthandler)
@@ -28,7 +29,9 @@
 
 • **baseUrl**? : *undefined | string*
 
-*Defined in [packages/http/src/httpClient.ts:31](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpClient.ts#L31)*
+*Defined in [packages/http/src/httpClient.ts:69](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpClient.ts#L69)*
+
+URL that is applied to all requests without specified protocol and domain.
 
 ___
 
@@ -36,7 +39,11 @@ ___
 
 • **bodyParser**? : *[BodyParser](../README.md#bodyparser)‹T›*
 
-*Defined in [packages/http/src/httpClient.ts:29](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpClient.ts#L29)*
+*Defined in [packages/http/src/httpClient.ts:57](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpClient.ts#L57)*
+
+A utility that parses and normalizes body of a response received from server.
+Can be used to decode JSON object, URL-encoded body or plain text.
+Built-in [bodyParser](httpclientconfig.md#optional-bodyparser) supports case-conversion.
 
 ___
 
@@ -44,7 +51,11 @@ ___
 
 • **bodySerializer**? : *[BodySerializer](../README.md#bodyserializer)*
 
-*Defined in [packages/http/src/httpClient.ts:30](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpClient.ts#L30)*
+*Defined in [packages/http/src/httpClient.ts:64](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpClient.ts#L64)*
+
+A utility that parses and normalizes body of a request sent to server.
+Can be used to encode JSON object, URL-encoded body or plain text.
+Built-in [bodySerializer](httpclientconfig.md#optional-bodyserializer) supports case-conversion.
 
 ___
 
@@ -52,15 +63,13 @@ ___
 
 • **defaultHeadersProvider**? : *[HeadersProvider](../README.md#headersprovider)*
 
-*Defined in [packages/http/src/httpClient.ts:28](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpClient.ts#L28)*
+*Defined in [packages/http/src/httpClient.ts:50](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpClient.ts#L50)*
 
-___
+Old way of passing global headers to requests.
+To add headers dynamically, you can use an interceptor instead.
+To add a set of static headers, pass them to request handler options directly.
 
-### `Optional` followRedirections
-
-• **followRedirections**? : *undefined | false | true*
-
-*Defined in [packages/http/src/httpClient.ts:32](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpClient.ts#L32)*
+**`deprecated`** 
 
 ___
 
@@ -68,7 +77,9 @@ ___
 
 • **queryParserOptions**? : *qs.IParseOptions*
 
-*Defined in [packages/http/src/httpClient.ts:33](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpClient.ts#L33)*
+*Defined in [packages/http/src/httpClient.ts:74](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpClient.ts#L74)*
+
+Allow to parse query options in a different way than the standard one.
 
 ___
 
@@ -76,7 +87,9 @@ ___
 
 • **querySerializerOptions**? : *qs.IStringifyOptions*
 
-*Defined in [packages/http/src/httpClient.ts:34](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpClient.ts#L34)*
+*Defined in [packages/http/src/httpClient.ts:79](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpClient.ts#L79)*
+
+Allow to serialize query options in a different way than the standard one.
 
 ___
 
@@ -84,7 +97,15 @@ ___
 
 • **requestHandler**: *[HttpRequestHandler](../README.md#httprequesthandler)*
 
-*Defined in [packages/http/src/httpClient.ts:27](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpClient.ts#L27)*
+*Defined in [packages/http/src/httpClient.ts:42](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpClient.ts#L42)*
+
+An implementation of request handler, which handles "low-level" HTTP communication.
+Result of executing a request via RequestHandler is a normalized object,
+which can be further processed by interceptors and HttpClient.
+
+- For Node.js environment, use [httpRequestHandler](../README.md#const-httprequesthandler)
+- For browser environments, use [fetchRequestHandler](../README.md#const-fetchrequesthandler)
+- For React Native and any other environment, use [xhrRequestHandler](../README.md#const-xhrrequesthandler)
 
 ___
 
@@ -92,4 +113,8 @@ ___
 
 • **requestTimeout**? : *undefined | number*
 
-*Defined in [packages/http/src/httpClient.ts:35](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpClient.ts#L35)*
+*Defined in [packages/http/src/httpClient.ts:86](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpClient.ts#L86)*
+
+Standard timeout, triggered when server does not respond with headers within specified period of time.
+
+**`default`** [DEFAULT_REQUEST_TIMEOUT_MS](../README.md#const-default_request_timeout_ms)

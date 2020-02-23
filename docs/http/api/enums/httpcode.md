@@ -59,7 +59,7 @@
 
 • **ACCEPTED**: = 202
 
-*Defined in [packages/http/src/httpCodes.ts:6](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L6)*
+*Defined in [packages/http/src/httpCodes.ts:6](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpCodes.ts#L6)*
 
 ___
 
@@ -67,7 +67,7 @@ ___
 
 • **BAD_GATEWAY**: = 502
 
-*Defined in [packages/http/src/httpCodes.ts:45](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L45)*
+*Defined in [packages/http/src/httpCodes.ts:45](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpCodes.ts#L45)*
 
 ___
 
@@ -75,7 +75,7 @@ ___
 
 • **BAD_REQUEST**: = 400
 
-*Defined in [packages/http/src/httpCodes.ts:18](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L18)*
+*Defined in [packages/http/src/httpCodes.ts:18](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpCodes.ts#L18)*
 
 ___
 
@@ -83,7 +83,7 @@ ___
 
 • **CONFLICT**: = 409
 
-*Defined in [packages/http/src/httpCodes.ts:26](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L26)*
+*Defined in [packages/http/src/httpCodes.ts:26](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpCodes.ts#L26)*
 
 ___
 
@@ -91,7 +91,7 @@ ___
 
 • **CONTINUE**: = 100
 
-*Defined in [packages/http/src/httpCodes.ts:2](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L2)*
+*Defined in [packages/http/src/httpCodes.ts:2](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpCodes.ts#L2)*
 
 ___
 
@@ -99,7 +99,7 @@ ___
 
 • **CREATED**: = 201
 
-*Defined in [packages/http/src/httpCodes.ts:5](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L5)*
+*Defined in [packages/http/src/httpCodes.ts:5](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpCodes.ts#L5)*
 
 ___
 
@@ -107,7 +107,7 @@ ___
 
 • **EXPECTATION_FAILED**: = 417
 
-*Defined in [packages/http/src/httpCodes.ts:34](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L34)*
+*Defined in [packages/http/src/httpCodes.ts:34](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpCodes.ts#L34)*
 
 ___
 
@@ -115,7 +115,7 @@ ___
 
 • **FORBIDDEN**: = 403
 
-*Defined in [packages/http/src/httpCodes.ts:20](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L20)*
+*Defined in [packages/http/src/httpCodes.ts:20](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpCodes.ts#L20)*
 
 ___
 
@@ -123,7 +123,7 @@ ___
 
 • **FOUND**: = 302
 
-*Defined in [packages/http/src/httpCodes.ts:13](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L13)*
+*Defined in [packages/http/src/httpCodes.ts:13](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpCodes.ts#L13)*
 
 ___
 
@@ -131,7 +131,7 @@ ___
 
 • **GATEWAY_TIMEOUT**: = 504
 
-*Defined in [packages/http/src/httpCodes.ts:47](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L47)*
+*Defined in [packages/http/src/httpCodes.ts:47](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpCodes.ts#L47)*
 
 ___
 
@@ -139,7 +139,7 @@ ___
 
 • **GONE**: = 410
 
-*Defined in [packages/http/src/httpCodes.ts:27](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L27)*
+*Defined in [packages/http/src/httpCodes.ts:27](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpCodes.ts#L27)*
 
 ___
 
@@ -147,7 +147,7 @@ ___
 
 • **HTTP_VERSION_NOT_SUPPORTED**: = 505
 
-*Defined in [packages/http/src/httpCodes.ts:48](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L48)*
+*Defined in [packages/http/src/httpCodes.ts:48](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpCodes.ts#L48)*
 
 ___
 
@@ -155,7 +155,7 @@ ___
 
 • **IM_A_TEAPOT**: = 418
 
-*Defined in [packages/http/src/httpCodes.ts:35](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L35)*
+*Defined in [packages/http/src/httpCodes.ts:35](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpCodes.ts#L35)*
 
 ___
 
@@ -163,7 +163,7 @@ ___
 
 • **INTERNAL_SERVER_ERROR**: = 500
 
-*Defined in [packages/http/src/httpCodes.ts:43](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L43)*
+*Defined in [packages/http/src/httpCodes.ts:43](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpCodes.ts#L43)*
 
 ___
 
@@ -171,7 +171,7 @@ ___
 
 • **LENGTH_REQUIRED**: = 411
 
-*Defined in [packages/http/src/httpCodes.ts:28](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L28)*
+*Defined in [packages/http/src/httpCodes.ts:28](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpCodes.ts#L28)*
 
 ___
 
@@ -179,7 +179,7 @@ ___
 
 • **METHOD_NOT_ALLOWED**: = 405
 
-*Defined in [packages/http/src/httpCodes.ts:22](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L22)*
+*Defined in [packages/http/src/httpCodes.ts:22](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpCodes.ts#L22)*
 
 ___
 
@@ -187,7 +187,7 @@ ___
 
 • **MOVED_PERMANENTLY**: = 301
 
-*Defined in [packages/http/src/httpCodes.ts:12](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L12)*
+*Defined in [packages/http/src/httpCodes.ts:12](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpCodes.ts#L12)*
 
 ___
 
@@ -195,7 +195,7 @@ ___
 
 • **MULTIPLE_CHOICES**: = 300
 
-*Defined in [packages/http/src/httpCodes.ts:11](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L11)*
+*Defined in [packages/http/src/httpCodes.ts:11](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpCodes.ts#L11)*
 
 ___
 
@@ -203,7 +203,7 @@ ___
 
 • **NETWORK_AUTHENTICATION_REQUIRED**: = 511
 
-*Defined in [packages/http/src/httpCodes.ts:49](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L49)*
+*Defined in [packages/http/src/httpCodes.ts:49](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpCodes.ts#L49)*
 
 ___
 
@@ -211,7 +211,7 @@ ___
 
 • **NONAUTHORITATIVE_INFORMATION**: = 203
 
-*Defined in [packages/http/src/httpCodes.ts:7](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L7)*
+*Defined in [packages/http/src/httpCodes.ts:7](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpCodes.ts#L7)*
 
 ___
 
@@ -219,7 +219,7 @@ ___
 
 • **NOT_ACCEPTABLE**: = 406
 
-*Defined in [packages/http/src/httpCodes.ts:23](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L23)*
+*Defined in [packages/http/src/httpCodes.ts:23](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpCodes.ts#L23)*
 
 ___
 
@@ -227,7 +227,7 @@ ___
 
 • **NOT_FOUND**: = 404
 
-*Defined in [packages/http/src/httpCodes.ts:21](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L21)*
+*Defined in [packages/http/src/httpCodes.ts:21](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpCodes.ts#L21)*
 
 ___
 
@@ -235,7 +235,7 @@ ___
 
 • **NOT_IMPLEMENTED**: = 501
 
-*Defined in [packages/http/src/httpCodes.ts:44](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L44)*
+*Defined in [packages/http/src/httpCodes.ts:44](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpCodes.ts#L44)*
 
 ___
 
@@ -243,7 +243,7 @@ ___
 
 • **NOT_MODIFIED**: = 304
 
-*Defined in [packages/http/src/httpCodes.ts:15](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L15)*
+*Defined in [packages/http/src/httpCodes.ts:15](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpCodes.ts#L15)*
 
 ___
 
@@ -251,7 +251,7 @@ ___
 
 • **NO_CONTENT**: = 204
 
-*Defined in [packages/http/src/httpCodes.ts:8](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L8)*
+*Defined in [packages/http/src/httpCodes.ts:8](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpCodes.ts#L8)*
 
 ___
 
@@ -259,7 +259,7 @@ ___
 
 • **OK**: = 200
 
-*Defined in [packages/http/src/httpCodes.ts:4](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L4)*
+*Defined in [packages/http/src/httpCodes.ts:4](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpCodes.ts#L4)*
 
 ___
 
@@ -267,7 +267,7 @@ ___
 
 • **PARTIAL_CONTENT**: = 206
 
-*Defined in [packages/http/src/httpCodes.ts:10](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L10)*
+*Defined in [packages/http/src/httpCodes.ts:10](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpCodes.ts#L10)*
 
 ___
 
@@ -275,7 +275,7 @@ ___
 
 • **PAYLOAD_TOO_LARGE**: = 413
 
-*Defined in [packages/http/src/httpCodes.ts:30](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L30)*
+*Defined in [packages/http/src/httpCodes.ts:30](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpCodes.ts#L30)*
 
 ___
 
@@ -283,7 +283,7 @@ ___
 
 • **PERMANENT_REDIRECT**: = 308
 
-*Defined in [packages/http/src/httpCodes.ts:17](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L17)*
+*Defined in [packages/http/src/httpCodes.ts:17](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpCodes.ts#L17)*
 
 ___
 
@@ -291,7 +291,7 @@ ___
 
 • **PRECONDITION_FAILED**: = 412
 
-*Defined in [packages/http/src/httpCodes.ts:29](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L29)*
+*Defined in [packages/http/src/httpCodes.ts:29](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpCodes.ts#L29)*
 
 ___
 
@@ -299,7 +299,7 @@ ___
 
 • **PRECONDITION_REQUIRED**: = 428
 
-*Defined in [packages/http/src/httpCodes.ts:39](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L39)*
+*Defined in [packages/http/src/httpCodes.ts:39](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpCodes.ts#L39)*
 
 ___
 
@@ -307,7 +307,7 @@ ___
 
 • **PROXY_AUTHENTICATION_REQUIRED**: = 407
 
-*Defined in [packages/http/src/httpCodes.ts:24](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L24)*
+*Defined in [packages/http/src/httpCodes.ts:24](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpCodes.ts#L24)*
 
 ___
 
@@ -315,7 +315,7 @@ ___
 
 • **RANGE_NOT_SATISFIABLE**: = 416
 
-*Defined in [packages/http/src/httpCodes.ts:33](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L33)*
+*Defined in [packages/http/src/httpCodes.ts:33](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpCodes.ts#L33)*
 
 ___
 
@@ -323,7 +323,7 @@ ___
 
 • **REQUEST_HEADER_FIELDS_TOO_LARGE**: = 431
 
-*Defined in [packages/http/src/httpCodes.ts:41](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L41)*
+*Defined in [packages/http/src/httpCodes.ts:41](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpCodes.ts#L41)*
 
 ___
 
@@ -331,7 +331,7 @@ ___
 
 • **REQUEST_TIMEOUT**: = 408
 
-*Defined in [packages/http/src/httpCodes.ts:25](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L25)*
+*Defined in [packages/http/src/httpCodes.ts:25](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpCodes.ts#L25)*
 
 ___
 
@@ -339,7 +339,7 @@ ___
 
 • **RESET_CONTENT**: = 205
 
-*Defined in [packages/http/src/httpCodes.ts:9](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L9)*
+*Defined in [packages/http/src/httpCodes.ts:9](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpCodes.ts#L9)*
 
 ___
 
@@ -347,7 +347,7 @@ ___
 
 • **SEE_OTHER**: = 303
 
-*Defined in [packages/http/src/httpCodes.ts:14](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L14)*
+*Defined in [packages/http/src/httpCodes.ts:14](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpCodes.ts#L14)*
 
 ___
 
@@ -355,7 +355,7 @@ ___
 
 • **SERVICE_UNAVAILABLE**: = 503
 
-*Defined in [packages/http/src/httpCodes.ts:46](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L46)*
+*Defined in [packages/http/src/httpCodes.ts:46](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpCodes.ts#L46)*
 
 ___
 
@@ -363,7 +363,7 @@ ___
 
 • **SWITCHING_PROTOCOLS**: = 101
 
-*Defined in [packages/http/src/httpCodes.ts:3](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L3)*
+*Defined in [packages/http/src/httpCodes.ts:3](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpCodes.ts#L3)*
 
 ___
 
@@ -371,7 +371,7 @@ ___
 
 • **TEMPORARY_REDIRECT**: = 307
 
-*Defined in [packages/http/src/httpCodes.ts:16](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L16)*
+*Defined in [packages/http/src/httpCodes.ts:16](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpCodes.ts#L16)*
 
 ___
 
@@ -379,7 +379,7 @@ ___
 
 • **TOO_EARLY**: = 425
 
-*Defined in [packages/http/src/httpCodes.ts:37](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L37)*
+*Defined in [packages/http/src/httpCodes.ts:37](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpCodes.ts#L37)*
 
 ___
 
@@ -387,7 +387,7 @@ ___
 
 • **TOO_MANY_REQUESTS**: = 429
 
-*Defined in [packages/http/src/httpCodes.ts:40](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L40)*
+*Defined in [packages/http/src/httpCodes.ts:40](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpCodes.ts#L40)*
 
 ___
 
@@ -395,7 +395,7 @@ ___
 
 • **UNAUTHORIZED**: = 401
 
-*Defined in [packages/http/src/httpCodes.ts:19](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L19)*
+*Defined in [packages/http/src/httpCodes.ts:19](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpCodes.ts#L19)*
 
 ___
 
@@ -403,7 +403,7 @@ ___
 
 • **UNAVAILABLE_FOR_LEGAL_REASONS**: = 451
 
-*Defined in [packages/http/src/httpCodes.ts:42](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L42)*
+*Defined in [packages/http/src/httpCodes.ts:42](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpCodes.ts#L42)*
 
 ___
 
@@ -411,7 +411,7 @@ ___
 
 • **UNPROCESSABLE_ENTITY**: = 422
 
-*Defined in [packages/http/src/httpCodes.ts:36](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L36)*
+*Defined in [packages/http/src/httpCodes.ts:36](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpCodes.ts#L36)*
 
 ___
 
@@ -419,7 +419,7 @@ ___
 
 • **UNSUPPORTED_MEDIA_TYPE**: = 415
 
-*Defined in [packages/http/src/httpCodes.ts:32](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L32)*
+*Defined in [packages/http/src/httpCodes.ts:32](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpCodes.ts#L32)*
 
 ___
 
@@ -427,7 +427,7 @@ ___
 
 • **UPGRADE_REQUIRED**: = 426
 
-*Defined in [packages/http/src/httpCodes.ts:38](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L38)*
+*Defined in [packages/http/src/httpCodes.ts:38](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpCodes.ts#L38)*
 
 ___
 
@@ -435,4 +435,4 @@ ___
 
 • **URI_TOO_LONG**: = 414
 
-*Defined in [packages/http/src/httpCodes.ts:31](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpCodes.ts#L31)*
+*Defined in [packages/http/src/httpCodes.ts:31](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpCodes.ts#L31)*

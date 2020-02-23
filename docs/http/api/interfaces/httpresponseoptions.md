@@ -19,7 +19,7 @@
 
 • **body**? : *[NormalizedHttpBody](../README.md#normalizedhttpbody)*
 
-*Defined in [packages/http/src/httpResponse.ts:11](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpResponse.ts#L11)*
+*Defined in [packages/http/src/httpResponse.ts:11](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpResponse.ts#L11)*
 
 ___
 
@@ -27,7 +27,7 @@ ___
 
 • **headers**? : *[HttpHeaders](../README.md#httpheaders)*
 
-*Defined in [packages/http/src/httpResponse.ts:9](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpResponse.ts#L9)*
+*Defined in [packages/http/src/httpResponse.ts:9](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpResponse.ts#L9)*
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 • **status**: *number*
 
-*Defined in [packages/http/src/httpResponse.ts:10](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpResponse.ts#L10)*
+*Defined in [packages/http/src/httpResponse.ts:10](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpResponse.ts#L10)*
 
 ___
 
@@ -43,4 +43,4 @@ ___
 
 • **url**? : *undefined | string*
 
-*Defined in [packages/http/src/httpResponse.ts:8](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpResponse.ts#L8)*
+*Defined in [packages/http/src/httpResponse.ts:8](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpResponse.ts#L8)*

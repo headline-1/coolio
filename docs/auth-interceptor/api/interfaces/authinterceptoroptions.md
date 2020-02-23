@@ -19,7 +19,7 @@
 
 • **canAuthorize**: *function*
 
-*Defined in [packages/auth-interceptor/src/authInterceptor.types.ts:30](https://github.com/headline-1/coolio/blob/420fd1d/packages/auth-interceptor/src/authInterceptor.types.ts#L30)*
+*Defined in [packages/auth-interceptor/src/authInterceptor.types.ts:30](https://github.com/headline-1/coolio/blob/0131267/packages/auth-interceptor/src/authInterceptor.types.ts#L30)*
 
 Determine if request should be processed, by checking request's options (i.e. check for a domain match)
 
@@ -41,7 +41,7 @@ ___
 
 • **onAuthorizationFailure**: *function*
 
-*Defined in [packages/auth-interceptor/src/authInterceptor.types.ts:24](https://github.com/headline-1/coolio/blob/420fd1d/packages/auth-interceptor/src/authInterceptor.types.ts#L24)*
+*Defined in [packages/auth-interceptor/src/authInterceptor.types.ts:24](https://github.com/headline-1/coolio/blob/0131267/packages/auth-interceptor/src/authInterceptor.types.ts#L24)*
 
 This function is called when:
 - authorize() function throws an error,
@@ -63,7 +63,7 @@ ___
 
 • **reauthorize**: *function*
 
-*Defined in [packages/auth-interceptor/src/authInterceptor.types.ts:10](https://github.com/headline-1/coolio/blob/420fd1d/packages/auth-interceptor/src/authInterceptor.types.ts#L10)*
+*Defined in [packages/auth-interceptor/src/authInterceptor.types.ts:10](https://github.com/headline-1/coolio/blob/0131267/packages/auth-interceptor/src/authInterceptor.types.ts#L10)*
 
 Obtain authorization data. At this point previous token has expired or
 Unauthorized response status code has been received. You can call refresh token endpoint.
@@ -78,7 +78,7 @@ ___
 
 • **setAuthorizationData**: *function*
 
-*Defined in [packages/auth-interceptor/src/authInterceptor.types.ts:17](https://github.com/headline-1/coolio/blob/420fd1d/packages/auth-interceptor/src/authInterceptor.types.ts#L17)*
+*Defined in [packages/auth-interceptor/src/authInterceptor.types.ts:17](https://github.com/headline-1/coolio/blob/0131267/packages/auth-interceptor/src/authInterceptor.types.ts#L17)*
 
 Insert authorization data to the request.
 

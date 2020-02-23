@@ -18,7 +18,7 @@
 
 • **endpoints**: *[SimpleEndpoint](simpleendpoint.md)[]*
 
-*Defined in [packages/http/src/testing/createSimpleServer.helper.ts:15](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/testing/createSimpleServer.helper.ts#L15)*
+*Defined in [packages/http/src/testing/createSimpleServer.helper.ts:15](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/testing/createSimpleServer.helper.ts#L15)*
 
 ___
 
@@ -26,7 +26,7 @@ ___
 
 • **headers**: *OutgoingHttpHeaders*
 
-*Defined in [packages/http/src/testing/createSimpleServer.helper.ts:14](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/testing/createSimpleServer.helper.ts#L14)*
+*Defined in [packages/http/src/testing/createSimpleServer.helper.ts:14](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/testing/createSimpleServer.helper.ts#L14)*
 
 ___
 
@@ -34,4 +34,4 @@ ___
 
 • **status**: *number*
 
-*Defined in [packages/http/src/testing/createSimpleServer.helper.ts:13](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/testing/createSimpleServer.helper.ts#L13)*
+*Defined in [packages/http/src/testing/createSimpleServer.helper.ts:13](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/testing/createSimpleServer.helper.ts#L13)*

@@ -19,7 +19,7 @@
 
 • **duration**: *number*
 
-*Defined in [packages/http/src/interceptors/loggingInterceptor.ts:7](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/interceptors/loggingInterceptor.ts#L7)*
+*Defined in [packages/http/src/interceptors/loggingInterceptor.ts:7](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/interceptors/loggingInterceptor.ts#L7)*
 
 ___
 
@@ -27,7 +27,7 @@ ___
 
 • **error**? : *any*
 
-*Defined in [packages/http/src/interceptors/loggingInterceptor.ts:6](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/interceptors/loggingInterceptor.ts#L6)*
+*Defined in [packages/http/src/interceptors/loggingInterceptor.ts:6](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/interceptors/loggingInterceptor.ts#L6)*
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 • **request**: *[HttpRequestOptions](httprequestoptions.md)*
 
-*Defined in [packages/http/src/interceptors/loggingInterceptor.ts:4](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/interceptors/loggingInterceptor.ts#L4)*
+*Defined in [packages/http/src/interceptors/loggingInterceptor.ts:4](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/interceptors/loggingInterceptor.ts#L4)*
 
 ___
 
@@ -43,4 +43,4 @@ ___
 
 • **response**? : *[HttpResponse](httpresponse.md)*
 
-*Defined in [packages/http/src/interceptors/loggingInterceptor.ts:5](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/interceptors/loggingInterceptor.ts#L5)*
+*Defined in [packages/http/src/interceptors/loggingInterceptor.ts:5](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/interceptors/loggingInterceptor.ts#L5)*

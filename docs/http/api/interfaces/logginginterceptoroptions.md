@@ -16,7 +16,7 @@
 
 • **logger**: *function*
 
-*Defined in [packages/http/src/interceptors/loggingInterceptor.ts:11](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/interceptors/loggingInterceptor.ts#L11)*
+*Defined in [packages/http/src/interceptors/loggingInterceptor.ts:11](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/interceptors/loggingInterceptor.ts#L11)*
 
 #### Type declaration:
 

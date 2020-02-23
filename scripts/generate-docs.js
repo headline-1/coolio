@@ -59,7 +59,7 @@ const processApiDocs = (summary, packageName) => {
   // Remove all children of found summary node and insert new summary at the same position
   summary.splice(
     start,
-    end - start - 1,
+    end - start,
     ...createSummaryLinesFromCollection(
       summaryCollection,
       `${packageName}/api/`,

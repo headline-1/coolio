@@ -19,7 +19,7 @@
 
 • **authStorage**: *[AuthStorage](authstorage.md)‹[OAuth2TokenResponse](oauth2tokenresponse.md)›*
 
-*Defined in [packages/auth-interceptor/src/oauth2Interceptor.types.ts:49](https://github.com/headline-1/coolio/blob/420fd1d/packages/auth-interceptor/src/oauth2Interceptor.types.ts#L49)*
+*Defined in [packages/auth-interceptor/src/oauth2Interceptor.types.ts:49](https://github.com/headline-1/coolio/blob/0131267/packages/auth-interceptor/src/oauth2Interceptor.types.ts#L49)*
 
 Data storage for OAuth credentials. Uses InMemoryAuthStorage by default.
 One can implement their own storage, i.e. backed by Redux or LocalStorage.
@@ -30,7 +30,7 @@ ___
 
 • **canAuthorize**: *function*
 
-*Defined in [packages/auth-interceptor/src/oauth2Interceptor.types.ts:62](https://github.com/headline-1/coolio/blob/420fd1d/packages/auth-interceptor/src/oauth2Interceptor.types.ts#L62)*
+*Defined in [packages/auth-interceptor/src/oauth2Interceptor.types.ts:62](https://github.com/headline-1/coolio/blob/0131267/packages/auth-interceptor/src/oauth2Interceptor.types.ts#L62)*
 
 Determine if request should be processed, by checking request's options (i.e. check for a domain match)
 
@@ -52,7 +52,7 @@ ___
 
 • **oauth**: *object*
 
-*Defined in [packages/auth-interceptor/src/oauth2Interceptor.types.ts:17](https://github.com/headline-1/coolio/blob/420fd1d/packages/auth-interceptor/src/oauth2Interceptor.types.ts#L17)*
+*Defined in [packages/auth-interceptor/src/oauth2Interceptor.types.ts:17](https://github.com/headline-1/coolio/blob/0131267/packages/auth-interceptor/src/oauth2Interceptor.types.ts#L17)*
 
 #### Type declaration:
 
@@ -72,7 +72,7 @@ ___
 
 • **onAuthorizationFailure**: *function*
 
-*Defined in [packages/auth-interceptor/src/oauth2Interceptor.types.ts:56](https://github.com/headline-1/coolio/blob/420fd1d/packages/auth-interceptor/src/oauth2Interceptor.types.ts#L56)*
+*Defined in [packages/auth-interceptor/src/oauth2Interceptor.types.ts:56](https://github.com/headline-1/coolio/blob/0131267/packages/auth-interceptor/src/oauth2Interceptor.types.ts#L56)*
 
 This function is called when:
 - authorize() function throws an error,

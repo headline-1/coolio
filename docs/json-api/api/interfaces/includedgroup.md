@@ -26,7 +26,7 @@ basing on specified name-type pairs, and add proper types to it.
 
 • **__d**: *D*
 
-*Defined in [jsonApi.interface.ts:103](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.interface.ts#L103)*
+*Defined in [jsonApi.interface.ts:103](https://github.com/headline-1/coolio/blob/0131267/packages/json-api/src/jsonApi.interface.ts#L103)*
 
 ___
 
@@ -34,4 +34,4 @@ ___
 
 • **type**: *string*
 
-*Defined in [jsonApi.interface.ts:102](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.interface.ts#L102)*
+*Defined in [jsonApi.interface.ts:102](https://github.com/headline-1/coolio/blob/0131267/packages/json-api/src/jsonApi.interface.ts#L102)*

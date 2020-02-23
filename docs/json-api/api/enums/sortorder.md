@@ -13,7 +13,7 @@
 
 • **ASCENDING**: = ""
 
-*Defined in [jsonApi.interface.ts:156](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.interface.ts#L156)*
+*Defined in [jsonApi.interface.ts:156](https://github.com/headline-1/coolio/blob/0131267/packages/json-api/src/jsonApi.interface.ts#L156)*
 
 ___
 
@@ -21,4 +21,4 @@ ___
 
 • **DESCENDING**: = "-"
 
-*Defined in [jsonApi.interface.ts:157](https://github.com/headline-1/coolio/blob/420fd1d/packages/json-api/src/jsonApi.interface.ts#L157)*
+*Defined in [jsonApi.interface.ts:157](https://github.com/headline-1/coolio/blob/0131267/packages/json-api/src/jsonApi.interface.ts#L157)*

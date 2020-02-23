@@ -30,7 +30,7 @@
 
 \+ **new HttpRequestError**(`options`: [NormalizedHttpOptions](../interfaces/normalizedhttpoptions.md), `message?`: undefined | string): *[HttpRequestError](httprequesterror.md)*
 
-*Defined in [packages/http/src/httpRequestError.ts:6](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpRequestError.ts#L6)*
+*Defined in [packages/http/src/httpRequestError.ts:6](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpRequestError.ts#L6)*
 
 **Parameters:**
 
@@ -67,7 +67,7 @@ ___
 
 • **options**: *[NormalizedHttpOptions](../interfaces/normalizedhttpoptions.md)*
 
-*Defined in [packages/http/src/httpRequestError.ts:8](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpRequestError.ts#L8)*
+*Defined in [packages/http/src/httpRequestError.ts:8](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpRequestError.ts#L8)*
 
 ___
 

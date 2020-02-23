@@ -31,7 +31,7 @@
 
 \+ **new HttpResponseError**(`response`: [HttpResponse](../interfaces/httpresponse.md)‹T›, `message?`: undefined | string): *[HttpResponseError](httpresponseerror.md)*
 
-*Defined in [packages/http/src/httpResponseError.ts:8](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpResponseError.ts#L8)*
+*Defined in [packages/http/src/httpResponseError.ts:8](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpResponseError.ts#L8)*
 
 **Parameters:**
 
@@ -68,7 +68,7 @@ ___
 
 • **response**: *[HttpResponse](../interfaces/httpresponse.md)‹T›*
 
-*Defined in [packages/http/src/httpResponseError.ts:10](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpResponseError.ts#L10)*
+*Defined in [packages/http/src/httpResponseError.ts:10](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpResponseError.ts#L10)*
 
 ___
 
@@ -88,7 +88,7 @@ ___
 
 • **status**: *[HttpCode](../enums/httpcode.md)*
 
-*Defined in [packages/http/src/httpResponseError.ts:7](https://github.com/headline-1/coolio/blob/420fd1d/packages/http/src/httpResponseError.ts#L7)*
+*Defined in [packages/http/src/httpResponseError.ts:7](https://github.com/headline-1/coolio/blob/0131267/packages/http/src/httpResponseError.ts#L7)*
 
 ___
 

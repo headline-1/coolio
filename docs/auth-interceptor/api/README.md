@@ -34,7 +34,7 @@
 
 Ƭ **Promisable**: *T | Promise‹T›*
 
-*Defined in [packages/auth-interceptor/src/promisable.ts:1](https://github.com/headline-1/coolio/blob/420fd1d/packages/auth-interceptor/src/promisable.ts#L1)*
+*Defined in [packages/auth-interceptor/src/promisable.ts:1](https://github.com/headline-1/coolio/blob/0131267/packages/auth-interceptor/src/promisable.ts#L1)*
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 Ƭ **QueueItem**: *object*
 
-*Defined in [packages/auth-interceptor/src/simpleQueue.ts:1](https://github.com/headline-1/coolio/blob/420fd1d/packages/auth-interceptor/src/simpleQueue.ts#L1)*
+*Defined in [packages/auth-interceptor/src/simpleQueue.ts:1](https://github.com/headline-1/coolio/blob/0131267/packages/auth-interceptor/src/simpleQueue.ts#L1)*
 
 #### Type declaration:
 
@@ -60,7 +60,7 @@ ___
 
 ▸ **createAuthInterceptor**(`options`: [AuthInterceptorOptions](interfaces/authinterceptoroptions.md)): *[AuthInterceptor](classes/authinterceptor.md)‹›*
 
-*Defined in [packages/auth-interceptor/src/authInterceptor.ts:87](https://github.com/headline-1/coolio/blob/420fd1d/packages/auth-interceptor/src/authInterceptor.ts#L87)*
+*Defined in [packages/auth-interceptor/src/authInterceptor.ts:87](https://github.com/headline-1/coolio/blob/0131267/packages/auth-interceptor/src/authInterceptor.ts#L87)*
 
 **Parameters:**
 
@@ -76,7 +76,7 @@ ___
 
 ▸ **createOAuth2Interceptor**(`__namedParameters`: object): *[AuthInterceptor](classes/authinterceptor.md)‹›*
 
-*Defined in [packages/auth-interceptor/src/oauth2Interceptor.ts:13](https://github.com/headline-1/coolio/blob/420fd1d/packages/auth-interceptor/src/oauth2Interceptor.ts#L13)*
+*Defined in [packages/auth-interceptor/src/oauth2Interceptor.ts:13](https://github.com/headline-1/coolio/blob/0131267/packages/auth-interceptor/src/oauth2Interceptor.ts#L13)*
 
 **Parameters:**
 
@@ -97,7 +97,7 @@ ___
 
 ▸ **hasUnauthorizedResponseCode**(`response`: HttpResponse): *boolean*
 
-*Defined in [packages/auth-interceptor/src/authInterceptor.ts:14](https://github.com/headline-1/coolio/blob/420fd1d/packages/auth-interceptor/src/authInterceptor.ts#L14)*
+*Defined in [packages/auth-interceptor/src/authInterceptor.ts:14](https://github.com/headline-1/coolio/blob/0131267/packages/auth-interceptor/src/authInterceptor.ts#L14)*
 
 **Parameters:**
 
@@ -113,7 +113,7 @@ ___
 
 ▸ **isUnauthorizedError**(`error`: any): *boolean*
 
-*Defined in [packages/auth-interceptor/src/authInterceptor.ts:15](https://github.com/headline-1/coolio/blob/420fd1d/packages/auth-interceptor/src/authInterceptor.ts#L15)*
+*Defined in [packages/auth-interceptor/src/authInterceptor.ts:15](https://github.com/headline-1/coolio/blob/0131267/packages/auth-interceptor/src/authInterceptor.ts#L15)*
 
 **Parameters:**
 
