@@ -5,6 +5,7 @@
 ### Enumeration members
 
 * [JSON](contenttype.md#json)
+* [MULTIPART_FORM](contenttype.md#multipart_form)
 * [TEXT](contenttype.md#text)
 * [URL_ENCODED](contenttype.md#url_encoded)
 * [VND_JSON](contenttype.md#vnd_json)
@@ -14,6 +15,12 @@
 ###  JSON
 
 • **JSON**: = "application/json"
+
+___
+
+###  MULTIPART_FORM
+
+• **MULTIPART_FORM**: = "multipart/form-data"
 
 ___
 

@@ -74,6 +74,8 @@
 * [cacheParsedBody](README.md#const-cacheparsedbody)
 * [createAsyncBodyHandler](README.md#const-createasyncbodyhandler)
 * [createErrorInterceptor](README.md#const-createerrorinterceptor)
+* [createFormData](README.md#const-createformdata)
+* [createFormDataImpl](README.md#const-createformdataimpl)
 * [createHttpResponse](README.md#const-createhttpresponse)
 * [createLoggingInterceptor](README.md#const-createlogginginterceptor)
 * [createRedirectionInterceptor](README.md#const-createredirectioninterceptor)
@@ -83,12 +85,14 @@
 * [encodeArrayBuffer](README.md#const-encodearraybuffer)
 * [encodeText](README.md#const-encodetext)
 * [fetchRequestHandler](README.md#const-fetchrequesthandler)
+* [getBoundaryFromContentTypeHeader](README.md#const-getboundaryfromcontenttypeheader)
 * [getCaseConverter](README.md#const-getcaseconverter)
 * [getEncodingFromHeaders](README.md#const-getencodingfromheaders)
 * [getHeader](README.md#const-getheader)
 * [getHostname](README.md#const-gethostname)
 * [handleRequest](README.md#const-handlerequest)
 * [httpRequestHandler](README.md#const-httprequesthandler)
+* [isFormData](README.md#const-isformdata)
 * [isHttpInterceptorInterface](README.md#const-ishttpinterceptorinterface)
 * [isHttpRequestError](README.md#const-ishttprequesterror)
 * [isHttpResponseError](README.md#const-ishttpresponseerror)
@@ -97,6 +101,7 @@
 * [noConversion](README.md#const-noconversion)
 * [parseHeaders](README.md#const-parseheaders)
 * [passthroughParser](README.md#const-passthroughparser)
+* [processMultipartBody](README.md#const-processmultipartbody)
 * [sanitizeHeaders](README.md#const-sanitizeheaders)
 * [sleep](README.md#const-sleep)
 * [splitWords](README.md#const-splitwords)
@@ -406,6 +411,36 @@ ___
 
 ___
 
+### `Const` createFormData
+
+▸ **createFormData**(`body`: object): *FormData*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`body` | object |
+
+**Returns:** *FormData*
+
+___
+
+### `Const` createFormDataImpl
+
+▸ **createFormDataImpl**(`object`: object, `form`: FormData, `namespace?`: undefined | string): *FormData*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`object` | object |
+`form` | FormData |
+`namespace?` | undefined &#124; string |
+
+**Returns:** *FormData*
+
+___
+
 ### `Const` createHttpResponse
 
 ▸ **createHttpResponse**(`__namedParameters`: object): *[HttpResponse](interfaces/httpresponse.md)*
@@ -563,6 +598,20 @@ Name | Type | Default | Description |
 
 ___
 
+### `Const` getBoundaryFromContentTypeHeader
+
+▸ **getBoundaryFromContentTypeHeader**(`header`: string[]): *string*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`header` | string[] |
+
+**Returns:** *string*
+
+___
+
 ### `Const` getCaseConverter
 
 ▸ **getCaseConverter**(`bodyCasing?`: [BodyCasing](enums/bodycasing.md)): *toCamelCase*
@@ -651,6 +700,20 @@ Name | Type | Default | Description |
 `requestHandlerOptions` | [HttpRequestHandlerOptions](interfaces/httprequesthandleroptions.md) | {} | default native options attached to all requests  |
 
 **Returns:** *[HttpRequestHandler](README.md#httprequesthandler)*
+
+___
+
+### `Const` isFormData
+
+▸ **isFormData**(`object`: any): *object is FormData*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`object` | any |
+
+**Returns:** *object is FormData*
 
 ___
 
@@ -766,6 +829,21 @@ Name | Type |
 **Returns:** *object*
 
 * **parsedBody**: *any* = (response as any).parsedBody || (() => response.arrayBuffer())
+
+___
+
+### `Const` processMultipartBody
+
+▸ **processMultipartBody**(`body`: string, `boundary`: string): *never*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`body` | string |
+`boundary` | string |
+
+**Returns:** *never*
 
 ___
 
@@ -1014,6 +1092,10 @@ ___
 ###  JSON
 
 • **JSON**: *RegExp‹›* = /^application\/(json|.+\+json)$/
+
+###  MULTIPART
+
+• **MULTIPART**: *RegExp‹›* = /^multipart\//
 
 ###  TEXT
 

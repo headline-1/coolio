@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/headline-1/coolio/compare/v1.2.2...v1.3.0) (2020-02-24)
+
+
+### Features
+
+* **http:** bodyparser & bodyserializer support for multipart and formdata ([aee40be](https://github.com/headline-1/coolio/commit/aee40bee33fad819d0549299abf281aca64e64bc))
+
+
+
+
+
 ## [1.2.2](https://github.com/headline-1/coolio/compare/v1.2.1...v1.2.2) (2020-02-23)
 
 **Note:** Version bump only for package @coolio/http
