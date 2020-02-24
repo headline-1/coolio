@@ -1,7 +1,7 @@
 /* eslint-disable quote-props */
 import { ContentType } from '../contentType';
 import { bodySerializer } from '../bodySerializer';
-import { BodyCasing, isFormData } from '../helpers';
+import { BodyCasing } from '../helpers';
 
 describe('bodySerializer', () => {
   const jsonBodySample = Object.freeze({
