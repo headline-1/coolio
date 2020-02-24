@@ -19,7 +19,7 @@ export const bodySerializer = ({
   const bodySerializers: ContentTypeMap<(body: any) => any> = {
     JSON: (body) => JSON.stringify(caseConverter(body)),
     URL_ENCODED: (body) => urlEncode(caseConverter(body)),
-    MULTIPART: (body) => body instanceof FormData ? body : createFormData(body),
+    MULTIPART: (body) => createFormData(caseConverter(body)),
     TEXT: (body) => String(body),
   };
 

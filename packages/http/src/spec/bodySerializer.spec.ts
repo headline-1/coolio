@@ -1,7 +1,7 @@
 /* eslint-disable quote-props */
 import { ContentType } from '../contentType';
 import { bodySerializer } from '../bodySerializer';
-import { BodyCasing } from '../helpers';
+import { BodyCasing, isFormData } from '../helpers';
 
 describe('bodySerializer', () => {
   const jsonBodySample = Object.freeze({
@@ -39,6 +39,10 @@ describe('bodySerializer', () => {
       [ContentType.URL_ENCODED, BodyCasing.KEBAB_CASE],
       [ContentType.URL_ENCODED, BodyCasing.PASCAL_CASE],
       [ContentType.URL_ENCODED, BodyCasing.SNAKE_CASE],
+      [ContentType.MULTIPART_FORM, BodyCasing.CAMEL_CASE],
+      [ContentType.MULTIPART_FORM, BodyCasing.KEBAB_CASE],
+      [ContentType.MULTIPART_FORM, BodyCasing.PASCAL_CASE],
+      [ContentType.MULTIPART_FORM, BodyCasing.SNAKE_CASE],
     ] as ([ContentType, BodyCasing])[]
   )('serializes request with %s body and %s casing', (contentType, bodyCasing) => {
     const body = bodySerializer({

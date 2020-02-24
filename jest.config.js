@@ -12,7 +12,9 @@ module.exports = {
     'ts',
     'json',
   ],
-  setupFiles: [],
+  setupFiles: [
+    './tests/test-setup.ts'
+  ],
   testMatch: [
     '<rootDir>/packages/*/src/**/*.spec.ts',
   ],
