@@ -24,6 +24,12 @@ describe('bodySerializer', () => {
     }
   });
 
+  const formDataBodySample = new FormData();
+  formDataBodySample.append('abc', 'def');
+  formDataBodySample.append('file', new Blob([
+    Buffer.from('Zażółć gęślą jaźń.', 'utf8'),
+  ]));
+
   it.each([
       [ContentType.JSON, BodyCasing.CAMEL_CASE],
       [ContentType.JSON, BodyCasing.KEBAB_CASE],
@@ -33,6 +39,10 @@ describe('bodySerializer', () => {
       [ContentType.URL_ENCODED, BodyCasing.KEBAB_CASE],
       [ContentType.URL_ENCODED, BodyCasing.PASCAL_CASE],
       [ContentType.URL_ENCODED, BodyCasing.SNAKE_CASE],
+      [ContentType.MULTIPART_FORM, BodyCasing.CAMEL_CASE],
+      [ContentType.MULTIPART_FORM, BodyCasing.KEBAB_CASE],
+      [ContentType.MULTIPART_FORM, BodyCasing.PASCAL_CASE],
+      [ContentType.MULTIPART_FORM, BodyCasing.SNAKE_CASE],
     ] as ([ContentType, BodyCasing])[]
   )('serializes request with %s body and %s casing', (contentType, bodyCasing) => {
     const body = bodySerializer({
@@ -60,8 +70,9 @@ describe('bodySerializer', () => {
     [
       [undefined],
       [Buffer.from('buffer', 'utf8')],
-      ['string']
-    ] as [undefined | Buffer | string][]
+      ['string'],
+      [formDataBodySample]
+    ] as [undefined | Buffer | string | FormData][]
   )('is a passthrough when %s is passed', (inputBody) => {
     const body = bodySerializer()({
       body: inputBody,

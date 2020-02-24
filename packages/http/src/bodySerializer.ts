@@ -5,6 +5,7 @@ import { BodySerializer, HttpOptions, NormalizedHttpBody } from './httpClient.ty
 import { BodyCasing, getCaseConverter, getHeader } from './helpers';
 import { urlEncode } from './helpers/urlEncoding.helper';
 import { ContentTypeMap, switchContentType } from './contentType';
+import { createFormData, isFormData } from './helpers/multipart.helper';
 
 export interface BodySerializerOptions {
   bodyCasing?: BodyCasing;
@@ -18,6 +19,7 @@ export const bodySerializer = ({
   const bodySerializers: ContentTypeMap<(body: any) => any> = {
     JSON: (body) => JSON.stringify(caseConverter(body)),
     URL_ENCODED: (body) => urlEncode(caseConverter(body)),
+    MULTIPART: (body) => createFormData(caseConverter(body)),
     TEXT: (body) => String(body),
   };
 
@@ -27,7 +29,7 @@ export const bodySerializer = ({
       .map(type => type.trim().toLowerCase());
     const body = options.body;
 
-    if (isNil(body) || isString(body) || isBuffer(body)) {
+    if (isNil(body) || isString(body) || isBuffer(body) || isFormData(body)) {
       return body as NormalizedHttpBody;
     }
     if (typeof body === 'object') {
