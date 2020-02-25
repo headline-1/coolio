@@ -6,6 +6,9 @@ import { HttpRequestError } from '../httpRequestError';
 const HEADERS_RECEIVED = 2;
 const DONE = 4;
 
+export interface XhrRequestHandlerOptions {
+}
+
 const createAsyncBodyHandler = <T>() => {
   let isCalled = false;
 
@@ -47,8 +50,7 @@ const createAsyncBodyHandler = <T>() => {
   };
 };
 
-// TODO Extract to '@coolio/xhr-request-handler'
-export const xhrRequestHandler = (): HttpRequestHandler => async (
+export const xhrRequestHandler = (_?: XhrRequestHandlerOptions): HttpRequestHandler => async (
   requestOptions: NormalizedHttpOptions,
 ): Promise<RawHttpResponse> => {
   if (typeof XMLHttpRequest === 'undefined') {
@@ -79,7 +81,7 @@ export const xhrRequestHandler = (): HttpRequestHandler => async (
     const bodyHandler = createAsyncBodyHandler<ArrayBuffer>();
 
     req.onerror = () => {
-      const error = new Error('XHR request error');
+      const error = new Error('XHR Request Error');
       reject(error);
       bodyHandler.onBodyFailure(() => error);
     };

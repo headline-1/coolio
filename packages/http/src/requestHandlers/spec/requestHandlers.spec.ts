@@ -11,7 +11,7 @@ import * as http from 'http';
 require('whatwg-fetch');
 
 const describeRequestHandlers = describe.each([
-  ['fetch', fetchRequestHandler()],
+  ['fetch', fetchRequestHandler({ defaultRequestOptions: { mode: 'cors' } })],
   ['http', httpRequestHandler()],
   ['xhr', xhrRequestHandler()],
 ] as [string, HttpRequestHandler][]);
@@ -23,6 +23,7 @@ describeRequestHandlers('%s.requestHandler', (_, requestHandler) => {
   beforeAll(() => {
     server = createSimpleServer();
     server.app.get('/', (req, res) => {
+      expect(req.headers['x-global-header']).toEqual('applied to all requests');
       res.status(HttpCode.OK).send('test body');
     });
     server.app.post('/body', (req, res) =>
@@ -54,6 +55,9 @@ describeRequestHandlers('%s.requestHandler', (_, requestHandler) => {
   it('handles a request', async () => {
     const client = new HttpClient({
       requestHandler,
+      headers: {
+        'x-global-header': 'applied to all requests',
+      },
       baseUrl: server.fullAddress,
     });
     const result = await client.get('/');
@@ -133,11 +137,11 @@ describeRequestHandlers('%s.requestHandler', (_, requestHandler) => {
       });
       expect(req.files).toHaveLength(1);
       expect(req.files[0]).toMatchObject({
-          fieldname: 'file',
-          originalname: 'file.dat',
-          mimetype: ContentType.BINARY,
-          size: randomFileBuffer.length,
-        });
+        fieldname: 'file',
+        originalname: 'file.dat',
+        mimetype: ContentType.BINARY,
+        size: randomFileBuffer.length,
+      });
       expect(randomFileBuffer.equals(req.files[0].buffer)).toBe(true);
     };
 

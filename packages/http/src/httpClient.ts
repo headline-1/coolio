@@ -1,5 +1,5 @@
 import * as qs from 'qs';
-import { HttpClientHelper } from './helpers';
+import { HttpClientHelper } from './helpers/httpClient.helper';
 import {
   BodyParser,
   BodySerializer,
@@ -24,8 +24,6 @@ import { urlCombine, urlDestruct } from './helpers/urlEncoding.helper';
  */
 export const DEFAULT_REQUEST_TIMEOUT_MS = 5 * 60 * 1000;
 
-type HeadersProvider = (host: string) => Promise<HttpHeaders> | HttpHeaders;
-
 /**
  * A set of configuration options, which allows {@link HttpClient} to perform requests and process responses.
  *
@@ -44,12 +42,10 @@ export interface HttpClientConfig<T = HttpResponse> {
   requestHandler: HttpRequestHandler;
 
   /**
-   * Old way of passing global headers to requests.
+   * Headers that will be passed to all requests.
    * To add headers dynamically, you can use an interceptor instead.
-   * To add a set of static headers, pass them to request handler options directly.
-   * @deprecated
    */
-  defaultHeadersProvider?: HeadersProvider;
+  headers?: HttpHeaders;
 
   /**
    * A utility that parses and normalizes body of a response received from server.
@@ -115,7 +111,7 @@ const passthroughParser: BodyParser<any> = (response: RawHttpResponse) => ({
  */
 export class HttpClient<T = unknown> {
   private readonly handle: HttpRequestHandler;
-  private readonly defaultHeadersProvider?: HeadersProvider;
+  private readonly headers?: HttpHeaders;
   private readonly interceptors: HttpInterceptor[] = [];
   private readonly bodyParser: BodyParser<T>;
   private readonly bodySerializer: BodySerializer;
@@ -128,7 +124,7 @@ export class HttpClient<T = unknown> {
     this.handle = config.requestHandler;
     this.bodyParser = config.bodyParser || passthroughParser as any;
     this.bodySerializer = config.bodySerializer || bodySerializer();
-    this.defaultHeadersProvider = config.defaultHeadersProvider;
+    this.headers = config.headers;
     this.baseUrl = config.baseUrl ? config.baseUrl.replace(/\/+$/, '') : undefined;
     this.queryParserOptions = config.queryParserOptions;
     this.querySerializerOptions = config.querySerializerOptions;
@@ -235,9 +231,7 @@ export class HttpClient<T = unknown> {
     }
 
     const headers = HttpClientHelper.sanitizeHeaders({
-      ...this.defaultHeadersProvider && this.defaultHeadersProvider(
-        HttpClientHelper.getHostname(url),
-      ),
+      ...this.headers,
       ...(options && options.headers),
     });
 

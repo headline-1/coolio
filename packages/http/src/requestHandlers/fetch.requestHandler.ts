@@ -7,7 +7,6 @@ export interface FetchRequestHandlerOptions {
   defaultRequestOptions?: RequestInit;
 }
 
-// TODO Extract to '@coolio/fetch-request-handler'
 /**
  * Creates a new {@link HttpRequestHandler} that uses [Fetch API]{@link https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API} underneath.
  * Does not support *timeout* property.
@@ -36,7 +35,7 @@ export const fetchRequestHandler = (
       fetch(requestOptions.url, {
         ...fetchRequestHandlerOptions.defaultRequestOptions,
         ...requestOptions,
-        headers: merge(fetchRequestHandlerOptions.defaultRequestOptions, requestOptions.headers),
+        headers: merge(fetchRequestHandlerOptions.defaultRequestOptions?.headers, requestOptions.headers),
         signal: abortController.signal,
       }).then(response => {
         clearTimeout(timer);

@@ -1,16 +1,9 @@
 import express from 'express';
 import multer, { memoryStorage } from 'multer';
+import cors from 'cors';
 import bodyParser from 'body-parser';
-import * as http from 'http';
 import { AddressInfo } from 'net';
-import { HttpMethod } from '../httpClient.types';
 import { ContentType } from '../contentType';
-
-export interface SimpleEndpoint {
-  method: HttpMethod;
-  route: RegExp | string;
-  response: string | ((req: http.IncomingMessage, res: http.OutgoingMessage) => void);
-}
 
 export interface SimpleServer {
   app: express.Express;
@@ -25,9 +18,16 @@ export const createSimpleServer = (): SimpleServer => {
   const server = app.listen();
   const address = server.address() as AddressInfo;
 
+  const corsMiddleware = cors({
+    allowedHeaders: ['x-global-header'],
+    origin: '*',
+  });
+
+  app.use(corsMiddleware);
+  app.options('*', corsMiddleware);
+
   app.use((req, res, next) => {
     res.setHeader('Content-Type', ContentType.TEXT);
-    res.setHeader('Access-Control-Allow-Origin', '*');
     next();
   });
 

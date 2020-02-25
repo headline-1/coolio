@@ -63,7 +63,7 @@ export interface HttpRequestOptions {
 
 export type HttpOptions = Partial<HttpRequestOptions>;
 
-export type NormalizedHttpBody = string | TypedArray | undefined;
+export type NormalizedHttpBody = TypedArray | string | undefined;
 
 export interface NormalizedHttpOptions {
   url: string;
