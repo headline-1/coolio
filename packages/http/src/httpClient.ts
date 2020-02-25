@@ -1,5 +1,4 @@
 import * as qs from 'qs';
-import { HttpClientHelper } from './helpers/httpClient.helper';
 import {
   BodyParser,
   BodySerializer,
@@ -18,6 +17,7 @@ import {
 import { bodySerializer } from './bodySerializer';
 import { cacheParsedBody } from './helpers/parsedBodyCache.helper';
 import { urlCombine, urlDestruct } from './helpers/urlEncoding.helper';
+import { sanitizeHeaders } from './helpers';
 
 /**
  * Default request timeout - 5 minutes.
@@ -230,11 +230,6 @@ export class HttpClient<T = unknown> {
       url = `${this.baseUrl}${url}`;
     }
 
-    const headers = HttpClientHelper.sanitizeHeaders({
-      ...this.headers,
-      ...(options && options.headers),
-    });
-
     const urlBreakdown = urlDestruct(urlCombine(url, options && options.query), this.queryParserOptions);
 
     const normalizedOptions: NormalizedHttpOptions = {
@@ -243,7 +238,7 @@ export class HttpClient<T = unknown> {
       method: options.method,
       url: urlBreakdown.url,
       query: urlBreakdown.query,
-      headers,
+      headers: sanitizeHeaders(this.headers, options && options.headers),
       body: options && options.body as any,
     };
 

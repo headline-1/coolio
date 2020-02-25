@@ -1,4 +1,4 @@
-import { getHeader } from '../headers.helper';
+import { getHeader, sanitizeHeaders } from '../headers.helper';
 
 describe('headers.helper', () => {
   it('returns the correct header from an object, regardless of casing', () => {
@@ -31,5 +31,65 @@ describe('headers.helper', () => {
   it('returns undefined if headers are not present at all', () => {
     expect(getHeader(undefined, 'x-1')).toEqual(undefined);
     expect(getHeader(null as any, 'x-1')).toEqual(undefined);
+  });
+
+  describe('#sanitizeHeaders', () => {
+    it('removes null or undefined headers', () => {
+      expect(sanitizeHeaders({
+        value: null,
+        value2: undefined,
+        value3: '',
+      })).toEqual({
+        value3: '',
+      });
+    });
+
+    it('handles undefined header groups', () => {
+      expect(sanitizeHeaders(undefined)).toEqual({});
+      expect(sanitizeHeaders({ a: 'a' }, undefined)).toEqual({
+        a: 'a',
+      });
+    });
+
+    it('joins multiple header groups', () => {
+      expect(sanitizeHeaders(
+        {
+          a: 'first',
+          b: 'second',
+        },
+        {
+          A: 'first override',
+          c: 'third',
+        }
+      )).toEqual({
+        a: 'first override',
+        b: 'second',
+        c: 'third',
+      });
+    });
+
+    it('converts all headers to strings', () => {
+      expect(sanitizeHeaders({
+        n: 1,
+        b: false,
+        o: {},
+        a: ['abc', 'def'],
+        s: 'string',
+      })).toEqual({
+        n: '1',
+        b: 'false',
+        o: '[object Object]',
+        a: 'abc,def',
+        s: 'string',
+      });
+    });
+
+    it('does not convert "not-own" properties', () => {
+      const x = () => ({});
+      x.test = 'value';
+      expect(sanitizeHeaders(x)).toEqual({
+        test: 'value',
+      });
+    });
   });
 });

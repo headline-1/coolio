@@ -16,16 +16,6 @@ const toUrlEncoded = (obj: object) => {
   return str.join('&');
 };
 
-const sanitizeHeaders = (headers: Record<string, any>): Record<string, string> => {
-  const result: Record<string, string> = {};
-  for (const key in headers) {
-    if (headers.hasOwnProperty(key) && !isNil(headers[key])) {
-      result[key] = headers[key].toString();
-    }
-  }
-  return result;
-};
-
 export const getHostname = (url: string): string => {
   const match = url && url.match(/^.+:\/\/([^/]+)/);
   return match ? match[1] : '';
@@ -34,6 +24,5 @@ export const getHostname = (url: string): string => {
 export const HttpClientHelper = {
   defaultHeaders,
   toUrlEncoded,
-  sanitizeHeaders,
   getHostname,
 };

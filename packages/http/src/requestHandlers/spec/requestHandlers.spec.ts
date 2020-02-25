@@ -122,14 +122,10 @@ describeRequestHandlers('%s.requestHandler', (_, requestHandler) => {
       requestHandler,
       baseUrl: server.fullAddress,
     });
-    const body = new FormData();
     const randomFileBuffer = Buffer.from(new Array(8 * 2014)
       .fill(0)
       .map(() => Math.random() * 255));
     const description = 'This is just a text description';
-
-    body.append('file', new File([randomFileBuffer], 'file.dat'));
-    body.append('description', description);
 
     verifyRequest = async req => {
       expect(req.body).toEqual({
@@ -146,8 +142,11 @@ describeRequestHandlers('%s.requestHandler', (_, requestHandler) => {
     };
 
     const response = await client.post('/body', {
-      headers: { 'content-type': ContentType.MULTIPART_FORM },
-      body,
+      headers: { 'Content-Type': ContentType.MULTIPART_FORM },
+      body: {
+        file: new File([randomFileBuffer], 'file.dat'),
+        description,
+      },
     });
     await expect(response.status).toEqual(HttpCode.OK);
   });

@@ -15,42 +15,6 @@ describe('httpClient.helper ', () => {
     });
   });
 
-  describe('#sanitizeHeaders', () => {
-    it('removes null or undefined headers', () => {
-      expect(HttpClientHelper.sanitizeHeaders({
-        value: null,
-        value2: undefined,
-        value3: '',
-      })).toEqual({
-        value3: '',
-      });
-    });
-
-    it('converts all headers to strings', () => {
-      expect(HttpClientHelper.sanitizeHeaders({
-        n: 1,
-        b: false,
-        o: {},
-        a: ['abc', 'def'],
-        s: 'string',
-      })).toEqual({
-        n: '1',
-        b: 'false',
-        o: '[object Object]',
-        a: 'abc,def',
-        s: 'string',
-      });
-    });
-
-    it('does not convert "not-own" properties', () => {
-      const x = () => ({});
-      x.test = 'value';
-      expect(HttpClientHelper.sanitizeHeaders(x)).toEqual({
-        test: 'value',
-      });
-    });
-  });
-
   describe('#toUrlEncoded', () => {
     it('encodes a simple object ', () => {
       expect(HttpClientHelper.toUrlEncoded({

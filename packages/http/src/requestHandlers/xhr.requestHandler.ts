@@ -2,6 +2,7 @@ import { HttpRequestHandler, NormalizedHttpOptions, RawHttpResponse } from '../h
 import { HttpResponseHeaders } from '../httpResponseHeaders';
 import { encodeText, getEncodingFromHeaders } from '../helpers/encoder.helper';
 import { HttpRequestError } from '../httpRequestError';
+import { isFormData } from '../helpers';
 
 const HEADERS_RECEIVED = 2;
 const DONE = 4;
@@ -71,9 +72,11 @@ export const xhrRequestHandler = (_?: XhrRequestHandlerOptions): HttpRequestHand
     req.ontimeout = () => {
       reject(new HttpRequestError(requestOptions, `Request timed out after ${requestOptions.timeout}ms.`));
     };
-
+    const isNotFormDataContentTypeHeader = isFormData(requestOptions.body)
+      ? (key: string) => key === 'content-type'
+      : () => true;
     for (const key in requestOptions.headers) {
-      if (requestOptions.headers.hasOwnProperty(key)) {
+      if (requestOptions.headers.hasOwnProperty(key) && isNotFormDataContentTypeHeader(key)) {
         req.setRequestHeader(key, requestOptions.headers[key]);
       }
     }

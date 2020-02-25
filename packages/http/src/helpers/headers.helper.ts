@@ -1,3 +1,4 @@
+import isNil from 'lodash/isNil';
 import { HttpHeaders } from '../httpClient.types';
 
 export const getHeader = (headers: HttpHeaders | undefined, header: string): string | undefined => {
@@ -12,5 +13,20 @@ export const getHeader = (headers: HttpHeaders | undefined, header: string): str
 export const parseHeaders = (headers: Headers): Record<string, string> => {
   const result: Record<string, string> = {};
   headers.forEach((value, key) => result[key.toLowerCase()] = value);
+  return result;
+};
+
+export const sanitizeHeaders = (...multipleHeaders: (Record<string, any> | undefined)[]): Record<string, string> => {
+  const result: Record<string, string> = {};
+  for (const headers of multipleHeaders) {
+    if(!headers){
+      continue;
+    }
+    for (const key in headers) {
+      if (headers.hasOwnProperty(key) && !isNil(headers[key])) {
+        result[key.toLowerCase()] = headers[key].toString();
+      }
+    }
+  }
   return result;
 };

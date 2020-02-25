@@ -1,7 +1,7 @@
-import merge from 'lodash/merge';
 import { HttpRequestHandler, NormalizedHttpOptions, RawHttpResponse } from '../httpClient.types';
 import { HttpResponseHeaders } from '../httpResponseHeaders';
 import { HttpRequestError } from '../httpRequestError';
+import { isFormData, sanitizeHeaders } from '../helpers';
 
 export interface FetchRequestHandlerOptions {
   defaultRequestOptions?: RequestInit;
@@ -35,7 +35,11 @@ export const fetchRequestHandler = (
       fetch(requestOptions.url, {
         ...fetchRequestHandlerOptions.defaultRequestOptions,
         ...requestOptions,
-        headers: merge(fetchRequestHandlerOptions.defaultRequestOptions?.headers, requestOptions.headers),
+        headers: sanitizeHeaders(
+          fetchRequestHandlerOptions.defaultRequestOptions?.headers,
+          requestOptions.headers,
+          isFormData(requestOptions.body) ? { 'content-type': undefined } : undefined
+        ),
         signal: abortController.signal,
       }).then(response => {
         clearTimeout(timer);
