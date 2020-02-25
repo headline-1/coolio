@@ -27,5 +27,5 @@
   * [NormalizedHttpOptions](interfaces/normalizedhttpoptions.md)
   * [RawHttpResponse](interfaces/rawhttpresponse.md)
   * [RedirectionInterceptorOptions](interfaces/redirectioninterceptoroptions.md)
-  * [SimpleEndpoint](interfaces/simpleendpoint.md)
   * [SimpleServer](interfaces/simpleserver.md)
+  * [XhrRequestHandlerOptions](interfaces/xhrrequesthandleroptions.md)

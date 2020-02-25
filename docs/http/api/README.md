@@ -35,8 +35,8 @@
 * [NormalizedHttpOptions](interfaces/normalizedhttpoptions.md)
 * [RawHttpResponse](interfaces/rawhttpresponse.md)
 * [RedirectionInterceptorOptions](interfaces/redirectioninterceptoroptions.md)
-* [SimpleEndpoint](interfaces/simpleendpoint.md)
 * [SimpleServer](interfaces/simpleserver.md)
+* [XhrRequestHandlerOptions](interfaces/xhrrequesthandleroptions.md)
 
 ### Type aliases
 
@@ -45,7 +45,6 @@
 * [BodySerializer](README.md#bodyserializer)
 * [BufferEncoding](README.md#bufferencoding)
 * [ContentTypeMap](README.md#contenttypemap)
-* [HeadersProvider](README.md#headersprovider)
 * [HttpBody](README.md#httpbody)
 * [HttpFetch](README.md#httpfetch)
 * [HttpHeaders](README.md#httpheaders)
@@ -186,22 +185,6 @@ ___
 
 ___
 
-###  HeadersProvider
-
-Ƭ **HeadersProvider**: *function*
-
-#### Type declaration:
-
-▸ (`host`: string): *Promise‹[HttpHeaders](README.md#httpheaders)› | [HttpHeaders](README.md#httpheaders)*
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`host` | string |
-
-___
-
 ###  HttpBody
 
 Ƭ **HttpBody**: *object | [TypedArray](README.md#typedarray) | string*
@@ -281,7 +264,7 @@ ___
 
 ###  NormalizedHttpBody
 
-Ƭ **NormalizedHttpBody**: *string | [TypedArray](README.md#typedarray) | undefined*
+Ƭ **NormalizedHttpBody**: *[TypedArray](README.md#typedarray) | string | undefined*
 
 ___
 
@@ -1067,7 +1050,13 @@ ___
 
 ### `Const` xhrRequestHandler
 
-▸ **xhrRequestHandler**(): *[HttpRequestHandler](README.md#httprequesthandler)*
+▸ **xhrRequestHandler**(`_?`: [XhrRequestHandlerOptions](interfaces/xhrrequesthandleroptions.md)): *[HttpRequestHandler](README.md#httprequesthandler)*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`_?` | [XhrRequestHandlerOptions](interfaces/xhrrequesthandleroptions.md) |
 
 **Returns:** *[HttpRequestHandler](README.md#httprequesthandler)*
 
