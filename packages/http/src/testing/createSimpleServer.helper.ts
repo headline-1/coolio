@@ -1,7 +1,11 @@
+import express from 'express';
 import * as http from 'http';
-import * as url from 'url';
 import { AddressInfo } from 'net';
 import { HttpMethod } from '../httpClient.types';
+import { ContentType } from '../contentType';
+import bodyParser from 'body-parser';
+import multer, { memoryStorage } from 'multer';
+import { OutgoingMessage } from 'http';
 
 export interface SimpleEndpoint {
   method: HttpMethod;
@@ -9,55 +13,42 @@ export interface SimpleEndpoint {
   response: string | ((req: http.IncomingMessage, res: http.OutgoingMessage) => void);
 }
 
-export interface CreateSimpleServerParams {
-  status: number;
-  headers: http.OutgoingHttpHeaders;
-  endpoints: SimpleEndpoint[];
-}
-
 export interface SimpleServer {
+  app: express.Express;
   port: number;
   host: string;
   fullAddress: string;
   close: () => Promise<void>;
 }
 
-// TODO replace it with express for testing
-export const createSimpleServer = ({
-  status,
-  endpoints,
-  headers,
-}: CreateSimpleServerParams): SimpleServer => {
-  const route = (req: http.IncomingMessage) => {
-    if (!req.url) {
-      return undefined;
-    }
-    const { pathname } = url.parse(req.url);
-    for (const endpoint of endpoints) {
-      if (endpoint.method === req.method && pathname?.match(new RegExp(`^${endpoint.route}$`))) {
-        return endpoint;
-      }
-    }
-  };
-
-  const server = http.createServer(function (req, res) {
-    const endpoint = route(req);
-    if (!endpoint) {
-      res.writeHead(404, {});
-      return res.end();
-    }
-    if (typeof endpoint.response === 'string') {
-      res.writeHead(status, {
-        'access-control-allow-origin': '*',
-        ...headers,
-      });
-      return res.end(endpoint.response);
-    }
-    return endpoint.response(req, res);
-  }).listen();
+export const createSimpleServer = (): SimpleServer => {
+  const app = express();
+  const server = app.listen();
   const address = server.address() as AddressInfo;
 
+  app.use((req, res, next) => {
+    res.setHeader('Content-Type', ContentType.TEXT);
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    next();
+  });
+
+  app.use(bodyParser.text({
+    type: ContentType.TEXT,
+  }));
+  app.use(bodyParser.raw({
+    type: ContentType.BINARY,
+  }));
+  app.use(multer({
+    storage: memoryStorage(),
+  }).any());
+
+  app.use((err: Error, req: express.Request, res: express.Response, _next: () => void) => {
+    console.error(err);
+    res.status(500).send('Something broke!');
+  });
+
   return {
+    app,
     port: address.port,
     host: address.address,
     fullAddress: `http://127.0.0.1:${address.port}`,
