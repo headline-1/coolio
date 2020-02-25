@@ -37,8 +37,8 @@
     * [NormalizedHttpOptions](http/api/interfaces/normalizedhttpoptions.md)
     * [RawHttpResponse](http/api/interfaces/rawhttpresponse.md)
     * [RedirectionInterceptorOptions](http/api/interfaces/redirectioninterceptoroptions.md)
-    * [SimpleEndpoint](http/api/interfaces/simpleendpoint.md)
     * [SimpleServer](http/api/interfaces/simpleserver.md)
+    * [XhrRequestHandlerOptions](http/api/interfaces/xhrrequesthandleroptions.md)
 
 ## Auth Interceptor
 

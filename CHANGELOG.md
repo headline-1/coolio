@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/headline-1/coolio/compare/v1.3.1...v2.0.0) (2020-02-25)
+
+
+### Bug Fixes
+
+* **headers:** fixed header merging in fetch requesthandler ([d6da36a](https://github.com/headline-1/coolio/commit/d6da36a23cf4aea2d8ba72fdb9b8446bebc48725))
+
+
+### BREAKING CHANGES
+
+* **headers:** removed deprecated headers options
+
+
+
+
+
 ## [1.3.1](https://github.com/headline-1/coolio/compare/v1.3.0...v1.3.1) (2020-02-25)
 
 

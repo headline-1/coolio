@@ -19,7 +19,7 @@ Common body shape defined by [bodyParser](httpclientconfig.md#optional-bodyparse
 * [baseUrl](httpclientconfig.md#optional-baseurl)
 * [bodyParser](httpclientconfig.md#optional-bodyparser)
 * [bodySerializer](httpclientconfig.md#optional-bodyserializer)
-* [defaultHeadersProvider](httpclientconfig.md#optional-defaultheadersprovider)
+* [headers](httpclientconfig.md#optional-headers)
 * [queryParserOptions](httpclientconfig.md#optional-queryparseroptions)
 * [querySerializerOptions](httpclientconfig.md#optional-queryserializeroptions)
 * [requestHandler](httpclientconfig.md#requesthandler)
@@ -55,15 +55,12 @@ Built-in [bodySerializer](httpclientconfig.md#optional-bodyserializer) supports 
 
 ___
 
-### `Optional` defaultHeadersProvider
+### `Optional` headers
 
-• **defaultHeadersProvider**? : *[HeadersProvider](../README.md#headersprovider)*
+• **headers**? : *[HttpHeaders](../README.md#httpheaders)*
 
-Old way of passing global headers to requests.
+Headers that will be passed to all requests.
 To add headers dynamically, you can use an interceptor instead.
-To add a set of static headers, pass them to request handler options directly.
-
-**`deprecated`** 
 
 ___
 
