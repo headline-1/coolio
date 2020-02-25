@@ -34,7 +34,9 @@ export const fetchRequestHandler = (
         reject(new HttpRequestError(requestOptions, `Request timed out after ${requestOptions.timeout}ms.`));
       }, requestOptions.timeout);
       fetch(requestOptions.url, {
-        ...mergeRequestOptions(fetchRequestHandlerOptions.defaultRequestOptions, requestOptions),
+        ...fetchRequestHandlerOptions.defaultRequestOptions,
+        ...requestOptions,
+        headers: merge(fetchRequestHandlerOptions.defaultRequestOptions, requestOptions.headers),
         signal: abortController.signal,
       }).then(response => {
         clearTimeout(timer);
@@ -57,11 +59,4 @@ export const fetchRequestHandler = (
       abort: () => abortController.abort(),
     };
   };
-};
-
-export const mergeRequestOptions = (
-  defaultRequestOptions: RequestInit | undefined,
-  requestOptions: NormalizedHttpOptions
-) => {
-  return merge({}, defaultRequestOptions, requestOptions);
 };

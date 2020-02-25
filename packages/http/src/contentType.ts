@@ -1,16 +1,17 @@
 export enum ContentType {
-  TEXT = 'text/plain',
+  BINARY = 'application/octet-stream',
   JSON = 'application/json',
-  VND_JSON = 'application/vnd.api+json',
   MULTIPART_FORM = 'multipart/form-data',
+  TEXT = 'text/plain',
   URL_ENCODED = 'application/x-www-form-urlencoded',
+  VND_JSON = 'application/vnd.api+json',
 }
 
 export const ContentTypeRegex = {
-  TEXT: /^text\//,
   JSON: /^application\/(json|.+\+json)$/,
-  URL_ENCODED: /^application\/x-www-form-urlencoded$/,
   MULTIPART: /^multipart\//,
+  TEXT: /^text\//,
+  URL_ENCODED: /^application\/x-www-form-urlencoded$/,
 };
 
 export type ContentTypeMap<T> = Record<keyof typeof ContentTypeRegex, T>;

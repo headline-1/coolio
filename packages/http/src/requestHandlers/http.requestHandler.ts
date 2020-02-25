@@ -1,14 +1,34 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
+import FormData from 'form-data';
+import * as http from 'http';
+import { ClientRequestArgs, IncomingMessage } from 'http';
+import * as url from 'url';
+import * as https from 'https';
 import { HttpRequestHandler, NormalizedHttpOptions, RawHttpResponse } from '../httpClient.types';
 import { encodeText, getEncodingFromHeaders } from '../helpers/encoder.helper';
-import { ClientRequestArgs, IncomingMessage } from 'http';
 import { HttpResponseHeaders } from '../httpResponseHeaders';
 import { HttpStatusText } from '../httpCodes';
 import { HttpRequestError } from '../httpRequestError';
+import { isFormData } from '../helpers';
 
 export interface HttpRequestHandlerOptions {
   defaultRequestOptions?: ClientRequestArgs;
 }
+
+const readBlob = (blob: Blob): Promise<ArrayBuffer> => {
+  const reader = new FileReader();
+  return new Promise<ArrayBuffer>((resolve, reject) => {
+    const onEnd = (e: ProgressEvent<FileReader>) => {
+      reader.removeEventListener('loadend', onEnd);
+      if ((e as any).error) {
+        reject((e as any).error);
+      } else {
+        resolve(Buffer.from(reader.result as ArrayBuffer));
+      }
+    };
+    reader.addEventListener('loadend', onEnd);
+    reader.readAsArrayBuffer(blob);
+  });
+};
 
 /**
  * Creates a new {@link HttpRequestHandler} that uses native Node.js [HTTP]{@link https://nodejs.org/api/http.html} & [HTTPS]{@link https://nodejs.org/api/https.html} modules underneath.
@@ -19,10 +39,6 @@ export interface HttpRequestHandlerOptions {
 export const httpRequestHandler = (
   requestHandlerOptions: HttpRequestHandlerOptions = {},
 ): HttpRequestHandler => {
-
-  const url = require('url');
-  const http = require('http');
-  const https = require('https');
 
   return (requestOptions: NormalizedHttpOptions): Promise<RawHttpResponse> => new Promise((resolve, reject) => {
     const {
@@ -88,6 +104,33 @@ export const httpRequestHandler = (
       if (headers.hasOwnProperty(key)) {
         request.setHeader(key, headers[key]);
       }
+    }
+
+    if (isFormData(body)) {
+      return (async () => {
+        const form = new FormData();
+        const entries: [string, FormDataEntryValue][] = [];
+        body.forEach((value, key) => entries.push([key, value]));
+        for (const [key, value] of entries) {
+          if (value instanceof Blob) {
+            const buffer = await readBlob(value);
+            form.append(key, buffer, {
+              contentType: value.type,
+              filename: value.name,
+              knownLength: value.size,
+            });
+          } else {
+            form.append(key, value);
+          }
+        }
+        const formHeaders = form.getHeaders();
+        for (const key in formHeaders) {
+          if (formHeaders.hasOwnProperty(key)) {
+            request.setHeader(key, formHeaders[key]);
+          }
+        }
+        form.pipe(request);
+      })().catch(reject);
     }
 
     if (body) {
