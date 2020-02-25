@@ -820,13 +820,13 @@ ___
 
 ### `Const` sanitizeHeaders
 
-▸ **sanitizeHeaders**(`headers`: Record‹string, any›): *Record‹string, string›*
+▸ **sanitizeHeaders**(...`multipleHeaders`: undefined | object[]): *Record‹string, string›*
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`headers` | Record‹string, any› |
+`...multipleHeaders` | undefined &#124; object[] |
 
 **Returns:** *Record‹string, string›*
 
@@ -1095,10 +1095,6 @@ ___
 ###  getHostname
 
 • **getHostname**: *getHostname*
-
-###  sanitizeHeaders
-
-• **sanitizeHeaders**: *[sanitizeHeaders](README.md#const-sanitizeheaders)*
 
 ###  toUrlEncoded
 

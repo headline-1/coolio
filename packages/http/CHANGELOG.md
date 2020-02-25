@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1](https://github.com/headline-1/coolio/compare/v2.0.0...v2.0.1) (2020-02-25)
+
+
+### Bug Fixes
+
+* **headers & multipart requests:** reworked header merging mechanism ([b16bfeb](https://github.com/headline-1/coolio/commit/b16bfeb7036379ecb869e072d8686d45d311d021))
+
+
+
+
+
 # [2.0.0](https://github.com/headline-1/coolio/compare/v1.3.1...v2.0.0) (2020-02-25)
 
 
