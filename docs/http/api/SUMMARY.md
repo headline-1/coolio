@@ -13,7 +13,6 @@
 * [Interfaces]()
   * [BodyParserOptions](interfaces/bodyparseroptions.md)
   * [BodySerializerOptions](interfaces/bodyserializeroptions.md)
-  * [CreateSimpleServerParams](interfaces/createsimpleserverparams.md)
   * [Endpoint](interfaces/endpoint.md)
   * [FetchRequestHandlerOptions](interfaces/fetchrequesthandleroptions.md)
   * [HttpClientConfig](interfaces/httpclientconfig.md)

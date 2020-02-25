@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.1](https://github.com/headline-1/coolio/compare/v1.3.0...v1.3.1) (2020-02-25)
+
+
+### Bug Fixes
+
+* **multipart upload:** tested multipart upload on all request handlers ([06b353c](https://github.com/headline-1/coolio/commit/06b353c465d65ffcbfebc007ef5ec33b9a30d4d4))
+
+
+
+
+
 # [1.3.0](https://github.com/headline-1/coolio/compare/v1.2.2...v1.3.0) (2020-02-24)
 
 

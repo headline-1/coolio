@@ -8,12 +8,19 @@
 
 ### Properties
 
+* [app](simpleserver.md#app)
 * [close](simpleserver.md#close)
 * [fullAddress](simpleserver.md#fulladdress)
 * [host](simpleserver.md#host)
 * [port](simpleserver.md#port)
 
 ## Properties
+
+###  app
+
+• **app**: *express.Express*
+
+___
 
 ###  close
 

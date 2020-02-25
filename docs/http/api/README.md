@@ -21,7 +21,6 @@
 
 * [BodyParserOptions](interfaces/bodyparseroptions.md)
 * [BodySerializerOptions](interfaces/bodyserializeroptions.md)
-* [CreateSimpleServerParams](interfaces/createsimpleserverparams.md)
 * [Endpoint](interfaces/endpoint.md)
 * [FetchRequestHandlerOptions](interfaces/fetchrequesthandleroptions.md)
 * [HttpClientConfig](interfaces/httpclientconfig.md)
@@ -96,12 +95,12 @@
 * [isHttpInterceptorInterface](README.md#const-ishttpinterceptorinterface)
 * [isHttpRequestError](README.md#const-ishttprequesterror)
 * [isHttpResponseError](README.md#const-ishttpresponseerror)
-* [mergeRequestOptions](README.md#const-mergerequestoptions)
 * [mockRequestHandler](README.md#const-mockrequesthandler)
 * [noConversion](README.md#const-noconversion)
 * [parseHeaders](README.md#const-parseheaders)
 * [passthroughParser](README.md#const-passthroughparser)
 * [processMultipartBody](README.md#const-processmultipartbody)
+* [readBlob](README.md#const-readblob)
 * [sanitizeHeaders](README.md#const-sanitizeheaders)
 * [sleep](README.md#const-sleep)
 * [splitWords](README.md#const-splitwords)
@@ -494,17 +493,7 @@ ___
 
 ### `Const` createSimpleServer
 
-▸ **createSimpleServer**(`__namedParameters`: object): *[SimpleServer](interfaces/simpleserver.md)*
-
-**Parameters:**
-
-▪ **__namedParameters**: *object*
-
-Name | Type |
------- | ------ |
-`endpoints` | [SimpleEndpoint](interfaces/simpleendpoint.md)[] |
-`headers` | OutgoingHttpHeaders |
-`status` | number |
+▸ **createSimpleServer**(): *[SimpleServer](interfaces/simpleserver.md)*
 
 **Returns:** *[SimpleServer](interfaces/simpleserver.md)*
 
@@ -759,21 +748,6 @@ Name | Type |
 
 ___
 
-### `Const` mergeRequestOptions
-
-▸ **mergeRequestOptions**(`defaultRequestOptions`: RequestInit | undefined, `requestOptions`: [NormalizedHttpOptions](interfaces/normalizedhttpoptions.md)): *RequestInit & [NormalizedHttpOptions](interfaces/normalizedhttpoptions.md)*
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`defaultRequestOptions` | RequestInit &#124; undefined |
-`requestOptions` | [NormalizedHttpOptions](interfaces/normalizedhttpoptions.md) |
-
-**Returns:** *RequestInit & [NormalizedHttpOptions](interfaces/normalizedhttpoptions.md)*
-
-___
-
 ### `Const` mockRequestHandler
 
 ▸ **mockRequestHandler**(`mockOptions`: [MockOptions](interfaces/mockoptions.md)): *[MockHttpRequestHandler](README.md#mockhttprequesthandler)*
@@ -844,6 +818,20 @@ Name | Type |
 `boundary` | string |
 
 **Returns:** *never*
+
+___
+
+### `Const` readBlob
+
+▸ **readBlob**(`blob`: Blob): *Promise‹ArrayBuffer›*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`blob` | Blob |
+
+**Returns:** *Promise‹ArrayBuffer›*
 
 ___
 

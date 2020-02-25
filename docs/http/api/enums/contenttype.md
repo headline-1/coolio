@@ -4,6 +4,7 @@
 
 ### Enumeration members
 
+* [BINARY](contenttype.md#binary)
 * [JSON](contenttype.md#json)
 * [MULTIPART_FORM](contenttype.md#multipart_form)
 * [TEXT](contenttype.md#text)
@@ -11,6 +12,12 @@
 * [VND_JSON](contenttype.md#vnd_json)
 
 ## Enumeration members
+
+###  BINARY
+
+• **BINARY**: = "application/octet-stream"
+
+___
 
 ###  JSON
 
