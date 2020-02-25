@@ -1,11 +1,10 @@
 import express from 'express';
+import multer, { memoryStorage } from 'multer';
+import bodyParser from 'body-parser';
 import * as http from 'http';
 import { AddressInfo } from 'net';
 import { HttpMethod } from '../httpClient.types';
 import { ContentType } from '../contentType';
-import bodyParser from 'body-parser';
-import multer, { memoryStorage } from 'multer';
-import { OutgoingMessage } from 'http';
 
 export interface SimpleEndpoint {
   method: HttpMethod;
