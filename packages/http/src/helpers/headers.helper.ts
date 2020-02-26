@@ -19,12 +19,18 @@ export const parseHeaders = (headers: Headers): Record<string, string> => {
 export const sanitizeHeaders = (...multipleHeaders: (Record<string, any> | undefined)[]): Record<string, string> => {
   const result: Record<string, string> = {};
   for (const headers of multipleHeaders) {
-    if(!headers){
+    if (!headers) {
       continue;
     }
     for (const key in headers) {
-      if (headers.hasOwnProperty(key) && !isNil(headers[key])) {
-        result[key.toLowerCase()] = headers[key].toString();
+      if (headers.hasOwnProperty(key)) {
+        const resultKey = key.toLowerCase();
+        const value = headers[key];
+        if (isNil(value)) {
+          delete result[resultKey];
+        } else {
+          result[resultKey] = value.toString();
+        }
       }
     }
   }

@@ -84,6 +84,16 @@ describe('headers.helper', () => {
       });
     });
 
+    it('overrdes with undefined', () => {
+      expect(sanitizeHeaders({
+        a: 'abc',
+      }, {
+        a: undefined
+      })).toEqual({
+        a: undefined,
+      })
+    });
+
     it('does not convert "not-own" properties', () => {
       const x = () => ({});
       x.test = 'value';
