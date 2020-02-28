@@ -8,6 +8,7 @@ import {
   toCamelCase,
   toKebabCase,
   toPascalCase,
+  toScreamingSnakeCase,
   toSnakeCase
 } from '../caseConversion.helper';
 
@@ -57,6 +58,12 @@ describe('caseConversion.helper', () => {
     it('splits space separated string', () => {
       expect(splitWords('this is a space separated string')).toEqual([
         'this', 'is', 'a', 'space', 'separated', 'string',
+      ]);
+    });
+
+    it('splits SCREAMING_SNAKE_CASE', () => {
+      expect(splitWords('THIS_IS_A_SCREAMING_SNAKE_CASE_STRING')).toEqual([
+        'THIS', 'IS', 'A', 'SCREAMING', 'SNAKE', 'CASE', 'STRING',
       ]);
     });
   });
@@ -137,6 +144,27 @@ describe('caseConversion.helper', () => {
               pascal_case: {
                 value: 'x',
                 value_two: 'y',
+              },
+            },
+          ],
+        },
+      });
+    });
+  });
+
+  describe('#toScreamingSnakeCase', () => {
+    it('converts mixed case object to SCREAMING_SNAKE_CASE', () => {
+      expect(toScreamingSnakeCase(conversionMockup)).toEqual({
+        FIRST_FIELD: 'x',
+        THREE_WORD_FIELD: 'b',
+        KEBAB_CASE_FIELD: {
+          AN_ARRAY: [
+            'a',
+            'b',
+            {
+              PASCAL_CASE: {
+                VALUE: 'x',
+                VALUE_TWO: 'y',
               },
             },
           ],
