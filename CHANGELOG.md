@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.1.0](https://github.com/headline-1/coolio/compare/v2.0.2...v2.1.0) (2020-03-03)
+
+
+### Bug Fixes
+
+* **case-conversion:** incorrect name formats are handled gracefully ([3d9ce11](https://github.com/headline-1/coolio/commit/3d9ce116072ff2bd377212aa1c490610700e7e93))
+* **headers:** preserve header casing ([c767655](https://github.com/headline-1/coolio/commit/c767655d7967f9cca738f9af9232e410c0717eb4))
+
+
+### Features
+
+* **case-conversion:** screaming snake case support ([1c70407](https://github.com/headline-1/coolio/commit/1c70407b7fb981742f4c5b39f3236b612664e0c9))
+
+
+
+
+
 ## [2.0.2](https://github.com/headline-1/coolio/compare/v2.0.1...v2.0.2) (2020-02-26)
 
 

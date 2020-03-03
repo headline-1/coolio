@@ -107,6 +107,7 @@
 * [toCamelCase](README.md#const-tocamelcase)
 * [toKebabCase](README.md#const-tokebabcase)
 * [toPascalCase](README.md#const-topascalcase)
+* [toScreamingSnakeCase](README.md#const-toscreamingsnakecase)
 * [toSnakeCase](README.md#const-tosnakecase)
 * [toUrlEncoded](README.md#const-tourlencoded)
 * [urlCombine](README.md#const-urlcombine)
@@ -326,7 +327,7 @@ ___
 
 Name | Type |
 ------ | ------ |
-`bodyCasing` | undefined &#124; [CAMEL_CASE](enums/bodycasing.md#camel_case) &#124; [SNAKE_CASE](enums/bodycasing.md#snake_case) &#124; [PASCAL_CASE](enums/bodycasing.md#pascal_case) &#124; [KEBAB_CASE](enums/bodycasing.md#kebab_case) |
+`bodyCasing` | undefined &#124; [CAMEL_CASE](enums/bodycasing.md#camel_case) &#124; [SNAKE_CASE](enums/bodycasing.md#snake_case) &#124; [SCREAMING_SNAKE_CASE](enums/bodycasing.md#screaming_snake_case) &#124; [PASCAL_CASE](enums/bodycasing.md#pascal_case) &#124; [KEBAB_CASE](enums/bodycasing.md#kebab_case) |
 `defaultParser` |  |
 
 **Returns:** *(Anonymous function)*
@@ -343,7 +344,7 @@ ___
 
 Name | Type |
 ------ | ------ |
-`bodyCasing` | undefined &#124; [CAMEL_CASE](enums/bodycasing.md#camel_case) &#124; [SNAKE_CASE](enums/bodycasing.md#snake_case) &#124; [PASCAL_CASE](enums/bodycasing.md#pascal_case) &#124; [KEBAB_CASE](enums/bodycasing.md#kebab_case) |
+`bodyCasing` | undefined &#124; [CAMEL_CASE](enums/bodycasing.md#camel_case) &#124; [SNAKE_CASE](enums/bodycasing.md#snake_case) &#124; [SCREAMING_SNAKE_CASE](enums/bodycasing.md#screaming_snake_case) &#124; [PASCAL_CASE](enums/bodycasing.md#pascal_case) &#124; [KEBAB_CASE](enums/bodycasing.md#kebab_case) |
 
 **Returns:** *[BodySerializer](README.md#bodyserializer)*
 
@@ -926,6 +927,20 @@ ___
 ### `Const` toPascalCase
 
 ▸ **toPascalCase**(`object`: any): *any*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`object` | any |
+
+**Returns:** *any*
+
+___
+
+### `Const` toScreamingSnakeCase
+
+▸ **toScreamingSnakeCase**(`object`: any): *any*
 
 **Parameters:**
 
