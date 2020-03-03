@@ -51,7 +51,7 @@ describe('headers.helper', () => {
       });
     });
 
-    it('joins multiple header groups', () => {
+    it('joins multiple header groups (preserving the last applied case)', () => {
       expect(sanitizeHeaders(
         {
           a: 'first',
@@ -62,7 +62,7 @@ describe('headers.helper', () => {
           c: 'third',
         }
       )).toEqual({
-        a: 'first override',
+        A: 'first override',
         b: 'second',
         c: 'third',
       });

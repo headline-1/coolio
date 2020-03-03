@@ -187,4 +187,9 @@ describe('HttpClient', () => {
       expect(result.headers.map).toEqual(expectedHeaders);
     });
   });
+
+  describe('header sending', () => {
+    it.todo('sends headers defined in HttpClient');
+    it.todo('sends headers specified in request');
+  });
 });
