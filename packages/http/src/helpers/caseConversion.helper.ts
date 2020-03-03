@@ -4,12 +4,19 @@ import isPlainObject from 'lodash/isPlainObject';
 export enum BodyCasing {
   CAMEL_CASE = 'CAMEL_CASE',
   SNAKE_CASE = 'SNAKE_CASE',
+  SCREAMING_SNAKE_CASE = 'SCREAMING_SNAKE_CASE',
   PASCAL_CASE = 'PASCAL_CASE',
   KEBAB_CASE = 'KEBAB_CASE',
 }
 
 export const splitWords = (text: string): string[] => {
-  return text.split(/(?:[ _-]+)|(?=[A-Z]+)/);
+  const words = (
+    text.toUpperCase() === text
+      ? text.split(/(?:[ _-]+)/)
+      : text.split(/(?:[ _-]+)|(?=[A-Z]+)/)
+  ).filter(Boolean);
+  // If the text
+  return words.length === 0 ? [text] : words;
 };
 
 export const deepKeyMap = (object: any, mapper: (key: string) => string): any => {
@@ -42,6 +49,10 @@ export const toSnakeCase = (object: any) => deepKeyMap(object, key => splitWords
   .map(word => word.toLowerCase())
   .join('_'));
 
+export const toScreamingSnakeCase = (object: any) => deepKeyMap(object, key => splitWords(key)
+  .map(word => word.toUpperCase())
+  .join('_'));
+
 export const toKebabCase = (object: any) => deepKeyMap(object, key => splitWords(key)
   .map(word => word.toLowerCase())
   .join('-'));
@@ -56,6 +67,8 @@ export const getCaseConverter = (bodyCasing?: BodyCasing) => {
       return toPascalCase;
     case BodyCasing.SNAKE_CASE:
       return toSnakeCase;
+    case BodyCasing.SCREAMING_SNAKE_CASE:
+      return toScreamingSnakeCase;
     case BodyCasing.KEBAB_CASE:
       return toKebabCase;
     default:
