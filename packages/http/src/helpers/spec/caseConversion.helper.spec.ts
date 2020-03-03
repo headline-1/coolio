@@ -25,8 +25,12 @@ const conversionMockup = {
           value_two: 'y',
         },
       },
+      {},
+      null,
     ],
   },
+  'undefinedField': undefined,
+  'NULL_FIELD': null,
 };
 
 describe('caseConversion.helper', () => {
@@ -66,6 +70,12 @@ describe('caseConversion.helper', () => {
         'THIS', 'IS', 'A', 'SCREAMING', 'SNAKE', 'CASE', 'STRING',
       ]);
     });
+
+    it('returns normalized arrays when splitting fields', () => {
+      expect(splitWords('weird_field__')).toEqual(['weird', 'field']);
+      expect(splitWords('__')).toEqual(['__']);
+      expect(splitWords('__11abc')).toEqual(['11abc']);
+    });
   });
 
   describe('#toCamelCase', () => {
@@ -83,8 +93,12 @@ describe('caseConversion.helper', () => {
                 valueTwo: 'y',
               },
             },
+            {},
+            null,
           ],
         },
+        undefinedField: undefined,
+        nullField: null,
       });
     });
   });
@@ -104,8 +118,12 @@ describe('caseConversion.helper', () => {
                 ValueTwo: 'y',
               },
             },
+            {},
+            null,
           ],
         },
+        UndefinedField: undefined,
+        NullField: null,
       });
     });
   });
@@ -125,8 +143,12 @@ describe('caseConversion.helper', () => {
                 'value-two': 'y',
               },
             },
+            {},
+            null,
           ],
         },
+        'undefined-field': undefined,
+        'null-field': null,
       });
     });
   });
@@ -146,8 +168,12 @@ describe('caseConversion.helper', () => {
                 value_two: 'y',
               },
             },
+            {},
+            null,
           ],
         },
+        undefined_field: undefined,
+        null_field: null,
       });
     });
   });
@@ -167,8 +193,12 @@ describe('caseConversion.helper', () => {
                 VALUE_TWO: 'y',
               },
             },
+            {},
+            null,
           ],
         },
+        UNDEFINED_FIELD: undefined,
+        NULL_FIELD: null,
       });
     });
   });

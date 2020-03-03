@@ -9,10 +9,15 @@ export enum BodyCasing {
   KEBAB_CASE = 'KEBAB_CASE',
 }
 
-export const splitWords = (text: string): string[] =>
-  text.toUpperCase() === text
-    ? text.split(/(?:[ _-]+)/)
-    : text.split(/(?:[ _-]+)|(?=[A-Z]+)/);
+export const splitWords = (text: string): string[] => {
+  const words = (
+    text.toUpperCase() === text
+      ? text.split(/(?:[ _-]+)/)
+      : text.split(/(?:[ _-]+)|(?=[A-Z]+)/)
+  ).filter(Boolean);
+  // If the text
+  return words.length === 0 ? [text] : words;
+};
 
 export const deepKeyMap = (object: any, mapper: (key: string) => string): any => {
   if (isArray(object)) {
