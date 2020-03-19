@@ -1,4 +1,4 @@
-# Enumeration: FilterOperator
+# FilterOperator
 
 **`deprecated`** It is not part of JSON API and is not supported in when array of keys is passed
 
@@ -8,50 +8,39 @@
 
 * [EQUALS](filteroperator.md#equals)
 * [GREATER](filteroperator.md#greater)
-* [GREATER_OR_EQUAL](filteroperator.md#greater_or_equal)
+* [GREATER\_OR\_EQUAL](filteroperator.md#greater_or_equal)
 * [LIKE](filteroperator.md#like)
 * [LOWER](filteroperator.md#lower)
-* [LOWER_OR_EQUAL](filteroperator.md#lower_or_equal)
-* [NOT_EQUALS](filteroperator.md#not_equals)
+* [LOWER\_OR\_EQUAL](filteroperator.md#lower_or_equal)
+* [NOT\_EQUALS](filteroperator.md#not_equals)
 
 ## Enumeration members
 
-###  EQUALS
+### EQUALS
 
 • **EQUALS**: = "EQ"
 
-___
-
-###  GREATER
+### GREATER
 
 • **GREATER**: = "GT"
 
-___
+### GREATER\_OR\_EQUAL
 
-###  GREATER_OR_EQUAL
+• **GREATER\_OR\_EQUAL**: = "GE"
 
-• **GREATER_OR_EQUAL**: = "GE"
-
-___
-
-###  LIKE
+### LIKE
 
 • **LIKE**: = "LIKE"
 
-___
-
-###  LOWER
+### LOWER
 
 • **LOWER**: = "LT"
 
-___
+### LOWER\_OR\_EQUAL
 
-###  LOWER_OR_EQUAL
+• **LOWER\_OR\_EQUAL**: = "LE"
 
-• **LOWER_OR_EQUAL**: = "LE"
+### NOT\_EQUALS
 
-___
+• **NOT\_EQUALS**: = "NEQ"
 
-###  NOT_EQUALS
-
-• **NOT_EQUALS**: = "NEQ"

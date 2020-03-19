@@ -1,4 +1,4 @@
-# Class: SimpleQueue
+# SimpleQueue
 
 Simple queue that executes Promises one by one.
 
@@ -19,31 +19,29 @@ Simple queue that executes Promises one by one.
 
 ## Accessors
 
-###  length
+### length
 
-• **get length**(): *number*
+• **get length**\(\): _number_
 
-**Returns:** *number*
+**Returns:** _number_
 
 ## Methods
 
-###  clean
+### clean
 
-▸ **clean**(`reason`: any): *void*
+▸ **clean**\(`reason`: any\): _void_
 
 **Parameters:**
 
-Name | Type |
------- | ------ |
-`reason` | any |
+| Name | Type |
+| :--- | :--- |
+| `reason` | any |
 
-**Returns:** *void*
+**Returns:** _void_
 
-___
+### put
 
-###  put
-
-▸ **put**<**T**>(`item`: function): *Promise‹T›*
+▸ **put**&lt;**T**&gt;\(`item`: function\): _Promise‹T›_
 
 Queues specified promise and returns when it's done
 
@@ -53,8 +51,9 @@ Queues specified promise and returns when it's done
 
 **Parameters:**
 
-▪ **item**: *function*
+▪ **item**: _function_
 
-▸ (): *Promise‹T›*
+▸ \(\): _Promise‹T›_
 
-**Returns:** *Promise‹T›*
+**Returns:** _Promise‹T›_
+

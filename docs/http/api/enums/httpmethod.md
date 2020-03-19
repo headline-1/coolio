@@ -1,4 +1,4 @@
-# Enumeration: HttpMethod
+# HttpMethod
 
 ## Index
 
@@ -12,30 +12,23 @@
 
 ## Enumeration members
 
-###  DELETE
+### DELETE
 
 • **DELETE**: = "DELETE"
 
-___
-
-###  GET
+### GET
 
 • **GET**: = "GET"
 
-___
-
-###  PATCH
+### PATCH
 
 • **PATCH**: = "PATCH"
 
-___
-
-###  POST
+### POST
 
 • **POST**: = "POST"
 
-___
-
-###  PUT
+### PUT
 
 • **PUT**: = "PUT"
+

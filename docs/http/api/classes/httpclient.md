@@ -1,4 +1,4 @@
-# Class: HttpClient <**T**>
+# HttpClient
 
 Base class in Coolio http package, which allows to perform API calls.
 
@@ -31,183 +31,169 @@ Common body shape defined by bodyParser passed in [HttpClientConfig](../interfac
 
 ## Constructors
 
-###  constructor
+### constructor
 
-\+ **new HttpClient**(`config`: [HttpClientConfig](../interfaces/httpclientconfig.md)‹T›): *[HttpClient](httpclient.md)*
++ **new HttpClient**\(`config`: [HttpClientConfig](../interfaces/httpclientconfig.md)‹T›\): [_HttpClient_](httpclient.md)
 
 **Parameters:**
 
-Name | Type |
------- | ------ |
-`config` | [HttpClientConfig](../interfaces/httpclientconfig.md)‹T› |
+| Name | Type |
+| :--- | :--- |
+| `config` | [HttpClientConfig](../interfaces/httpclientconfig.md)‹T› |
 
-**Returns:** *[HttpClient](httpclient.md)*
+**Returns:** [_HttpClient_](httpclient.md)
 
 ## Methods
 
-###  addInterceptor
+### addInterceptor
 
-▸ **addInterceptor**(`interceptor`: [HttpInterceptor](../README.md#httpinterceptor)): *this*
+▸ **addInterceptor**\(`interceptor`: [HttpInterceptor](../#httpinterceptor)\): _this_
 
-Adds an interceptor to the client. Interceptor can be written either as class or as a function,
-which may mutate request options and post-process response from server.
-Multiple interceptors can be added to a single HttpClient. They can perform as:
-- cache
-- error handler
-- authorizer
-- logger
-- auto-retry
-- redirection handler
+Adds an interceptor to the client. Interceptor can be written either as class or as a function, which may mutate request options and post-process response from server. Multiple interceptors can be added to a single HttpClient. They can perform as:
+
+* cache
+* error handler
+* authorizer
+* logger
+* auto-retry
+* redirection handler
 
 **Parameters:**
 
-Name | Type | Description |
------- | ------ | ------ |
-`interceptor` | [HttpInterceptor](../README.md#httpinterceptor) | Interceptor that will process every request/response in this HttpClient.  |
+| Name | Type | Description |
+| :--- | :--- | :--- |
+| `interceptor` | [HttpInterceptor](../#httpinterceptor) | Interceptor that will process every request/response in this HttpClient. |
 
-**Returns:** *this*
+**Returns:** _this_
 
-___
+### delete
 
-###  delete
-
-▸ **delete**<**Body**>(`uri`: string, `options?`: [HttpOptions](../README.md#httpoptions)): *Promise‹[HttpResponse](../interfaces/httpresponse.md)‹Body››*
+▸ **delete**&lt;**Body**&gt;\(`uri`: string, `options?`: [HttpOptions](../#httpoptions)\): _Promise‹_[_HttpResponse_](../interfaces/httpresponse.md)_‹Body››_
 
 Performs a DELETE request.
 
 **Type parameters:**
 
-▪ **Body**: *T*
+▪ **Body**: _T_
 
 **Parameters:**
 
-Name | Type | Description |
------- | ------ | ------ |
-`uri` | string | Address of HTTP endpoint |
-`options?` | [HttpOptions](../README.md#httpoptions) | Additional [HttpOptions](../README.md#httpoptions) passed with request  |
+| Name | Type | Description |
+| :--- | :--- | :--- |
+| `uri` | string | Address of HTTP endpoint |
+| `options?` | [HttpOptions](../#httpoptions) | Additional [HttpOptions](../#httpoptions) passed with request |
 
-**Returns:** *Promise‹[HttpResponse](../interfaces/httpresponse.md)‹Body››*
+**Returns:** _Promise‹_[_HttpResponse_](../interfaces/httpresponse.md)_‹Body››_
 
-___
+### get
 
-###  get
-
-▸ **get**<**Body**>(`uri`: string, `options?`: [HttpOptions](../README.md#httpoptions)): *Promise‹[HttpResponse](../interfaces/httpresponse.md)‹Body››*
+▸ **get**&lt;**Body**&gt;\(`uri`: string, `options?`: [HttpOptions](../#httpoptions)\): _Promise‹_[_HttpResponse_](../interfaces/httpresponse.md)_‹Body››_
 
 Performs a GET request.
 
 **Type parameters:**
 
-▪ **Body**: *T*
+▪ **Body**: _T_
 
 **Parameters:**
 
-Name | Type | Description |
------- | ------ | ------ |
-`uri` | string | Address of HTTP endpoint |
-`options?` | [HttpOptions](../README.md#httpoptions) | Additional [HttpOptions](../README.md#httpoptions) passed with request  |
+| Name | Type | Description |
+| :--- | :--- | :--- |
+| `uri` | string | Address of HTTP endpoint |
+| `options?` | [HttpOptions](../#httpoptions) | Additional [HttpOptions](../#httpoptions) passed with request |
 
-**Returns:** *Promise‹[HttpResponse](../interfaces/httpresponse.md)‹Body››*
+**Returns:** _Promise‹_[_HttpResponse_](../interfaces/httpresponse.md)_‹Body››_
 
-___
+### patch
 
-###  patch
-
-▸ **patch**<**Body**>(`uri`: string, `options?`: [HttpOptions](../README.md#httpoptions)): *Promise‹[HttpResponse](../interfaces/httpresponse.md)‹Body››*
+▸ **patch**&lt;**Body**&gt;\(`uri`: string, `options?`: [HttpOptions](../#httpoptions)\): _Promise‹_[_HttpResponse_](../interfaces/httpresponse.md)_‹Body››_
 
 Performs a PATCH request.
 
 **Type parameters:**
 
-▪ **Body**: *T*
+▪ **Body**: _T_
 
 **Parameters:**
 
-Name | Type | Description |
------- | ------ | ------ |
-`uri` | string | Address of HTTP endpoint |
-`options?` | [HttpOptions](../README.md#httpoptions) | Additional [HttpOptions](../README.md#httpoptions) passed with request  |
+| Name | Type | Description |
+| :--- | :--- | :--- |
+| `uri` | string | Address of HTTP endpoint |
+| `options?` | [HttpOptions](../#httpoptions) | Additional [HttpOptions](../#httpoptions) passed with request |
 
-**Returns:** *Promise‹[HttpResponse](../interfaces/httpresponse.md)‹Body››*
+**Returns:** _Promise‹_[_HttpResponse_](../interfaces/httpresponse.md)_‹Body››_
 
-___
+### post
 
-###  post
-
-▸ **post**<**Body**>(`uri`: string, `options?`: [HttpOptions](../README.md#httpoptions)): *Promise‹[HttpResponse](../interfaces/httpresponse.md)‹Body››*
+▸ **post**&lt;**Body**&gt;\(`uri`: string, `options?`: [HttpOptions](../#httpoptions)\): _Promise‹_[_HttpResponse_](../interfaces/httpresponse.md)_‹Body››_
 
 Performs a POST request.
 
 **Type parameters:**
 
-▪ **Body**: *T*
+▪ **Body**: _T_
 
 **Parameters:**
 
-Name | Type | Description |
------- | ------ | ------ |
-`uri` | string | Address of HTTP endpoint |
-`options?` | [HttpOptions](../README.md#httpoptions) | Additional [HttpOptions](../README.md#httpoptions) passed with request  |
+| Name | Type | Description |
+| :--- | :--- | :--- |
+| `uri` | string | Address of HTTP endpoint |
+| `options?` | [HttpOptions](../#httpoptions) | Additional [HttpOptions](../#httpoptions) passed with request |
 
-**Returns:** *Promise‹[HttpResponse](../interfaces/httpresponse.md)‹Body››*
+**Returns:** _Promise‹_[_HttpResponse_](../interfaces/httpresponse.md)_‹Body››_
 
-___
+### put
 
-###  put
-
-▸ **put**<**Body**>(`uri`: string, `options?`: [HttpOptions](../README.md#httpoptions)): *Promise‹[HttpResponse](../interfaces/httpresponse.md)‹Body››*
+▸ **put**&lt;**Body**&gt;\(`uri`: string, `options?`: [HttpOptions](../#httpoptions)\): _Promise‹_[_HttpResponse_](../interfaces/httpresponse.md)_‹Body››_
 
 Performs a PUT request.
 
 **Type parameters:**
 
-▪ **Body**: *T*
+▪ **Body**: _T_
 
 **Parameters:**
 
-Name | Type | Description |
------- | ------ | ------ |
-`uri` | string | Address of HTTP endpoint |
-`options?` | [HttpOptions](../README.md#httpoptions) | Additional [HttpOptions](../README.md#httpoptions) passed with request  |
+| Name | Type | Description |
+| :--- | :--- | :--- |
+| `uri` | string | Address of HTTP endpoint |
+| `options?` | [HttpOptions](../#httpoptions) | Additional [HttpOptions](../#httpoptions) passed with request |
 
-**Returns:** *Promise‹[HttpResponse](../interfaces/httpresponse.md)‹Body››*
+**Returns:** _Promise‹_[_HttpResponse_](../interfaces/httpresponse.md)_‹Body››_
 
-___
+### remove
 
-###  remove
-
-▸ **remove**<**Body**>(`uri`: string, `options?`: [HttpOptions](../README.md#httpoptions)): *Promise‹[HttpResponse](../interfaces/httpresponse.md)‹any››*
+▸ **remove**&lt;**Body**&gt;\(`uri`: string, `options?`: [HttpOptions](../#httpoptions)\): _Promise‹_[_HttpResponse_](../interfaces/httpresponse.md)_‹any››_
 
 Performs a DELETE request.
 
 **Type parameters:**
 
-▪ **Body**: *T*
+▪ **Body**: _T_
 
 **Parameters:**
 
-Name | Type | Description |
------- | ------ | ------ |
-`uri` | string | Address of HTTP endpoint |
-`options?` | [HttpOptions](../README.md#httpoptions) | Additional [HttpOptions](../README.md#httpoptions) passed with request  |
+| Name | Type | Description |
+| :--- | :--- | :--- |
+| `uri` | string | Address of HTTP endpoint |
+| `options?` | [HttpOptions](../#httpoptions) | Additional [HttpOptions](../#httpoptions) passed with request |
 
-**Returns:** *Promise‹[HttpResponse](../interfaces/httpresponse.md)‹any››*
+**Returns:** _Promise‹_[_HttpResponse_](../interfaces/httpresponse.md)_‹any››_
 
-___
+### request
 
-###  request
-
-▸ **request**<**Body**>(`url`: string, `options`: [HttpRequestOptions](../interfaces/httprequestoptions.md)): *Promise‹[HttpResponse](../interfaces/httpresponse.md)‹Body››*
+▸ **request**&lt;**Body**&gt;\(`url`: string, `options`: [HttpRequestOptions](../interfaces/httprequestoptions.md)\): _Promise‹_[_HttpResponse_](../interfaces/httpresponse.md)_‹Body››_
 
 **Type parameters:**
 
-▪ **Body**: *T*
+▪ **Body**: _T_
 
 **Parameters:**
 
-Name | Type |
------- | ------ |
-`url` | string |
-`options` | [HttpRequestOptions](../interfaces/httprequestoptions.md) |
+| Name | Type |
+| :--- | :--- |
+| `url` | string |
+| `options` | [HttpRequestOptions](../interfaces/httprequestoptions.md) |
 
-**Returns:** *Promise‹[HttpResponse](../interfaces/httpresponse.md)‹Body››*
+**Returns:** _Promise‹_[_HttpResponse_](../interfaces/httpresponse.md)_‹Body››_
+

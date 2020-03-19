@@ -1,30 +1,46 @@
 # Getting Started
 
-### HTTP
+## Coolio's HTTP Package
 
-A simple HTTP client for web apps. Supports interceptors & global configuration.
+`@coolio/http` is a simple, yet extendable HTTP client for web apps. It features:
 
-### Quick start
+* body parsing and serialization, with case-conversion support
+  * raw data \(ArrayBuffer\)
+  * JSON
+  * URL-encoded
+  * plain text
+  * multipart \([FormData](https://developer.mozilla.org/en-US/docs/Web/API/FormData)\)
+* extensibility via [interceptors](interceptors.md), with built-ins such as:
+  * logger
+  * error handler
+  * redirection interceptor
+* configurable requestHandler layer, which let's you choose the underlaying mechanism used for HTTP communication
 
-Installation:
+## Quick start
+
+### Installation
+
+Install `@coolio/http` package using `npm` or `yarn`.
 
 ```bash
 npm install @coolio/http
 ```
 
-Initialize a HttpClient and configure it as below:
+### Creating a client
+
+You may create multiple `HttpClient` instances, as your application connects to various APIs and each API probably has slightly different conventions. You can initialize a HttpClient and configure it as below:
 
 ```typescript
 import { bodyParser, bodySerializer, BodyCasing, ContentType, HttpClient, fetchRequestHandler } from '@coolio/http';
+import { fetchRequestHandler } from '@coolio/http/request-handlers/fetch';
 import { Config } from './config';
 
 export const httpClient = new HttpClient({
-  baseUrl: 'https://api.headline1.com/v1/',
+  baseUrl: 'https://api.example.com/v1/',
   requestHandler: fetchRequestHandler,
-  defaultHeadersProvider: (host: string) => ({
+  headers: {
     'Content-Type': ContentType.JSON,
-    'Authorization': host === Config.API_DOMAIN ? 'Bearer abcdef1234567890' : undefined,
-  }),
+  },
   bodyParser: bodyParser({ 
     bodyCasing: BodyCasing.CAMEL_CASE
   }),
@@ -34,26 +50,40 @@ export const httpClient = new HttpClient({
 });
 ```
 
-Use the client in repositories containing API bindings:
+In the example above, we create `HttpClient` instance which will route all paths to `api.example.com/v1` address:
+
+* if you request `/users`, the request will go to `api.example.com/v1/users`
+* if you request `https://google.com`, the request will go to `google.com`, as you specified full URL and `baseUrl` is not applied in such case.
+
+Then, our `httpClient` uses `fetchRequestHandler` to deal with HTTP requests, in order to use Fetch API as request handler. Each `requestHandler` in _**coolio**_ acts as a bridge between natively available mechanisms \(such as [XmlHttpRequest](https://developer.mozilla.org/pl/docs/XMLHttpRequest), [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) or [http](https://nodejs.org/api/http.html) module available in Node.js\) and [RawHttpResponse](api/interfaces/rawhttpresponse.md). Such Raw response has to be further processed by `bodyParser`. BodyParser and BodySerializer automatically handle most common body types, such as JSON, URL-encoded, plain text, multipart and raw \(for binary uploads\). As a result we get a nicely processed [HttpResponse](api/interfaces/httpresponse.md), which lets us get response body, headers and status code of a response.
+
+You can find all options directly in [HttpClientConfig](api/interfaces/httpclientconfig.md) API docs. 
+
+### Requests
+
+`httpClient` allows you to perform requests using all basic http methods. See [HttpRequestOptions](api/interfaces/httprequestoptions.md) to check what can be passed there.
+
+### Repositories
+
+You may use the repository pattern to separate API requests from other code. You can use previously defined `HttpClient` as below:
 
 ```typescript
 import { httpClient } from './httpClient';
 import { Config } from './config';
 import { User } from './user.types';
 
-const getUsers = async (): Promise<User[]> => {
-  const response = await httpClient.get(`${Config.API_BASE_URL}/users`, {
+const getUsers = async (page: number, limit = 10): Promise<User[]> => {
+  const response = await httpClient.get('/users', {
     query: {
-      page: 3,
-      limit: 10,
+      page,
+      limit,
     },
   });
-  const body = await response.parsedBody();
-  return body.data;
+  return await response.parsedBody();
 };
 
 const getProfile = async (): Promise<User> => {
-  const response = await httpClient.get(`${Config.API_BASE_URL}/me`);
+  const response = await httpClient.get('/users/me');
   return await response.parsedBody();
 };
 
@@ -65,52 +95,55 @@ export const UserRepository = {
 
 After doing the following, you can simply call `UserRepository.getProfile()` to receive the Promise returning `User` object.
 
-### HttpClient Options
-
-| Parameter | Required | Description |
-| :--- | :--- | :--- |
-| `baseUrl` | no | Base path for making all relative requests. |
-| `requestHandler` | yes | Abstraction layer for the standard `fetch` mechanism or any other transport you can think of. By default you can use `fetchRequestHandler`, which uses `fetch` underneath. You can also use built-in `mockRequestHandler` for testing purposes or `httpRequestHandler` from `@coolio/http-request-handler`. |
-| `defaultHeadersProvider` | no | Function returning common headers for all request sent by your client. Host argument can be used to pass authorization data, but only for specific domain. |
-| `bodyParser` | no | Adds a custom parser that processes the response body. Parsed body can be always accessed via `parsedBody` Promise in `HttpResponse`. By default it returns an `ArrayBuffer`. If you pass the standard `bodyParser`, it will decode JSON, URL-encoded body and plain text responses. It also supports case conversion, which is useful if your API returns responses in a convention that doesn't match your needs. |
-| `bodySerializer` | no | Adds a custom serializer that can process body before sending. It supports case conversion. |
-
-### Interceptors
-
-Quite often we need to do something "in-between" while our API requests are running. This is why we have a built-in interceptors mechanism. They can:
-
-* throw errors if response status code indicates that request failed,
-* automagically retry request up to X times if it failed,
-* transparently reauthorize if your access token has been revoked
-
-The first case is described below:
+Another way of dealing with repositories is to use class-based approach:
 
 ```typescript
-import { HttpFetch, HttpCode, ResponseError, NormalizedHttpOptions } from '@coolio/http';
+import { bodyParser, bodySerializer, BodyCasing, ContentType, HttpClient } from '@coolio/http';
+import { fetchRequestHandler } from '@coolio/http/request-handlers/fetch';
 
-export const errorInterceptor = <Body>(
-  request: HttpFetch<Body>,
-  options: NormalizedHttpOptions,
-): HttpFetch<Body> => {
-  return () => request().then(response => {
-    // You can always use `HttpCode` enum as in this case, however
-    // `response.status < 400` would be better in this case
-    if(response.status === HttpCode.OK){
-      return response;
-    }
-    throw new ResponseError(response);
-  })
-};
+export class BaseRepository {
+  protected client: HttpClient;
 
-// In your httpClient.ts add the following:
+  constructor(baseUrl = '/'){
+    this.client = new HttpClient({
+      baseUrl: `https://api.example.com/v1/${baseUrl}`,
+      requestHandler: fetchRequestHandler,
+      headers: {
+        'Content-Type': ContentType.JSON,
+      },
+      bodyParser: bodyParser({ 
+        bodyCasing: BodyCasing.CAMEL_CASE
+      }),
+      bodySerializer: bodySerializer({
+        bodyCasing: BodyCasing.SNAKE_CASE
+      }),
+    });    
+  }
+}
 
-httpClient.addInterceptor(errorInterceptor);
+export class UserRepository extends BaseRepository {
+  constructor(){
+    super('/users'); // baseUrl is now https://api.example.com/v1/users
+  }
+  
+  async getUsers(page: number, limit = 10): Promise<User[]> {
+    const response = await this.client.get('/', {
+      query: {
+        page,
+        limit,
+      },
+    });
+    return await response.parsedBody();
+  }
+
+  async getProfile(): Promise<User> {
+    const response = await this.client.get('/me');
+    return await response.parsedBody();
+  }
+}
+
+export const userRepository = new UserRepository();
 ```
-
-As you can see, interceptors accept two arguments:
-
-* `HttpFetch` - a function that returns a Promise that performs http request. It allows to queue or delay multiple requests, retry them etc.
-* `NormalizedHttpOptions` - options that can be modified before request is made, i.e. you can add `Authorization` header in your `authInterceptor`.
 
 ### Advanced Use Cases
 
@@ -118,9 +151,7 @@ If you happen to use JSON API, you may benefit from using a wrapper library that
 
 ```bash
 npm install @coolio/json-api
-# or if you're using fancy stuff:
-yarn add @coolio/json-api
 ```
 
-See [@coolio/json-api's README.md](https://github.com/headline-1/coolio/tree/master/packages/json-api#readme) for details.
+See [@coolio/json-api](../json-api/getting-started.md) docs for details.
 

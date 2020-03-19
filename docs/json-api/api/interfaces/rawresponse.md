@@ -1,10 +1,10 @@
-# Interface: RawResponse <**D, M**>
+# RawResponse
 
 ## Type parameters
 
-▪ **D**: *[AnyData](../README.md#anydata)*
+▪ **D**: [_AnyData_](../#anydata)
 
-▪ **M**: *object*
+▪ **M**: _object_
 
 ## Hierarchy
 
@@ -20,18 +20,15 @@
 
 ## Properties
 
-###  data
+### data
 
-• **data**: *D*
-
-___
+• **data**: _D_
 
 ### `Optional` included
 
-• **included**? : *[IncludedRelationships](../README.md#includedrelationships)*
-
-___
+• **included**? : [_IncludedRelationships_](../#includedrelationships)
 
 ### `Optional` meta
 
-• **meta**? : *M*
+• **meta**? : _M_
+

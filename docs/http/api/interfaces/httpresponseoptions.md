@@ -1,4 +1,4 @@
-# Interface: HttpResponseOptions
+# HttpResponseOptions
 
 ## Hierarchy
 
@@ -17,22 +17,17 @@
 
 ### `Optional` body
 
-• **body**? : *[NormalizedHttpBody](../README.md#normalizedhttpbody)*
-
-___
+• **body**? : [_NormalizedHttpBody_](../#normalizedhttpbody)
 
 ### `Optional` headers
 
-• **headers**? : *[HttpHeaders](../README.md#httpheaders)*
+• **headers**? : [_HttpHeaders_](../#httpheaders)
 
-___
+### status
 
-###  status
-
-• **status**: *number*
-
-___
+• **status**: _number_
 
 ### `Optional` url
 
-• **url**? : *undefined | string*
+• **url**? : _undefined \| string_
+

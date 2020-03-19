@@ -1,4 +1,4 @@
-# Interface: LoggingInterceptorOptions
+# LoggingInterceptorOptions
 
 ## Hierarchy
 
@@ -12,16 +12,17 @@
 
 ## Properties
 
-###  logger
+### logger
 
-• **logger**: *function*
+• **logger**: _function_
 
 #### Type declaration:
 
-▸ (`log`: [Log](log.md)): *void*
+▸ \(`log`: [Log](log.md)\): _void_
 
 **Parameters:**
 
-Name | Type |
------- | ------ |
-`log` | [Log](log.md) |
+| Name | Type |
+| :--- | :--- |
+| `log` | [Log](log.md) |
+

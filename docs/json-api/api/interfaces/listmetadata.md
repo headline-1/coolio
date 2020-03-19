@@ -1,4 +1,4 @@
-# Interface: ListMetaData
+# ListMetaData
 
 ## Hierarchy
 
@@ -12,6 +12,7 @@
 
 ## Properties
 
-###  totalResourceCount
+### totalResourceCount
 
-• **totalResourceCount**: *number*
+• **totalResourceCount**: _number_
+
