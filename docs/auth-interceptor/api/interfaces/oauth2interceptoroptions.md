@@ -1,4 +1,4 @@
-# OAuth2InterceptorOptions
+# Interface: OAuth2InterceptorOptions
 
 ## Hierarchy
 
@@ -15,58 +15,67 @@
 
 ## Properties
 
-### authStorage
+###  authStorage
 
-• **authStorage**: [_AuthStorage_](authstorage.md)_‹_[_OAuth2TokenResponse_](oauth2tokenresponse.md)_›_
+• **authStorage**: *[AuthStorage](authstorage.md)‹[OAuth2TokenResponse](oauth2tokenresponse.md)›*
 
-Data storage for OAuth credentials. Uses InMemoryAuthStorage by default. One can implement their own storage, i.e. backed by Redux or LocalStorage.
+Data storage for OAuth credentials. Uses InMemoryAuthStorage by default.
+One can implement their own storage, i.e. backed by Redux or LocalStorage.
 
-### canAuthorize
+___
 
-• **canAuthorize**: _function_
+###  canAuthorize
 
-Determine if request should be processed, by checking request's options \(i.e. check for a domain match\)
+• **canAuthorize**: *function*
+
+Determine if request should be processed, by checking request's options (i.e. check for a domain match)
 
 **`param`** Request options
 
 #### Type declaration:
 
-▸ \(`options`: NormalizedHttpOptions\): _boolean_
+▸ (`options`: NormalizedHttpOptions): *boolean*
 
 **Parameters:**
 
-| Name | Type |
-| :--- | :--- |
-| `options` | NormalizedHttpOptions |
+Name | Type |
+------ | ------ |
+`options` | NormalizedHttpOptions |
 
-### oauth
+___
 
-• **oauth**: _object_
+###  oauth
+
+• **oauth**: *object*
 
 #### Type declaration:
 
-* **clientId**: _string_
-* **clientSecret**? : _undefined \| string_
-* **contentType**? : _ContentType_
-* **httpClientOptions**: _HttpClientConfig_
-* **refreshTokenUrl**: _string_
+* **clientId**: *string*
 
-### onAuthorizationFailure
+* **clientSecret**? : *undefined | string*
 
-• **onAuthorizationFailure**: _function_
+* **contentType**? : *ContentType*
+
+* **httpClientOptions**: *HttpClientConfig*
+
+* **refreshTokenUrl**: *string*
+
+___
+
+###  onAuthorizationFailure
+
+• **onAuthorizationFailure**: *function*
 
 This function is called when:
-
-* authorize\(\) function throws an error,
-* a second call to an api endpoint results in 401.
+- authorize() function throws an error,
+- a second call to an api endpoint results in 401.
 
 #### Type declaration:
 
-▸ \(`err`: [AuthError](../classes/autherror.md)\): [_Promisable_](../#promisable)
+▸ (`err`: [AuthError](../classes/autherror.md)): *[Promisable](../README.md#promisable)*
 
 **Parameters:**
 
-| Name | Type |
-| :--- | :--- |
-| `err` | [AuthError](../classes/autherror.md) |
-
+Name | Type |
+------ | ------ |
+`err` | [AuthError](../classes/autherror.md) |

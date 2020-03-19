@@ -1,4 +1,4 @@
-# AuthInterceptorOptions
+# Interface: AuthInterceptorOptions
 
 ## Hierarchy
 
@@ -15,70 +15,75 @@
 
 ## Properties
 
-### canAuthorize
+###  canAuthorize
 
-• **canAuthorize**: _function_
+• **canAuthorize**: *function*
 
-Determine if request should be processed, by checking request's options \(i.e. check for a domain match\)
+Determine if request should be processed, by checking request's options (i.e. check for a domain match)
 
 **`param`** Request options
 
 #### Type declaration:
 
-▸ \(`options`: NormalizedHttpOptions\): _boolean_
+▸ (`options`: NormalizedHttpOptions): *boolean*
 
 **Parameters:**
 
-| Name | Type |
-| :--- | :--- |
-| `options` | NormalizedHttpOptions |
+Name | Type |
+------ | ------ |
+`options` | NormalizedHttpOptions |
 
-### onAuthorizationFailure
+___
 
-• **onAuthorizationFailure**: _function_
+###  onAuthorizationFailure
+
+• **onAuthorizationFailure**: *function*
 
 This function is called when:
-
-* authorize\(\) function throws an error,
-* a second call to an api endpoint results in 401.
+- authorize() function throws an error,
+- a second call to an api endpoint results in 401.
 
 #### Type declaration:
 
-▸ \(`err`: [AuthError](../classes/autherror.md)\): [_Promisable_](../#promisable)
+▸ (`err`: [AuthError](../classes/autherror.md)): *[Promisable](../README.md#promisable)*
 
 **Parameters:**
 
-| Name | Type |
-| :--- | :--- |
-| `err` | [AuthError](../classes/autherror.md) |
+Name | Type |
+------ | ------ |
+`err` | [AuthError](../classes/autherror.md) |
 
-### reauthorize
+___
 
-• **reauthorize**: _function_
+###  reauthorize
 
-Obtain authorization data. At this point previous token has expired or Unauthorized response status code has been received. You can call refresh token endpoint.
+• **reauthorize**: *function*
+
+Obtain authorization data. At this point previous token has expired or
+Unauthorized response status code has been received. You can call refresh token endpoint.
 
 #### Type declaration:
 
-▸ \(\): [_Promisable_](../#promisable)
+▸ (): *[Promisable](../README.md#promisable)*
 
-### setAuthorizationData
+___
 
-• **setAuthorizationData**: _function_
+###  setAuthorizationData
+
+• **setAuthorizationData**: *function*
 
 Insert authorization data to the request.
 
-**`param`** Authorization data obtained earlier by {\#authorize}
+**`param`** Authorization data obtained earlier by {#authorize}
 
 **`param`** Request options
 
 #### Type declaration:
 
-▸ \(`options`: NormalizedHttpOptions\): [_Promisable_](../#promisable)
+▸ (`options`: NormalizedHttpOptions): *[Promisable](../README.md#promisable)*
 
 **Parameters:**
 
-| Name | Type |
-| :--- | :--- |
-| `options` | NormalizedHttpOptions |
-
+Name | Type |
+------ | ------ |
+`options` | NormalizedHttpOptions |

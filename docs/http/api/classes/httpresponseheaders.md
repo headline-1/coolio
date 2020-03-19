@@ -1,4 +1,4 @@
-# HttpResponseHeaders
+# Class: HttpResponseHeaders
 
 ## Hierarchy
 
@@ -21,48 +21,49 @@
 
 ## Constructors
 
-### constructor
+###  constructor
 
-+ **new HttpResponseHeaders**\(`headers`: IncomingHttpHeaders \| [HttpHeaders](../#httpheaders) \| Headers \| string\): [_HttpResponseHeaders_](httpresponseheaders.md)
+\+ **new HttpResponseHeaders**(`headers`: IncomingHttpHeaders | [HttpHeaders](../README.md#httpheaders) | Headers | string): *[HttpResponseHeaders](httpresponseheaders.md)*
 
 **Parameters:**
 
-| Name | Type | Default |
-| :--- | :--- | :--- |
-| `headers` | IncomingHttpHeaders \| [HttpHeaders](../#httpheaders) \| Headers \| string | {} |
+Name | Type | Default |
+------ | ------ | ------ |
+`headers` | IncomingHttpHeaders &#124; [HttpHeaders](../README.md#httpheaders) &#124; Headers &#124; string | {} |
 
-**Returns:** [_HttpResponseHeaders_](httpresponseheaders.md)
+**Returns:** *[HttpResponseHeaders](httpresponseheaders.md)*
 
 ## Properties
 
-### map
+###  map
 
-• **map**: _Record‹string, string›_
+• **map**: *Record‹string, string›*
 
 ## Methods
 
-### get
+###  get
 
-▸ **get**\(`key`: string\): _undefined \| string_
-
-**Parameters:**
-
-| Name | Type |
-| :--- | :--- |
-| `key` | string |
-
-**Returns:** _undefined \| string_
-
-### set
-
-▸ **set**\(`key`: string, `value`: any\): _void_
+▸ **get**(`key`: string): *undefined | string*
 
 **Parameters:**
 
-| Name | Type |
-| :--- | :--- |
-| `key` | string |
-| `value` | any |
+Name | Type |
+------ | ------ |
+`key` | string |
 
-**Returns:** _void_
+**Returns:** *undefined | string*
 
+___
+
+###  set
+
+▸ **set**(`key`: string, `value`: any): *void*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`key` | string |
+`value` | any |
+
+**Returns:** *void*

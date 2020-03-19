@@ -1,4 +1,4 @@
-# SimpleServer
+# Interface: SimpleServer
 
 ## Hierarchy
 
@@ -16,27 +16,34 @@
 
 ## Properties
 
-### app
+###  app
 
-• **app**: _express.Express_
+• **app**: *express.Express*
 
-### close
+___
 
-• **close**: _function_
+###  close
+
+• **close**: *function*
 
 #### Type declaration:
 
-▸ \(\): _Promise‹void›_
+▸ (): *Promise‹void›*
 
-### fullAddress
+___
 
-• **fullAddress**: _string_
+###  fullAddress
 
-### host
+• **fullAddress**: *string*
 
-• **host**: _string_
+___
 
-### port
+###  host
 
-• **port**: _number_
+• **host**: *string*
 
+___
+
+###  port
+
+• **port**: *number*

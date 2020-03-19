@@ -1,4 +1,4 @@
-# HttpResponse
+# Interface: HttpResponse <**T**>
 
 ## Type parameters
 
@@ -30,71 +30,86 @@
 
 ## Properties
 
-### headers
+###  headers
 
-• **headers**: [_HttpResponseHeaders_](../classes/httpresponseheaders.md)
+• **headers**: *[HttpResponseHeaders](../classes/httpresponseheaders.md)*
 
-_Inherited from_ [_RawHttpResponse_](rawhttpresponse.md)_._[_headers_](rawhttpresponse.md#headers)
+*Inherited from [RawHttpResponse](rawhttpresponse.md).[headers](rawhttpresponse.md#headers)*
 
-### ok
+___
 
-• **ok**: _boolean_
+###  ok
 
-_Inherited from_ [_RawHttpResponse_](rawhttpresponse.md)_._[_ok_](rawhttpresponse.md#ok)
+• **ok**: *boolean*
 
-### redirected
+*Inherited from [RawHttpResponse](rawhttpresponse.md).[ok](rawhttpresponse.md#ok)*
 
-• **redirected**: _boolean_
+___
 
-_Inherited from_ [_RawHttpResponse_](rawhttpresponse.md)_._[_redirected_](rawhttpresponse.md#redirected)
+###  redirected
 
-### status
+• **redirected**: *boolean*
 
-• **status**: _number_
+*Inherited from [RawHttpResponse](rawhttpresponse.md).[redirected](rawhttpresponse.md#redirected)*
 
-_Inherited from_ [_RawHttpResponse_](rawhttpresponse.md)_._[_status_](rawhttpresponse.md#status)
+___
 
-### statusText
+###  status
 
-• **statusText**: _string_
+• **status**: *number*
 
-_Inherited from_ [_RawHttpResponse_](rawhttpresponse.md)_._[_statusText_](rawhttpresponse.md#statustext)
+*Inherited from [RawHttpResponse](rawhttpresponse.md).[status](rawhttpresponse.md#status)*
 
-### url
+___
 
-• **url**: _string_
+###  statusText
 
-_Inherited from_ [_RawHttpResponse_](rawhttpresponse.md)_._[_url_](rawhttpresponse.md#url)
+• **statusText**: *string*
+
+*Inherited from [RawHttpResponse](rawhttpresponse.md).[statusText](rawhttpresponse.md#statustext)*
+
+___
+
+###  url
+
+• **url**: *string*
+
+*Inherited from [RawHttpResponse](rawhttpresponse.md).[url](rawhttpresponse.md#url)*
 
 ## Methods
 
-### abort
+###  abort
 
-▸ **abort**\(\): _void_
+▸ **abort**(): *void*
 
-_Inherited from_ [_RawHttpResponse_](rawhttpresponse.md)_._[_abort_](rawhttpresponse.md#abort)
+*Inherited from [RawHttpResponse](rawhttpresponse.md).[abort](rawhttpresponse.md#abort)*
 
-**Returns:** _void_
+**Returns:** *void*
 
-### arrayBuffer
+___
 
-▸ **arrayBuffer**\(\): _Promise‹ArrayBuffer›_
+###  arrayBuffer
 
-_Inherited from_ [_RawHttpResponse_](rawhttpresponse.md)_._[_arrayBuffer_](rawhttpresponse.md#arraybuffer)
+▸ **arrayBuffer**(): *Promise‹ArrayBuffer›*
 
-**Returns:** _Promise‹ArrayBuffer›_
+*Inherited from [RawHttpResponse](rawhttpresponse.md).[arrayBuffer](rawhttpresponse.md#arraybuffer)*
 
-### parsedBody
+**Returns:** *Promise‹ArrayBuffer›*
 
-▸ **parsedBody**\(\): _Promise‹T›_
+___
 
-**Returns:** _Promise‹T›_
+###  parsedBody
 
-### text
+▸ **parsedBody**(): *Promise‹T›*
 
-▸ **text**\(\): _Promise‹string›_
+**Returns:** *Promise‹T›*
 
-_Inherited from_ [_RawHttpResponse_](rawhttpresponse.md)_._[_text_](rawhttpresponse.md#text)
+___
 
-**Returns:** _Promise‹string›_
+###  text
 
+▸ **text**(): *Promise‹string›*
+
+*Inherited from [RawHttpResponse](rawhttpresponse.md).[text](rawhttpresponse.md#text)*
+
+**Returns:** *Promise‹string›*

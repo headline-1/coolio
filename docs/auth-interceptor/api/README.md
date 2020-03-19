@@ -1,4 +1,4 @@
-# API
+# @coolio/auth-interceptor
 
 ## Index
 
@@ -18,85 +18,95 @@
 
 ### Type aliases
 
-* [Promisable](./#promisable)
-* [QueueItem](./#queueitem)
+* [Promisable](README.md#promisable)
+* [QueueItem](README.md#queueitem)
 
 ### Functions
 
-* [createAuthInterceptor](./#const-createauthinterceptor)
-* [createOAuth2Interceptor](./#const-createoauth2interceptor)
-* [hasUnauthorizedResponseCode](./#const-hasunauthorizedresponsecode)
-* [isUnauthorizedError](./#const-isunauthorizederror)
+* [createAuthInterceptor](README.md#const-createauthinterceptor)
+* [createOAuth2Interceptor](README.md#const-createoauth2interceptor)
+* [hasUnauthorizedResponseCode](README.md#const-hasunauthorizedresponsecode)
+* [isUnauthorizedError](README.md#const-isunauthorizederror)
 
 ## Type aliases
 
-### Promisable
+###  Promisable
 
-Ƭ **Promisable**: _T \| Promise‹T›_
+Ƭ **Promisable**: *T | Promise‹T›*
 
-### QueueItem
+___
 
-Ƭ **QueueItem**: _object_
+###  QueueItem
+
+Ƭ **QueueItem**: *object*
 
 #### Type declaration:
 
-* **fail**\(\): _function_
-  * \(`reason`: any\): _void_
-* **run**\(\): _function_
-  * \(\): _Promise‹void›_
+* **fail**(): *function*
+
+  * (`reason`: any): *void*
+
+* **run**(): *function*
+
+  * (): *Promise‹void›*
 
 ## Functions
 
 ### `Const` createAuthInterceptor
 
-▸ **createAuthInterceptor**\(`options`: [AuthInterceptorOptions](interfaces/authinterceptoroptions.md)\): [_AuthInterceptor_](classes/authinterceptor.md)_‹›_
+▸ **createAuthInterceptor**(`options`: [AuthInterceptorOptions](interfaces/authinterceptoroptions.md)): *[AuthInterceptor](classes/authinterceptor.md)‹›*
 
 **Parameters:**
 
-| Name | Type |
-| :--- | :--- |
-| `options` | [AuthInterceptorOptions](interfaces/authinterceptoroptions.md) |
+Name | Type |
+------ | ------ |
+`options` | [AuthInterceptorOptions](interfaces/authinterceptoroptions.md) |
 
-**Returns:** [_AuthInterceptor_](classes/authinterceptor.md)_‹›_
+**Returns:** *[AuthInterceptor](classes/authinterceptor.md)‹›*
+
+___
 
 ### `Const` createOAuth2Interceptor
 
-▸ **createOAuth2Interceptor**\(`__namedParameters`: object\): [_AuthInterceptor_](classes/authinterceptor.md)_‹›_
+▸ **createOAuth2Interceptor**(`__namedParameters`: object): *[AuthInterceptor](classes/authinterceptor.md)‹›*
 
 **Parameters:**
 
-▪ **\_\_namedParameters**: _object_
+▪ **__namedParameters**: *object*
 
-| Name | Type |
-| :--- | :--- |
-| `authStorage` | [AuthStorage](interfaces/authstorage.md)‹[OAuth2TokenResponse](interfaces/oauth2tokenresponse.md)› |
-| `canAuthorize` | function |
-| `oauth` | object |
-| `onAuthorizationFailure` | function |
+Name | Type |
+------ | ------ |
+`authStorage` | [AuthStorage](interfaces/authstorage.md)‹[OAuth2TokenResponse](interfaces/oauth2tokenresponse.md)› |
+`canAuthorize` | function |
+`oauth` | object |
+`onAuthorizationFailure` | function |
 
-**Returns:** [_AuthInterceptor_](classes/authinterceptor.md)_‹›_
+**Returns:** *[AuthInterceptor](classes/authinterceptor.md)‹›*
+
+___
 
 ### `Const` hasUnauthorizedResponseCode
 
-▸ **hasUnauthorizedResponseCode**\(`response`: HttpResponse\): _boolean_
+▸ **hasUnauthorizedResponseCode**(`response`: HttpResponse): *boolean*
 
 **Parameters:**
 
-| Name | Type |
-| :--- | :--- |
-| `response` | HttpResponse |
+Name | Type |
+------ | ------ |
+`response` | HttpResponse |
 
-**Returns:** _boolean_
+**Returns:** *boolean*
+
+___
 
 ### `Const` isUnauthorizedError
 
-▸ **isUnauthorizedError**\(`error`: any\): _boolean_
+▸ **isUnauthorizedError**(`error`: any): *boolean*
 
 **Parameters:**
 
-| Name | Type |
-| :--- | :--- |
-| `error` | any |
+Name | Type |
+------ | ------ |
+`error` | any |
 
-**Returns:** _boolean_
-
+**Returns:** *boolean*

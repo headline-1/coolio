@@ -1,4 +1,4 @@
-# OAuth2TokenResponse
+# Interface: OAuth2TokenResponse
 
 ## Hierarchy
 
@@ -18,31 +18,42 @@
 
 ## Properties
 
-### accessToken
+###  accessToken
 
-• **accessToken**: _string_
+• **accessToken**: *string*
+
+___
 
 ### `Optional` expires
 
-• **expires**? : _undefined \| string_
+• **expires**? : *undefined | string*
+
+___
 
 ### `Optional` expiresIn
 
-• **expiresIn**? : _undefined \| string_
+• **expiresIn**? : *undefined | string*
+
+___
 
 ### `Optional` idToken
 
-• **idToken**? : _undefined \| string_
+• **idToken**? : *undefined | string*
 
-### refreshToken
+___
 
-• **refreshToken**: _string_
+###  refreshToken
+
+• **refreshToken**: *string*
+
+___
 
 ### `Optional` scope
 
-• **scope**? : _undefined \| string_
+• **scope**? : *undefined | string*
+
+___
 
 ### `Optional` tokenType
 
-• **tokenType**? : _undefined \| string_
-
+• **tokenType**? : *undefined | string*

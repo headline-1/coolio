@@ -1,4 +1,4 @@
-# InMemoryAuthStorage
+# Class: InMemoryAuthStorage <**T**>
 
 ## Type parameters
 
@@ -21,25 +21,26 @@
 
 ## Methods
 
-### getData
+###  getData
 
-▸ **getData**\(\): _T \| undefined_
+▸ **getData**(): *T | undefined*
 
-_Implementation of_ [_AuthStorage_](../interfaces/authstorage.md)
+*Implementation of [AuthStorage](../interfaces/authstorage.md)*
 
-**Returns:** _T \| undefined_
+**Returns:** *T | undefined*
 
-### setData
+___
 
-▸ **setData**\(`data`: T\): _void_
+###  setData
 
-_Implementation of_ [_AuthStorage_](../interfaces/authstorage.md)
+▸ **setData**(`data`: T): *void*
+
+*Implementation of [AuthStorage](../interfaces/authstorage.md)*
 
 **Parameters:**
 
-| Name | Type |
-| :--- | :--- |
-| `data` | T |
+Name | Type |
+------ | ------ |
+`data` | T |
 
-**Returns:** _void_
-
+**Returns:** *void*

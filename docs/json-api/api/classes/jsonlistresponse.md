@@ -1,10 +1,10 @@
-# JsonListResponse
+# Class: JsonListResponse <**Raw, I**>
 
 ## Type parameters
 
-▪ **Raw**: [_RawListResponse_](../interfaces/rawlistresponse.md)_‹any, any›_
+▪ **Raw**: *[RawListResponse](../interfaces/rawlistresponse.md)‹any, any›*
 
-▪ **I**: [_IncludedGroups_](../#includedgroups)
+▪ **I**: *[IncludedGroups](../README.md#includedgroups)*
 
 ## Hierarchy
 
@@ -31,57 +31,66 @@
 
 ## Constructors
 
-### constructor
+###  constructor
 
-+ **new JsonListResponse**\(`raw`: Raw, `limit`: number, `offset`: number \| undefined, `rawIncludedGroups`: I, `response`: HttpResponse‹Raw›\): [_JsonListResponse_](jsonlistresponse.md)
+\+ **new JsonListResponse**(`raw`: Raw, `limit`: number, `offset`: number | undefined, `rawIncludedGroups`: I, `response`: HttpResponse‹Raw›): *[JsonListResponse](jsonlistresponse.md)*
 
 **Parameters:**
 
-| Name | Type |
-| :--- | :--- |
-| `raw` | Raw |
-| `limit` | number |
-| `offset` | number \| undefined |
-| `rawIncludedGroups` | I |
-| `response` | HttpResponse‹Raw› |
+Name | Type |
+------ | ------ |
+`raw` | Raw |
+`limit` | number |
+`offset` | number &#124; undefined |
+`rawIncludedGroups` | I |
+`response` | HttpResponse‹Raw› |
 
-**Returns:** [_JsonListResponse_](jsonlistresponse.md)
+**Returns:** *[JsonListResponse](jsonlistresponse.md)*
 
 ## Properties
 
-### limit
+###  limit
 
-• **limit**: _number_
+• **limit**: *number*
 
-### offset
+___
 
-• **offset**: _number \| undefined_
+###  offset
 
-### raw
+• **offset**: *number | undefined*
 
-• **raw**: _Raw_
+___
 
-### response
+###  raw
 
-• **response**: _HttpResponse‹Raw›_
+• **raw**: *Raw*
+
+___
+
+###  response
+
+• **response**: *HttpResponse‹Raw›*
 
 ## Accessors
 
-### elements
+###  elements
 
-• **get elements**\(\): [_MergedData_](../#mergeddata)_‹Raw\["data"\]›_
+• **get elements**(): *[MergedData](../README.md#mergeddata)‹Raw["data"]›*
 
-**Returns:** [_MergedData_](../#mergeddata)_‹Raw\["data"\]›_
+**Returns:** *[MergedData](../README.md#mergeddata)‹Raw["data"]›*
 
-### included
+___
 
-• **get included**\(\): _object_
+###  included
 
-**Returns:** _object_
+• **get included**(): *object*
 
-### meta
+**Returns:** *object*
 
-• **get meta**\(\): _Raw\["meta"\]_
+___
 
-**Returns:** _Raw\["meta"\]_
+###  meta
 
+• **get meta**(): *Raw["meta"]*
+
+**Returns:** *Raw["meta"]*

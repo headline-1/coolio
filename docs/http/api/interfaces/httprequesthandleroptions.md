@@ -1,4 +1,4 @@
-# HttpRequestHandlerOptions
+# Interface: HttpRequestHandlerOptions
 
 ## Hierarchy
 
@@ -14,5 +14,4 @@
 
 ### `Optional` defaultRequestOptions
 
-• **defaultRequestOptions**? : _ClientRequestArgs_
-
+• **defaultRequestOptions**? : *ClientRequestArgs*
