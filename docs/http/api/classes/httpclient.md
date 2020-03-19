@@ -180,6 +180,8 @@ ___
 
 Performs a DELETE request.
 
+**`deprecated`** Use delete instead of remove, since it matches HTTP request method.
+
 **Type parameters:**
 
 ▪ **Body**: *T*
