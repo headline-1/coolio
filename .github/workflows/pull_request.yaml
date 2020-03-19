@@ -29,7 +29,7 @@ jobs:
     - name: Lint code
       run: yarn lint
     - name: Audit packages
-      run: yarn audit
+      run: yarn audit --groups dependencies
     - name: Upload coverage to Codecov
       if: matrix.os != 'windows-latest'
       uses: codecov/codecov-action@v1.0.2
