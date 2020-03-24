@@ -1,4 +1,4 @@
-# Class: HttpResponseError <**T**>
+# HttpResponseError
 
 ## Type parameters
 
@@ -27,59 +27,50 @@
 
 ## Constructors
 
-###  constructor
+### constructor
 
-\+ **new HttpResponseError**(`response`: [HttpResponse](../interfaces/httpresponse.md)‹T›, `message?`: undefined | string): *[HttpResponseError](httpresponseerror.md)*
++ **new HttpResponseError**\(`response`: [HttpResponse](../interfaces/httpresponse.md)‹T›, `message?`: undefined \| string\): [_HttpResponseError_](httpresponseerror.md)
 
 **Parameters:**
 
-Name | Type |
------- | ------ |
-`response` | [HttpResponse](../interfaces/httpresponse.md)‹T› |
-`message?` | undefined &#124; string |
+| Name | Type |
+| :--- | :--- |
+| `response` | [HttpResponse](../interfaces/httpresponse.md)‹T› |
+| `message?` | undefined \| string |
 
-**Returns:** *[HttpResponseError](httpresponseerror.md)*
+**Returns:** [_HttpResponseError_](httpresponseerror.md)
 
 ## Properties
 
-###  message
+### message
 
-• **message**: *string*
+• **message**: _string_
 
-*Inherited from [HttpRequestError](httprequesterror.md).[message](httprequesterror.md#message)*
+_Inherited from_ [_HttpRequestError_](httprequesterror.md)_._[_message_](httprequesterror.md#message)
 
-___
+### name
 
-###  name
+• **name**: _string_
 
-• **name**: *string*
+_Inherited from_ [_HttpRequestError_](httprequesterror.md)_._[_name_](httprequesterror.md#name)
 
-*Inherited from [HttpRequestError](httprequesterror.md).[name](httprequesterror.md#name)*
+### response
 
-___
-
-###  response
-
-• **response**: *[HttpResponse](../interfaces/httpresponse.md)‹T›*
-
-___
+• **response**: [_HttpResponse_](../interfaces/httpresponse.md)_‹T›_
 
 ### `Optional` stack
 
-• **stack**? : *undefined | string*
+• **stack**? : _undefined \| string_
 
-*Inherited from [HttpRequestError](httprequesterror.md).[stack](httprequesterror.md#optional-stack)*
+_Inherited from_ [_HttpRequestError_](httprequesterror.md)_._[_stack_](httprequesterror.md#optional-stack)
 
-*Overrides [HttpRequestError](httprequesterror.md).[stack](httprequesterror.md#optional-stack)*
+_Overrides_ [_HttpRequestError_](httprequesterror.md)_._[_stack_](httprequesterror.md#optional-stack)
 
-___
+### status
 
-###  status
-
-• **status**: *[HttpCode](../enums/httpcode.md)*
-
-___
+• **status**: [_HttpCode_](../enums/httpcode.md)
 
 ### `Static` Error
 
-▪ **Error**: *ErrorConstructor*
+▪ **Error**: _ErrorConstructor_
+

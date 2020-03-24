@@ -1,4 +1,4 @@
-# Interface: Attributes
+# Attributes
 
 ## Hierarchy
 
@@ -6,4 +6,5 @@
 
 ## Indexable
 
-* \[ **x**: *string*\]: any
+* \[ **x**: _string_\]: any
+

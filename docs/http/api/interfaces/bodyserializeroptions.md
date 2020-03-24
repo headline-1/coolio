@@ -1,4 +1,4 @@
-# Interface: BodySerializerOptions
+# BodySerializerOptions
 
 ## Hierarchy
 
@@ -14,4 +14,5 @@
 
 ### `Optional` bodyCasing
 
-• **bodyCasing**? : *[BodyCasing](../enums/bodycasing.md)*
+• **bodyCasing**? : [_BodyCasing_](../enums/bodycasing.md)
+

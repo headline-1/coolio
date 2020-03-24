@@ -1,4 +1,4 @@
-# Interface: FetchRequestHandlerOptions
+# FetchRequestHandlerOptions
 
 ## Hierarchy
 
@@ -14,4 +14,5 @@
 
 ### `Optional` defaultRequestOptions
 
-• **defaultRequestOptions**? : *RequestInit*
+• **defaultRequestOptions**? : _RequestInit_
+

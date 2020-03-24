@@ -33,7 +33,6 @@ You may create multiple `HttpClient` instances, as your application connects to 
 ```typescript
 import { bodyParser, bodySerializer, BodyCasing, ContentType, HttpClient, fetchRequestHandler } from '@coolio/http';
 import { fetchRequestHandler } from '@coolio/http/request-handlers/fetch';
-import { Config } from './config';
 
 export const httpClient = new HttpClient({
   baseUrl: 'https://api.example.com/v1/',
@@ -69,7 +68,6 @@ You may use the repository pattern to separate API requests from other code. You
 
 ```typescript
 import { httpClient } from './httpClient';
-import { Config } from './config';
 import { User } from './user.types';
 
 const getUsers = async (page: number, limit = 10): Promise<User[]> => {

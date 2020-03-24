@@ -1,4 +1,4 @@
-# Interface: Log
+# Log
 
 ## Hierarchy
 
@@ -15,24 +15,19 @@
 
 ## Properties
 
-###  duration
+### duration
 
-• **duration**: *number*
-
-___
+• **duration**: _number_
 
 ### `Optional` error
 
-• **error**? : *any*
+• **error**? : _any_
 
-___
+### request
 
-###  request
-
-• **request**: *[HttpRequestOptions](httprequestoptions.md)*
-
-___
+• **request**: [_HttpRequestOptions_](httprequestoptions.md)
 
 ### `Optional` response
 
-• **response**? : *[HttpResponse](httpresponse.md)*
+• **response**? : [_HttpResponse_](httpresponse.md)
+

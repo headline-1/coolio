@@ -1,4 +1,4 @@
-# Interface: RawHttpResponse
+# RawHttpResponse
 
 ## Hierarchy
 
@@ -25,60 +25,47 @@
 
 ## Properties
 
-###  headers
+### headers
 
-• **headers**: *[HttpResponseHeaders](../classes/httpresponseheaders.md)*
+• **headers**: [_HttpResponseHeaders_](../classes/httpresponseheaders.md)
 
-___
+### ok
 
-###  ok
+• **ok**: _boolean_
 
-• **ok**: *boolean*
+### redirected
 
-___
+• **redirected**: _boolean_
 
-###  redirected
+### status
 
-• **redirected**: *boolean*
+• **status**: _number_
 
-___
+### statusText
 
-###  status
+• **statusText**: _string_
 
-• **status**: *number*
+### url
 
-___
-
-###  statusText
-
-• **statusText**: *string*
-
-___
-
-###  url
-
-• **url**: *string*
+• **url**: _string_
 
 ## Methods
 
-###  abort
+### abort
 
-▸ **abort**(): *void*
+▸ **abort**\(\): _void_
 
-**Returns:** *void*
+**Returns:** _void_
 
-___
+### arrayBuffer
 
-###  arrayBuffer
+▸ **arrayBuffer**\(\): _Promise‹ArrayBuffer›_
 
-▸ **arrayBuffer**(): *Promise‹ArrayBuffer›*
+**Returns:** _Promise‹ArrayBuffer›_
 
-**Returns:** *Promise‹ArrayBuffer›*
+### text
 
-___
+▸ **text**\(\): _Promise‹string›_
 
-###  text
+**Returns:** _Promise‹string›_
 
-▸ **text**(): *Promise‹string›*
-
-**Returns:** *Promise‹string›*

@@ -1,4 +1,4 @@
-# Interface: BodyParserOptions
+# BodyParserOptions
 
 ## Hierarchy
 
@@ -15,10 +15,9 @@
 
 ### `Optional` bodyCasing
 
-• **bodyCasing**? : *[BodyCasing](../enums/bodycasing.md)*
-
-___
+• **bodyCasing**? : [_BodyCasing_](../enums/bodycasing.md)
 
 ### `Optional` defaultParser
 
-• **defaultParser**? : *[BodyParserImplementation](../README.md#bodyparserimplementation)*
+• **defaultParser**? : [_BodyParserImplementation_](../#bodyparserimplementation)
+

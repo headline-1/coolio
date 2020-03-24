@@ -1,5 +1,6 @@
-# Interface: XhrRequestHandlerOptions
+# XhrRequestHandlerOptions
 
 ## Hierarchy
 
 * **XhrRequestHandlerOptions**
+

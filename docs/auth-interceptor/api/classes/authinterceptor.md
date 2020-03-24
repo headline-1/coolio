@@ -1,4 +1,4 @@
-# Class: AuthInterceptor
+# AuthInterceptor
 
 ## Hierarchy
 
@@ -24,31 +24,31 @@
 
 ## Constructors
 
-###  constructor
+### constructor
 
-\+ **new AuthInterceptor**(`options`: [AuthInterceptorOptions](../interfaces/authinterceptoroptions.md)): *[AuthInterceptor](authinterceptor.md)*
++ **new AuthInterceptor**\(`options`: [AuthInterceptorOptions](../interfaces/authinterceptoroptions.md)\): [_AuthInterceptor_](authinterceptor.md)
 
 **Parameters:**
 
-Name | Type |
------- | ------ |
-`options` | [AuthInterceptorOptions](../interfaces/authinterceptoroptions.md) |
+| Name | Type |
+| :--- | :--- |
+| `options` | [AuthInterceptorOptions](../interfaces/authinterceptoroptions.md) |
 
-**Returns:** *[AuthInterceptor](authinterceptor.md)*
+**Returns:** [_AuthInterceptor_](authinterceptor.md)
 
 ## Accessors
 
-###  pendingRequestCount
+### pendingRequestCount
 
-• **get pendingRequestCount**(): *number*
+• **get pendingRequestCount**\(\): _number_
 
-**Returns:** *number*
+**Returns:** _number_
 
 ## Methods
 
-###  onIntercept
+### onIntercept
 
-▸ **onIntercept**<**Body**>(`request`: HttpFetch‹Body›, `options`: NormalizedHttpOptions): *HttpFetch‹Body›*
+▸ **onIntercept**&lt;**Body**&gt;\(`request`: HttpFetch‹Body›, `options`: NormalizedHttpOptions\): _HttpFetch‹Body›_
 
 **Type parameters:**
 
@@ -56,9 +56,10 @@ Name | Type |
 
 **Parameters:**
 
-Name | Type |
------- | ------ |
-`request` | HttpFetch‹Body› |
-`options` | NormalizedHttpOptions |
+| Name | Type |
+| :--- | :--- |
+| `request` | HttpFetch‹Body› |
+| `options` | NormalizedHttpOptions |
 
-**Returns:** *HttpFetch‹Body›*
+**Returns:** _HttpFetch‹Body›_
+

@@ -1,8 +1,8 @@
-# Class: RemoveBuilder <**Raw**>
+# RemoveBuilder
 
 ## Type parameters
 
-▪ **Raw**: *[RawResponse](../interfaces/rawresponse.md)‹any, any›*
+▪ **Raw**: [_RawResponse_](../interfaces/rawresponse.md)_‹any, any›_
 
 ## Hierarchy
 
@@ -45,243 +45,214 @@
 
 ## Constructors
 
-###  constructor
+### constructor
 
-\+ **new RemoveBuilder**(`httpClient`: HttpClient, `uri`: string): *[RemoveBuilder](removebuilder.md)*
++ **new RemoveBuilder**\(`httpClient`: HttpClient, `uri`: string\): [_RemoveBuilder_](removebuilder.md)
 
-*Overrides [RequestBuilder](requestbuilder.md).[constructor](requestbuilder.md#protected-constructor)*
+_Overrides_ [_RequestBuilder_](requestbuilder.md)_._[_constructor_](requestbuilder.md#protected-constructor)
 
 **Parameters:**
 
-Name | Type |
------- | ------ |
-`httpClient` | HttpClient |
-`uri` | string |
+| Name | Type |
+| :--- | :--- |
+| `httpClient` | HttpClient |
+| `uri` | string |
 
-**Returns:** *[RemoveBuilder](removebuilder.md)*
+**Returns:** [_RemoveBuilder_](removebuilder.md)
 
 ## Properties
 
 ### `Protected` limit
 
-• **limit**: *number* = DEFAULT_RESOURCE_LIMIT
+• **limit**: _number_ = DEFAULT\_RESOURCE\_LIMIT
 
-*Inherited from [RequestBuilder](requestbuilder.md).[limit](requestbuilder.md#protected-limit)*
-
-___
+_Inherited from_ [_RequestBuilder_](requestbuilder.md)_._[_limit_](requestbuilder.md#protected-limit)
 
 ### `Protected` offset
 
-• **offset**: *undefined | number*
+• **offset**: _undefined \| number_
 
-*Inherited from [RequestBuilder](requestbuilder.md).[offset](requestbuilder.md#protected-offset)*
-
-___
+_Inherited from_ [_RequestBuilder_](requestbuilder.md)_._[_offset_](requestbuilder.md#protected-offset)
 
 ### `Protected` options
 
-• **options**: *[Options](../interfaces/options.md)*
+• **options**: [_Options_](../interfaces/options.md)
 
-*Inherited from [RequestBuilder](requestbuilder.md).[options](requestbuilder.md#protected-options)*
-
-___
+_Inherited from_ [_RequestBuilder_](requestbuilder.md)_._[_options_](requestbuilder.md#protected-options)
 
 ### `Protected` page
 
-• **page**: *number* = 1
+• **page**: _number_ = 1
 
-*Inherited from [RequestBuilder](requestbuilder.md).[page](requestbuilder.md#protected-page)*
-
-___
+_Inherited from_ [_RequestBuilder_](requestbuilder.md)_._[_page_](requestbuilder.md#protected-page)
 
 ### `Protected` queryParams
 
-• **queryParams**: *Record‹string, string›*
+• **queryParams**: _Record‹string, string›_
 
-*Inherited from [RequestBuilder](requestbuilder.md).[queryParams](requestbuilder.md#protected-queryparams)*
-
-___
+_Inherited from_ [_RequestBuilder_](requestbuilder.md)_._[_queryParams_](requestbuilder.md#protected-queryparams)
 
 ### `Protected` resolveIncludedRelationships
 
-• **resolveIncludedRelationships**: *boolean* = false
+• **resolveIncludedRelationships**: _boolean_ = false
 
-*Inherited from [RequestBuilder](requestbuilder.md).[resolveIncludedRelationships](requestbuilder.md#protected-resolveincludedrelationships)*
-
-___
+_Inherited from_ [_RequestBuilder_](requestbuilder.md)_._[_resolveIncludedRelationships_](requestbuilder.md#protected-resolveincludedrelationships)
 
 ### `Protected` sortParams
 
-• **sortParams**: *string[]* = []
+• **sortParams**: _string\[\]_ = \[\]
 
-*Inherited from [RequestBuilder](requestbuilder.md).[sortParams](requestbuilder.md#protected-sortparams)*
+_Inherited from_ [_RequestBuilder_](requestbuilder.md)_._[_sortParams_](requestbuilder.md#protected-sortparams)
 
-___
+### uri
 
-###  uri
+• **uri**: _string_
 
-• **uri**: *string*
-
-*Inherited from [RequestBuilder](requestbuilder.md).[uri](requestbuilder.md#uri)*
+_Inherited from_ [_RequestBuilder_](requestbuilder.md)_._[_uri_](requestbuilder.md#uri)
 
 ## Accessors
 
-###  parameters
+### parameters
 
-• **get parameters**(): *Record‹string, string›*
+• **get parameters**\(\): _Record‹string, string›_
 
-*Inherited from [RequestBuilder](requestbuilder.md).[parameters](requestbuilder.md#parameters)*
+_Inherited from_ [_RequestBuilder_](requestbuilder.md)_._[_parameters_](requestbuilder.md#parameters)
 
-**Returns:** *Record‹string, string›*
+**Returns:** _Record‹string, string›_
 
 ## Methods
 
-###  filter
+### filter
 
-▸ **filter**(`key`: string | string[] | undefined, `value`: string | number | boolean | undefined, `operator?`: [FilterOperator](../enums/filteroperator.md)): *this*
+▸ **filter**\(`key`: string \| string\[\] \| undefined, `value`: string \| number \| boolean \| undefined, `operator?`: [FilterOperator](../enums/filteroperator.md)\): _this_
 
-*Inherited from [RequestBuilder](requestbuilder.md).[filter](requestbuilder.md#filter)*
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`key` | string &#124; string[] &#124; undefined |
-`value` | string &#124; number &#124; boolean &#124; undefined |
-`operator?` | [FilterOperator](../enums/filteroperator.md) |
-
-**Returns:** *this*
-
-___
-
-###  pageLimit
-
-▸ **pageLimit**(`limit`: number): *this*
-
-*Inherited from [RequestBuilder](requestbuilder.md).[pageLimit](requestbuilder.md#pagelimit)*
+_Inherited from_ [_RequestBuilder_](requestbuilder.md)_._[_filter_](requestbuilder.md#filter)
 
 **Parameters:**
 
-Name | Type |
------- | ------ |
-`limit` | number |
+| Name | Type |
+| :--- | :--- |
+| `key` | string \| string\[\] \| undefined |
+| `value` | string \| number \| boolean \| undefined |
+| `operator?` | [FilterOperator](../enums/filteroperator.md) |
 
-**Returns:** *this*
+**Returns:** _this_
 
-___
+### pageLimit
 
-###  pageNumber
+▸ **pageLimit**\(`limit`: number\): _this_
 
-▸ **pageNumber**(`page`: number | string | undefined): *this*
-
-*Inherited from [RequestBuilder](requestbuilder.md).[pageNumber](requestbuilder.md#pagenumber)*
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`page` | number &#124; string &#124; undefined |
-
-**Returns:** *this*
-
-___
-
-###  pageOffset
-
-▸ **pageOffset**(`offset`: number): *this*
-
-*Inherited from [RequestBuilder](requestbuilder.md).[pageOffset](requestbuilder.md#pageoffset)*
+_Inherited from_ [_RequestBuilder_](requestbuilder.md)_._[_pageLimit_](requestbuilder.md#pagelimit)
 
 **Parameters:**
 
-Name | Type |
------- | ------ |
-`offset` | number |
+| Name | Type |
+| :--- | :--- |
+| `limit` | number |
 
-**Returns:** *this*
+**Returns:** _this_
 
-___
+### pageNumber
 
-###  parameter
+▸ **pageNumber**\(`page`: number \| string \| undefined\): _this_
 
-▸ **parameter**(`key`: string, `value`: string | number | boolean | undefined): *this*
-
-*Inherited from [RequestBuilder](requestbuilder.md).[parameter](requestbuilder.md#parameter)*
+_Inherited from_ [_RequestBuilder_](requestbuilder.md)_._[_pageNumber_](requestbuilder.md#pagenumber)
 
 **Parameters:**
 
-Name | Type |
------- | ------ |
-`key` | string |
-`value` | string &#124; number &#124; boolean &#124; undefined |
+| Name | Type |
+| :--- | :--- |
+| `page` | number \| string \| undefined |
 
-**Returns:** *this*
+**Returns:** _this_
 
-___
+### pageOffset
+
+▸ **pageOffset**\(`offset`: number\): _this_
+
+_Inherited from_ [_RequestBuilder_](requestbuilder.md)_._[_pageOffset_](requestbuilder.md#pageoffset)
+
+**Parameters:**
+
+| Name | Type |
+| :--- | :--- |
+| `offset` | number |
+
+**Returns:** _this_
+
+### parameter
+
+▸ **parameter**\(`key`: string, `value`: string \| number \| boolean \| undefined\): _this_
+
+_Inherited from_ [_RequestBuilder_](requestbuilder.md)_._[_parameter_](requestbuilder.md#parameter)
+
+**Parameters:**
+
+| Name | Type |
+| :--- | :--- |
+| `key` | string |
+| `value` | string \| number \| boolean \| undefined |
+
+**Returns:** _this_
 
 ### `Protected` parseResponse
 
-▸ **parseResponse**<**Raw**>(`response`: HttpResponse): *Promise‹[JsonResponse](jsonresponse.md)‹Raw››*
+▸ **parseResponse**&lt;**Raw**&gt;\(`response`: HttpResponse\): _Promise‹_[_JsonResponse_](jsonresponse.md)_‹Raw››_
 
-*Inherited from [RequestBuilder](requestbuilder.md).[parseResponse](requestbuilder.md#protected-parseresponse)*
+_Inherited from_ [_RequestBuilder_](requestbuilder.md)_._[_parseResponse_](requestbuilder.md#protected-parseresponse)
 
 **Type parameters:**
 
-▪ **Raw**: *[RawResponse](../interfaces/rawresponse.md)‹any, any›*
+▪ **Raw**: [_RawResponse_](../interfaces/rawresponse.md)_‹any, any›_
 
 **Parameters:**
 
-Name | Type |
------- | ------ |
-`response` | HttpResponse |
+| Name | Type |
+| :--- | :--- |
+| `response` | HttpResponse |
 
-**Returns:** *Promise‹[JsonResponse](jsonresponse.md)‹Raw››*
+**Returns:** _Promise‹_[_JsonResponse_](jsonresponse.md)_‹Raw››_
 
-___
+### resolveIncluded
 
-###  resolveIncluded
+▸ **resolveIncluded**\(`resolveIncluded?`: undefined \| false \| true\): _this_
 
-▸ **resolveIncluded**(`resolveIncluded?`: undefined | false | true): *this*
-
-*Inherited from [RequestBuilder](requestbuilder.md).[resolveIncluded](requestbuilder.md#resolveincluded)*
+_Inherited from_ [_RequestBuilder_](requestbuilder.md)_._[_resolveIncluded_](requestbuilder.md#resolveincluded)
 
 **Parameters:**
 
-Name | Type |
------- | ------ |
-`resolveIncluded?` | undefined &#124; false &#124; true |
+| Name | Type |
+| :--- | :--- |
+| `resolveIncluded?` | undefined \| false \| true |
 
-**Returns:** *this*
+**Returns:** _this_
 
-___
+### send
 
-###  send
+▸ **send**\(`options`: HttpOptions\): _Promise‹_[_JsonResponse_](jsonresponse.md)_‹Raw››_
 
-▸ **send**(`options`: HttpOptions): *Promise‹[JsonResponse](jsonresponse.md)‹Raw››*
-
-*Overrides [RequestBuilder](requestbuilder.md).[send](requestbuilder.md#abstract-send)*
+_Overrides_ [_RequestBuilder_](requestbuilder.md)_._[_send_](requestbuilder.md#abstract-send)
 
 **Parameters:**
 
-Name | Type | Default |
------- | ------ | ------ |
-`options` | HttpOptions | {} |
+| Name | Type | Default |
+| :--- | :--- | :--- |
+| `options` | HttpOptions | {} |
 
-**Returns:** *Promise‹[JsonResponse](jsonresponse.md)‹Raw››*
+**Returns:** _Promise‹_[_JsonResponse_](jsonresponse.md)_‹Raw››_
 
-___
+### sort
 
-###  sort
+▸ **sort**\(`key`: string \| undefined, `order`: [SortOrder](../enums/sortorder.md)\): _this_
 
-▸ **sort**(`key`: string | undefined, `order`: [SortOrder](../enums/sortorder.md)): *this*
-
-*Inherited from [RequestBuilder](requestbuilder.md).[sort](requestbuilder.md#sort)*
+_Inherited from_ [_RequestBuilder_](requestbuilder.md)_._[_sort_](requestbuilder.md#sort)
 
 **Parameters:**
 
-Name | Type |
------- | ------ |
-`key` | string &#124; undefined |
-`order` | [SortOrder](../enums/sortorder.md) |
+| Name | Type |
+| :--- | :--- |
+| `key` | string \| undefined |
+| `order` | [SortOrder](../enums/sortorder.md) |
 
-**Returns:** *this*
+**Returns:** _this_
+

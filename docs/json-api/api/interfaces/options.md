@@ -1,4 +1,4 @@
-# Interface: Options
+# Options
 
 ## Hierarchy
 
@@ -15,10 +15,9 @@
 
 ### `Optional` pagination
 
-• **pagination**? : *undefined | false | true*
-
-___
+• **pagination**? : _undefined \| false \| true_
 
 ### `Optional` sort
 
-• **sort**? : *undefined | false | true*
+• **sort**? : _undefined \| false \| true_
+

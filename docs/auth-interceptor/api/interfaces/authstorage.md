@@ -1,4 +1,4 @@
-# Interface: AuthStorage <**T**>
+# AuthStorage
 
 ## Type parameters
 
@@ -21,22 +21,21 @@
 
 ## Methods
 
-###  getData
+### getData
 
-▸ **getData**(): *[Promisable](../README.md#promisable)‹T | undefined›*
+▸ **getData**\(\): [_Promisable_](../#promisable)_‹T \| undefined›_
 
-**Returns:** *[Promisable](../README.md#promisable)‹T | undefined›*
+**Returns:** [_Promisable_](../#promisable)_‹T \| undefined›_
 
-___
+### setData
 
-###  setData
-
-▸ **setData**(`t`: T): *[Promisable](../README.md#promisable)*
+▸ **setData**\(`t`: T\): [_Promisable_](../#promisable)
 
 **Parameters:**
 
-Name | Type |
------- | ------ |
-`t` | T |
+| Name | Type |
+| :--- | :--- |
+| `t` | T |
 
-**Returns:** *[Promisable](../README.md#promisable)*
+**Returns:** [_Promisable_](../#promisable)
+

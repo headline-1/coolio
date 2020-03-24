@@ -1,4 +1,4 @@
-# Class: JsonApiClient
+# JsonApiClient
 
 ## Hierarchy
 
@@ -25,140 +25,131 @@
 
 ## Constructors
 
-###  constructor
+### constructor
 
-\+ **new JsonApiClient**(`httpClient`: HttpClient): *[JsonApiClient](jsonapiclient.md)*
++ **new JsonApiClient**\(`httpClient`: HttpClient\): [_JsonApiClient_](jsonapiclient.md)
 
 **Parameters:**
 
-Name | Type |
------- | ------ |
-`httpClient` | HttpClient |
+| Name | Type |
+| :--- | :--- |
+| `httpClient` | HttpClient |
 
-**Returns:** *[JsonApiClient](jsonapiclient.md)*
+**Returns:** [_JsonApiClient_](jsonapiclient.md)
 
 ## Properties
 
-###  httpClient
+### httpClient
 
-• **httpClient**: *HttpClient*
+• **httpClient**: _HttpClient_
 
 ## Methods
 
-###  get
+### get
 
-▸ **get**<**D**, **M**>(`uri`: string): *[GetBuilder](getbuilder.md)‹[RawResponse](../interfaces/rawresponse.md)‹D, M››*
-
-**Type parameters:**
-
-▪ **D**: *[AnyData](../README.md#anydata)*
-
-▪ **M**: *object*
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`uri` | string |
-
-**Returns:** *[GetBuilder](getbuilder.md)‹[RawResponse](../interfaces/rawresponse.md)‹D, M››*
-
-___
-
-###  getList
-
-▸ **getList**<**D**, **M**>(`uri`: string): *[GetListBuilder](getlistbuilder.md)‹[RawListResponse](../interfaces/rawlistresponse.md)‹D, M›, object›*
+▸ **get**&lt;**D**, **M**&gt;\(`uri`: string\): [_GetBuilder_](getbuilder.md)_‹_[_RawResponse_](../interfaces/rawresponse.md)_‹D, M››_
 
 **Type parameters:**
 
-▪ **D**: *[AnyData](../README.md#anydata)*
+▪ **D**: [_AnyData_](../#anydata)
 
-▪ **M**: *[ListMetaData](../interfaces/listmetadata.md)*
+▪ **M**: _object_
 
 **Parameters:**
 
-Name | Type |
------- | ------ |
-`uri` | string |
+| Name | Type |
+| :--- | :--- |
+| `uri` | string |
 
-**Returns:** *[GetListBuilder](getlistbuilder.md)‹[RawListResponse](../interfaces/rawlistresponse.md)‹D, M›, object›*
+**Returns:** [_GetBuilder_](getbuilder.md)_‹_[_RawResponse_](../interfaces/rawresponse.md)_‹D, M››_
 
-___
+### getList
 
-###  patch
-
-▸ **patch**<**D**, **M**>(`uri`: string): *[UpdateBuilder](updatebuilder.md)‹[RawResponse](../interfaces/rawresponse.md)‹D, M››*
+▸ **getList**&lt;**D**, **M**&gt;\(`uri`: string\): [_GetListBuilder_](getlistbuilder.md)_‹_[_RawListResponse_](../interfaces/rawlistresponse.md)_‹D, M›, object›_
 
 **Type parameters:**
 
-▪ **D**: *[AnyData](../README.md#anydata)*
+▪ **D**: [_AnyData_](../#anydata)
 
-▪ **M**: *object*
+▪ **M**: [_ListMetaData_](../interfaces/listmetadata.md)
 
 **Parameters:**
 
-Name | Type |
------- | ------ |
-`uri` | string |
+| Name | Type |
+| :--- | :--- |
+| `uri` | string |
 
-**Returns:** *[UpdateBuilder](updatebuilder.md)‹[RawResponse](../interfaces/rawresponse.md)‹D, M››*
+**Returns:** [_GetListBuilder_](getlistbuilder.md)_‹_[_RawListResponse_](../interfaces/rawlistresponse.md)_‹D, M›, object›_
 
-___
+### patch
 
-###  post
-
-▸ **post**<**D**, **M**>(`uri`: string): *[PostBuilder](postbuilder.md)‹[RawResponse](../interfaces/rawresponse.md)‹D, M››*
+▸ **patch**&lt;**D**, **M**&gt;\(`uri`: string\): [_UpdateBuilder_](updatebuilder.md)_‹_[_RawResponse_](../interfaces/rawresponse.md)_‹D, M››_
 
 **Type parameters:**
 
-▪ **D**: *[AnyData](../README.md#anydata)*
+▪ **D**: [_AnyData_](../#anydata)
 
-▪ **M**: *object*
+▪ **M**: _object_
 
 **Parameters:**
 
-Name | Type |
------- | ------ |
-`uri` | string |
+| Name | Type |
+| :--- | :--- |
+| `uri` | string |
 
-**Returns:** *[PostBuilder](postbuilder.md)‹[RawResponse](../interfaces/rawresponse.md)‹D, M››*
+**Returns:** [_UpdateBuilder_](updatebuilder.md)_‹_[_RawResponse_](../interfaces/rawresponse.md)_‹D, M››_
 
-___
+### post
 
-###  put
-
-▸ **put**<**D**, **M**>(`uri`: string): *[UpdateBuilder](updatebuilder.md)‹[RawResponse](../interfaces/rawresponse.md)‹D, M››*
+▸ **post**&lt;**D**, **M**&gt;\(`uri`: string\): [_PostBuilder_](postbuilder.md)_‹_[_RawResponse_](../interfaces/rawresponse.md)_‹D, M››_
 
 **Type parameters:**
 
-▪ **D**: *[AnyData](../README.md#anydata)*
+▪ **D**: [_AnyData_](../#anydata)
 
-▪ **M**: *object*
+▪ **M**: _object_
 
 **Parameters:**
 
-Name | Type |
------- | ------ |
-`uri` | string |
+| Name | Type |
+| :--- | :--- |
+| `uri` | string |
 
-**Returns:** *[UpdateBuilder](updatebuilder.md)‹[RawResponse](../interfaces/rawresponse.md)‹D, M››*
+**Returns:** [_PostBuilder_](postbuilder.md)_‹_[_RawResponse_](../interfaces/rawresponse.md)_‹D, M››_
 
-___
+### put
 
-###  remove
-
-▸ **remove**<**D**, **M**>(`uri`: string): *[RemoveBuilder](removebuilder.md)‹[RawResponse](../interfaces/rawresponse.md)‹D, M››*
+▸ **put**&lt;**D**, **M**&gt;\(`uri`: string\): [_UpdateBuilder_](updatebuilder.md)_‹_[_RawResponse_](../interfaces/rawresponse.md)_‹D, M››_
 
 **Type parameters:**
 
-▪ **D**: *[AnyData](../README.md#anydata)*
+▪ **D**: [_AnyData_](../#anydata)
 
-▪ **M**: *object*
+▪ **M**: _object_
 
 **Parameters:**
 
-Name | Type |
------- | ------ |
-`uri` | string |
+| Name | Type |
+| :--- | :--- |
+| `uri` | string |
 
-**Returns:** *[RemoveBuilder](removebuilder.md)‹[RawResponse](../interfaces/rawresponse.md)‹D, M››*
+**Returns:** [_UpdateBuilder_](updatebuilder.md)_‹_[_RawResponse_](../interfaces/rawresponse.md)_‹D, M››_
+
+### remove
+
+▸ **remove**&lt;**D**, **M**&gt;\(`uri`: string\): [_RemoveBuilder_](removebuilder.md)_‹_[_RawResponse_](../interfaces/rawresponse.md)_‹D, M››_
+
+**Type parameters:**
+
+▪ **D**: [_AnyData_](../#anydata)
+
+▪ **M**: _object_
+
+**Parameters:**
+
+| Name | Type |
+| :--- | :--- |
+| `uri` | string |
+
+**Returns:** [_RemoveBuilder_](removebuilder.md)_‹_[_RawResponse_](../interfaces/rawresponse.md)_‹D, M››_
+
