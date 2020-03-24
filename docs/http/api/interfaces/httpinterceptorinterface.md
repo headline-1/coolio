@@ -1,4 +1,4 @@
-# Interface: HttpInterceptorInterface
+# HttpInterceptorInterface
 
 ## Hierarchy
 
@@ -12,9 +12,9 @@
 
 ## Methods
 
-###  onIntercept
+### onIntercept
 
-▸ **onIntercept**<**Body**>(`request`: [HttpFetch](../README.md#httpfetch)‹Body›, `options`: [NormalizedHttpOptions](normalizedhttpoptions.md)): *[HttpFetch](../README.md#httpfetch)‹Body›*
+▸ **onIntercept**&lt;**Body**&gt;\(`request`: [HttpFetch](../#httpfetch)‹Body›, `options`: [NormalizedHttpOptions](normalizedhttpoptions.md)\): [_HttpFetch_](../#httpfetch)_‹Body›_
 
 **Type parameters:**
 
@@ -22,9 +22,10 @@
 
 **Parameters:**
 
-Name | Type |
------- | ------ |
-`request` | [HttpFetch](../README.md#httpfetch)‹Body› |
-`options` | [NormalizedHttpOptions](normalizedhttpoptions.md) |
+| Name | Type |
+| :--- | :--- |
+| `request` | [HttpFetch](../#httpfetch)‹Body› |
+| `options` | [NormalizedHttpOptions](normalizedhttpoptions.md) |
 
-**Returns:** *[HttpFetch](../README.md#httpfetch)‹Body›*
+**Returns:** [_HttpFetch_](../#httpfetch)_‹Body›_
+

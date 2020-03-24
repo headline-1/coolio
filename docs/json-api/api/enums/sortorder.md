@@ -1,4 +1,4 @@
-# Enumeration: SortOrder
+# SortOrder
 
 ## Index
 
@@ -9,12 +9,11 @@
 
 ## Enumeration members
 
-###  ASCENDING
+### ASCENDING
 
 • **ASCENDING**: = ""
 
-___
-
-###  DESCENDING
+### DESCENDING
 
 • **DESCENDING**: = "-"
+

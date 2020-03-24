@@ -1,4 +1,4 @@
-# Interface: RedirectionInterceptorOptions
+# RedirectionInterceptorOptions
 
 ## Hierarchy
 
@@ -14,4 +14,5 @@
 
 ### `Optional` redirectionLimit
 
-• **redirectionLimit**? : *undefined | number*
+• **redirectionLimit**? : _undefined \| number_
+

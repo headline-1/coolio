@@ -1,4 +1,4 @@
-# Interface: MockOptions
+# MockOptions
 
 ## Hierarchy
 
@@ -12,6 +12,7 @@
 
 ## Properties
 
-###  endpoints
+### endpoints
 
-• **endpoints**: *[Endpoint](endpoint.md)[]*
+• **endpoints**: [_Endpoint_](endpoint.md)_\[\]_
+

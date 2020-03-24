@@ -31,20 +31,20 @@ npm install @coolio/http
 You may create multiple `HttpClient` instances, as your application connects to various APIs and each API probably has slightly different conventions. You can initialize a HttpClient and configure it as below:
 
 ```typescript
-import { bodyParser, bodySerializer, BodyCasing, ContentType, HttpClient, fetchRequestHandler } from '@coolio/http';
+import { bodyParser, bodySerializer, BodyCasing, ContentType, HttpClient } from '@coolio/http';
 import { fetchRequestHandler } from '@coolio/http/request-handlers/fetch';
 
 export const httpClient = new HttpClient({
   baseUrl: 'https://api.example.com/v1/',
-  requestHandler: fetchRequestHandler,
+  requestHandler: fetchRequestHandler(),
   headers: {
     'Content-Type': ContentType.JSON,
   },
   bodyParser: bodyParser({ 
-    bodyCasing: BodyCasing.CAMEL_CASE
+    bodyCasing: BodyCasing.CAMEL_CASE,
   }),
   bodySerializer: bodySerializer({
-    bodyCasing: BodyCasing.SNAKE_CASE
+    bodyCasing: BodyCasing.SNAKE_CASE,
   }),
 });
 ```
@@ -105,15 +105,15 @@ export class BaseRepository {
   constructor(baseUrl = '/'){
     this.client = new HttpClient({
       baseUrl: `https://api.example.com/v1/${baseUrl}`,
-      requestHandler: fetchRequestHandler,
+      requestHandler: fetchRequestHandler(),
       headers: {
         'Content-Type': ContentType.JSON,
       },
       bodyParser: bodyParser({ 
-        bodyCasing: BodyCasing.CAMEL_CASE
+        bodyCasing: BodyCasing.CAMEL_CASE,
       }),
       bodySerializer: bodySerializer({
-        bodyCasing: BodyCasing.SNAKE_CASE
+        bodyCasing: BodyCasing.SNAKE_CASE,
       }),
     });    
   }

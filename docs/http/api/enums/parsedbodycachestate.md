@@ -1,4 +1,4 @@
-# Enumeration: ParsedBodyCacheState
+# ParsedBodyCacheState
 
 ## Index
 
@@ -10,18 +10,15 @@
 
 ## Enumeration members
 
-###  FINISHED
+### FINISHED
 
 • **FINISHED**:
 
-___
-
-###  STARTED
+### STARTED
 
 • **STARTED**:
 
-___
-
-###  UNINITIALIZED
+### UNINITIALIZED
 
 • **UNINITIALIZED**:
+

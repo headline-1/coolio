@@ -1,4 +1,4 @@
-# Interface: HttpRequestOptions
+# HttpRequestOptions
 
 ## Hierarchy
 
@@ -20,40 +20,29 @@
 
 ### `Optional` body
 
-• **body**? : *[HttpBody](../README.md#httpbody)*
-
-___
+• **body**? : [_HttpBody_](../#httpbody)
 
 ### `Optional` bypassResponseHandler
 
-• **bypassResponseHandler**? : *undefined | false | true*
-
-___
+• **bypassResponseHandler**? : _undefined \| false \| true_
 
 ### `Optional` headers
 
-• **headers**? : *[HttpHeaders](../README.md#httpheaders)*
+• **headers**? : [_HttpHeaders_](../#httpheaders)
 
-___
+### method
 
-###  method
-
-• **method**: *[HttpMethod](../enums/httpmethod.md)*
-
-___
+• **method**: [_HttpMethod_](../enums/httpmethod.md)
 
 ### `Optional` mode
 
-• **mode**? : *[RequestMode](../README.md#requestmode)*
-
-___
+• **mode**? : [_RequestMode_](../#requestmode)
 
 ### `Optional` query
 
-• **query**? : *undefined | object*
-
-___
+• **query**? : _undefined \| object_
 
 ### `Optional` timeout
 
-• **timeout**? : *undefined | number*
+• **timeout**? : _undefined \| number_
+

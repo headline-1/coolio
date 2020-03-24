@@ -1,4 +1,4 @@
-# @coolio/json-api
+# API
 
 ## Index
 
@@ -31,317 +31,267 @@
 
 ### Type aliases
 
-* [AnyData](README.md#anydata)
-* [AttributesOf](README.md#attributesof)
-* [EmptyRecord](README.md#emptyrecord)
-* [IncludedGroups](README.md#includedgroups)
-* [IncludedGroupsSchema](README.md#includedgroupsschema)
-* [IncludedRelationships](README.md#includedrelationships)
-* [MergedData](README.md#mergeddata)
-* [MergedIncludedGroups](README.md#mergedincludedgroups)
-* [OptionalRels](README.md#optionalrels)
-* [RawRelationship](README.md#rawrelationship)
-* [Relationship](README.md#relationship)
-* [RelationshipArray](README.md#relationshiparray)
-* [RelationshipData](README.md#relationshipdata)
-* [RelationshipType](README.md#relationshiptype)
-* [Relationships](README.md#relationships)
-* [RelationshipsOf](README.md#relationshipsof)
-* [ResolvedRelationship](README.md#resolvedrelationship)
-* [ResolvedRelationshipArray](README.md#resolvedrelationshiparray)
-* [ResolvedRelationships](README.md#resolvedrelationships)
-* [UnresolvedRelationships](README.md#unresolvedrelationships)
+* [AnyData](./#anydata)
+* [AttributesOf](./#attributesof)
+* [EmptyRecord](./#emptyrecord)
+* [IncludedGroups](./#includedgroups)
+* [IncludedGroupsSchema](./#includedgroupsschema)
+* [IncludedRelationships](./#includedrelationships)
+* [MergedData](./#mergeddata)
+* [MergedIncludedGroups](./#mergedincludedgroups)
+* [OptionalRels](./#optionalrels)
+* [RawRelationship](./#rawrelationship)
+* [Relationship](./#relationship)
+* [RelationshipArray](./#relationshiparray)
+* [RelationshipData](./#relationshipdata)
+* [RelationshipType](./#relationshiptype)
+* [Relationships](./#relationships)
+* [RelationshipsOf](./#relationshipsof)
+* [ResolvedRelationship](./#resolvedrelationship)
+* [ResolvedRelationshipArray](./#resolvedrelationshiparray)
+* [ResolvedRelationships](./#resolvedrelationships)
+* [UnresolvedRelationships](./#unresolvedrelationships)
 
 ### Variables
 
-* [DEFAULT_RESOURCE_LIMIT](README.md#const-default_resource_limit)
+* [DEFAULT\_RESOURCE\_LIMIT](./#const-default_resource_limit)
 
 ### Functions
 
-* [findIncludedRelationship](README.md#const-findincludedrelationship)
-* [includedGroup](README.md#const-includedgroup)
-* [isData](README.md#const-isdata)
-* [mergeElementData](README.md#const-mergeelementdata)
-* [resolveRelationships](README.md#resolverelationships)
+* [findIncludedRelationship](./#const-findincludedrelationship)
+* [includedGroup](./#const-includedgroup)
+* [isData](./#const-isdata)
+* [mergeElementData](./#const-mergeelementdata)
+* [resolveRelationships](./#resolverelationships)
 
 ### Object literals
 
-* [Headers](README.md#const-headers)
+* [Headers](./#const-headers)
 
 ## Type aliases
 
-###  AnyData
+### AnyData
 
-Ƭ **AnyData**: *[Data](interfaces/data.md)‹any, any›*
+Ƭ **AnyData**: [_Data_](interfaces/data.md)_‹any, any›_
 
-___
+### AttributesOf
 
-###  AttributesOf
+Ƭ **AttributesOf**: _D extends object ? D\["attributes"\] : EmptyRecord_
 
-Ƭ **AttributesOf**: *D extends object ? D["attributes"] : EmptyRecord*
+### EmptyRecord
 
-___
-
-###  EmptyRecord
-
-Ƭ **EmptyRecord**: *object*
+Ƭ **EmptyRecord**: _object_
 
 #### Type declaration:
 
-* \[ **key**: *string*\]: never
+* \[ **key**: _string_\]: never
 
-___
+### IncludedGroups
 
-###  IncludedGroups
-
-Ƭ **IncludedGroups**: *object*
+Ƭ **IncludedGroups**: _object_
 
 #### Type declaration:
 
-___
+### IncludedGroupsSchema
 
-###  IncludedGroupsSchema
+Ƭ **IncludedGroupsSchema**: _Record‹string,_ [_IncludedGroup_](interfaces/includedgroup.md)_›_
 
-Ƭ **IncludedGroupsSchema**: *Record‹string, [IncludedGroup](interfaces/includedgroup.md)›*
+### IncludedRelationships
 
-___
+Ƭ **IncludedRelationships**: _D\[\]_
 
-###  IncludedRelationships
-
-Ƭ **IncludedRelationships**: *D[]*
-
-___
-
-###  MergedData
+### MergedData
 
 Ƭ **MergedData**:
 
-MergeData type
---------------
-This sophisticated type allows to correctly infer nicely formatted data from JSON API format.
-`id`, `type`, `attributes` and `relationships` suddenly become a single, combined object with easy access to it.
-Same is applied to arrays.
+## MergeData type
 
-___
+This sophisticated type allows to correctly infer nicely formatted data from JSON API format. `id`, `type`, `attributes` and `relationships` suddenly become a single, combined object with easy access to it. Same is applied to arrays.
 
-###  MergedIncludedGroups
+### MergedIncludedGroups
 
-Ƭ **MergedIncludedGroups**: *object*
+Ƭ **MergedIncludedGroups**: _object_
 
 #### Type declaration:
 
-___
+### OptionalRels
 
-###  OptionalRels
+Ƭ **OptionalRels**: [_Relationships_](./#relationships) _\| undefined_
 
-Ƭ **OptionalRels**: *[Relationships](README.md#relationships) | undefined*
+### RawRelationship
 
-___
-
-###  RawRelationship
-
-Ƭ **RawRelationship**: *object*
+Ƭ **RawRelationship**: _object_
 
 #### Type declaration:
 
-* **data**: *T*
+* **data**: _T_
+* **links**? : _undefined \| object_
+* **related**? : _undefined \| string_
 
-* **links**? : *undefined | object*
+### Relationship
 
-* **related**? : *undefined | string*
+Ƭ **Relationship**: [_RawRelationship_](./#rawrelationship)_‹_[_RelationshipData_](./#relationshipdata)_›_
 
-___
+### RelationshipArray
 
-###  Relationship
+Ƭ **RelationshipArray**: [_RawRelationship_](./#rawrelationship)_‹_[_RelationshipData_](./#relationshipdata)_\[\]›_
 
-Ƭ **Relationship**: *[RawRelationship](README.md#rawrelationship)‹[RelationshipData](README.md#relationshipdata)›*
+### RelationshipData
 
-___
-
-###  RelationshipArray
-
-Ƭ **RelationshipArray**: *[RawRelationship](README.md#rawrelationship)‹[RelationshipData](README.md#relationshipdata)[]›*
-
-___
-
-###  RelationshipData
-
-Ƭ **RelationshipData**: *object*
+Ƭ **RelationshipData**: _object_
 
 #### Type declaration:
 
-* **id**: *string*
+* **id**: _string_
+* **type**: _Type_
 
-* **type**: *Type*
+### RelationshipType
 
-___
+Ƭ **RelationshipType**: [_RelationshipData_](./#relationshipdata)_‹Type› \|_ [_RelationshipData_](./#relationshipdata)_‹Type›\[\]_
 
-###  RelationshipType
+### Relationships
 
-Ƭ **RelationshipType**: *[RelationshipData](README.md#relationshipdata)‹Type› | [RelationshipData](README.md#relationshipdata)‹Type›[]*
+Ƭ **Relationships**: _Record‹string,_ [_RawRelationship_](./#rawrelationship)_‹_[_RelationshipType_](./#relationshiptype)_› \| undefined›_
 
-___
+### RelationshipsOf
 
-###  Relationships
+Ƭ **RelationshipsOf**: _D extends object ? D\["relationships"\] : EmptyRecord_
 
-Ƭ **Relationships**: *Record‹string, [RawRelationship](README.md#rawrelationship)‹[RelationshipType](README.md#relationshiptype)› | undefined›*
+### ResolvedRelationship
 
-___
+Ƭ **ResolvedRelationship**: [_RawRelationship_](./#rawrelationship)_‹D›_
 
-###  RelationshipsOf
+### ResolvedRelationshipArray
 
-Ƭ **RelationshipsOf**: *D extends object ? D["relationships"] : EmptyRecord*
+Ƭ **ResolvedRelationshipArray**: [_RawRelationship_](./#rawrelationship)_‹D\[\]›_
 
-___
+### ResolvedRelationships
 
-###  ResolvedRelationship
+Ƭ **ResolvedRelationships**: _Record‹string,_ [_ResolvedRelationship_](./#resolvedrelationship) _\|_ [_ResolvedRelationshipArray_](./#resolvedrelationshiparray) _\| undefined›_
 
-Ƭ **ResolvedRelationship**: *[RawRelationship](README.md#rawrelationship)‹D›*
+### UnresolvedRelationships
 
-___
-
-###  ResolvedRelationshipArray
-
-Ƭ **ResolvedRelationshipArray**: *[RawRelationship](README.md#rawrelationship)‹D[]›*
-
-___
-
-###  ResolvedRelationships
-
-Ƭ **ResolvedRelationships**: *Record‹string, [ResolvedRelationship](README.md#resolvedrelationship) | [ResolvedRelationshipArray](README.md#resolvedrelationshiparray) | undefined›*
-
-___
-
-###  UnresolvedRelationships
-
-Ƭ **UnresolvedRelationships**: *Record‹string, [Relationship](README.md#relationship) | [RelationshipArray](README.md#relationshiparray)›*
+Ƭ **UnresolvedRelationships**: _Record‹string,_ [_Relationship_](./#relationship) _\|_ [_RelationshipArray_](./#relationshiparray)_›_
 
 ## Variables
 
-### `Const` DEFAULT_RESOURCE_LIMIT
+### `Const` DEFAULT\_RESOURCE\_LIMIT
 
-• **DEFAULT_RESOURCE_LIMIT**: *10* = 10
+• **DEFAULT\_RESOURCE\_LIMIT**: _10_ = 10
 
 ## Functions
 
 ### `Const` findIncludedRelationship
 
-▸ **findIncludedRelationship**(`relationship`: [RelationshipData](README.md#relationshipdata), `included`: [IncludedRelationships](README.md#includedrelationships)): *[AnyData](README.md#anydata) | undefined*
+▸ **findIncludedRelationship**\(`relationship`: [RelationshipData](./#relationshipdata), `included`: [IncludedRelationships](./#includedrelationships)\): [_AnyData_](./#anydata) _\| undefined_
 
 **Parameters:**
 
-Name | Type |
------- | ------ |
-`relationship` | [RelationshipData](README.md#relationshipdata) |
-`included` | [IncludedRelationships](README.md#includedrelationships) |
+| Name | Type |
+| :--- | :--- |
+| `relationship` | [RelationshipData](./#relationshipdata) |
+| `included` | [IncludedRelationships](./#includedrelationships) |
 
-**Returns:** *[AnyData](README.md#anydata) | undefined*
-
-___
+**Returns:** [_AnyData_](./#anydata) _\| undefined_
 
 ### `Const` includedGroup
 
-▸ **includedGroup**<**D**>(`type`: string): *[IncludedGroup](interfaces/includedgroup.md)‹D›*
+▸ **includedGroup**&lt;**D**&gt;\(`type`: string\): [_IncludedGroup_](interfaces/includedgroup.md)_‹D›_
 
 **Type parameters:**
 
-▪ **D**: *[AnyData](README.md#anydata)*
+▪ **D**: [_AnyData_](./#anydata)
 
 **Parameters:**
 
-Name | Type |
------- | ------ |
-`type` | string |
+| Name | Type |
+| :--- | :--- |
+| `type` | string |
 
-**Returns:** *[IncludedGroup](interfaces/includedgroup.md)‹D›*
-
-___
+**Returns:** [_IncludedGroup_](interfaces/includedgroup.md)_‹D›_
 
 ### `Const` isData
 
-▸ **isData**<**D**>(`data`: [RelationshipData](README.md#relationshipdata) | D): *data is D*
+▸ **isData**&lt;**D**&gt;\(`data`: [RelationshipData](./#relationshipdata) \| D\): _data is D_
 
 **Type parameters:**
 
-▪ **D**: *[AnyData](README.md#anydata)*
+▪ **D**: [_AnyData_](./#anydata)
 
 **Parameters:**
 
-Name | Type |
------- | ------ |
-`data` | [RelationshipData](README.md#relationshipdata) &#124; D |
+| Name | Type |
+| :--- | :--- |
+| `data` | [RelationshipData](./#relationshipdata) \| D |
 
-**Returns:** *data is D*
-
-___
+**Returns:** _data is D_
 
 ### `Const` mergeElementData
 
-▸ **mergeElementData**<**D**>(`data`: D): *[MergedData](README.md#mergeddata)‹D›*
+▸ **mergeElementData**&lt;**D**&gt;\(`data`: D\): [_MergedData_](./#mergeddata)_‹D›_
 
 **Type parameters:**
 
-▪ **D**: *[AnyData](README.md#anydata)*
+▪ **D**: [_AnyData_](./#anydata)
 
 **Parameters:**
 
-Name | Type |
------- | ------ |
-`data` | D |
+| Name | Type |
+| :--- | :--- |
+| `data` | D |
 
-**Returns:** *[MergedData](README.md#mergeddata)‹D›*
+**Returns:** [_MergedData_](./#mergeddata)_‹D›_
 
-___
+### resolveRelationships
 
-###  resolveRelationships
-
-▸ **resolveRelationships**<**D**>(`data`: D, `included`: [IncludedRelationships](README.md#includedrelationships)): *D*
+▸ **resolveRelationships**&lt;**D**&gt;\(`data`: D, `included`: [IncludedRelationships](./#includedrelationships)\): _D_
 
 **Type parameters:**
 
-▪ **D**: *[AnyData](README.md#anydata) | [AnyData](README.md#anydata)[]*
+▪ **D**: [_AnyData_](./#anydata) _\|_ [_AnyData_](./#anydata)_\[\]_
 
 **Parameters:**
 
-Name | Type |
------- | ------ |
-`data` | D |
-`included` | [IncludedRelationships](README.md#includedrelationships) |
+| Name | Type |
+| :--- | :--- |
+| `data` | D |
+| `included` | [IncludedRelationships](./#includedrelationships) |
 
-**Returns:** *D*
+**Returns:** _D_
 
-▸ **resolveRelationships**(`data`: [RelationshipData](README.md#relationshipdata)[], `included`: [IncludedRelationships](README.md#includedrelationships)): *object | [Data](interfaces/data.md)‹any, any›[]*
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`data` | [RelationshipData](README.md#relationshipdata)[] |
-`included` | [IncludedRelationships](README.md#includedrelationships) |
-
-**Returns:** *object | [Data](interfaces/data.md)‹any, any›[]*
-
-▸ **resolveRelationships**(`data`: [RelationshipData](README.md#relationshipdata), `included`: [IncludedRelationships](README.md#includedrelationships)): *[AnyData](README.md#anydata) | [RelationshipData](README.md#relationshipdata)*
+▸ **resolveRelationships**\(`data`: [RelationshipData](./#relationshipdata)\[\], `included`: [IncludedRelationships](./#includedrelationships)\): _object \|_ [_Data_](interfaces/data.md)_‹any, any›\[\]_
 
 **Parameters:**
 
-Name | Type |
------- | ------ |
-`data` | [RelationshipData](README.md#relationshipdata) |
-`included` | [IncludedRelationships](README.md#includedrelationships) |
+| Name | Type |
+| :--- | :--- |
+| `data` | [RelationshipData](./#relationshipdata)\[\] |
+| `included` | [IncludedRelationships](./#includedrelationships) |
 
-**Returns:** *[AnyData](README.md#anydata) | [RelationshipData](README.md#relationshipdata)*
+**Returns:** _object \|_ [_Data_](interfaces/data.md)_‹any, any›\[\]_
+
+▸ **resolveRelationships**\(`data`: [RelationshipData](./#relationshipdata), `included`: [IncludedRelationships](./#includedrelationships)\): [_AnyData_](./#anydata) _\|_ [_RelationshipData_](./#relationshipdata)
+
+**Parameters:**
+
+| Name | Type |
+| :--- | :--- |
+| `data` | [RelationshipData](./#relationshipdata) |
+| `included` | [IncludedRelationships](./#includedrelationships) |
+
+**Returns:** [_AnyData_](./#anydata) _\|_ [_RelationshipData_](./#relationshipdata)
 
 ## Object literals
 
 ### `Const` Headers
 
-### ▪ **Headers**: *object*
+### ▪ **Headers**: _object_
 
-###  Accept
+### Accept
 
-• **Accept**: *ContentType* = ContentType.VND_JSON
+• **Accept**: _ContentType_ = ContentType.VND\_JSON
 
-###  Content-Type
+### Content-Type
 
-• **Content-Type**: *ContentType* = ContentType.VND_JSON
+• **Content-Type**: _ContentType_ = ContentType.VND\_JSON
+
