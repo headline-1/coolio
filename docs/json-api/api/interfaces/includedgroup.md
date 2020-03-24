@@ -1,12 +1,13 @@
-# IncludedGroup
+# Interface: IncludedGroup <**D**>
 
-## Included groups
-
-Included groups allow you to extract stuff from 'included' JSON API field basing on specified name-type pairs, and add proper types to it.
+Included groups
+---------------
+Included groups allow you to extract stuff from 'included' JSON API field
+basing on specified name-type pairs, and add proper types to it.
 
 ## Type parameters
 
-▪ **D**: [_AnyData_](../#anydata)
+▪ **D**: *[AnyData](../README.md#anydata)*
 
 ## Hierarchy
 
@@ -16,16 +17,17 @@ Included groups allow you to extract stuff from 'included' JSON API field basing
 
 ### Properties
 
-* [\_\_d](includedgroup.md#__d)
+* [__d](includedgroup.md#__d)
 * [type](includedgroup.md#type)
 
 ## Properties
 
-### \_\_d
+###  __d
 
-• **\_\_d**: _D_
+• **__d**: *D*
 
-### type
+___
 
-• **type**: _string_
+###  type
 
+• **type**: *string*

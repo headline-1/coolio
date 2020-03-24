@@ -1,10 +1,10 @@
-# RawListResponse
+# Interface: RawListResponse <**D, M**>
 
 ## Type parameters
 
-▪ **D**: [_AnyData_](../#anydata)
+▪ **D**: *[AnyData](../README.md#anydata)*
 
-▪ **M**: [_ListMetaData_](listmetadata.md)
+▪ **M**: *[ListMetaData](listmetadata.md)*
 
 ## Hierarchy
 
@@ -21,26 +21,34 @@
 
 ## Properties
 
-### data
+###  data
 
-• **data**: _D\[\]_
+• **data**: *D[]*
+
+___
 
 ### `Optional` included
 
-• **included**? : [_IncludedRelationships_](../#includedrelationships)
+• **included**? : *[IncludedRelationships](../README.md#includedrelationships)*
 
-### links
+___
 
-• **links**: _object_
+###  links
+
+• **links**: *object*
 
 #### Type declaration:
 
-* **first**: _string_
-* **last**: _string_
-* **next**? : _undefined \| string_
-* **prev**? : _undefined \| string_
+* **first**: *string*
 
-### meta
+* **last**: *string*
 
-• **meta**: _M_
+* **next**? : *undefined | string*
 
+* **prev**? : *undefined | string*
+
+___
+
+###  meta
+
+• **meta**: *M*

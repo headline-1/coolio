@@ -1,4 +1,4 @@
-# ContentType
+# Enumeration: ContentType
 
 ## Index
 
@@ -6,34 +6,43 @@
 
 * [BINARY](contenttype.md#binary)
 * [JSON](contenttype.md#json)
-* [MULTIPART\_FORM](contenttype.md#multipart_form)
+* [MULTIPART_FORM](contenttype.md#multipart_form)
 * [TEXT](contenttype.md#text)
-* [URL\_ENCODED](contenttype.md#url_encoded)
-* [VND\_JSON](contenttype.md#vnd_json)
+* [URL_ENCODED](contenttype.md#url_encoded)
+* [VND_JSON](contenttype.md#vnd_json)
 
 ## Enumeration members
 
-### BINARY
+###  BINARY
 
 • **BINARY**: = "application/octet-stream"
 
-### JSON
+___
+
+###  JSON
 
 • **JSON**: = "application/json"
 
-### MULTIPART\_FORM
+___
 
-• **MULTIPART\_FORM**: = "multipart/form-data"
+###  MULTIPART_FORM
 
-### TEXT
+• **MULTIPART_FORM**: = "multipart/form-data"
+
+___
+
+###  TEXT
 
 • **TEXT**: = "text/plain"
 
-### URL\_ENCODED
+___
 
-• **URL\_ENCODED**: = "application/x-www-form-urlencoded"
+###  URL_ENCODED
 
-### VND\_JSON
+• **URL_ENCODED**: = "application/x-www-form-urlencoded"
 
-• **VND\_JSON**: = "application/vnd.api+json"
+___
 
+###  VND_JSON
+
+• **VND_JSON**: = "application/vnd.api+json"

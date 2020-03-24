@@ -1,4 +1,4 @@
-# HttpClientConfig
+# Interface: HttpClientConfig <**T**>
 
 A set of configuration options, which allows [HttpClient](../classes/httpclient.md) to perform requests and process responses.
 
@@ -29,55 +29,75 @@ Common body shape defined by [bodyParser](httpclientconfig.md#optional-bodyparse
 
 ### `Optional` baseUrl
 
-• **baseUrl**? : _undefined \| string_
+• **baseUrl**? : *undefined | string*
 
 URL that is applied to all requests without specified protocol and domain.
 
+___
+
 ### `Optional` bodyParser
 
-• **bodyParser**? : [_BodyParser_](../#bodyparser)_‹T›_
+• **bodyParser**? : *[BodyParser](../README.md#bodyparser)‹T›*
 
-A utility that parses and normalizes body of a response received from server. Can be used to decode JSON object, URL-encoded body or plain text. Built-in [bodyParser](httpclientconfig.md#optional-bodyparser) supports case-conversion.
+A utility that parses and normalizes body of a response received from server.
+Can be used to decode JSON object, URL-encoded body or plain text.
+Built-in [bodyParser](httpclientconfig.md#optional-bodyparser) supports case-conversion.
+
+___
 
 ### `Optional` bodySerializer
 
-• **bodySerializer**? : [_BodySerializer_](../#bodyserializer)
+• **bodySerializer**? : *[BodySerializer](../README.md#bodyserializer)*
 
-A utility that parses and normalizes body of a request sent to server. Can be used to encode JSON object, URL-encoded body or plain text. Built-in [bodySerializer](httpclientconfig.md#optional-bodyserializer) supports case-conversion.
+A utility that parses and normalizes body of a request sent to server.
+Can be used to encode JSON object, URL-encoded body or plain text.
+Built-in [bodySerializer](httpclientconfig.md#optional-bodyserializer) supports case-conversion.
+
+___
 
 ### `Optional` headers
 
-• **headers**? : [_HttpHeaders_](../#httpheaders)
+• **headers**? : *[HttpHeaders](../README.md#httpheaders)*
 
-Headers that will be passed to all requests. To add headers dynamically, you can use an interceptor instead.
+Headers that will be passed to all requests.
+To add headers dynamically, you can use an interceptor instead.
+
+___
 
 ### `Optional` queryParserOptions
 
-• **queryParserOptions**? : _qs.IParseOptions_
+• **queryParserOptions**? : *qs.IParseOptions*
 
 Allow to parse query options in a different way than the standard one.
 
+___
+
 ### `Optional` querySerializerOptions
 
-• **querySerializerOptions**? : _qs.IStringifyOptions_
+• **querySerializerOptions**? : *qs.IStringifyOptions*
 
 Allow to serialize query options in a different way than the standard one.
 
-### requestHandler
+___
 
-• **requestHandler**: [_HttpRequestHandler_](../#httprequesthandler)
+###  requestHandler
 
-An implementation of request handler, which handles "low-level" HTTP communication. Result of executing a request via RequestHandler is a normalized object, which can be further processed by interceptors and HttpClient.
+• **requestHandler**: *[HttpRequestHandler](../README.md#httprequesthandler)*
 
-* For Node.js environment, use [httpRequestHandler](../#const-httprequesthandler)
-* For browser environments, use [fetchRequestHandler](../#const-fetchrequesthandler)
-* For React Native and any other environment, use [xhrRequestHandler](../#const-xhrrequesthandler)
+An implementation of request handler, which handles "low-level" HTTP communication.
+Result of executing a request via RequestHandler is a normalized object,
+which can be further processed by interceptors and HttpClient.
+
+- For Node.js environment, use [httpRequestHandler](../README.md#const-httprequesthandler)
+- For browser environments, use [fetchRequestHandler](../README.md#const-fetchrequesthandler)
+- For React Native and any other environment, use [xhrRequestHandler](../README.md#const-xhrrequesthandler)
+
+___
 
 ### `Optional` requestTimeout
 
-• **requestTimeout**? : _undefined \| number_
+• **requestTimeout**? : *undefined | number*
 
 Standard timeout, triggered when server does not respond with headers within specified period of time.
 
-**`default`** [DEFAULT\_REQUEST\_TIMEOUT\_MS](../#const-default_request_timeout_ms)
-
+**`default`** [DEFAULT_REQUEST_TIMEOUT_MS](../README.md#const-default_request_timeout_ms)

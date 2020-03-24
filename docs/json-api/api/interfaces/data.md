@@ -1,10 +1,10 @@
-# Data
+# Interface: Data <**Attrs, Rels**>
 
 ## Type parameters
 
-▪ **Attrs**: [_Attributes_](attributes.md)
+▪ **Attrs**: *[Attributes](attributes.md)*
 
-▪ **Rels**: [_OptionalRels_](../#optionalrels)
+▪ **Rels**: *[OptionalRels](../README.md#optionalrels)*
 
 ## Hierarchy
 
@@ -22,27 +22,34 @@
 
 ## Properties
 
-### attributes
+###  attributes
 
-• **attributes**: _Attrs_
+• **attributes**: *Attrs*
 
-### id
+___
 
-• **id**: _string_
+###  id
 
-### links
+• **id**: *string*
 
-• **links**: _object_
+___
+
+###  links
+
+• **links**: *object*
 
 #### Type declaration:
 
-* **self**: _string_
+* **self**: *string*
 
-### relationships
+___
 
-• **relationships**: _Rels_
+###  relationships
 
-### type
+• **relationships**: *Rels*
 
-• **type**: _string_
+___
 
+###  type
+
+• **type**: *string*

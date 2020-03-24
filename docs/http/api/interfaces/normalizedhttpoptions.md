@@ -1,4 +1,4 @@
-# NormalizedHttpOptions
+# Interface: NormalizedHttpOptions
 
 ## Hierarchy
 
@@ -21,33 +21,46 @@
 
 ### `Optional` body
 
-• **body**? : [_NormalizedHttpBody_](../#normalizedhttpbody)
+• **body**? : *[NormalizedHttpBody](../README.md#normalizedhttpbody)*
+
+___
 
 ### `Optional` bypassResponseHandler
 
-• **bypassResponseHandler**? : _undefined \| false \| true_
+• **bypassResponseHandler**? : *undefined | false | true*
 
-### headers
+___
 
-• **headers**: _Record‹string, string›_
+###  headers
 
-### method
+• **headers**: *Record‹string, string›*
 
-• **method**: [_HttpMethod_](../enums/httpmethod.md)
+___
+
+###  method
+
+• **method**: *[HttpMethod](../enums/httpmethod.md)*
+
+___
 
 ### `Optional` mode
 
-• **mode**? : [_RequestMode_](../#requestmode)
+• **mode**? : *[RequestMode](../README.md#requestmode)*
 
-### query
+___
 
-• **query**: _any_
+###  query
 
-### timeout
+• **query**: *any*
 
-• **timeout**: _number_
+___
 
-### url
+###  timeout
 
-• **url**: _string_
+• **timeout**: *number*
 
+___
+
+###  url
+
+• **url**: *string*

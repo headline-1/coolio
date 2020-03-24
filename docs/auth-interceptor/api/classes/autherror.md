@@ -1,4 +1,4 @@
-# AuthError
+# Class: AuthError
 
 ## Hierarchy
 
@@ -22,46 +22,53 @@
 
 ## Constructors
 
-### constructor
+###  constructor
 
-+ **new AuthError**\(`message`: string, `cause?`: [Error](autherror.md#static-error)\): [_AuthError_](autherror.md)
+\+ **new AuthError**(`message`: string, `cause?`: [Error](autherror.md#static-error)): *[AuthError](autherror.md)*
 
 **Parameters:**
 
-| Name | Type |
-| :--- | :--- |
-| `message` | string |
-| `cause?` | [Error](autherror.md#static-error) |
+Name | Type |
+------ | ------ |
+`message` | string |
+`cause?` | [Error](autherror.md#static-error) |
 
-**Returns:** [_AuthError_](autherror.md)
+**Returns:** *[AuthError](autherror.md)*
 
 ## Properties
 
 ### `Optional` cause
 
-• **cause**? : [_Error_](autherror.md#static-error)
+• **cause**? : *[Error](autherror.md#static-error)*
 
-### message
+___
 
-• **message**: _string_
+###  message
 
-_Inherited from_ [_AuthError_](autherror.md)_._[_message_](autherror.md#message)
+• **message**: *string*
 
-### name
+*Inherited from [AuthError](autherror.md).[message](autherror.md#message)*
 
-• **name**: _string_
+___
 
-_Inherited from_ [_AuthError_](autherror.md)_._[_name_](autherror.md#name)
+###  name
+
+• **name**: *string*
+
+*Inherited from [AuthError](autherror.md).[name](autherror.md#name)*
+
+___
 
 ### `Optional` stack
 
-• **stack**? : _undefined \| string_
+• **stack**? : *undefined | string*
 
-_Inherited from_ [_AuthError_](autherror.md)_._[_stack_](autherror.md#optional-stack)
+*Inherited from [AuthError](autherror.md).[stack](autherror.md#optional-stack)*
 
-_Overrides_ [_AuthError_](autherror.md)_._[_stack_](autherror.md#optional-stack)
+*Overrides [AuthError](autherror.md).[stack](autherror.md#optional-stack)*
+
+___
 
 ### `Static` Error
 
-▪ **Error**: _ErrorConstructor_
-
+▪ **Error**: *ErrorConstructor*

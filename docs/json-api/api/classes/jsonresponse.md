@@ -1,8 +1,8 @@
-# JsonResponse
+# Class: JsonResponse <**Raw**>
 
 ## Type parameters
 
-▪ **Raw**: [_RawResponse_](../interfaces/rawresponse.md)_‹any, any›_
+▪ **Raw**: *[RawResponse](../interfaces/rawresponse.md)‹any, any›*
 
 ## Hierarchy
 
@@ -26,40 +26,43 @@
 
 ## Constructors
 
-### constructor
+###  constructor
 
-+ **new JsonResponse**\(`raw`: Raw, `response`: HttpResponse‹Raw›\): [_JsonResponse_](jsonresponse.md)
+\+ **new JsonResponse**(`raw`: Raw, `response`: HttpResponse‹Raw›): *[JsonResponse](jsonresponse.md)*
 
 **Parameters:**
 
-| Name | Type |
-| :--- | :--- |
-| `raw` | Raw |
-| `response` | HttpResponse‹Raw› |
+Name | Type |
+------ | ------ |
+`raw` | Raw |
+`response` | HttpResponse‹Raw› |
 
-**Returns:** [_JsonResponse_](jsonresponse.md)
+**Returns:** *[JsonResponse](jsonresponse.md)*
 
 ## Properties
 
-### raw
+###  raw
 
-• **raw**: _Raw_
+• **raw**: *Raw*
 
-### response
+___
 
-• **response**: _HttpResponse‹Raw›_
+###  response
+
+• **response**: *HttpResponse‹Raw›*
 
 ## Accessors
 
-### element
+###  element
 
-• **get element**\(\): [_MergedData_](../#mergeddata)_‹Raw\["data"\]›_
+• **get element**(): *[MergedData](../README.md#mergeddata)‹Raw["data"]›*
 
-**Returns:** [_MergedData_](../#mergeddata)_‹Raw\["data"\]›_
+**Returns:** *[MergedData](../README.md#mergeddata)‹Raw["data"]›*
 
-### meta
+___
 
-• **get meta**\(\): _Raw\["meta"\]_
+###  meta
 
-**Returns:** _Raw\["meta"\]_
+• **get meta**(): *Raw["meta"]*
 
+**Returns:** *Raw["meta"]*

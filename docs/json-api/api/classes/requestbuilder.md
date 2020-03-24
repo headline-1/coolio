@@ -1,4 +1,4 @@
-# RequestBuilder
+# Class: RequestBuilder <**ResponseType**>
 
 ## Type parameters
 
@@ -55,174 +55,203 @@
 
 ### `Protected` constructor
 
-+ **new RequestBuilder**\(`uri`: string, `options`: [Options](../interfaces/options.md)\): [_RequestBuilder_](requestbuilder.md)
+\+ **new RequestBuilder**(`uri`: string, `options`: [Options](../interfaces/options.md)): *[RequestBuilder](requestbuilder.md)*
 
 **Parameters:**
 
-| Name | Type |
-| :--- | :--- |
-| `uri` | string |
-| `options` | [Options](../interfaces/options.md) |
+Name | Type |
+------ | ------ |
+`uri` | string |
+`options` | [Options](../interfaces/options.md) |
 
-**Returns:** [_RequestBuilder_](requestbuilder.md)
+**Returns:** *[RequestBuilder](requestbuilder.md)*
 
 ## Properties
 
 ### `Protected` limit
 
-• **limit**: _number_ = DEFAULT\_RESOURCE\_LIMIT
+• **limit**: *number* = DEFAULT_RESOURCE_LIMIT
+
+___
 
 ### `Protected` offset
 
-• **offset**: _undefined \| number_
+• **offset**: *undefined | number*
+
+___
 
 ### `Protected` options
 
-• **options**: [_Options_](../interfaces/options.md)
+• **options**: *[Options](../interfaces/options.md)*
+
+___
 
 ### `Protected` page
 
-• **page**: _number_ = 1
+• **page**: *number* = 1
+
+___
 
 ### `Protected` queryParams
 
-• **queryParams**: _Record‹string, string›_
+• **queryParams**: *Record‹string, string›*
+
+___
 
 ### `Protected` resolveIncludedRelationships
 
-• **resolveIncludedRelationships**: _boolean_ = false
+• **resolveIncludedRelationships**: *boolean* = false
+
+___
 
 ### `Protected` sortParams
 
-• **sortParams**: _string\[\]_ = \[\]
+• **sortParams**: *string[]* = []
 
-### uri
+___
 
-• **uri**: _string_
+###  uri
+
+• **uri**: *string*
 
 ## Accessors
 
-### parameters
+###  parameters
 
-• **get parameters**\(\): _Record‹string, string›_
+• **get parameters**(): *Record‹string, string›*
 
-**Returns:** _Record‹string, string›_
+**Returns:** *Record‹string, string›*
 
 ## Methods
 
-### filter
+###  filter
 
-▸ **filter**\(`key`: string \| string\[\] \| undefined, `value`: string \| number \| boolean \| undefined, `operator?`: [FilterOperator](../enums/filteroperator.md)\): _this_
-
-**Parameters:**
-
-| Name | Type |
-| :--- | :--- |
-| `key` | string \| string\[\] \| undefined |
-| `value` | string \| number \| boolean \| undefined |
-| `operator?` | [FilterOperator](../enums/filteroperator.md) |
-
-**Returns:** _this_
-
-### pageLimit
-
-▸ **pageLimit**\(`limit`: number\): _this_
+▸ **filter**(`key`: string | string[] | undefined, `value`: string | number | boolean | undefined, `operator?`: [FilterOperator](../enums/filteroperator.md)): *this*
 
 **Parameters:**
 
-| Name | Type |
-| :--- | :--- |
-| `limit` | number |
+Name | Type |
+------ | ------ |
+`key` | string &#124; string[] &#124; undefined |
+`value` | string &#124; number &#124; boolean &#124; undefined |
+`operator?` | [FilterOperator](../enums/filteroperator.md) |
 
-**Returns:** _this_
+**Returns:** *this*
 
-### pageNumber
+___
 
-▸ **pageNumber**\(`page`: number \| string \| undefined\): _this_
+###  pageLimit
 
-**Parameters:**
-
-| Name | Type |
-| :--- | :--- |
-| `page` | number \| string \| undefined |
-
-**Returns:** _this_
-
-### pageOffset
-
-▸ **pageOffset**\(`offset`: number\): _this_
+▸ **pageLimit**(`limit`: number): *this*
 
 **Parameters:**
 
-| Name | Type |
-| :--- | :--- |
-| `offset` | number |
+Name | Type |
+------ | ------ |
+`limit` | number |
 
-**Returns:** _this_
+**Returns:** *this*
 
-### parameter
+___
 
-▸ **parameter**\(`key`: string, `value`: string \| number \| boolean \| undefined\): _this_
+###  pageNumber
+
+▸ **pageNumber**(`page`: number | string | undefined): *this*
 
 **Parameters:**
 
-| Name | Type |
-| :--- | :--- |
-| `key` | string |
-| `value` | string \| number \| boolean \| undefined |
+Name | Type |
+------ | ------ |
+`page` | number &#124; string &#124; undefined |
 
-**Returns:** _this_
+**Returns:** *this*
+
+___
+
+###  pageOffset
+
+▸ **pageOffset**(`offset`: number): *this*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`offset` | number |
+
+**Returns:** *this*
+
+___
+
+###  parameter
+
+▸ **parameter**(`key`: string, `value`: string | number | boolean | undefined): *this*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`key` | string |
+`value` | string &#124; number &#124; boolean &#124; undefined |
+
+**Returns:** *this*
+
+___
 
 ### `Protected` parseResponse
 
-▸ **parseResponse**&lt;**Raw**&gt;\(`response`: HttpResponse\): _Promise‹_[_JsonResponse_](jsonresponse.md)_‹Raw››_
+▸ **parseResponse**<**Raw**>(`response`: HttpResponse): *Promise‹[JsonResponse](jsonresponse.md)‹Raw››*
 
 **Type parameters:**
 
-▪ **Raw**: [_RawResponse_](../interfaces/rawresponse.md)_‹any, any›_
+▪ **Raw**: *[RawResponse](../interfaces/rawresponse.md)‹any, any›*
 
 **Parameters:**
 
-| Name | Type |
-| :--- | :--- |
-| `response` | HttpResponse |
+Name | Type |
+------ | ------ |
+`response` | HttpResponse |
 
-**Returns:** _Promise‹_[_JsonResponse_](jsonresponse.md)_‹Raw››_
+**Returns:** *Promise‹[JsonResponse](jsonresponse.md)‹Raw››*
 
-### resolveIncluded
+___
 
-▸ **resolveIncluded**\(`resolveIncluded?`: undefined \| false \| true\): _this_
+###  resolveIncluded
+
+▸ **resolveIncluded**(`resolveIncluded?`: undefined | false | true): *this*
 
 **Parameters:**
 
-| Name | Type |
-| :--- | :--- |
-| `resolveIncluded?` | undefined \| false \| true |
+Name | Type |
+------ | ------ |
+`resolveIncluded?` | undefined &#124; false &#124; true |
 
-**Returns:** _this_
+**Returns:** *this*
+
+___
 
 ### `Abstract` send
 
-▸ **send**\(`options?`: HttpOptions\): _Promise‹ResponseType›_
+▸ **send**(`options?`: HttpOptions): *Promise‹ResponseType›*
 
 **Parameters:**
 
-| Name | Type |
-| :--- | :--- |
-| `options?` | HttpOptions |
+Name | Type |
+------ | ------ |
+`options?` | HttpOptions |
 
-**Returns:** _Promise‹ResponseType›_
+**Returns:** *Promise‹ResponseType›*
 
-### sort
+___
 
-▸ **sort**\(`key`: string \| undefined, `order`: [SortOrder](../enums/sortorder.md)\): _this_
+###  sort
+
+▸ **sort**(`key`: string | undefined, `order`: [SortOrder](../enums/sortorder.md)): *this*
 
 **Parameters:**
 
-| Name | Type |
-| :--- | :--- |
-| `key` | string \| undefined |
-| `order` | [SortOrder](../enums/sortorder.md) |
+Name | Type |
+------ | ------ |
+`key` | string &#124; undefined |
+`order` | [SortOrder](../enums/sortorder.md) |
 
-**Returns:** _this_
-
+**Returns:** *this*

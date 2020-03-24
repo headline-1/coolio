@@ -1,4 +1,4 @@
-# Endpoint
+# Interface: Endpoint
 
 ## Hierarchy
 
@@ -13,21 +13,22 @@
 
 ## Properties
 
-### handler
+###  handler
 
-• **handler**: _function_
+• **handler**: *function*
 
 #### Type declaration:
 
-▸ \(`request`: [NormalizedHttpOptions](normalizedhttpoptions.md)\): _Promise‹_[_RawHttpResponse_](rawhttpresponse.md)_›_
+▸ (`request`: [NormalizedHttpOptions](normalizedhttpoptions.md)): *Promise‹[RawHttpResponse](rawhttpresponse.md)›*
 
 **Parameters:**
 
-| Name | Type |
-| :--- | :--- |
-| `request` | [NormalizedHttpOptions](normalizedhttpoptions.md) |
+Name | Type |
+------ | ------ |
+`request` | [NormalizedHttpOptions](normalizedhttpoptions.md) |
 
-### match
+___
 
-• **match**: _string \| RegExp_
+###  match
 
+• **match**: *string | RegExp*

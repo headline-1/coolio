@@ -1,4 +1,4 @@
-# API
+# @coolio/http
 
 ## Index
 
@@ -40,169 +40,187 @@
 
 ### Type aliases
 
-* [BodyParser](./#bodyparser)
-* [BodyParserImplementation](./#bodyparserimplementation)
-* [BodySerializer](./#bodyserializer)
-* [BufferEncoding](./#bufferencoding)
-* [ContentTypeMap](./#contenttypemap)
-* [HttpBody](./#httpbody)
-* [HttpFetch](./#httpfetch)
-* [HttpHeaders](./#httpheaders)
-* [HttpInterceptor](./#httpinterceptor)
-* [HttpInterceptorFunction](./#httpinterceptorfunction)
-* [HttpOptions](./#httpoptions)
-* [HttpRequestHandler](./#httprequesthandler)
-* [MockHttpRequestHandler](./#mockhttprequesthandler)
-* [NormalizedHttpBody](./#normalizedhttpbody)
-* [PromiseFunction](./#promisefunction)
-* [RequestMode](./#requestmode)
+* [BodyParser](README.md#bodyparser)
+* [BodyParserImplementation](README.md#bodyparserimplementation)
+* [BodySerializer](README.md#bodyserializer)
+* [BufferEncoding](README.md#bufferencoding)
+* [ContentTypeMap](README.md#contenttypemap)
+* [HttpBody](README.md#httpbody)
+* [HttpFetch](README.md#httpfetch)
+* [HttpHeaders](README.md#httpheaders)
+* [HttpInterceptor](README.md#httpinterceptor)
+* [HttpInterceptorFunction](README.md#httpinterceptorfunction)
+* [HttpOptions](README.md#httpoptions)
+* [HttpRequestHandler](README.md#httprequesthandler)
+* [MockHttpRequestHandler](README.md#mockhttprequesthandler)
+* [NormalizedHttpBody](README.md#normalizedhttpbody)
+* [PromiseFunction](README.md#promisefunction)
+* [RequestMode](README.md#requestmode)
 
 ### Variables
 
-* [DEFAULT\_REQUEST\_TIMEOUT\_MS](./#const-default_request_timeout_ms)
-* [DONE](./#const-done)
-* [HEADERS\_RECEIVED](./#const-headers_received)
-* [TypedArray](./#typedarray)
-* [symbol](./#const-symbol)
+* [DEFAULT_REQUEST_TIMEOUT_MS](README.md#const-default_request_timeout_ms)
+* [DONE](README.md#const-done)
+* [HEADERS_RECEIVED](README.md#const-headers_received)
+* [TypedArray](README.md#typedarray)
+* [symbol](README.md#const-symbol)
 
 ### Functions
 
-* [bodyParser](./#const-bodyparser)
-* [bodySerializer](./#const-bodyserializer)
-* [cacheParsedBody](./#const-cacheparsedbody)
-* [createAsyncBodyHandler](./#const-createasyncbodyhandler)
-* [createErrorInterceptor](./#const-createerrorinterceptor)
-* [createFormData](./#const-createformdata)
-* [createFormDataImpl](./#const-createformdataimpl)
-* [createHttpResponse](./#const-createhttpresponse)
-* [createLoggingInterceptor](./#const-createlogginginterceptor)
-* [createRedirectionInterceptor](./#const-createredirectioninterceptor)
-* [createSimpleServer](./#const-createsimpleserver)
-* [deepKeyMap](./#const-deepkeymap)
-* [defaultHeaders](./#const-defaultheaders)
-* [encodeArrayBuffer](./#const-encodearraybuffer)
-* [encodeText](./#const-encodetext)
-* [fetchRequestHandler](./#const-fetchrequesthandler)
-* [getBoundaryFromContentTypeHeader](./#const-getboundaryfromcontenttypeheader)
-* [getCaseConverter](./#const-getcaseconverter)
-* [getEncodingFromHeaders](./#const-getencodingfromheaders)
-* [getHeader](./#const-getheader)
-* [getHostname](./#const-gethostname)
-* [handleRequest](./#const-handlerequest)
-* [httpRequestHandler](./#const-httprequesthandler)
-* [isFormData](./#const-isformdata)
-* [isHttpInterceptorInterface](./#const-ishttpinterceptorinterface)
-* [isHttpRequestError](./#const-ishttprequesterror)
-* [isHttpResponseError](./#const-ishttpresponseerror)
-* [mockRequestHandler](./#const-mockrequesthandler)
-* [noConversion](./#const-noconversion)
-* [parseHeaders](./#const-parseheaders)
-* [passthroughParser](./#const-passthroughparser)
-* [processMultipartBody](./#const-processmultipartbody)
-* [readBlob](./#const-readblob)
-* [sanitizeHeaders](./#const-sanitizeheaders)
-* [sleep](./#const-sleep)
-* [splitWords](./#const-splitwords)
-* [switchContentType](./#switchcontenttype)
-* [toCamelCase](./#const-tocamelcase)
-* [toKebabCase](./#const-tokebabcase)
-* [toPascalCase](./#const-topascalcase)
-* [toScreamingSnakeCase](./#const-toscreamingsnakecase)
-* [toSnakeCase](./#const-tosnakecase)
-* [toUrlEncoded](./#const-tourlencoded)
-* [urlCombine](./#const-urlcombine)
-* [urlDecode](./#const-urldecode)
-* [urlDestruct](./#const-urldestruct)
-* [urlEncode](./#const-urlencode)
-* [useInterceptor](./#const-useinterceptor)
-* [xhrRequestHandler](./#const-xhrrequesthandler)
+* [bodyParser](README.md#const-bodyparser)
+* [bodySerializer](README.md#const-bodyserializer)
+* [cacheParsedBody](README.md#const-cacheparsedbody)
+* [createAsyncBodyHandler](README.md#const-createasyncbodyhandler)
+* [createErrorInterceptor](README.md#const-createerrorinterceptor)
+* [createFormData](README.md#const-createformdata)
+* [createFormDataImpl](README.md#const-createformdataimpl)
+* [createHttpResponse](README.md#const-createhttpresponse)
+* [createLoggingInterceptor](README.md#const-createlogginginterceptor)
+* [createRedirectionInterceptor](README.md#const-createredirectioninterceptor)
+* [createSimpleServer](README.md#const-createsimpleserver)
+* [deepKeyMap](README.md#const-deepkeymap)
+* [defaultHeaders](README.md#const-defaultheaders)
+* [encodeArrayBuffer](README.md#const-encodearraybuffer)
+* [encodeText](README.md#const-encodetext)
+* [fetchRequestHandler](README.md#const-fetchrequesthandler)
+* [getBoundaryFromContentTypeHeader](README.md#const-getboundaryfromcontenttypeheader)
+* [getCaseConverter](README.md#const-getcaseconverter)
+* [getEncodingFromHeaders](README.md#const-getencodingfromheaders)
+* [getHeader](README.md#const-getheader)
+* [getHostname](README.md#const-gethostname)
+* [handleRequest](README.md#const-handlerequest)
+* [httpRequestHandler](README.md#const-httprequesthandler)
+* [isFormData](README.md#const-isformdata)
+* [isHttpInterceptorInterface](README.md#const-ishttpinterceptorinterface)
+* [isHttpRequestError](README.md#const-ishttprequesterror)
+* [isHttpResponseError](README.md#const-ishttpresponseerror)
+* [mockRequestHandler](README.md#const-mockrequesthandler)
+* [noConversion](README.md#const-noconversion)
+* [parseHeaders](README.md#const-parseheaders)
+* [passthroughParser](README.md#const-passthroughparser)
+* [processMultipartBody](README.md#const-processmultipartbody)
+* [readBlob](README.md#const-readblob)
+* [sanitizeHeaders](README.md#const-sanitizeheaders)
+* [sleep](README.md#const-sleep)
+* [splitWords](README.md#const-splitwords)
+* [switchContentType](README.md#switchcontenttype)
+* [toCamelCase](README.md#const-tocamelcase)
+* [toKebabCase](README.md#const-tokebabcase)
+* [toPascalCase](README.md#const-topascalcase)
+* [toScreamingSnakeCase](README.md#const-toscreamingsnakecase)
+* [toSnakeCase](README.md#const-tosnakecase)
+* [toUrlEncoded](README.md#const-tourlencoded)
+* [urlCombine](README.md#const-urlcombine)
+* [urlDecode](README.md#const-urldecode)
+* [urlDestruct](README.md#const-urldestruct)
+* [urlEncode](README.md#const-urlencode)
+* [useInterceptor](README.md#const-useinterceptor)
+* [xhrRequestHandler](README.md#const-xhrrequesthandler)
 
 ### Object literals
 
-* [ContentTypeRegex](./#const-contenttyperegex)
-* [HttpClientHelper](./#const-httpclienthelper)
-* [HttpStatusText](./#const-httpstatustext)
-* [Interceptors](./#const-interceptors)
+* [ContentTypeRegex](README.md#const-contenttyperegex)
+* [HttpClientHelper](README.md#const-httpclienthelper)
+* [HttpStatusText](README.md#const-httpstatustext)
+* [Interceptors](README.md#const-interceptors)
 
 ## Type aliases
 
-### BodyParser
+###  BodyParser
 
-Ƭ **BodyParser**: _function_
+Ƭ **BodyParser**: *function*
 
 #### Type declaration:
 
-▸ \(`response`: [RawHttpResponse](interfaces/rawhttpresponse.md)\): [_HttpResponse_](interfaces/httpresponse.md)_‹T›_
+▸ (`response`: [RawHttpResponse](interfaces/rawhttpresponse.md)): *[HttpResponse](interfaces/httpresponse.md)‹T›*
 
 **Parameters:**
 
-| Name | Type |
-| :--- | :--- |
-| `response` | [RawHttpResponse](interfaces/rawhttpresponse.md) |
+Name | Type |
+------ | ------ |
+`response` | [RawHttpResponse](interfaces/rawhttpresponse.md) |
 
-### BodyParserImplementation
+___
 
-Ƭ **BodyParserImplementation**: _function_
+###  BodyParserImplementation
+
+Ƭ **BodyParserImplementation**: *function*
 
 #### Type declaration:
 
-▸ \(`rawResponse`: [RawHttpResponse](interfaces/rawhttpresponse.md)\): _Promise‹any›_
+▸ (`rawResponse`: [RawHttpResponse](interfaces/rawhttpresponse.md)): *Promise‹any›*
 
 **Parameters:**
 
-| Name | Type |
-| :--- | :--- |
-| `rawResponse` | [RawHttpResponse](interfaces/rawhttpresponse.md) |
+Name | Type |
+------ | ------ |
+`rawResponse` | [RawHttpResponse](interfaces/rawhttpresponse.md) |
 
-### BodySerializer
+___
 
-Ƭ **BodySerializer**: _function_
+###  BodySerializer
+
+Ƭ **BodySerializer**: *function*
 
 #### Type declaration:
 
-▸ \(`request`: [HttpOptions](./#httpoptions)\): [_NormalizedHttpBody_](./#normalizedhttpbody)
+▸ (`request`: [HttpOptions](README.md#httpoptions)): *[NormalizedHttpBody](README.md#normalizedhttpbody)*
 
 **Parameters:**
 
-| Name | Type |
-| :--- | :--- |
-| `request` | [HttpOptions](./#httpoptions) |
+Name | Type |
+------ | ------ |
+`request` | [HttpOptions](README.md#httpoptions) |
 
-### BufferEncoding
+___
 
-Ƭ **BufferEncoding**: _"ascii" \| "utf8" \| "utf-8" \| "utf16le" \| "ucs2" \| "ucs-2" \| "base64" \| "latin1" \| "binary" \| "hex"_
+###  BufferEncoding
 
-### ContentTypeMap
+Ƭ **BufferEncoding**: *"ascii" | "utf8" | "utf-8" | "utf16le" | "ucs2" | "ucs-2" | "base64" | "latin1" | "binary" | "hex"*
 
-Ƭ **ContentTypeMap**: _Record‹keyof typeof ContentTypeRegex, T›_
+___
 
-### HttpBody
+###  ContentTypeMap
 
-Ƭ **HttpBody**: _object \|_ [_TypedArray_](./#typedarray) _\| string_
+Ƭ **ContentTypeMap**: *Record‹keyof typeof ContentTypeRegex, T›*
 
-### HttpFetch
+___
 
-Ƭ **HttpFetch**: _function_
+###  HttpBody
 
-#### Type declaration:
+Ƭ **HttpBody**: *object | [TypedArray](README.md#typedarray) | string*
 
-▸ \(\): _Promise‹_[_HttpResponse_](interfaces/httpresponse.md)_‹Body››_
+___
 
-### HttpHeaders
+###  HttpFetch
 
-Ƭ **HttpHeaders**: _Record‹string, string \| number \| boolean \| undefined \| null›_
-
-### HttpInterceptor
-
-Ƭ **HttpInterceptor**: [_HttpInterceptorFunction_](./#httpinterceptorfunction) _\|_ [_HttpInterceptorInterface_](interfaces/httpinterceptorinterface.md)
-
-### HttpInterceptorFunction
-
-Ƭ **HttpInterceptorFunction**: _function_
+Ƭ **HttpFetch**: *function*
 
 #### Type declaration:
 
-▸ &lt;**Body**&gt;\(`request`: [HttpFetch](./#httpfetch)‹Body›, `options`: [NormalizedHttpOptions](interfaces/normalizedhttpoptions.md)\): [_HttpFetch_](./#httpfetch)_‹Body›_
+▸ (): *Promise‹[HttpResponse](interfaces/httpresponse.md)‹Body››*
+
+___
+
+###  HttpHeaders
+
+Ƭ **HttpHeaders**: *Record‹string, string | number | boolean | undefined | null›*
+
+___
+
+###  HttpInterceptor
+
+Ƭ **HttpInterceptor**: *[HttpInterceptorFunction](README.md#httpinterceptorfunction) | [HttpInterceptorInterface](interfaces/httpinterceptorinterface.md)*
+
+___
+
+###  HttpInterceptorFunction
+
+Ƭ **HttpInterceptorFunction**: *function*
+
+#### Type declaration:
+
+▸ <**Body**>(`request`: [HttpFetch](README.md#httpfetch)‹Body›, `options`: [NormalizedHttpOptions](interfaces/normalizedhttpoptions.md)): *[HttpFetch](README.md#httpfetch)‹Body›*
 
 **Type parameters:**
 
@@ -210,107 +228,131 @@
 
 **Parameters:**
 
-| Name | Type |
-| :--- | :--- |
-| `request` | [HttpFetch](./#httpfetch)‹Body› |
-| `options` | [NormalizedHttpOptions](interfaces/normalizedhttpoptions.md) |
+Name | Type |
+------ | ------ |
+`request` | [HttpFetch](README.md#httpfetch)‹Body› |
+`options` | [NormalizedHttpOptions](interfaces/normalizedhttpoptions.md) |
 
-### HttpOptions
+___
 
-Ƭ **HttpOptions**: _Partial‹_[_HttpRequestOptions_](interfaces/httprequestoptions.md)_›_
+###  HttpOptions
 
-### HttpRequestHandler
+Ƭ **HttpOptions**: *Partial‹[HttpRequestOptions](interfaces/httprequestoptions.md)›*
 
-Ƭ **HttpRequestHandler**: _function_
+___
+
+###  HttpRequestHandler
+
+Ƭ **HttpRequestHandler**: *function*
 
 #### Type declaration:
 
-▸ \(`requestOptions`: [NormalizedHttpOptions](interfaces/normalizedhttpoptions.md)\): _Promise‹_[_RawHttpResponse_](interfaces/rawhttpresponse.md)_›_
+▸ (`requestOptions`: [NormalizedHttpOptions](interfaces/normalizedhttpoptions.md)): *Promise‹[RawHttpResponse](interfaces/rawhttpresponse.md)›*
 
 **Parameters:**
 
-| Name | Type |
-| :--- | :--- |
-| `requestOptions` | [NormalizedHttpOptions](interfaces/normalizedhttpoptions.md) |
+Name | Type |
+------ | ------ |
+`requestOptions` | [NormalizedHttpOptions](interfaces/normalizedhttpoptions.md) |
 
-### MockHttpRequestHandler
+___
 
-Ƭ **MockHttpRequestHandler**: [_HttpRequestHandler_](./#httprequesthandler) _& object_
+###  MockHttpRequestHandler
 
-### NormalizedHttpBody
+Ƭ **MockHttpRequestHandler**: *[HttpRequestHandler](README.md#httprequesthandler) & object*
 
-Ƭ **NormalizedHttpBody**: [_TypedArray_](./#typedarray) _\| string \| undefined_
+___
 
-### PromiseFunction
+###  NormalizedHttpBody
 
-Ƭ **PromiseFunction**: _function_
+Ƭ **NormalizedHttpBody**: *[TypedArray](README.md#typedarray) | string | undefined*
+
+___
+
+###  PromiseFunction
+
+Ƭ **PromiseFunction**: *function*
 
 #### Type declaration:
 
-▸ \(\): _Promise‹T›_
+▸ (): *Promise‹T›*
 
-### RequestMode
+___
 
-Ƭ **RequestMode**: _"navigate" \| "same-origin" \| "no-cors" \| "cors"_
+###  RequestMode
+
+Ƭ **RequestMode**: *"navigate" | "same-origin" | "no-cors" | "cors"*
 
 ## Variables
 
-### `Const` DEFAULT\_REQUEST\_TIMEOUT\_MS
+### `Const` DEFAULT_REQUEST_TIMEOUT_MS
 
-• **DEFAULT\_REQUEST\_TIMEOUT\_MS**: _number_ = 5  _60_  1000
+• **DEFAULT_REQUEST_TIMEOUT_MS**: *number* = 5 * 60 * 1000
 
 Default request timeout - 5 minutes.
 
+___
+
 ### `Const` DONE
 
-• **DONE**: _4_ = 4
+• **DONE**: *4* = 4
 
-### `Const` HEADERS\_RECEIVED
+___
 
-• **HEADERS\_RECEIVED**: _2_ = 2
+### `Const` HEADERS_RECEIVED
 
-### TypedArray
+• **HEADERS_RECEIVED**: *2* = 2
 
-• **TypedArray**: _any_
+___
+
+###  TypedArray
+
+• **TypedArray**: *any*
+
+___
 
 ### `Const` symbol
 
-• **symbol**: _unique symbol_ = Symbol\('HttpResponseError'\)
+• **symbol**: *unique symbol* = Symbol('HttpResponseError')
 
 ## Functions
 
 ### `Const` bodyParser
 
-▸ **bodyParser**\(`__namedParameters`: object\): _\(Anonymous function\)_
+▸ **bodyParser**(`__namedParameters`: object): *(Anonymous function)*
 
 **Parameters:**
 
-▪`Default value` **\_\_namedParameters**: _object_= {}
+▪`Default value`  **__namedParameters**: *object*= {}
 
-| Name | Type |
-| :--- | :--- |
-| `bodyCasing` | undefined \| [CAMEL\_CASE](enums/bodycasing.md#camel_case) \| [SNAKE\_CASE](enums/bodycasing.md#snake_case) \| [SCREAMING\_SNAKE\_CASE](enums/bodycasing.md#screaming_snake_case) \| [PASCAL\_CASE](enums/bodycasing.md#pascal_case) \| [KEBAB\_CASE](enums/bodycasing.md#kebab_case) |
-| `defaultParser` |  |
+Name | Type |
+------ | ------ |
+`bodyCasing` | undefined &#124; [CAMEL_CASE](enums/bodycasing.md#camel_case) &#124; [SNAKE_CASE](enums/bodycasing.md#snake_case) &#124; [SCREAMING_SNAKE_CASE](enums/bodycasing.md#screaming_snake_case) &#124; [PASCAL_CASE](enums/bodycasing.md#pascal_case) &#124; [KEBAB_CASE](enums/bodycasing.md#kebab_case) |
+`defaultParser` |  |
 
-**Returns:** _\(Anonymous function\)_
+**Returns:** *(Anonymous function)*
+
+___
 
 ### `Const` bodySerializer
 
-▸ **bodySerializer**\(`__namedParameters`: object\): [_BodySerializer_](./#bodyserializer)
+▸ **bodySerializer**(`__namedParameters`: object): *[BodySerializer](README.md#bodyserializer)*
 
 **Parameters:**
 
-▪`Default value` **\_\_namedParameters**: _object_= {}
+▪`Default value`  **__namedParameters**: *object*= {}
 
-| Name | Type |
-| :--- | :--- |
-| `bodyCasing` | undefined \| [CAMEL\_CASE](enums/bodycasing.md#camel_case) \| [SNAKE\_CASE](enums/bodycasing.md#snake_case) \| [SCREAMING\_SNAKE\_CASE](enums/bodycasing.md#screaming_snake_case) \| [PASCAL\_CASE](enums/bodycasing.md#pascal_case) \| [KEBAB\_CASE](enums/bodycasing.md#kebab_case) |
+Name | Type |
+------ | ------ |
+`bodyCasing` | undefined &#124; [CAMEL_CASE](enums/bodycasing.md#camel_case) &#124; [SNAKE_CASE](enums/bodycasing.md#snake_case) &#124; [SCREAMING_SNAKE_CASE](enums/bodycasing.md#screaming_snake_case) &#124; [PASCAL_CASE](enums/bodycasing.md#pascal_case) &#124; [KEBAB_CASE](enums/bodycasing.md#kebab_case) |
 
-**Returns:** [_BodySerializer_](./#bodyserializer)
+**Returns:** *[BodySerializer](README.md#bodyserializer)*
+
+___
 
 ### `Const` cacheParsedBody
 
-▸ **cacheParsedBody**&lt;**T**&gt;\(`parsedBody`: [PromiseFunction](./#promisefunction)‹T›\): [_PromiseFunction_](./#promisefunction)_‹T›_
+▸ **cacheParsedBody**<**T**>(`parsedBody`: [PromiseFunction](README.md#promisefunction)‹T›): *[PromiseFunction](README.md#promisefunction)‹T›*
 
 **Type parameters:**
 
@@ -318,436 +360,510 @@ Default request timeout - 5 minutes.
 
 **Parameters:**
 
-| Name | Type |
-| :--- | :--- |
-| `parsedBody` | [PromiseFunction](./#promisefunction)‹T› |
+Name | Type |
+------ | ------ |
+`parsedBody` | [PromiseFunction](README.md#promisefunction)‹T› |
 
-**Returns:** [_PromiseFunction_](./#promisefunction)_‹T›_
+**Returns:** *[PromiseFunction](README.md#promisefunction)‹T›*
+
+___
 
 ### `Const` createAsyncBodyHandler
 
-▸ **createAsyncBodyHandler**&lt;**T**&gt;\(\): _object_
+▸ **createAsyncBodyHandler**<**T**>(): *object*
 
 **Type parameters:**
 
 ▪ **T**
 
-**Returns:** _object_
+**Returns:** *object*
 
-* **call**\(\): _Promise‹T›_
-* **onBodyFailure**\(`failer`: function\): _void_
-* **onBodyReceived**\(`getter`: function\): _void_
+* **call**(): *Promise‹T›*
+
+* **onBodyFailure**(`failer`: function): *void*
+
+* **onBodyReceived**(`getter`: function): *void*
+
+___
 
 ### `Const` createErrorInterceptor
 
-▸ **createErrorInterceptor**\(\): [_HttpInterceptorFunction_](./#httpinterceptorfunction)
+▸ **createErrorInterceptor**(): *[HttpInterceptorFunction](README.md#httpinterceptorfunction)*
 
-**Returns:** [_HttpInterceptorFunction_](./#httpinterceptorfunction)
+**Returns:** *[HttpInterceptorFunction](README.md#httpinterceptorfunction)*
+
+___
 
 ### `Const` createFormData
 
-▸ **createFormData**\(`body`: object\): _FormData_
+▸ **createFormData**(`body`: object): *FormData*
 
 **Parameters:**
 
-| Name | Type |
-| :--- | :--- |
-| `body` | object |
+Name | Type |
+------ | ------ |
+`body` | object |
 
-**Returns:** _FormData_
+**Returns:** *FormData*
+
+___
 
 ### `Const` createFormDataImpl
 
-▸ **createFormDataImpl**\(`object`: object, `form`: FormData, `namespace?`: undefined \| string\): _FormData_
+▸ **createFormDataImpl**(`object`: object, `form`: FormData, `namespace?`: undefined | string): *FormData*
 
 **Parameters:**
 
-| Name | Type |
-| :--- | :--- |
-| `object` | object |
-| `form` | FormData |
-| `namespace?` | undefined \| string |
+Name | Type |
+------ | ------ |
+`object` | object |
+`form` | FormData |
+`namespace?` | undefined &#124; string |
 
-**Returns:** _FormData_
+**Returns:** *FormData*
+
+___
 
 ### `Const` createHttpResponse
 
-▸ **createHttpResponse**\(`__namedParameters`: object\): [_HttpResponse_](interfaces/httpresponse.md)
+▸ **createHttpResponse**(`__namedParameters`: object): *[HttpResponse](interfaces/httpresponse.md)*
 
 **Parameters:**
 
-▪ **\_\_namedParameters**: _object_
+▪ **__namedParameters**: *object*
 
-| Name | Type | Default |
-| :--- | :--- | :--- |
-| `body` | undefined \| string \| Uint8Array‹› \| Uint8ClampedArray‹› \| Uint16Array‹› \| Uint32Array‹› \| Int8Array‹› \| Int16Array‹› \| Int32Array‹› \| Float32Array‹› \| Float64Array‹› | - |
-| `headers` | undefined \| object | - |
-| `status` | number | - |
-| `url` | string | "" |
+Name | Type | Default |
+------ | ------ | ------ |
+`body` | undefined &#124; string &#124; Uint8Array‹› &#124; Uint8ClampedArray‹› &#124; Uint16Array‹› &#124; Uint32Array‹› &#124; Int8Array‹› &#124; Int16Array‹› &#124; Int32Array‹› &#124; Float32Array‹› &#124; Float64Array‹› | - |
+`headers` | undefined &#124; object | - |
+`status` | number | - |
+`url` | string | "" |
 
-**Returns:** [_HttpResponse_](interfaces/httpresponse.md)
+**Returns:** *[HttpResponse](interfaces/httpresponse.md)*
+
+___
 
 ### `Const` createLoggingInterceptor
 
-▸ **createLoggingInterceptor**\(`__namedParameters`: object\): [_HttpInterceptorFunction_](./#httpinterceptorfunction)
+▸ **createLoggingInterceptor**(`__namedParameters`: object): *[HttpInterceptorFunction](README.md#httpinterceptorfunction)*
 
 **Parameters:**
 
-▪ **\_\_namedParameters**: _object_
+▪ **__namedParameters**: *object*
 
-| Name | Type |
-| :--- | :--- |
-| `logger` | function |
+Name | Type |
+------ | ------ |
+`logger` | function |
 
-**Returns:** [_HttpInterceptorFunction_](./#httpinterceptorfunction)
+**Returns:** *[HttpInterceptorFunction](README.md#httpinterceptorfunction)*
+
+___
 
 ### `Const` createRedirectionInterceptor
 
-▸ **createRedirectionInterceptor**\(`__namedParameters`: object\): [_HttpInterceptorFunction_](./#httpinterceptorfunction)
+▸ **createRedirectionInterceptor**(`__namedParameters`: object): *[HttpInterceptorFunction](README.md#httpinterceptorfunction)*
 
 **Parameters:**
 
-▪`Default value` **\_\_namedParameters**: _object_= {}
+▪`Default value`  **__namedParameters**: *object*= {}
 
-| Name | Type | Default |
-| :--- | :--- | :--- |
-| `redirectionLimit` | number | 30 |
+Name | Type | Default |
+------ | ------ | ------ |
+`redirectionLimit` | number | 30 |
 
-**Returns:** [_HttpInterceptorFunction_](./#httpinterceptorfunction)
+**Returns:** *[HttpInterceptorFunction](README.md#httpinterceptorfunction)*
+
+___
 
 ### `Const` createSimpleServer
 
-▸ **createSimpleServer**\(\): [_SimpleServer_](interfaces/simpleserver.md)
+▸ **createSimpleServer**(): *[SimpleServer](interfaces/simpleserver.md)*
 
-**Returns:** [_SimpleServer_](interfaces/simpleserver.md)
+**Returns:** *[SimpleServer](interfaces/simpleserver.md)*
+
+___
 
 ### `Const` deepKeyMap
 
-▸ **deepKeyMap**\(`object`: any, `mapper`: function\): _any_
+▸ **deepKeyMap**(`object`: any, `mapper`: function): *any*
 
 **Parameters:**
 
-▪ **object**: _any_
+▪ **object**: *any*
 
-▪ **mapper**: _function_
+▪ **mapper**: *function*
 
-▸ \(`key`: string\): _string_
+▸ (`key`: string): *string*
 
 **Parameters:**
 
-| Name | Type |
-| :--- | :--- |
-| `key` | string |
+Name | Type |
+------ | ------ |
+`key` | string |
 
-**Returns:** _any_
+**Returns:** *any*
+
+___
 
 ### `Const` defaultHeaders
 
-▸ **defaultHeaders**\(`_host`: string\): _object_
+▸ **defaultHeaders**(`_host`: string): *object*
 
 **Parameters:**
 
-| Name | Type | Default |
-| :--- | :--- | :--- |
-| `_host` | string | "" |
+Name | Type | Default |
+------ | ------ | ------ |
+`_host` | string | "" |
 
-**Returns:** _object_
+**Returns:** *object*
 
-* **Accept**: _string_ = "application/json,application/vnd.api+json"
-* **Content-Type**: [_ContentType_](enums/contenttype.md) = ContentType.JSON
+* **Accept**: *string* = "application/json,application/vnd.api+json"
+
+* **Content-Type**: *[ContentType](enums/contenttype.md)* = ContentType.JSON
+
+___
 
 ### `Const` encodeArrayBuffer
 
-▸ **encodeArrayBuffer**\(`data`: [TypedArray](./#typedarray) \| string \| undefined, `encoding`: [BufferEncoding](./#bufferencoding)\): _Uint8Array‹›_
+▸ **encodeArrayBuffer**(`data`: [TypedArray](README.md#typedarray) | string | undefined, `encoding`: [BufferEncoding](README.md#bufferencoding)): *Uint8Array‹›*
 
 **Parameters:**
 
-| Name | Type | Default |
-| :--- | :--- | :--- |
-| `data` | [TypedArray](./#typedarray) \| string \| undefined | "" |
-| `encoding` | [BufferEncoding](./#bufferencoding) | "utf8" |
+Name | Type | Default |
+------ | ------ | ------ |
+`data` | [TypedArray](README.md#typedarray) &#124; string &#124; undefined | "" |
+`encoding` | [BufferEncoding](README.md#bufferencoding) | "utf8" |
 
-**Returns:** _Uint8Array‹›_
+**Returns:** *Uint8Array‹›*
+
+___
 
 ### `Const` encodeText
 
-▸ **encodeText**\(`buffer`: ArrayBuffer, `encoding`: string\): _string_
+▸ **encodeText**(`buffer`: ArrayBuffer, `encoding`: string): *string*
 
 **Parameters:**
 
-| Name | Type | Default |
-| :--- | :--- | :--- |
-| `buffer` | ArrayBuffer | - |
-| `encoding` | string | "utf8" |
+Name | Type | Default |
+------ | ------ | ------ |
+`buffer` | ArrayBuffer | - |
+`encoding` | string | "utf8" |
 
-**Returns:** _string_
+**Returns:** *string*
+
+___
 
 ### `Const` fetchRequestHandler
 
-▸ **fetchRequestHandler**\(`fetchRequestHandlerOptions`: [FetchRequestHandlerOptions](interfaces/fetchrequesthandleroptions.md)\): [_HttpRequestHandler_](./#httprequesthandler)
+▸ **fetchRequestHandler**(`fetchRequestHandlerOptions`: [FetchRequestHandlerOptions](interfaces/fetchrequesthandleroptions.md)): *[HttpRequestHandler](README.md#httprequesthandler)*
 
-Creates a new [HttpRequestHandler](./#httprequesthandler) that uses [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) underneath. Does not support _timeout_ property. Abort is possible only after headers were received.
+Creates a new [HttpRequestHandler](README.md#httprequesthandler) that uses [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) underneath.
+Does not support *timeout* property.
+Abort is possible only after headers were received.
 
 **Parameters:**
 
-| Name | Type | Default | Description |
-| :--- | :--- | :--- | :--- |
-| `fetchRequestHandlerOptions` | [FetchRequestHandlerOptions](interfaces/fetchrequesthandleroptions.md) | {} | default Fetch API options attached to all requests |
+Name | Type | Default | Description |
+------ | ------ | ------ | ------ |
+`fetchRequestHandlerOptions` | [FetchRequestHandlerOptions](interfaces/fetchrequesthandleroptions.md) | {} | default Fetch API options attached to all requests  |
 
-**Returns:** [_HttpRequestHandler_](./#httprequesthandler)
+**Returns:** *[HttpRequestHandler](README.md#httprequesthandler)*
+
+___
 
 ### `Const` getBoundaryFromContentTypeHeader
 
-▸ **getBoundaryFromContentTypeHeader**\(`header`: string\[\]\): _string_
+▸ **getBoundaryFromContentTypeHeader**(`header`: string[]): *string*
 
 **Parameters:**
 
-| Name | Type |
-| :--- | :--- |
-| `header` | string\[\] |
+Name | Type |
+------ | ------ |
+`header` | string[] |
 
-**Returns:** _string_
+**Returns:** *string*
+
+___
 
 ### `Const` getCaseConverter
 
-▸ **getCaseConverter**\(`bodyCasing?`: [BodyCasing](enums/bodycasing.md)\): _toCamelCase_
+▸ **getCaseConverter**(`bodyCasing?`: [BodyCasing](enums/bodycasing.md)): *toCamelCase*
 
 **Parameters:**
 
-| Name | Type |
-| :--- | :--- |
-| `bodyCasing?` | [BodyCasing](enums/bodycasing.md) |
+Name | Type |
+------ | ------ |
+`bodyCasing?` | [BodyCasing](enums/bodycasing.md) |
 
-**Returns:** _toCamelCase_
+**Returns:** *toCamelCase*
+
+___
 
 ### `Const` getEncodingFromHeaders
 
-▸ **getEncodingFromHeaders**\(`headers`: [HttpResponseHeaders](classes/httpresponseheaders.md) \| undefined, `fallback`: string\): _string_
+▸ **getEncodingFromHeaders**(`headers`: [HttpResponseHeaders](classes/httpresponseheaders.md) | undefined, `fallback`: string): *string*
 
 **Parameters:**
 
-| Name | Type | Default |
-| :--- | :--- | :--- |
-| `headers` | [HttpResponseHeaders](classes/httpresponseheaders.md) \| undefined | - |
-| `fallback` | string | "utf8" |
+Name | Type | Default |
+------ | ------ | ------ |
+`headers` | [HttpResponseHeaders](classes/httpresponseheaders.md) &#124; undefined | - |
+`fallback` | string | "utf8" |
 
-**Returns:** _string_
+**Returns:** *string*
+
+___
 
 ### `Const` getHeader
 
-▸ **getHeader**\(`headers`: [HttpHeaders](./#httpheaders) \| undefined, `header`: string\): _string \| undefined_
+▸ **getHeader**(`headers`: [HttpHeaders](README.md#httpheaders) | undefined, `header`: string): *string | undefined*
 
 **Parameters:**
 
-| Name | Type |
-| :--- | :--- |
-| `headers` | [HttpHeaders](./#httpheaders) \| undefined |
-| `header` | string |
+Name | Type |
+------ | ------ |
+`headers` | [HttpHeaders](README.md#httpheaders) &#124; undefined |
+`header` | string |
 
-**Returns:** _string \| undefined_
+**Returns:** *string | undefined*
+
+___
 
 ### `Const` getHostname
 
-▸ **getHostname**\(`url`: string\): _string_
+▸ **getHostname**(`url`: string): *string*
 
 **Parameters:**
 
-| Name | Type |
-| :--- | :--- |
-| `url` | string |
+Name | Type |
+------ | ------ |
+`url` | string |
 
-**Returns:** _string_
+**Returns:** *string*
+
+___
 
 ### `Const` handleRequest
 
-▸ **handleRequest**\(`code`: number, `body`: any, `contentType`: string\): _Promise‹_[_HttpResponse_](interfaces/httpresponse.md)_›_
+▸ **handleRequest**(`code`: number, `body`: any, `contentType`: string): *Promise‹[HttpResponse](interfaces/httpresponse.md)›*
 
 **Parameters:**
 
-| Name | Type | Default |
-| :--- | :--- | :--- |
-| `code` | number | - |
-| `body` | any | - |
-| `contentType` | string | ContentType.TEXT |
+Name | Type | Default |
+------ | ------ | ------ |
+`code` | number | - |
+`body` | any | - |
+`contentType` | string | ContentType.TEXT |
 
-**Returns:** _Promise‹_[_HttpResponse_](interfaces/httpresponse.md)_›_
+**Returns:** *Promise‹[HttpResponse](interfaces/httpresponse.md)›*
+
+___
 
 ### `Const` httpRequestHandler
 
-▸ **httpRequestHandler**\(`requestHandlerOptions`: [HttpRequestHandlerOptions](interfaces/httprequesthandleroptions.md)\): [_HttpRequestHandler_](./#httprequesthandler)
+▸ **httpRequestHandler**(`requestHandlerOptions`: [HttpRequestHandlerOptions](interfaces/httprequesthandleroptions.md)): *[HttpRequestHandler](README.md#httprequesthandler)*
 
-Creates a new [HttpRequestHandler](./#httprequesthandler) that uses native Node.js [HTTP](https://nodejs.org/api/http.html) & [HTTPS](https://nodejs.org/api/https.html) modules underneath. Does not support _mode_ property.
+Creates a new [HttpRequestHandler](README.md#httprequesthandler) that uses native Node.js [HTTP](https://nodejs.org/api/http.html) & [HTTPS](https://nodejs.org/api/https.html) modules underneath.
+Does not support *mode* property.
 
 **Parameters:**
 
-| Name | Type | Default | Description |
-| :--- | :--- | :--- | :--- |
-| `requestHandlerOptions` | [HttpRequestHandlerOptions](interfaces/httprequesthandleroptions.md) | {} | default native options attached to all requests |
+Name | Type | Default | Description |
+------ | ------ | ------ | ------ |
+`requestHandlerOptions` | [HttpRequestHandlerOptions](interfaces/httprequesthandleroptions.md) | {} | default native options attached to all requests  |
 
-**Returns:** [_HttpRequestHandler_](./#httprequesthandler)
+**Returns:** *[HttpRequestHandler](README.md#httprequesthandler)*
+
+___
 
 ### `Const` isFormData
 
-▸ **isFormData**\(`object`: any\): _object is FormData_
+▸ **isFormData**(`object`: any): *object is FormData*
 
 **Parameters:**
 
-| Name | Type |
-| :--- | :--- |
-| `object` | any |
+Name | Type |
+------ | ------ |
+`object` | any |
 
-**Returns:** _object is FormData_
+**Returns:** *object is FormData*
+
+___
 
 ### `Const` isHttpInterceptorInterface
 
-▸ **isHttpInterceptorInterface**\(`interceptor`: [HttpInterceptor](./#httpinterceptor)\): _interceptor is HttpInterceptorInterface_
+▸ **isHttpInterceptorInterface**(`interceptor`: [HttpInterceptor](README.md#httpinterceptor)): *interceptor is HttpInterceptorInterface*
 
 **Parameters:**
 
-| Name | Type |
-| :--- | :--- |
-| `interceptor` | [HttpInterceptor](./#httpinterceptor) |
+Name | Type |
+------ | ------ |
+`interceptor` | [HttpInterceptor](README.md#httpinterceptor) |
 
-**Returns:** _interceptor is HttpInterceptorInterface_
+**Returns:** *interceptor is HttpInterceptorInterface*
+
+___
 
 ### `Const` isHttpRequestError
 
-▸ **isHttpRequestError**\(`error`: any\): _error is HttpRequestError_
+▸ **isHttpRequestError**(`error`: any): *error is HttpRequestError*
 
 **Parameters:**
 
-| Name | Type |
-| :--- | :--- |
-| `error` | any |
+Name | Type |
+------ | ------ |
+`error` | any |
 
-**Returns:** _error is HttpRequestError_
+**Returns:** *error is HttpRequestError*
+
+___
 
 ### `Const` isHttpResponseError
 
-▸ **isHttpResponseError**\(`error`: any\): _error is HttpResponseError_
+▸ **isHttpResponseError**(`error`: any): *error is HttpResponseError*
 
 **Parameters:**
 
-| Name | Type |
-| :--- | :--- |
-| `error` | any |
+Name | Type |
+------ | ------ |
+`error` | any |
 
-**Returns:** _error is HttpResponseError_
+**Returns:** *error is HttpResponseError*
+
+___
 
 ### `Const` mockRequestHandler
 
-▸ **mockRequestHandler**\(`mockOptions`: [MockOptions](interfaces/mockoptions.md)\): [_MockHttpRequestHandler_](./#mockhttprequesthandler)
+▸ **mockRequestHandler**(`mockOptions`: [MockOptions](interfaces/mockoptions.md)): *[MockHttpRequestHandler](README.md#mockhttprequesthandler)*
 
 **Parameters:**
 
-| Name | Type |
-| :--- | :--- |
-| `mockOptions` | [MockOptions](interfaces/mockoptions.md) |
+Name | Type |
+------ | ------ |
+`mockOptions` | [MockOptions](interfaces/mockoptions.md) |
 
-**Returns:** [_MockHttpRequestHandler_](./#mockhttprequesthandler)
+**Returns:** *[MockHttpRequestHandler](README.md#mockhttprequesthandler)*
+
+___
 
 ### `Const` noConversion
 
-▸ **noConversion**\(`object`: any\): _any_
+▸ **noConversion**(`object`: any): *any*
 
 **Parameters:**
 
-| Name | Type |
-| :--- | :--- |
-| `object` | any |
+Name | Type |
+------ | ------ |
+`object` | any |
 
-**Returns:** _any_
+**Returns:** *any*
+
+___
 
 ### `Const` parseHeaders
 
-▸ **parseHeaders**\(`headers`: Headers\): _Record‹string, string›_
+▸ **parseHeaders**(`headers`: Headers): *Record‹string, string›*
 
 **Parameters:**
 
-| Name | Type |
-| :--- | :--- |
-| `headers` | Headers |
+Name | Type |
+------ | ------ |
+`headers` | Headers |
 
-**Returns:** _Record‹string, string›_
+**Returns:** *Record‹string, string›*
+
+___
 
 ### `Const` passthroughParser
 
-▸ **passthroughParser**\(`response`: [RawHttpResponse](interfaces/rawhttpresponse.md)\): _object_
+▸ **passthroughParser**(`response`: [RawHttpResponse](interfaces/rawhttpresponse.md)): *object*
 
 **Parameters:**
 
-| Name | Type |
-| :--- | :--- |
-| `response` | [RawHttpResponse](interfaces/rawhttpresponse.md) |
+Name | Type |
+------ | ------ |
+`response` | [RawHttpResponse](interfaces/rawhttpresponse.md) |
 
-**Returns:** _object_
+**Returns:** *object*
 
-* **parsedBody**: _any_ = \(response as any\).parsedBody \|\| \(\(\) =&gt; response.arrayBuffer\(\)\)
+* **parsedBody**: *any* = (response as any).parsedBody || (() => response.arrayBuffer())
+
+___
 
 ### `Const` processMultipartBody
 
-▸ **processMultipartBody**\(`body`: string, `boundary`: string\): _never_
+▸ **processMultipartBody**(`body`: string, `boundary`: string): *never*
 
 **Parameters:**
 
-| Name | Type |
-| :--- | :--- |
-| `body` | string |
-| `boundary` | string |
+Name | Type |
+------ | ------ |
+`body` | string |
+`boundary` | string |
 
-**Returns:** _never_
+**Returns:** *never*
+
+___
 
 ### `Const` readBlob
 
-▸ **readBlob**\(`blob`: Blob\): _Promise‹ArrayBuffer›_
+▸ **readBlob**(`blob`: Blob): *Promise‹ArrayBuffer›*
 
 **Parameters:**
 
-| Name | Type |
-| :--- | :--- |
-| `blob` | Blob |
+Name | Type |
+------ | ------ |
+`blob` | Blob |
 
-**Returns:** _Promise‹ArrayBuffer›_
+**Returns:** *Promise‹ArrayBuffer›*
+
+___
 
 ### `Const` sanitizeHeaders
 
-▸ **sanitizeHeaders**\(...`multipleHeaders`: undefined \| object\[\]\): _Record‹string, string›_
+▸ **sanitizeHeaders**(...`multipleHeaders`: undefined | object[]): *Record‹string, string›*
 
 **Parameters:**
 
-| Name | Type |
-| :--- | :--- |
-| `...multipleHeaders` | undefined \| object\[\] |
+Name | Type |
+------ | ------ |
+`...multipleHeaders` | undefined &#124; object[] |
 
-**Returns:** _Record‹string, string›_
+**Returns:** *Record‹string, string›*
+
+___
 
 ### `Const` sleep
 
-▸ **sleep**\(`ms`: number\): _Promise‹unknown›_
+▸ **sleep**(`ms`: number): *Promise‹unknown›*
 
 **Parameters:**
 
-| Name | Type |
-| :--- | :--- |
-| `ms` | number |
+Name | Type |
+------ | ------ |
+`ms` | number |
 
-**Returns:** _Promise‹unknown›_
+**Returns:** *Promise‹unknown›*
+
+___
 
 ### `Const` splitWords
 
-▸ **splitWords**\(`text`: string\): _string\[\]_
+▸ **splitWords**(`text`: string): *string[]*
 
 **Parameters:**
 
-| Name | Type |
-| :--- | :--- |
-| `text` | string |
+Name | Type |
+------ | ------ |
+`text` | string |
 
-**Returns:** _string\[\]_
+**Returns:** *string[]*
 
-### switchContentType
+___
 
-▸ **switchContentType**&lt;**T**&gt;\(`contentType`: string, `map`: [ContentTypeMap](./#contenttypemap)‹T›, `defaultResult`: T\): _T_
+###  switchContentType
+
+▸ **switchContentType**<**T**>(`contentType`: string, `map`: [ContentTypeMap](README.md#contenttypemap)‹T›, `defaultResult`: T): *T*
 
 **Type parameters:**
 
@@ -755,15 +871,15 @@ Creates a new [HttpRequestHandler](./#httprequesthandler) that uses native Node.
 
 **Parameters:**
 
-| Name | Type |
-| :--- | :--- |
-| `contentType` | string |
-| `map` | [ContentTypeMap](./#contenttypemap)‹T› |
-| `defaultResult` | T |
+Name | Type |
+------ | ------ |
+`contentType` | string |
+`map` | [ContentTypeMap](README.md#contenttypemap)‹T› |
+`defaultResult` | T |
 
-**Returns:** _T_
+**Returns:** *T*
 
-▸ **switchContentType**&lt;**T**&gt;\(`contentType`: string, `map`: [ContentTypeMap](./#contenttypemap)‹T›\): _T \| undefined_
+▸ **switchContentType**<**T**>(`contentType`: string, `map`: [ContentTypeMap](README.md#contenttypemap)‹T›): *T | undefined*
 
 **Type parameters:**
 
@@ -771,102 +887,118 @@ Creates a new [HttpRequestHandler](./#httprequesthandler) that uses native Node.
 
 **Parameters:**
 
-| Name | Type |
-| :--- | :--- |
-| `contentType` | string |
-| `map` | [ContentTypeMap](./#contenttypemap)‹T› |
+Name | Type |
+------ | ------ |
+`contentType` | string |
+`map` | [ContentTypeMap](README.md#contenttypemap)‹T› |
 
-**Returns:** _T \| undefined_
+**Returns:** *T | undefined*
+
+___
 
 ### `Const` toCamelCase
 
-▸ **toCamelCase**\(`object`: any\): _any_
+▸ **toCamelCase**(`object`: any): *any*
 
 **Parameters:**
 
-| Name | Type |
-| :--- | :--- |
-| `object` | any |
+Name | Type |
+------ | ------ |
+`object` | any |
 
-**Returns:** _any_
+**Returns:** *any*
+
+___
 
 ### `Const` toKebabCase
 
-▸ **toKebabCase**\(`object`: any\): _any_
+▸ **toKebabCase**(`object`: any): *any*
 
 **Parameters:**
 
-| Name | Type |
-| :--- | :--- |
-| `object` | any |
+Name | Type |
+------ | ------ |
+`object` | any |
 
-**Returns:** _any_
+**Returns:** *any*
+
+___
 
 ### `Const` toPascalCase
 
-▸ **toPascalCase**\(`object`: any\): _any_
+▸ **toPascalCase**(`object`: any): *any*
 
 **Parameters:**
 
-| Name | Type |
-| :--- | :--- |
-| `object` | any |
+Name | Type |
+------ | ------ |
+`object` | any |
 
-**Returns:** _any_
+**Returns:** *any*
+
+___
 
 ### `Const` toScreamingSnakeCase
 
-▸ **toScreamingSnakeCase**\(`object`: any\): _any_
+▸ **toScreamingSnakeCase**(`object`: any): *any*
 
 **Parameters:**
 
-| Name | Type |
-| :--- | :--- |
-| `object` | any |
+Name | Type |
+------ | ------ |
+`object` | any |
 
-**Returns:** _any_
+**Returns:** *any*
+
+___
 
 ### `Const` toSnakeCase
 
-▸ **toSnakeCase**\(`object`: any\): _any_
+▸ **toSnakeCase**(`object`: any): *any*
 
 **Parameters:**
 
-| Name | Type |
-| :--- | :--- |
-| `object` | any |
+Name | Type |
+------ | ------ |
+`object` | any |
 
-**Returns:** _any_
+**Returns:** *any*
+
+___
 
 ### `Const` toUrlEncoded
 
-▸ **toUrlEncoded**\(`obj`: object\): _string_
+▸ **toUrlEncoded**(`obj`: object): *string*
 
 **Parameters:**
 
-| Name | Type |
-| :--- | :--- |
-| `obj` | object |
+Name | Type |
+------ | ------ |
+`obj` | object |
 
-**Returns:** _string_
+**Returns:** *string*
+
+___
 
 ### `Const` urlCombine
 
-▸ **urlCombine**\(`sourceUrl`: string, `sourceQuery?`: undefined \| object, `options?`: qs.IStringifyOptions\): _string_
+▸ **urlCombine**(`sourceUrl`: string, `sourceQuery?`: undefined | object, `options?`: qs.IStringifyOptions): *string*
 
 **Parameters:**
 
-| Name | Type |
-| :--- | :--- |
-| `sourceUrl` | string |
-| `sourceQuery?` | undefined \| object |
-| `options?` | qs.IStringifyOptions |
+Name | Type |
+------ | ------ |
+`sourceUrl` | string |
+`sourceQuery?` | undefined &#124; object |
+`options?` | qs.IStringifyOptions |
 
-**Returns:** _string_
+**Returns:** *string*
+
+___
 
 ### `Const` urlDecode
 
-▸ **urlDecode**&lt;**T**&gt;\(`value`: string, `options?`: qs.IParseOptions\): _T_
+▸ **urlDecode**<**T**>(`value`: string, `options?`: qs.IParseOptions): *T*
 
 **Type parameters:**
 
@@ -874,125 +1006,139 @@ Creates a new [HttpRequestHandler](./#httprequesthandler) that uses native Node.
 
 **Parameters:**
 
-| Name | Type |
-| :--- | :--- |
-| `value` | string |
-| `options?` | qs.IParseOptions |
+Name | Type |
+------ | ------ |
+`value` | string |
+`options?` | qs.IParseOptions |
 
-**Returns:** _T_
+**Returns:** *T*
+
+___
 
 ### `Const` urlDestruct
 
-▸ **urlDestruct**\(`url`: string, `options?`: qs.IParseOptions\): _object_
+▸ **urlDestruct**(`url`: string, `options?`: qs.IParseOptions): *object*
 
 **Parameters:**
 
-| Name | Type |
-| :--- | :--- |
-| `url` | string |
-| `options?` | qs.IParseOptions |
+Name | Type |
+------ | ------ |
+`url` | string |
+`options?` | qs.IParseOptions |
 
-**Returns:** _object_
+**Returns:** *object*
 
-* **query**: _any_
-* **url**: _string_
+* **query**: *any*
+
+* **url**: *string*
+
+___
 
 ### `Const` urlEncode
 
-▸ **urlEncode**\(`value`: any, `options?`: qs.IStringifyOptions\): _string_
+▸ **urlEncode**(`value`: any, `options?`: qs.IStringifyOptions): *string*
 
 **Parameters:**
 
-| Name | Type |
-| :--- | :--- |
-| `value` | any |
-| `options?` | qs.IStringifyOptions |
+Name | Type |
+------ | ------ |
+`value` | any |
+`options?` | qs.IStringifyOptions |
 
-**Returns:** _string_
+**Returns:** *string*
+
+___
 
 ### `Const` useInterceptor
 
-▸ **useInterceptor**\(`normalizedOptions`: [NormalizedHttpOptions](interfaces/normalizedhttpoptions.md)\): _\(Anonymous function\)_
+▸ **useInterceptor**(`normalizedOptions`: [NormalizedHttpOptions](interfaces/normalizedhttpoptions.md)): *(Anonymous function)*
 
 **Parameters:**
 
-| Name | Type |
-| :--- | :--- |
-| `normalizedOptions` | [NormalizedHttpOptions](interfaces/normalizedhttpoptions.md) |
+Name | Type |
+------ | ------ |
+`normalizedOptions` | [NormalizedHttpOptions](interfaces/normalizedhttpoptions.md) |
 
-**Returns:** _\(Anonymous function\)_
+**Returns:** *(Anonymous function)*
+
+___
 
 ### `Const` xhrRequestHandler
 
-▸ **xhrRequestHandler**\(`_?`: [XhrRequestHandlerOptions](interfaces/xhrrequesthandleroptions.md)\): [_HttpRequestHandler_](./#httprequesthandler)
+▸ **xhrRequestHandler**(`_?`: [XhrRequestHandlerOptions](interfaces/xhrrequesthandleroptions.md)): *[HttpRequestHandler](README.md#httprequesthandler)*
 
 **Parameters:**
 
-| Name | Type |
-| :--- | :--- |
-| `_?` | [XhrRequestHandlerOptions](interfaces/xhrrequesthandleroptions.md) |
+Name | Type |
+------ | ------ |
+`_?` | [XhrRequestHandlerOptions](interfaces/xhrrequesthandleroptions.md) |
 
-**Returns:** [_HttpRequestHandler_](./#httprequesthandler)
+**Returns:** *[HttpRequestHandler](README.md#httprequesthandler)*
 
 ## Object literals
 
 ### `Const` ContentTypeRegex
 
-### ▪ **ContentTypeRegex**: _object_
+### ▪ **ContentTypeRegex**: *object*
 
-### JSON
+###  JSON
 
-• **JSON**: _RegExp‹›_ = /^application\/\(json\|.++json\)$/
+• **JSON**: *RegExp‹›* = /^application\/(json|.+\+json)$/
 
-### MULTIPART
+###  MULTIPART
 
-• **MULTIPART**: _RegExp‹›_ = /^multipart\//
+• **MULTIPART**: *RegExp‹›* = /^multipart\//
 
-### TEXT
+###  TEXT
 
-• **TEXT**: _RegExp‹›_ = /^text\//
+• **TEXT**: *RegExp‹›* = /^text\//
 
-### URL\_ENCODED
+###  URL_ENCODED
 
-• **URL\_ENCODED**: _RegExp‹›_ = /^application\/x-www-form-urlencoded$/
+• **URL_ENCODED**: *RegExp‹›* = /^application\/x-www-form-urlencoded$/
+
+___
 
 ### `Const` HttpClientHelper
 
-### ▪ **HttpClientHelper**: _object_
+### ▪ **HttpClientHelper**: *object*
 
-### defaultHeaders
+###  defaultHeaders
 
-• **defaultHeaders**: [_defaultHeaders_](./#const-defaultheaders)
+• **defaultHeaders**: *[defaultHeaders](README.md#const-defaultheaders)*
 
-### getHostname
+###  getHostname
 
-• **getHostname**: _getHostname_
+• **getHostname**: *getHostname*
 
-### toUrlEncoded
+###  toUrlEncoded
 
-• **toUrlEncoded**: [_toUrlEncoded_](./#const-tourlencoded)
+• **toUrlEncoded**: *[toUrlEncoded](README.md#const-tourlencoded)*
+
+___
 
 ### `Const` HttpStatusText
 
-### ▪ **HttpStatusText**: _object_
+### ▪ **HttpStatusText**: *object*
 
-### \_\_computed
+###  __computed
 
-• **\_\_computed**: _string_ = "Network Authentication Required"
+• **__computed**: *string* = "Network Authentication Required"
+
+___
 
 ### `Const` Interceptors
 
-### ▪ **Interceptors**: _object_
+### ▪ **Interceptors**: *object*
 
-### createErrorInterceptor
+###  createErrorInterceptor
 
-• **createErrorInterceptor**: _createErrorInterceptor_
+• **createErrorInterceptor**: *createErrorInterceptor*
 
-### createLoggingInterceptor
+###  createLoggingInterceptor
 
-• **createLoggingInterceptor**: _createLoggingInterceptor_
+• **createLoggingInterceptor**: *createLoggingInterceptor*
 
-### createRedirectionInterceptor
+###  createRedirectionInterceptor
 
-• **createRedirectionInterceptor**: _createRedirectionInterceptor_
-
+• **createRedirectionInterceptor**: *createRedirectionInterceptor*

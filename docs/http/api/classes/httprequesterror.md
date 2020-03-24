@@ -1,4 +1,4 @@
-# HttpRequestError
+# Class: HttpRequestError <**T**>
 
 ## Type parameters
 
@@ -26,46 +26,53 @@
 
 ## Constructors
 
-### constructor
+###  constructor
 
-+ **new HttpRequestError**\(`options`: [NormalizedHttpOptions](../interfaces/normalizedhttpoptions.md), `message?`: undefined \| string\): [_HttpRequestError_](httprequesterror.md)
+\+ **new HttpRequestError**(`options`: [NormalizedHttpOptions](../interfaces/normalizedhttpoptions.md), `message?`: undefined | string): *[HttpRequestError](httprequesterror.md)*
 
 **Parameters:**
 
-| Name | Type |
-| :--- | :--- |
-| `options` | [NormalizedHttpOptions](../interfaces/normalizedhttpoptions.md) |
-| `message?` | undefined \| string |
+Name | Type |
+------ | ------ |
+`options` | [NormalizedHttpOptions](../interfaces/normalizedhttpoptions.md) |
+`message?` | undefined &#124; string |
 
-**Returns:** [_HttpRequestError_](httprequesterror.md)
+**Returns:** *[HttpRequestError](httprequesterror.md)*
 
 ## Properties
 
-### message
+###  message
 
-• **message**: _string_
+• **message**: *string*
 
-_Inherited from_ [_HttpRequestError_](httprequesterror.md)_._[_message_](httprequesterror.md#message)
+*Inherited from [HttpRequestError](httprequesterror.md).[message](httprequesterror.md#message)*
 
-### name
+___
 
-• **name**: _string_
+###  name
 
-_Inherited from_ [_HttpRequestError_](httprequesterror.md)_._[_name_](httprequesterror.md#name)
+• **name**: *string*
 
-### options
+*Inherited from [HttpRequestError](httprequesterror.md).[name](httprequesterror.md#name)*
 
-• **options**: [_NormalizedHttpOptions_](../interfaces/normalizedhttpoptions.md)
+___
+
+###  options
+
+• **options**: *[NormalizedHttpOptions](../interfaces/normalizedhttpoptions.md)*
+
+___
 
 ### `Optional` stack
 
-• **stack**? : _undefined \| string_
+• **stack**? : *undefined | string*
 
-_Inherited from_ [_HttpRequestError_](httprequesterror.md)_._[_stack_](httprequesterror.md#optional-stack)
+*Inherited from [HttpRequestError](httprequesterror.md).[stack](httprequesterror.md#optional-stack)*
 
-_Overrides_ [_HttpRequestError_](httprequesterror.md)_._[_stack_](httprequesterror.md#optional-stack)
+*Overrides [HttpRequestError](httprequesterror.md).[stack](httprequesterror.md#optional-stack)*
+
+___
 
 ### `Static` Error
 
-▪ **Error**: _ErrorConstructor_
-
+▪ **Error**: *ErrorConstructor*

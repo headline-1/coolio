@@ -1,249 +1,342 @@
-# HttpCode
+# Enumeration: HttpCode
 
 ## Index
 
 ### Enumeration members
 
 * [ACCEPTED](httpcode.md#accepted)
-* [BAD\_GATEWAY](httpcode.md#bad_gateway)
-* [BAD\_REQUEST](httpcode.md#bad_request)
+* [BAD_GATEWAY](httpcode.md#bad_gateway)
+* [BAD_REQUEST](httpcode.md#bad_request)
 * [CONFLICT](httpcode.md#conflict)
 * [CONTINUE](httpcode.md#continue)
 * [CREATED](httpcode.md#created)
-* [EXPECTATION\_FAILED](httpcode.md#expectation_failed)
+* [EXPECTATION_FAILED](httpcode.md#expectation_failed)
 * [FORBIDDEN](httpcode.md#forbidden)
 * [FOUND](httpcode.md#found)
-* [GATEWAY\_TIMEOUT](httpcode.md#gateway_timeout)
+* [GATEWAY_TIMEOUT](httpcode.md#gateway_timeout)
 * [GONE](httpcode.md#gone)
-* [HTTP\_VERSION\_NOT\_SUPPORTED](httpcode.md#http_version_not_supported)
-* [IM\_A\_TEAPOT](httpcode.md#im_a_teapot)
-* [INTERNAL\_SERVER\_ERROR](httpcode.md#internal_server_error)
-* [LENGTH\_REQUIRED](httpcode.md#length_required)
-* [METHOD\_NOT\_ALLOWED](httpcode.md#method_not_allowed)
-* [MOVED\_PERMANENTLY](httpcode.md#moved_permanently)
-* [MULTIPLE\_CHOICES](httpcode.md#multiple_choices)
-* [NETWORK\_AUTHENTICATION\_REQUIRED](httpcode.md#network_authentication_required)
-* [NONAUTHORITATIVE\_INFORMATION](httpcode.md#nonauthoritative_information)
-* [NOT\_ACCEPTABLE](httpcode.md#not_acceptable)
-* [NOT\_FOUND](httpcode.md#not_found)
-* [NOT\_IMPLEMENTED](httpcode.md#not_implemented)
-* [NOT\_MODIFIED](httpcode.md#not_modified)
-* [NO\_CONTENT](httpcode.md#no_content)
+* [HTTP_VERSION_NOT_SUPPORTED](httpcode.md#http_version_not_supported)
+* [IM_A_TEAPOT](httpcode.md#im_a_teapot)
+* [INTERNAL_SERVER_ERROR](httpcode.md#internal_server_error)
+* [LENGTH_REQUIRED](httpcode.md#length_required)
+* [METHOD_NOT_ALLOWED](httpcode.md#method_not_allowed)
+* [MOVED_PERMANENTLY](httpcode.md#moved_permanently)
+* [MULTIPLE_CHOICES](httpcode.md#multiple_choices)
+* [NETWORK_AUTHENTICATION_REQUIRED](httpcode.md#network_authentication_required)
+* [NONAUTHORITATIVE_INFORMATION](httpcode.md#nonauthoritative_information)
+* [NOT_ACCEPTABLE](httpcode.md#not_acceptable)
+* [NOT_FOUND](httpcode.md#not_found)
+* [NOT_IMPLEMENTED](httpcode.md#not_implemented)
+* [NOT_MODIFIED](httpcode.md#not_modified)
+* [NO_CONTENT](httpcode.md#no_content)
 * [OK](httpcode.md#ok)
-* [PARTIAL\_CONTENT](httpcode.md#partial_content)
-* [PAYLOAD\_TOO\_LARGE](httpcode.md#payload_too_large)
-* [PERMANENT\_REDIRECT](httpcode.md#permanent_redirect)
-* [PRECONDITION\_FAILED](httpcode.md#precondition_failed)
-* [PRECONDITION\_REQUIRED](httpcode.md#precondition_required)
-* [PROXY\_AUTHENTICATION\_REQUIRED](httpcode.md#proxy_authentication_required)
-* [RANGE\_NOT\_SATISFIABLE](httpcode.md#range_not_satisfiable)
-* [REQUEST\_HEADER\_FIELDS\_TOO\_LARGE](httpcode.md#request_header_fields_too_large)
-* [REQUEST\_TIMEOUT](httpcode.md#request_timeout)
-* [RESET\_CONTENT](httpcode.md#reset_content)
-* [SEE\_OTHER](httpcode.md#see_other)
-* [SERVICE\_UNAVAILABLE](httpcode.md#service_unavailable)
-* [SWITCHING\_PROTOCOLS](httpcode.md#switching_protocols)
-* [TEMPORARY\_REDIRECT](httpcode.md#temporary_redirect)
-* [TOO\_EARLY](httpcode.md#too_early)
-* [TOO\_MANY\_REQUESTS](httpcode.md#too_many_requests)
+* [PARTIAL_CONTENT](httpcode.md#partial_content)
+* [PAYLOAD_TOO_LARGE](httpcode.md#payload_too_large)
+* [PERMANENT_REDIRECT](httpcode.md#permanent_redirect)
+* [PRECONDITION_FAILED](httpcode.md#precondition_failed)
+* [PRECONDITION_REQUIRED](httpcode.md#precondition_required)
+* [PROXY_AUTHENTICATION_REQUIRED](httpcode.md#proxy_authentication_required)
+* [RANGE_NOT_SATISFIABLE](httpcode.md#range_not_satisfiable)
+* [REQUEST_HEADER_FIELDS_TOO_LARGE](httpcode.md#request_header_fields_too_large)
+* [REQUEST_TIMEOUT](httpcode.md#request_timeout)
+* [RESET_CONTENT](httpcode.md#reset_content)
+* [SEE_OTHER](httpcode.md#see_other)
+* [SERVICE_UNAVAILABLE](httpcode.md#service_unavailable)
+* [SWITCHING_PROTOCOLS](httpcode.md#switching_protocols)
+* [TEMPORARY_REDIRECT](httpcode.md#temporary_redirect)
+* [TOO_EARLY](httpcode.md#too_early)
+* [TOO_MANY_REQUESTS](httpcode.md#too_many_requests)
 * [UNAUTHORIZED](httpcode.md#unauthorized)
-* [UNAVAILABLE\_FOR\_LEGAL\_REASONS](httpcode.md#unavailable_for_legal_reasons)
-* [UNPROCESSABLE\_ENTITY](httpcode.md#unprocessable_entity)
-* [UNSUPPORTED\_MEDIA\_TYPE](httpcode.md#unsupported_media_type)
-* [UPGRADE\_REQUIRED](httpcode.md#upgrade_required)
-* [URI\_TOO\_LONG](httpcode.md#uri_too_long)
+* [UNAVAILABLE_FOR_LEGAL_REASONS](httpcode.md#unavailable_for_legal_reasons)
+* [UNPROCESSABLE_ENTITY](httpcode.md#unprocessable_entity)
+* [UNSUPPORTED_MEDIA_TYPE](httpcode.md#unsupported_media_type)
+* [UPGRADE_REQUIRED](httpcode.md#upgrade_required)
+* [URI_TOO_LONG](httpcode.md#uri_too_long)
 
 ## Enumeration members
 
-### ACCEPTED
+###  ACCEPTED
 
 • **ACCEPTED**: = 202
 
-### BAD\_GATEWAY
+___
 
-• **BAD\_GATEWAY**: = 502
+###  BAD_GATEWAY
 
-### BAD\_REQUEST
+• **BAD_GATEWAY**: = 502
 
-• **BAD\_REQUEST**: = 400
+___
 
-### CONFLICT
+###  BAD_REQUEST
+
+• **BAD_REQUEST**: = 400
+
+___
+
+###  CONFLICT
 
 • **CONFLICT**: = 409
 
-### CONTINUE
+___
+
+###  CONTINUE
 
 • **CONTINUE**: = 100
 
-### CREATED
+___
+
+###  CREATED
 
 • **CREATED**: = 201
 
-### EXPECTATION\_FAILED
+___
 
-• **EXPECTATION\_FAILED**: = 417
+###  EXPECTATION_FAILED
 
-### FORBIDDEN
+• **EXPECTATION_FAILED**: = 417
+
+___
+
+###  FORBIDDEN
 
 • **FORBIDDEN**: = 403
 
-### FOUND
+___
+
+###  FOUND
 
 • **FOUND**: = 302
 
-### GATEWAY\_TIMEOUT
+___
 
-• **GATEWAY\_TIMEOUT**: = 504
+###  GATEWAY_TIMEOUT
 
-### GONE
+• **GATEWAY_TIMEOUT**: = 504
+
+___
+
+###  GONE
 
 • **GONE**: = 410
 
-### HTTP\_VERSION\_NOT\_SUPPORTED
+___
 
-• **HTTP\_VERSION\_NOT\_SUPPORTED**: = 505
+###  HTTP_VERSION_NOT_SUPPORTED
 
-### IM\_A\_TEAPOT
+• **HTTP_VERSION_NOT_SUPPORTED**: = 505
 
-• **IM\_A\_TEAPOT**: = 418
+___
 
-### INTERNAL\_SERVER\_ERROR
+###  IM_A_TEAPOT
 
-• **INTERNAL\_SERVER\_ERROR**: = 500
+• **IM_A_TEAPOT**: = 418
 
-### LENGTH\_REQUIRED
+___
 
-• **LENGTH\_REQUIRED**: = 411
+###  INTERNAL_SERVER_ERROR
 
-### METHOD\_NOT\_ALLOWED
+• **INTERNAL_SERVER_ERROR**: = 500
 
-• **METHOD\_NOT\_ALLOWED**: = 405
+___
 
-### MOVED\_PERMANENTLY
+###  LENGTH_REQUIRED
 
-• **MOVED\_PERMANENTLY**: = 301
+• **LENGTH_REQUIRED**: = 411
 
-### MULTIPLE\_CHOICES
+___
 
-• **MULTIPLE\_CHOICES**: = 300
+###  METHOD_NOT_ALLOWED
 
-### NETWORK\_AUTHENTICATION\_REQUIRED
+• **METHOD_NOT_ALLOWED**: = 405
 
-• **NETWORK\_AUTHENTICATION\_REQUIRED**: = 511
+___
 
-### NONAUTHORITATIVE\_INFORMATION
+###  MOVED_PERMANENTLY
 
-• **NONAUTHORITATIVE\_INFORMATION**: = 203
+• **MOVED_PERMANENTLY**: = 301
 
-### NOT\_ACCEPTABLE
+___
 
-• **NOT\_ACCEPTABLE**: = 406
+###  MULTIPLE_CHOICES
 
-### NOT\_FOUND
+• **MULTIPLE_CHOICES**: = 300
 
-• **NOT\_FOUND**: = 404
+___
 
-### NOT\_IMPLEMENTED
+###  NETWORK_AUTHENTICATION_REQUIRED
 
-• **NOT\_IMPLEMENTED**: = 501
+• **NETWORK_AUTHENTICATION_REQUIRED**: = 511
 
-### NOT\_MODIFIED
+___
 
-• **NOT\_MODIFIED**: = 304
+###  NONAUTHORITATIVE_INFORMATION
 
-### NO\_CONTENT
+• **NONAUTHORITATIVE_INFORMATION**: = 203
 
-• **NO\_CONTENT**: = 204
+___
 
-### OK
+###  NOT_ACCEPTABLE
+
+• **NOT_ACCEPTABLE**: = 406
+
+___
+
+###  NOT_FOUND
+
+• **NOT_FOUND**: = 404
+
+___
+
+###  NOT_IMPLEMENTED
+
+• **NOT_IMPLEMENTED**: = 501
+
+___
+
+###  NOT_MODIFIED
+
+• **NOT_MODIFIED**: = 304
+
+___
+
+###  NO_CONTENT
+
+• **NO_CONTENT**: = 204
+
+___
+
+###  OK
 
 • **OK**: = 200
 
-### PARTIAL\_CONTENT
+___
 
-• **PARTIAL\_CONTENT**: = 206
+###  PARTIAL_CONTENT
 
-### PAYLOAD\_TOO\_LARGE
+• **PARTIAL_CONTENT**: = 206
 
-• **PAYLOAD\_TOO\_LARGE**: = 413
+___
 
-### PERMANENT\_REDIRECT
+###  PAYLOAD_TOO_LARGE
 
-• **PERMANENT\_REDIRECT**: = 308
+• **PAYLOAD_TOO_LARGE**: = 413
 
-### PRECONDITION\_FAILED
+___
 
-• **PRECONDITION\_FAILED**: = 412
+###  PERMANENT_REDIRECT
 
-### PRECONDITION\_REQUIRED
+• **PERMANENT_REDIRECT**: = 308
 
-• **PRECONDITION\_REQUIRED**: = 428
+___
 
-### PROXY\_AUTHENTICATION\_REQUIRED
+###  PRECONDITION_FAILED
 
-• **PROXY\_AUTHENTICATION\_REQUIRED**: = 407
+• **PRECONDITION_FAILED**: = 412
 
-### RANGE\_NOT\_SATISFIABLE
+___
 
-• **RANGE\_NOT\_SATISFIABLE**: = 416
+###  PRECONDITION_REQUIRED
 
-### REQUEST\_HEADER\_FIELDS\_TOO\_LARGE
+• **PRECONDITION_REQUIRED**: = 428
 
-• **REQUEST\_HEADER\_FIELDS\_TOO\_LARGE**: = 431
+___
 
-### REQUEST\_TIMEOUT
+###  PROXY_AUTHENTICATION_REQUIRED
 
-• **REQUEST\_TIMEOUT**: = 408
+• **PROXY_AUTHENTICATION_REQUIRED**: = 407
 
-### RESET\_CONTENT
+___
 
-• **RESET\_CONTENT**: = 205
+###  RANGE_NOT_SATISFIABLE
 
-### SEE\_OTHER
+• **RANGE_NOT_SATISFIABLE**: = 416
 
-• **SEE\_OTHER**: = 303
+___
 
-### SERVICE\_UNAVAILABLE
+###  REQUEST_HEADER_FIELDS_TOO_LARGE
 
-• **SERVICE\_UNAVAILABLE**: = 503
+• **REQUEST_HEADER_FIELDS_TOO_LARGE**: = 431
 
-### SWITCHING\_PROTOCOLS
+___
 
-• **SWITCHING\_PROTOCOLS**: = 101
+###  REQUEST_TIMEOUT
 
-### TEMPORARY\_REDIRECT
+• **REQUEST_TIMEOUT**: = 408
 
-• **TEMPORARY\_REDIRECT**: = 307
+___
 
-### TOO\_EARLY
+###  RESET_CONTENT
 
-• **TOO\_EARLY**: = 425
+• **RESET_CONTENT**: = 205
 
-### TOO\_MANY\_REQUESTS
+___
 
-• **TOO\_MANY\_REQUESTS**: = 429
+###  SEE_OTHER
 
-### UNAUTHORIZED
+• **SEE_OTHER**: = 303
+
+___
+
+###  SERVICE_UNAVAILABLE
+
+• **SERVICE_UNAVAILABLE**: = 503
+
+___
+
+###  SWITCHING_PROTOCOLS
+
+• **SWITCHING_PROTOCOLS**: = 101
+
+___
+
+###  TEMPORARY_REDIRECT
+
+• **TEMPORARY_REDIRECT**: = 307
+
+___
+
+###  TOO_EARLY
+
+• **TOO_EARLY**: = 425
+
+___
+
+###  TOO_MANY_REQUESTS
+
+• **TOO_MANY_REQUESTS**: = 429
+
+___
+
+###  UNAUTHORIZED
 
 • **UNAUTHORIZED**: = 401
 
-### UNAVAILABLE\_FOR\_LEGAL\_REASONS
+___
 
-• **UNAVAILABLE\_FOR\_LEGAL\_REASONS**: = 451
+###  UNAVAILABLE_FOR_LEGAL_REASONS
 
-### UNPROCESSABLE\_ENTITY
+• **UNAVAILABLE_FOR_LEGAL_REASONS**: = 451
 
-• **UNPROCESSABLE\_ENTITY**: = 422
+___
 
-### UNSUPPORTED\_MEDIA\_TYPE
+###  UNPROCESSABLE_ENTITY
 
-• **UNSUPPORTED\_MEDIA\_TYPE**: = 415
+• **UNPROCESSABLE_ENTITY**: = 422
 
-### UPGRADE\_REQUIRED
+___
 
-• **UPGRADE\_REQUIRED**: = 426
+###  UNSUPPORTED_MEDIA_TYPE
 
-### URI\_TOO\_LONG
+• **UNSUPPORTED_MEDIA_TYPE**: = 415
 
-• **URI\_TOO\_LONG**: = 414
+___
 
+###  UPGRADE_REQUIRED
+
+• **UPGRADE_REQUIRED**: = 426
+
+___
+
+###  URI_TOO_LONG
+
+• **URI_TOO_LONG**: = 414
