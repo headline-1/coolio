@@ -5,7 +5,7 @@ import { BodySerializer, HttpOptions, NormalizedHttpBody } from './httpClient.ty
 import { BodyCasing, getCaseConverter, getHeader } from './helpers';
 import { urlEncode } from './helpers/urlEncoding.helper';
 import { ContentTypeMap, switchContentType } from './contentType';
-import { createFormData, isFormData } from './helpers/multipart.helper';
+import { CFormData } from './formData';
 
 export interface BodySerializerOptions {
   bodyCasing?: BodyCasing;
@@ -19,22 +19,22 @@ export const bodySerializer = ({
   const bodySerializers: ContentTypeMap<(body: any) => any> = {
     JSON: (body) => JSON.stringify(caseConverter(body)),
     URL_ENCODED: (body) => urlEncode(caseConverter(body)),
-    MULTIPART: (body) => createFormData(caseConverter(body)),
+    MULTIPART: (body) => CFormData.from(caseConverter(body)),
     TEXT: (body) => String(body),
   };
 
-  return (options: HttpOptions): NormalizedHttpBody => {
+  return async (options: HttpOptions): Promise<NormalizedHttpBody> => {
     const contentTypeHeader = getHeader(options.headers, 'content-type') || '';
     const contentType = contentTypeHeader.split(';')
       .map(type => type.trim().toLowerCase());
     const body = options.body;
 
-    if (isNil(body) || isString(body) || isBuffer(body) || isFormData(body)) {
+    if (isNil(body) || isString(body) || isBuffer(body) || CFormData.isFormData(body)) {
       return body as NormalizedHttpBody;
     }
     if (typeof body === 'object') {
       for (const type of contentType) {
-        const serializedBody = switchContentType(type, bodySerializers);
+        const serializedBody = await switchContentType(type, bodySerializers);
         if (serializedBody) {
           return serializedBody(body);
         }

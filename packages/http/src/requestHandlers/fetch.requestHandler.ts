@@ -1,7 +1,8 @@
 import { HttpRequestHandler, NormalizedHttpOptions, RawHttpResponse } from '../httpClient.types';
 import { HttpResponseHeaders } from '../httpResponseHeaders';
 import { HttpRequestError } from '../httpRequestError';
-import { isFormData, sanitizeHeaders } from '../helpers';
+import { sanitizeHeaders } from '../helpers';
+import { CFormData } from '../formData';
 
 export interface FetchRequestHandlerOptions {
   defaultRequestOptions?: RequestInit;
@@ -38,7 +39,7 @@ export const fetchRequestHandler = (
         headers: sanitizeHeaders(
           fetchRequestHandlerOptions.defaultRequestOptions?.headers,
           requestOptions.headers,
-          isFormData(requestOptions.body) ? { 'content-type': undefined } : undefined
+          CFormData.isFormData(requestOptions.body) ? { 'content-type': undefined } : undefined
         ),
         signal: abortController.signal,
       }).then(response => {

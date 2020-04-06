@@ -30,7 +30,7 @@ export const createOAuth2Interceptor = ({
   });
 
   const getAuthData = async () => {
-    const authData = await Promise.resolve(authStorage.getData());
+    const authData = await authStorage.getData();
     if (!authData) {
       throw new AuthError('Data received from AuthStorage is undefined.');
     }
@@ -52,7 +52,7 @@ export const createOAuth2Interceptor = ({
       });
       const oauth2Data: OAuth2TokenResponse = await response.parsedBody();
 
-      await Promise.resolve(authStorage.setData(oauth2Data));
+      await authStorage.setData(oauth2Data);
     },
     setAuthorizationData: async (options: NormalizedHttpOptions) => {
       // Get previously stored tokens
