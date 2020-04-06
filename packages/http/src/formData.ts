@@ -172,7 +172,7 @@ export class CFormData {
 
   pipe(writable: Writable) {
     const stream = CombinedStream.create();
-    for (const [name, entries] of this.data.entries()) {
+    this.data.forEach((entries, name) => {
       for (const entry of entries) {
         stream.append(this.multiPartHeader(name, entry?.meta));
         const value = entry.value;
@@ -185,7 +185,7 @@ export class CFormData {
         }
         stream.append(CFormData.LINE_BREAK);
       }
-    }
+    });
     stream.append(this.lastBoundary());
     stream.pipe(writable);
   }
