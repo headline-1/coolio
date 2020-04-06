@@ -60,7 +60,7 @@
     "buffer": "^5.5.0",
     "combined-stream": "^1.0.8",
     "lodash": "^4.17.15",
-    "mime-types": "^2.1.26",
+    "mime": "^2.4.4",
     "qs": "^6.9.1"
   },
   "gitHead": "df3e4ca748cf0eba95323a60ae934ac5afed495b"

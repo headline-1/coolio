@@ -1,4 +1,4 @@
-import * as mime from 'mime-types';
+import * as mime from 'mime';
 import CombinedStream from 'combined-stream';
 import { Readable, Writable } from 'stream';
 
@@ -52,7 +52,7 @@ export const getFileMeta = (value: Blob | Readable, existingMeta?: CFormDataEntr
   const filename = path.substring(Math.max(path.lastIndexOf('/'), path.lastIndexOf('\\')) + 1);
 
   const contentType = anyValue.type
-    || mime.lookup(path)
+    || mime.getType(path)
     || (isHttpRequest && anyValue.headers['content-type'])
     || CFormData.DEFAULT_CONTENT_TYPE;
 
