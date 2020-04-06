@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CoolioFormData creates a Buffer with complete FormData output 1`] = `
+Array [
+  "--",
+  "
+Content-Disposition: form-data; name=\\"text\\"
+
+Sample text
+--",
+  "
+Content-Disposition: form-data; name=\\"file\\"; filename=\\"file.txt\\"
+Content-Type: text/plain
+
+Sample file contents.
+--",
+  "--
+",
+]
+`;

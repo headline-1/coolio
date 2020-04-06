@@ -7,6 +7,7 @@ import { HttpClient } from '../../httpClient';
 import { HttpCode } from '../../httpCodes';
 import { ContentType } from '../../contentType';
 import * as http from 'http';
+import { CFormData } from '../../formData';
 
 require('whatwg-fetch');
 
@@ -117,38 +118,50 @@ describeRequestHandlers('%s.requestHandler', (_, requestHandler) => {
     await expect(response.status).toEqual(HttpCode.OK);
   });
 
-  it('sends FormData body correctly', async () => {
-    const client = new HttpClient({
-      requestHandler,
-      baseUrl: server.fullAddress,
-    });
+  describe('FormData', () => {
+    // Prepare body object
     const randomFileBuffer = Buffer.from(new Array(8 * 2014)
       .fill(0)
       .map(() => Math.random() * 255));
     const description = 'This is just a text description';
-
-    verifyRequest = async req => {
-      expect(req.body).toEqual({
-        description,
-      });
-      expect(req.files).toHaveLength(1);
-      expect(req.files[0]).toMatchObject({
-        fieldname: 'file',
-        originalname: 'file.dat',
-        mimetype: ContentType.BINARY,
-        size: randomFileBuffer.length,
-      });
-      expect(randomFileBuffer.equals(req.files[0].buffer)).toBe(true);
+    const body = {
+      file: new File([randomFileBuffer], 'file.dat'),
+      description,
     };
 
-    const response = await client.post('/body', {
-      headers: { 'Content-Type': ContentType.MULTIPART_FORM },
-      body: {
-        file: new File([randomFileBuffer], 'file.dat'),
-        description,
-      },
+    beforeEach(() => {
+      // Prepare server-side verifier
+      verifyRequest = async req => {
+        expect(req.body).toEqual({
+          description,
+        });
+        expect(req.files).toHaveLength(1);
+        expect(req.files[0]).toMatchObject({
+          fieldname: 'file',
+          originalname: 'file.dat',
+          mimetype: ContentType.BINARY,
+          size: randomFileBuffer.length,
+        });
+        expect(randomFileBuffer.equals(req.files[0].buffer)).toBe(true);
+      };
     });
-    await expect(response.status).toEqual(HttpCode.OK);
+
+    it.each([
+      ['raw body object', body],
+      ['native browser FormData', CFormData.from(body)],
+      ['custom FormData', new CFormData(body)],
+    ] as [string, any][])
+    ('is sent correctly using %s', async (_, body) => {
+      const client = new HttpClient({
+        requestHandler,
+        baseUrl: server.fullAddress,
+      });
+      const response = await client.post('/body', {
+        headers: { 'Content-Type': ContentType.MULTIPART_FORM },
+        body,
+      });
+      await expect(response.status).toEqual(HttpCode.OK);
+    });
   });
 
 });

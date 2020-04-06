@@ -12,12 +12,12 @@ import {
   HttpRequestOptions,
   HttpResponse,
   NormalizedHttpOptions,
-  RawHttpResponse,
 } from './httpClient.types';
 import { bodySerializer } from './bodySerializer';
 import { cacheParsedBody } from './helpers/parsedBodyCache.helper';
 import { urlCombine, urlDestruct } from './helpers/urlEncoding.helper';
 import { sanitizeHeaders } from './helpers';
+import { bodyParser } from './bodyParser';
 
 /**
  * Default request timeout - 5 minutes.
@@ -99,11 +99,6 @@ const useInterceptor = (normalizedOptions: NormalizedHttpOptions) => <Body>(
   return interceptor(req, normalizedOptions);
 };
 
-const passthroughParser: BodyParser<any> = (response: RawHttpResponse) => ({
-  ...response,
-  parsedBody: (response as any).parsedBody || (() => response.arrayBuffer()),
-});
-
 /**
  * Base class in Coolio http package, which allows to perform API calls.
  *
@@ -122,7 +117,7 @@ export class HttpClient<T = unknown> {
 
   constructor(config: HttpClientConfig<T>) {
     this.handle = config.requestHandler;
-    this.bodyParser = config.bodyParser || passthroughParser as any;
+    this.bodyParser = config.bodyParser || bodyParser();
     this.bodySerializer = config.bodySerializer || bodySerializer();
     this.headers = config.headers;
     this.baseUrl = config.baseUrl ? config.baseUrl.replace(/\/+$/, '') : undefined;
@@ -225,7 +220,7 @@ export class HttpClient<T = unknown> {
    */
   remove = <Body extends T = any>(uri: string, options?: HttpOptions) => this.delete(uri, options);
 
-  request<Body extends T>(url: string, options: HttpRequestOptions): Promise<HttpResponse<Body>> {
+  async request<Body extends T>(url: string, options: HttpRequestOptions): Promise<HttpResponse<Body>> {
     if (this.baseUrl && url.startsWith('/')) {
       url = `${this.baseUrl}${url}`;
     }

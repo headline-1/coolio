@@ -2,7 +2,8 @@ import { HttpRequestHandler, NormalizedHttpOptions, RawHttpResponse } from '../h
 import { HttpResponseHeaders } from '../httpResponseHeaders';
 import { encodeText, getEncodingFromHeaders } from '../helpers/encoder.helper';
 import { HttpRequestError } from '../httpRequestError';
-import { isFormData } from '../helpers';
+import { CFormData } from '../formData';
+import { sanitizeHeaders } from '../helpers';
 
 const HEADERS_RECEIVED = 2;
 const DONE = 4;
@@ -72,12 +73,23 @@ export const xhrRequestHandler = (_?: XhrRequestHandlerOptions): HttpRequestHand
     req.ontimeout = () => {
       reject(new HttpRequestError(requestOptions, `Request timed out after ${requestOptions.timeout}ms.`));
     };
-    const isNotFormDataContentTypeHeader = isFormData(requestOptions.body)
-      ? (key: string) => key === 'content-type'
-      : () => true;
-    for (const key in requestOptions.headers) {
-      if (requestOptions.headers.hasOwnProperty(key) && isNotFormDataContentTypeHeader(key)) {
-        req.setRequestHeader(key, requestOptions.headers[key]);
+
+    // Normalization of FormData options
+    // Make sure that we use native browser FormData with fetch and reset content-type header
+    const isFormData = CFormData.isFormData(requestOptions.body);
+    const body: any = isFormData
+      ? CFormData.from(requestOptions.body, { forceImplementation: 'native' })
+      : requestOptions.body;
+    const formDataHeaderOverride = isFormData ? { 'content-type': undefined } : undefined;
+
+    const headers = sanitizeHeaders(
+      requestOptions.headers,
+      formDataHeaderOverride,
+    );
+
+    for (const key in headers) {
+      if (headers.hasOwnProperty(key)) {
+        req.setRequestHeader(key, headers[key]);
       }
     }
 
@@ -110,6 +122,7 @@ export const xhrRequestHandler = (_?: XhrRequestHandlerOptions): HttpRequestHand
           break;
       }
     };
-    req.send(requestOptions.body);
+
+    req.send(body);
   });
 };

@@ -1,4 +1,3 @@
-import FormData from 'form-data';
 import * as http from 'http';
 import { ClientRequestArgs, IncomingMessage } from 'http';
 import * as url from 'url';
@@ -8,27 +7,11 @@ import { encodeText, getEncodingFromHeaders } from '../helpers/encoder.helper';
 import { HttpResponseHeaders } from '../httpResponseHeaders';
 import { HttpStatusText } from '../httpCodes';
 import { HttpRequestError } from '../httpRequestError';
-import { isFormData } from '../helpers';
+import { CFormData } from '../formData';
 
 export interface HttpRequestHandlerOptions {
   defaultRequestOptions?: ClientRequestArgs;
 }
-
-const readBlob = (blob: Blob): Promise<ArrayBuffer> => {
-  const reader = new FileReader();
-  return new Promise<ArrayBuffer>((resolve, reject) => {
-    const onEnd = (e: ProgressEvent<FileReader>) => {
-      reader.removeEventListener('loadend', onEnd);
-      if ((e as any).error) {
-        reject((e as any).error);
-      } else {
-        resolve(Buffer.from(reader.result as ArrayBuffer));
-      }
-    };
-    reader.addEventListener('loadend', onEnd);
-    reader.readAsArrayBuffer(blob);
-  });
-};
 
 /**
  * Creates a new {@link HttpRequestHandler} that uses native Node.js [HTTP]{@link https://nodejs.org/api/http.html} & [HTTPS]{@link https://nodejs.org/api/https.html} modules underneath.
@@ -106,31 +89,16 @@ export const httpRequestHandler = (
       }
     }
 
-    if (isFormData(body)) {
-      return (async () => {
-        const form = new FormData();
-        const entries: [string, FormDataEntryValue][] = [];
-        body.forEach((value, key) => entries.push([key, value]));
-        for (const [key, value] of entries) {
-          if (value instanceof Blob) {
-            const buffer = await readBlob(value);
-            form.append(key, buffer, {
-              contentType: value.type,
-              filename: value.name,
-              knownLength: value.size,
-            });
-          } else {
-            form.append(key, value);
-          }
+    if (CFormData.isFormData(body)) {
+      const formData = new CFormData(body); // TODO Avoid rewriting FormData if it's already in custom format
+      const formHeaders = formData.getHeaders();
+      for (const key in formHeaders) {
+        if (formHeaders.hasOwnProperty(key)) {
+          request.setHeader(key, formHeaders[key]);
         }
-        const formHeaders = form.getHeaders();
-        for (const key in formHeaders) {
-          if (formHeaders.hasOwnProperty(key)) {
-            request.setHeader(key, formHeaders[key]);
-          }
-        }
-        form.pipe(request);
-      })().catch(reject);
+      }
+      formData.pipe(request);
+      return;
     }
 
     if (body) {
