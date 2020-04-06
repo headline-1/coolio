@@ -73,9 +73,6 @@ export const xhrRequestHandler = (_?: XhrRequestHandlerOptions): HttpRequestHand
     req.ontimeout = () => {
       reject(new HttpRequestError(requestOptions, `Request timed out after ${requestOptions.timeout}ms.`));
     };
-    const isNotFormDataContentTypeHeader = CFormData.isFormData(requestOptions.body)
-      ? (key: string) => key === 'content-type'
-      : () => true;
 
     // Normalization of FormData options
     // Make sure that we use native browser FormData with fetch and reset content-type header
