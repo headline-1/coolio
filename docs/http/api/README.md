@@ -12,6 +12,7 @@
 
 ### Classes
 
+* [CFormData](classes/cformdata.md)
 * [HttpClient](classes/httpclient.md)
 * [HttpRequestError](classes/httprequesterror.md)
 * [HttpResponseError](classes/httpresponseerror.md)
@@ -21,8 +22,11 @@
 
 * [BodyParserOptions](interfaces/bodyparseroptions.md)
 * [BodySerializerOptions](interfaces/bodyserializeroptions.md)
+* [CFormDataEntryMetadata](interfaces/cformdataentrymetadata.md)
+* [CFormDataEntryValue](interfaces/cformdataentryvalue.md)
 * [Endpoint](interfaces/endpoint.md)
 * [FetchRequestHandlerOptions](interfaces/fetchrequesthandleroptions.md)
+* [FormDataFromOptions](interfaces/formdatafromoptions.md)
 * [HttpClientConfig](interfaces/httpclientconfig.md)
 * [HttpInterceptorInterface](interfaces/httpinterceptorinterface.md)
 * [HttpRequestHandlerOptions](interfaces/httprequesthandleroptions.md)
@@ -44,6 +48,7 @@
 * [BodyParserImplementation](README.md#bodyparserimplementation)
 * [BodySerializer](README.md#bodyserializer)
 * [BufferEncoding](README.md#bufferencoding)
+* [CFormDataValue](README.md#cformdatavalue)
 * [ContentTypeMap](README.md#contenttypemap)
 * [HttpBody](README.md#httpbody)
 * [HttpFetch](README.md#httpfetch)
@@ -62,6 +67,7 @@
 * [DEFAULT_REQUEST_TIMEOUT_MS](README.md#const-default_request_timeout_ms)
 * [DONE](README.md#const-done)
 * [HEADERS_RECEIVED](README.md#const-headers_received)
+* [SUPPORTS_BROWSER_FORM_DATA](README.md#const-supports_browser_form_data)
 * [TypedArray](README.md#typedarray)
 * [symbol](README.md#const-symbol)
 
@@ -72,8 +78,6 @@
 * [cacheParsedBody](README.md#const-cacheparsedbody)
 * [createAsyncBodyHandler](README.md#const-createasyncbodyhandler)
 * [createErrorInterceptor](README.md#const-createerrorinterceptor)
-* [createFormData](README.md#const-createformdata)
-* [createFormDataImpl](README.md#const-createformdataimpl)
 * [createHttpResponse](README.md#const-createhttpresponse)
 * [createLoggingInterceptor](README.md#const-createlogginginterceptor)
 * [createRedirectionInterceptor](README.md#const-createredirectioninterceptor)
@@ -86,18 +90,19 @@
 * [getBoundaryFromContentTypeHeader](README.md#const-getboundaryfromcontenttypeheader)
 * [getCaseConverter](README.md#const-getcaseconverter)
 * [getEncodingFromHeaders](README.md#const-getencodingfromheaders)
+* [getFileMeta](README.md#const-getfilemeta)
 * [getHeader](README.md#const-getheader)
 * [getHostname](README.md#const-gethostname)
 * [handleRequest](README.md#const-handlerequest)
 * [httpRequestHandler](README.md#const-httprequesthandler)
-* [isFormData](README.md#const-isformdata)
+* [isBlob](README.md#const-isblob)
+* [isBrowserFormData](README.md#const-isbrowserformdata)
 * [isHttpInterceptorInterface](README.md#const-ishttpinterceptorinterface)
 * [isHttpRequestError](README.md#const-ishttprequesterror)
 * [isHttpResponseError](README.md#const-ishttpresponseerror)
 * [mockRequestHandler](README.md#const-mockrequesthandler)
 * [noConversion](README.md#const-noconversion)
 * [parseHeaders](README.md#const-parseheaders)
-* [passthroughParser](README.md#const-passthroughparser)
 * [processMultipartBody](README.md#const-processmultipartbody)
 * [readBlob](README.md#const-readblob)
 * [sanitizeHeaders](README.md#const-sanitizeheaders)
@@ -177,6 +182,12 @@ ___
 ###  BufferEncoding
 
 Ƭ **BufferEncoding**: *"ascii" | "utf8" | "utf-8" | "utf16le" | "ucs2" | "ucs-2" | "base64" | "latin1" | "binary" | "hex"*
+
+___
+
+###  CFormDataValue
+
+Ƭ **CFormDataValue**: *string | Blob | Readable*
 
 ___
 
@@ -265,7 +276,7 @@ ___
 
 ###  NormalizedHttpBody
 
-Ƭ **NormalizedHttpBody**: *[TypedArray](README.md#typedarray) | string | undefined*
+Ƭ **NormalizedHttpBody**: *FormData | [CFormData](classes/cformdata.md) | [TypedArray](README.md#typedarray) | string | undefined*
 
 ___
 
@@ -305,6 +316,18 @@ ___
 
 ___
 
+### `Const` SUPPORTS_BROWSER_FORM_DATA
+
+• **SUPPORTS_BROWSER_FORM_DATA**: *boolean* = (() => {
+  try {
+    return !({} instanceof FormData);
+  } catch {
+    return false;
+  }
+})()
+
+___
+
 ###  TypedArray
 
 • **TypedArray**: *any*
@@ -319,7 +342,7 @@ ___
 
 ### `Const` bodyParser
 
-▸ **bodyParser**(`__namedParameters`: object): *(Anonymous function)*
+▸ **bodyParser**(`__namedParameters`: object): *[BodyParser](README.md#bodyparser)‹any›*
 
 **Parameters:**
 
@@ -330,7 +353,7 @@ Name | Type |
 `bodyCasing` | undefined &#124; [CAMEL_CASE](enums/bodycasing.md#camel_case) &#124; [SNAKE_CASE](enums/bodycasing.md#snake_case) &#124; [SCREAMING_SNAKE_CASE](enums/bodycasing.md#screaming_snake_case) &#124; [PASCAL_CASE](enums/bodycasing.md#pascal_case) &#124; [KEBAB_CASE](enums/bodycasing.md#kebab_case) |
 `defaultParser` |  |
 
-**Returns:** *(Anonymous function)*
+**Returns:** *[BodyParser](README.md#bodyparser)‹any›*
 
 ___
 
@@ -354,17 +377,23 @@ ___
 
 ▸ **cacheParsedBody**<**T**>(`parsedBody`: [PromiseFunction](README.md#promisefunction)‹T›): *[PromiseFunction](README.md#promisefunction)‹T›*
 
+This is not a regular cache!
+This function is only used across subsequent executions of parsedBody() on a single HttpResponse.
+To implement cache, make use of interceptors.
+
 **Type parameters:**
 
 ▪ **T**
 
 **Parameters:**
 
-Name | Type |
------- | ------ |
-`parsedBody` | [PromiseFunction](README.md#promisefunction)‹T› |
+Name | Type | Description |
+------ | ------ | ------ |
+`parsedBody` | [PromiseFunction](README.md#promisefunction)‹T› | a promise function returning parsed body, which in most cases can be called only once |
 
 **Returns:** *[PromiseFunction](README.md#promisefunction)‹T›*
+
+a promise function returning body, it can be called many times
 
 ___
 
@@ -391,36 +420,6 @@ ___
 ▸ **createErrorInterceptor**(): *[HttpInterceptorFunction](README.md#httpinterceptorfunction)*
 
 **Returns:** *[HttpInterceptorFunction](README.md#httpinterceptorfunction)*
-
-___
-
-### `Const` createFormData
-
-▸ **createFormData**(`body`: object): *FormData*
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`body` | object |
-
-**Returns:** *FormData*
-
-___
-
-### `Const` createFormDataImpl
-
-▸ **createFormDataImpl**(`object`: object, `form`: FormData, `namespace?`: undefined | string): *FormData*
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`object` | object |
-`form` | FormData |
-`namespace?` | undefined &#124; string |
-
-**Returns:** *FormData*
 
 ___
 
@@ -614,6 +613,21 @@ Name | Type | Default |
 
 ___
 
+### `Const` getFileMeta
+
+▸ **getFileMeta**(`value`: Blob | Readable, `existingMeta?`: [CFormDataEntryMetadata](interfaces/cformdataentrymetadata.md)): *object | object*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`value` | Blob &#124; Readable |
+`existingMeta?` | [CFormDataEntryMetadata](interfaces/cformdataentrymetadata.md) |
+
+**Returns:** *object | object*
+
+___
+
 ### `Const` getHeader
 
 ▸ **getHeader**(`headers`: [HttpHeaders](README.md#httpheaders) | undefined, `header`: string): *string | undefined*
@@ -676,17 +690,31 @@ Name | Type | Default | Description |
 
 ___
 
-### `Const` isFormData
+### `Const` isBlob
 
-▸ **isFormData**(`object`: any): *object is FormData*
+▸ **isBlob**(`value`: any): *value is Blob*
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`object` | any |
+`value` | any |
 
-**Returns:** *object is FormData*
+**Returns:** *value is Blob*
+
+___
+
+### `Const` isBrowserFormData
+
+▸ **isBrowserFormData**(`value`: any): *value is FormData*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`value` | any |
+
+**Returns:** *value is FormData*
 
 ___
 
@@ -774,22 +802,6 @@ Name | Type |
 
 ___
 
-### `Const` passthroughParser
-
-▸ **passthroughParser**(`response`: [RawHttpResponse](interfaces/rawhttpresponse.md)): *object*
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`response` | [RawHttpResponse](interfaces/rawhttpresponse.md) |
-
-**Returns:** *object*
-
-* **parsedBody**: *any* = (response as any).parsedBody || (() => response.arrayBuffer())
-
-___
-
 ### `Const` processMultipartBody
 
 ▸ **processMultipartBody**(`body`: string, `boundary`: string): *never*
@@ -807,7 +819,7 @@ ___
 
 ### `Const` readBlob
 
-▸ **readBlob**(`blob`: Blob): *Promise‹ArrayBuffer›*
+▸ **readBlob**(`blob`: Blob): *Promise‹Buffer›*
 
 **Parameters:**
 
@@ -815,7 +827,7 @@ Name | Type |
 ------ | ------ |
 `blob` | Blob |
 
-**Returns:** *Promise‹ArrayBuffer›*
+**Returns:** *Promise‹Buffer›*
 
 ___
 

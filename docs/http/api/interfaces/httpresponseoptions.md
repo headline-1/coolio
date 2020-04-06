@@ -17,7 +17,7 @@
 
 ### `Optional` body
 
-• **body**? : *[NormalizedHttpBody](../README.md#normalizedhttpbody)*
+• **body**? : *[TypedArray](../README.md#typedarray) | string*
 
 ___
 
