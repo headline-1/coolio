@@ -1,8 +1,14 @@
-import { CFormData } from '../formData';
+import { CFormData, SUPPORTS_BROWSER_FORM_DATA } from '../formData';
 
 describe('CoolioFormData', () => {
+  describe('testing environment', () => {
+    it('supports native (browser) FormData', () => {
+      expect(SUPPORTS_BROWSER_FORM_DATA).toBe(true);
+    });
+  });
+
   describe('#from()', () => {
-    it('returns input if it is already CoolioFormData or FormData', async () => {
+    it('returns the input if it already is custom or native FormData', async () => {
       const input = new CFormData();
       const input2 = new FormData();
 
@@ -11,6 +17,38 @@ describe('CoolioFormData', () => {
 
       expect(formData).toBe(input);
       expect(formData2).toBe(input2);
+    });
+
+    it('converts existing native FormData to custom format', () => {
+      const input = new FormData();
+      const fileMock = new File(
+        [Buffer.from('This is some kind of text file mock', 'utf8')],
+        'sample-text.txt'
+      );
+      input.append('test', 'value');
+      input.append('file', fileMock);
+
+      const result = CFormData.from(input, { forceImplementation: 'custom' });
+      expect(result).not.toBe(input);
+      expect(result instanceof CFormData).toBeTruthy();
+      expect(result.get('test')).toBe('value');
+      expect(result.get('file')).toBe(fileMock);
+    });
+
+    it('converts existing custom FormData to native format', ()=>{
+      const input = new CFormData();
+      const fileMock = new File(
+        [Buffer.from('This is some kind of text file mock', 'utf8')],
+        'sample-text.txt'
+      );
+      input.append('test', 'value');
+      input.append('file', fileMock);
+
+      const result = CFormData.from(input, { forceImplementation: 'native' });
+      expect(result).not.toBe(input);
+      expect(result instanceof FormData).toBeTruthy();
+      expect(result.get('test')).toBe('value');
+      expect(result.get('file')).toBe(fileMock);
     });
 
     it('serializes primitives to FormData', async () => {

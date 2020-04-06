@@ -33,13 +33,23 @@ export const fetchRequestHandler = (
         abortController.abort();
         reject(new HttpRequestError(requestOptions, `Request timed out after ${requestOptions.timeout}ms.`));
       }, requestOptions.timeout);
+
+      // Normalization of FormData options
+      // Make sure that we use native browser FormData with fetch and reset content-type header
+      const isFormData = CFormData.isFormData(requestOptions.body);
+      const body: any = isFormData
+        ? CFormData.from(requestOptions.body, { forceImplementation: 'native' })
+        : requestOptions.body;
+      const formDataHeaderOverride = isFormData ? { 'content-type': undefined } : undefined;
+
       fetch(requestOptions.url, {
         ...fetchRequestHandlerOptions.defaultRequestOptions,
         ...requestOptions,
+        body,
         headers: sanitizeHeaders(
           fetchRequestHandlerOptions.defaultRequestOptions?.headers,
           requestOptions.headers,
-          CFormData.isFormData(requestOptions.body) ? { 'content-type': undefined } : undefined
+          formDataHeaderOverride,
         ),
         signal: abortController.signal,
       }).then(response => {

@@ -1,5 +1,6 @@
 import { HttpResponseHeaders } from './httpResponseHeaders';
 import TypedArray = NodeJS.TypedArray;
+import { CFormData } from './formData';
 
 export interface RawHttpResponse {
   readonly headers: HttpResponseHeaders;
@@ -63,7 +64,7 @@ export interface HttpRequestOptions {
 
 export type HttpOptions = Partial<HttpRequestOptions>;
 
-export type NormalizedHttpBody = TypedArray | string | undefined;
+export type NormalizedHttpBody = FormData | CFormData | TypedArray | string | undefined;
 
 export interface NormalizedHttpOptions {
   url: string;

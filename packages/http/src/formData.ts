@@ -64,6 +64,10 @@ export const getFileMeta = (value: Blob | Readable, existingMeta?: CFormDataEntr
   };
 };
 
+export interface FormDataFromOptions {
+  forceImplementation?: 'native' | 'custom';
+}
+
 export interface CFormDataEntryMetadata {
   header?: string | Record<string, string | string[]>;
   filepath?: string;
@@ -107,12 +111,15 @@ export class CFormData {
     }
   }
 
-  static from(data: any): FormData | CFormData {
-    if (isBrowserFormData(data) || data instanceof CFormData) {
+  static from(data: any, { forceImplementation }: FormDataFromOptions = {}): FormData | CFormData {
+    if (
+      (isBrowserFormData(data) && forceImplementation !== 'custom')
+      || (data instanceof CFormData && forceImplementation !== 'native')
+    ) {
       return data;
     }
     const formData = new CFormData(data);
-    if (!SUPPORTS_BROWSER_FORM_DATA) {
+    if (!SUPPORTS_BROWSER_FORM_DATA || forceImplementation === 'custom') {
       return formData;
     }
     const browserFormData = new FormData();
