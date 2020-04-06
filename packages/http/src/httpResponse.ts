@@ -1,14 +1,15 @@
-import { HttpHeaders, HttpResponse, NormalizedHttpBody, RawHttpResponse } from './httpClient.types';
+import { HttpHeaders, HttpResponse, RawHttpResponse } from './httpClient.types';
 import { bodyParser } from './bodyParser';
 import { encodeArrayBuffer, encodeText } from './helpers/encoder.helper';
 import { HttpStatusText } from './httpCodes';
 import { HttpResponseHeaders } from './httpResponseHeaders';
+import TypedArray = NodeJS.TypedArray;
 
 interface HttpResponseOptions {
   url?: string;
   headers?: HttpHeaders;
   status: number;
-  body?: NormalizedHttpBody;
+  body?: TypedArray | string;
 }
 
 export const createHttpResponse = ({
