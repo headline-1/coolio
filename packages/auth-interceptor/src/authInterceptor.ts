@@ -29,12 +29,12 @@ export class AuthInterceptor implements HttpInterceptorInterface {
     if (this.options.canAuthorize(options)) {
       return () => this.queue.put(async () => {
         // Authorize a regular request
-        await this.options.setAuthorizationData(options);
+        await Promise.resolve(this.options.setAuthorizationData(options));
         // Perform request and handle failures with retry
         return await this.handleUnauthorizedResponse(request, async () => {
           // Authorize one more time, refreshing the token before
           await this.requestReauthorization();
-          await this.options.setAuthorizationData(options);
+          await Promise.resolve(this.options.setAuthorizationData(options));
 
           // Perform request and handle failures by throwing AuthorizationError
           return this.handleUnauthorizedResponse(request, error => this.handleAuthorizationError(error));
@@ -47,7 +47,7 @@ export class AuthInterceptor implements HttpInterceptorInterface {
 
   private async requestReauthorization() {
     try {
-      await this.options.reauthorize();
+      await Promise.resolve(this.options.reauthorize());
     } catch (error) {
       await this.handleAuthorizationError(error);
     }
@@ -61,7 +61,7 @@ export class AuthInterceptor implements HttpInterceptorInterface {
   private async handleAuthorizationError(error: any): Promise<never> {
     const authError = new AuthError('Reauthorization failed or credentials are invalid.', error);
     this.queue.clean(authError);
-    await this.options.onAuthorizationFailure(authError);
+    await Promise.resolve(this.options.onAuthorizationFailure(authError));
     throw authError;
   }
 
