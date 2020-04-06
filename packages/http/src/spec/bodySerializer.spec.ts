@@ -44,8 +44,8 @@ describe('bodySerializer', () => {
       [ContentType.MULTIPART_FORM, BodyCasing.PASCAL_CASE],
       [ContentType.MULTIPART_FORM, BodyCasing.SNAKE_CASE],
     ] as ([ContentType, BodyCasing])[]
-  )('serializes request with %s body and %s casing', async (contentType, bodyCasing) => {
-    const body = await bodySerializer({
+  )('serializes request with %s body and %s casing', (contentType, bodyCasing) => {
+    const body = bodySerializer({
       bodyCasing: bodyCasing,
     })({
       body: jsonBodySample,
@@ -56,8 +56,8 @@ describe('bodySerializer', () => {
     expect(body).toMatchSnapshot(`${contentType}-with-${bodyCasing}`);
   });
 
-  it('serializes request with text body', async () => {
-    const body = await bodySerializer()({
+  it('serializes request with text body', () => {
+    const body = bodySerializer()({
       body: ['this is a text body'],
       headers: {
         'Content-Type': ContentType.TEXT,
@@ -73,19 +73,19 @@ describe('bodySerializer', () => {
       ['string'],
       [formDataBodySample]
     ] as [undefined | Buffer | string | FormData][]
-  )('is a passthrough when %s is passed', async (inputBody) => {
-    const body = await bodySerializer()({
+  )('is a passthrough when %s is passed', (inputBody) => {
+    const body = bodySerializer()({
       body: inputBody,
       headers: {},
     });
     expect(body).toBe(inputBody);
   });
 
-  it('fails when Content-Type is not specified and non-passthrough item is passed', async () => {
-    await expect(bodySerializer()({
+  it('fails when Content-Type is not specified and non-passthrough item is passed', () => {
+    expect(() => bodySerializer()({
       body: {},
       headers: {},
-    })).rejects.toThrowError('Can not serialize request body');
+    })).toThrowError('Can not serialize request body');
   });
 
 });

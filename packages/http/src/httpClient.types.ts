@@ -22,7 +22,7 @@ export interface HttpResponse<T = any> extends RawHttpResponse {
 
 export type BodyParser<T = unknown> = (response: RawHttpResponse) => HttpResponse<T>;
 
-export type BodySerializer = (request: HttpOptions) => Promise<NormalizedHttpBody>;
+export type BodySerializer = (request: HttpOptions) => NormalizedHttpBody;
 
 export type HttpFetch<Body> = () => Promise<HttpResponse<Body>>;
 

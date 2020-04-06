@@ -237,7 +237,7 @@ export class HttpClient<T = unknown> {
       body: options && options.body as any,
     };
 
-    normalizedOptions.body = await this.bodySerializer(normalizedOptions);
+    normalizedOptions.body = this.bodySerializer(normalizedOptions);
 
     const chain = this.interceptors.reduce(
       useInterceptor(normalizedOptions),

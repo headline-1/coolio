@@ -23,7 +23,7 @@ export const bodySerializer = ({
     TEXT: (body) => String(body),
   };
 
-  return async (options: HttpOptions): Promise<NormalizedHttpBody> => {
+  return  (options: HttpOptions): NormalizedHttpBody => {
     const contentTypeHeader = getHeader(options.headers, 'content-type') || '';
     const contentType = contentTypeHeader.split(';')
       .map(type => type.trim().toLowerCase());
@@ -34,7 +34,7 @@ export const bodySerializer = ({
     }
     if (typeof body === 'object') {
       for (const type of contentType) {
-        const serializedBody = await switchContentType(type, bodySerializers);
+        const serializedBody = switchContentType(type, bodySerializers);
         if (serializedBody) {
           return serializedBody(body);
         }
