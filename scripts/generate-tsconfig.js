@@ -15,7 +15,7 @@ const processPackage = (projectDir) => {
       compilerOptions: {
         baseUrl: '.',
         rootDir: 'src',
-        outDir: `./dist/${base}`,
+        outDir: `./dist/${base || 'base'}`,
       },
       include: [
         './src',
@@ -29,7 +29,7 @@ const processPackage = (projectDir) => {
   writeTsconfig('esm');
   writeTsconfig('esm5');
   writeTsconfig(undefined, {
-    compilerOptions: { noEmit: true },
+    compilerOptions: { },
     typedocOptions: {
       inputFiles: ['./src/index.ts'],
       exclude: ['**/*.spec.ts', '**/spec/*.ts'],

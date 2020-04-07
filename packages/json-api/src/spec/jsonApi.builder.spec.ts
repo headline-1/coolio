@@ -1,6 +1,4 @@
 import { DEFAULT_REQUEST_TIMEOUT_MS } from '@coolio/http';
-import { GetBuilder } from '../jsonApi.get';
-import { GetListBuilder } from '../jsonApi.getList';
 import { createHttpMock, HttpMock } from './httpClient.setup';
 import { DEFAULT_HEADERS_MOCK, GET_MOCK } from './jsonApi.mocks';
 
