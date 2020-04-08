@@ -25,9 +25,7 @@ jobs:
     - run: yarn compile
     - name: Upload built packages
       uses: actions/upload-artifact@v2-preview
-      with:
-        name: dist
-        path: ./packages/{*/dist/,http/request-handlers}
+      with: { name: dist, path: ./packages/*/dist }
   test:
     name: Test
     needs: build
@@ -54,6 +52,8 @@ jobs:
       uses: actions/download-artifact@v2-preview
       with: { name: dist, path: ./packages/ }
     - run: yarn lint
+    - run: 'find packages | sed -e "s/[^-][^\/]*\//  |/g" -e "s/|\([^ ]\)/|-\1/"'
+      if: matrix.os == 'ubuntu-latest'
     - run: yarn test
     - name: Upload coverage to Codecov
       if: matrix.os == 'ubuntu-latest' && matrix.node_version

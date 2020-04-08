@@ -26,9 +26,7 @@ jobs:
       run: yarn compile
     - name: Upload built packages
       uses: actions/upload-artifact@v2-preview
-      with:
-        name: dist
-        path: ./packages/{*/dist/,http/request-handlers}
+      with: { name: dist, path: ./packages/*/dist/ }
   coverage:
     name: Test Coverage
     needs: build
