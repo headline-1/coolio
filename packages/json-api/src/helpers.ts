@@ -9,7 +9,7 @@ import {
   RelationshipData,
   ResolvedRelationship,
   ResolvedRelationshipArray,
-} from './jsonApi.interface';
+} from './types';
 
 export const isData = <D extends AnyData>(
   data: RelationshipData | D,

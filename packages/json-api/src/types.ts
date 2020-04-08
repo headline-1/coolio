@@ -110,21 +110,22 @@ export type IncludedGroups<Groups extends IncludedGroupsSchema = IncludedGroupsS
 
 export type MergedIncludedGroups<G extends IncludedGroups<any>> = { [k in keyof G]: MergedData<G[k]> };
 
-/*
- * RawResponse & RawListResponse
- * ------------
- * These are types covering JSON API responses for single element and multiple elements.
+/**
+ * This interface covers JSON API response for single element.
  */
-
 export interface RawResponse<D extends AnyData, M extends {} = {}> {
   data: D;
   meta?: M;
   included?: IncludedRelationships;
 }
 
+/**
+ * This interface covers JSON API response for multiple elements.
+ */
 export interface RawListResponse<D extends AnyData, M extends ListMetaData = ListMetaData> {
   data: D[];
   links: {
+    self?: string;
     first: string;
     next?: string;
     prev?: string;
@@ -138,19 +139,6 @@ export const Headers = {
   'Content-Type': ContentType.VND_JSON,
   'Accept': ContentType.VND_JSON,
 };
-
-/**
- * @deprecated It is not part of JSON API and is not supported in when array of keys is passed
- */
-export enum FilterOperator {
-  EQUALS = 'EQ',
-  NOT_EQUALS = 'NEQ',
-  LIKE = 'LIKE',
-  GREATER = 'GT',
-  LOWER = 'LT',
-  GREATER_OR_EQUAL = 'GE',
-  LOWER_OR_EQUAL = 'LE',
-}
 
 export enum SortOrder {
   ASCENDING = '',

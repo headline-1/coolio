@@ -6,13 +6,65 @@ on:
     - master
 
 jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Build packages
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v1
+      with: { node-version: 12 }
+    - name: Yarn Cache
+      uses: actions/cache@v1
+      with:
+        path: ~/.cache/yarn
+        key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-yarn-
+    - name: Install dependencies
+      run: yarn
+    - name: Build packages
+      run: yarn compile
+    - name: Upload built packages
+      uses: actions/upload-artifact@v2-preview
+      with: { name: dist, path: ./packages/*/dist/ }
+  coverage:
+    name: Test Coverage
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v1
+      with: { node-version: 12 }
+    - name: Yarn Cache
+      uses: actions/cache@v1
+      with:
+        path: ~/.cache/yarn
+        key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-yarn-
+    - run: yarn
+    - uses: actions/download-artifact@v1 # TODO: Change to v2 when gzip is fixed
+      with: { name: dist, path: ./packages/ }
+    - run: yarn test
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v1
   github-release:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node_version: ['12']
+    needs: build
     steps:
     - uses: actions/checkout@v1
+    - uses: actions/setup-node@v1
+      with: { node-version: 12 }
+    - name: Yarn Cache
+      uses: actions/cache@v1
+      with:
+        path: ~/.cache/yarn
+        key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-yarn-
+    - run: yarn
+    - uses: actions/download-artifact@v1 # TODO: Change to v2 when gzip is fixed
+      with: { name: dist, path: ./packages/ }
     - name: Checkout Hack (Push Ability)
       run: |
         git config --global user.name "Headline1 Automation"
@@ -22,14 +74,6 @@ jobs:
         git checkout "${GITHUB_REF:11}"
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    - name: Use Node.js ${{ matrix.node_version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - name: Install dependencies
-      run: yarn
-    - name: Build packages
-      run: yarn compile
     - name: Create release
       run: yarn release:version --yes
       env:
@@ -37,23 +81,24 @@ jobs:
   npm-publish:
     runs-on: ubuntu-latest
     needs: github-release
-    strategy:
-      matrix:
-        node_version: ['12']
     steps:
     - uses: actions/checkout@v1
+    - uses: actions/setup-node@v1
+      with: { node-version: 12 }
+    - name: Yarn Cache
+      uses: actions/cache@v1
+      with:
+        path: ~/.cache/yarn
+        key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-yarn-
+    - run: yarn
+    - uses: actions/download-artifact@v1 # TODO: Change to v2 when gzip is fixed
+      with: { name: dist, path: ./packages/ }
     - name: Checkout Hack (Attach Head)
       run: git checkout "${GITHUB_REF:11}"
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    - name: Use Node.js ${{ matrix.node_version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - name: Install dependencies
-      run: yarn
-    - name: Build packages
-      run: yarn compile
     - name: Create release & publish package
       run: |
         npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
