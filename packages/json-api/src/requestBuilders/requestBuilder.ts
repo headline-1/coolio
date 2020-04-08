@@ -1,6 +1,6 @@
 import { HttpClient } from '@coolio/http';
 import isNil from 'lodash/isNil';
-import { AnyData, SortOrder } from '../types';
+import { AnyData, ListMetaData, SortOrder } from '../types';
 import { JsonApiOneSender } from '../senders/jsonApi.one-sender';
 import { JsonApiManySender } from '../senders/jsonApi.many-sender';
 import { JsonApiRequestData, RequestBuilderOptions } from '../requestData';
@@ -14,7 +14,7 @@ export class RequestBuilder<D extends AnyData, M extends {} = {}> {
   protected readonly requestData: JsonApiRequestData;
 
   constructor(
-    protected readonly httpClient: HttpClient,
+    private readonly httpClient: HttpClient,
     options: RequestBuilderOptions,
     uri: string,
   ) {
@@ -70,7 +70,7 @@ export class RequestBuilder<D extends AnyData, M extends {} = {}> {
 
   expectMany() {
     this.onBeforeExpect();
-    return new JsonApiManySender<D, M>(this.httpClient, this.requestData);
+    return new JsonApiManySender<D, M & ListMetaData>(this.httpClient, this.requestData);
   }
 
   /**

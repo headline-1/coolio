@@ -1,5 +1,4 @@
 import {
-  BodyCasing,
   bodyParser,
   bodySerializer,
   ContentType,
@@ -8,13 +7,13 @@ import {
 } from '@coolio/http';
 import { mockRequestHandler, handleRequest, MockHttpRequestHandler } from '@coolio/http/request-handlers/mock';
 import {
-  DELETE_MOCK,
-  GET_LIST_MOCK,
-  GET_MOCK,
-  PATCH_MOCK,
-  POST_EMPTY_MOCK,
-  POST_MOCK,
-  PUT_MOCK
+  DeleteMock,
+  GetListMock,
+  GetMock,
+  PatchMock,
+  PostEmptyMock,
+  PostMock,
+  PutMock
 } from './jsonApi.mocks';
 
 export interface HttpMock {
@@ -27,39 +26,39 @@ export const createHttpMock = (): HttpMock => {
   const requestHandler = mockRequestHandler({
     endpoints: [
       {
-        match: GET_MOCK.URI,
-        handler: ok(GET_MOCK.RAW),
+        match: GetMock.uri,
+        handler: ok(GetMock.raw),
       },
       {
-        match: POST_EMPTY_MOCK.URI,
+        match: PostEmptyMock.uri,
         handler: () => handleRequest(HttpCode.ACCEPTED, undefined, ContentType.VND_JSON),
       },
       {
-        match: GET_LIST_MOCK.URI,
-        handler: ok(GET_LIST_MOCK.RAW),
+        match: GetListMock.uri,
+        handler: ok(GetListMock.raw),
       },
       {
-        match: PUT_MOCK.URI,
-        handler: ok(GET_MOCK.RAW),
+        match: PutMock.uri,
+        handler: ok(GetMock.raw),
       },
       {
-        match: PATCH_MOCK.URI,
-        handler: ok(GET_MOCK.RAW),
+        match: PatchMock.uri,
+        handler: ok(GetMock.raw),
       },
       {
-        match: DELETE_MOCK.URI,
-        handler: ok(GET_MOCK.RAW),
+        match: DeleteMock.uri,
+        handler: ok(GetMock.raw),
       },
       {
-        match: POST_MOCK.URI,
-        handler: ok(GET_MOCK.RAW),
+        match: PostMock.uri,
+        handler: ok(GetMock.raw),
       },
     ],
   });
   const httpClient = new HttpClient({
     requestHandler,
-    bodyParser: bodyParser({ bodyCasing: BodyCasing.CAMEL_CASE }),
-    bodySerializer: bodySerializer({ bodyCasing: BodyCasing.SNAKE_CASE }),
+    bodyParser: bodyParser(),
+    bodySerializer: bodySerializer(),
   });
 
   return { httpClient, requestHandler };

@@ -1,12 +1,12 @@
 import { HttpClient, HttpOptions } from '@coolio/http';
 import isNil from 'lodash/isNil';
-import { AnyData, IncludedGroups, IncludedGroupsSchema, RawListResponse } from '../types';
+import { AnyData, IncludedGroups, IncludedGroupsSchema, ListMetaData, RawListResponse } from '../types';
 import { JsonListResponse } from '../responses';
 import { resolveRelationships } from '../helpers';
 import { JsonApiSender } from './jsonApi.sender';
 import { JsonApiRequestData } from '../requestData';
 
-export class JsonApiManySender<D extends AnyData, M, I extends IncludedGroups = {}> extends JsonApiSender {
+export class JsonApiManySender<D extends AnyData, M extends ListMetaData, I extends IncludedGroups = {}> extends JsonApiSender {
   private previousResponse?: JsonListResponse<RawListResponse<D, M>, I>;
   private includedGroups: IncludedGroupsSchema = {};
 

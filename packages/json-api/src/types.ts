@@ -122,9 +122,10 @@ export interface RawResponse<D extends AnyData, M extends {} = {}> {
 /**
  * This interface covers JSON API response for multiple elements.
  */
-export interface RawListResponse<D extends AnyData, M extends {} = ListMetaData> {
+export interface RawListResponse<D extends AnyData, M extends ListMetaData = ListMetaData> {
   data: D[];
   links: {
+    self?: string;
     first: string;
     next?: string;
     prev?: string;
