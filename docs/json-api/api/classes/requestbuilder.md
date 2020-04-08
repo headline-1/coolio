@@ -1,142 +1,106 @@
-# Class: RequestBuilder <**ResponseType**>
+# Class: RequestBuilder <**D, M**>
+
+RequestBuilder is responsible for setting request options part of API call.
+You can configure filters, sorting methods, pagination and then call [expectMany](requestbuilder.md#expectmany) or [expectOne](requestbuilder.md#expectone)
+in order to send specify response processing params and finally send the request.
 
 ## Type parameters
 
-▪ **ResponseType**
+▪ **D**: *[AnyData](../README.md#anydata)*
+
+▪ **M**: *object*
 
 ## Hierarchy
 
 * **RequestBuilder**
 
-  ↳ [GetBuilder](getbuilder.md)
-
-  ↳ [GetListBuilder](getlistbuilder.md)
-
-  ↳ [PostBuilder](postbuilder.md)
-
-  ↳ [RemoveBuilder](removebuilder.md)
-
-  ↳ [UpdateBuilder](updatebuilder.md)
+  ↳ [CreationalRequestBuilder](creationalrequestbuilder.md)
 
 ## Index
 
 ### Constructors
 
-* [constructor](requestbuilder.md#protected-constructor)
+* [constructor](requestbuilder.md#constructor)
 
 ### Properties
 
-* [limit](requestbuilder.md#protected-limit)
-* [offset](requestbuilder.md#protected-offset)
-* [options](requestbuilder.md#protected-options)
-* [page](requestbuilder.md#protected-page)
-* [queryParams](requestbuilder.md#protected-queryparams)
-* [resolveIncludedRelationships](requestbuilder.md#protected-resolveincludedrelationships)
-* [sortParams](requestbuilder.md#protected-sortparams)
-* [uri](requestbuilder.md#uri)
-
-### Accessors
-
-* [parameters](requestbuilder.md#parameters)
+* [requestData](requestbuilder.md#protected-requestdata)
 
 ### Methods
 
+* [expectMany](requestbuilder.md#expectmany)
+* [expectOne](requestbuilder.md#expectone)
 * [filter](requestbuilder.md#filter)
+* [onBeforeExpect](requestbuilder.md#protected-onbeforeexpect)
 * [pageLimit](requestbuilder.md#pagelimit)
 * [pageNumber](requestbuilder.md#pagenumber)
 * [pageOffset](requestbuilder.md#pageoffset)
 * [parameter](requestbuilder.md#parameter)
-* [parseResponse](requestbuilder.md#protected-parseresponse)
-* [resolveIncluded](requestbuilder.md#resolveincluded)
-* [send](requestbuilder.md#abstract-send)
 * [sort](requestbuilder.md#sort)
 
 ## Constructors
 
-### `Protected` constructor
+###  constructor
 
-\+ **new RequestBuilder**(`uri`: string, `options`: [Options](../interfaces/options.md)): *[RequestBuilder](requestbuilder.md)*
+\+ **new RequestBuilder**(`httpClient`: HttpClient, `options`: [RequestBuilderOptions](../interfaces/requestbuilderoptions.md), `uri`: string): *[RequestBuilder](requestbuilder.md)*
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
+`httpClient` | HttpClient |
+`options` | [RequestBuilderOptions](../interfaces/requestbuilderoptions.md) |
 `uri` | string |
-`options` | [Options](../interfaces/options.md) |
 
 **Returns:** *[RequestBuilder](requestbuilder.md)*
 
 ## Properties
 
-### `Protected` limit
+### `Protected` requestData
 
-• **limit**: *number* = DEFAULT_RESOURCE_LIMIT
-
-___
-
-### `Protected` offset
-
-• **offset**: *undefined | number*
-
-___
-
-### `Protected` options
-
-• **options**: *[Options](../interfaces/options.md)*
-
-___
-
-### `Protected` page
-
-• **page**: *number* = 1
-
-___
-
-### `Protected` queryParams
-
-• **queryParams**: *Record‹string, string›*
-
-___
-
-### `Protected` resolveIncludedRelationships
-
-• **resolveIncludedRelationships**: *boolean* = false
-
-___
-
-### `Protected` sortParams
-
-• **sortParams**: *string[]* = []
-
-___
-
-###  uri
-
-• **uri**: *string*
-
-## Accessors
-
-###  parameters
-
-• **get parameters**(): *Record‹string, string›*
-
-**Returns:** *Record‹string, string›*
+• **requestData**: *[JsonApiRequestData](jsonapirequestdata.md)*
 
 ## Methods
 
+###  expectMany
+
+▸ **expectMany**(): *[JsonApiManySender](jsonapimanysender.md)‹D, M & [ListMetaData](../interfaces/listmetadata.md), object›*
+
+**Returns:** *[JsonApiManySender](jsonapimanysender.md)‹D, M & [ListMetaData](../interfaces/listmetadata.md), object›*
+
+___
+
+###  expectOne
+
+▸ **expectOne**(): *[JsonApiOneSender](jsonapionesender.md)‹D, M›*
+
+**Returns:** *[JsonApiOneSender](jsonapionesender.md)‹D, M›*
+
+___
+
 ###  filter
 
-▸ **filter**(`key`: string | string[] | undefined, `value`: string | number | boolean | undefined, `operator?`: [FilterOperator](../enums/filteroperator.md)): *this*
+▸ **filter**(`key`: string | string[], `value`: string | number | boolean | undefined): *this*
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`key` | string &#124; string[] &#124; undefined |
+`key` | string &#124; string[] |
 `value` | string &#124; number &#124; boolean &#124; undefined |
-`operator?` | [FilterOperator](../enums/filteroperator.md) |
 
 **Returns:** *this*
+
+___
+
+### `Protected` onBeforeExpect
+
+▸ **onBeforeExpect**(): *void*
+
+Executed before [expectOne](requestbuilder.md#expectone) and [expectMany](requestbuilder.md#expectmany).
+Can be overridden by inheriting classes.
+
+**Returns:** *void*
 
 ___
 
@@ -194,52 +158,6 @@ Name | Type |
 `value` | string &#124; number &#124; boolean &#124; undefined |
 
 **Returns:** *this*
-
-___
-
-### `Protected` parseResponse
-
-▸ **parseResponse**<**Raw**>(`response`: HttpResponse): *Promise‹[JsonResponse](jsonresponse.md)‹Raw››*
-
-**Type parameters:**
-
-▪ **Raw**: *[RawResponse](../interfaces/rawresponse.md)‹any, any›*
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`response` | HttpResponse |
-
-**Returns:** *Promise‹[JsonResponse](jsonresponse.md)‹Raw››*
-
-___
-
-###  resolveIncluded
-
-▸ **resolveIncluded**(`resolveIncluded?`: undefined | false | true): *this*
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`resolveIncluded?` | undefined &#124; false &#124; true |
-
-**Returns:** *this*
-
-___
-
-### `Abstract` send
-
-▸ **send**(`options?`: HttpOptions): *Promise‹ResponseType›*
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`options?` | HttpOptions |
-
-**Returns:** *Promise‹ResponseType›*
 
 ___
 

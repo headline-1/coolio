@@ -1,5 +1,7 @@
 # Interface: RawResponse <**D, M**>
 
+This interface covers JSON API response for single element.
+
 ## Type parameters
 
 ▪ **D**: *[AnyData](../README.md#anydata)*

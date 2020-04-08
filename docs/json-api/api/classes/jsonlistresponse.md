@@ -33,17 +33,17 @@
 
 ###  constructor
 
-\+ **new JsonListResponse**(`raw`: Raw, `limit`: number, `offset`: number | undefined, `rawIncludedGroups`: I, `response`: HttpResponse‹Raw›): *[JsonListResponse](jsonlistresponse.md)*
+\+ **new JsonListResponse**(`raw`: Raw, `response`: HttpResponse‹Raw›, `limit`: number, `offset`: number | undefined, `rawIncludedGroups`: I): *[JsonListResponse](jsonlistresponse.md)*
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
 `raw` | Raw |
+`response` | HttpResponse‹Raw› |
 `limit` | number |
 `offset` | number &#124; undefined |
 `rawIncludedGroups` | I |
-`response` | HttpResponse‹Raw› |
 
 **Returns:** *[JsonListResponse](jsonlistresponse.md)*
 

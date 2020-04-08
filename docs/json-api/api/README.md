@@ -4,20 +4,19 @@
 
 ### Enumerations
 
-* [FilterOperator](enums/filteroperator.md)
 * [SortOrder](enums/sortorder.md)
 
 ### Classes
 
-* [GetBuilder](classes/getbuilder.md)
-* [GetListBuilder](classes/getlistbuilder.md)
+* [CreationalRequestBuilder](classes/creationalrequestbuilder.md)
 * [JsonApiClient](classes/jsonapiclient.md)
+* [JsonApiManySender](classes/jsonapimanysender.md)
+* [JsonApiOneSender](classes/jsonapionesender.md)
+* [JsonApiRequestData](classes/jsonapirequestdata.md)
+* [JsonApiSender](classes/jsonapisender.md)
 * [JsonListResponse](classes/jsonlistresponse.md)
 * [JsonResponse](classes/jsonresponse.md)
-* [PostBuilder](classes/postbuilder.md)
-* [RemoveBuilder](classes/removebuilder.md)
 * [RequestBuilder](classes/requestbuilder.md)
-* [UpdateBuilder](classes/updatebuilder.md)
 
 ### Interfaces
 
@@ -25,9 +24,9 @@
 * [Data](interfaces/data.md)
 * [IncludedGroup](interfaces/includedgroup.md)
 * [ListMetaData](interfaces/listmetadata.md)
-* [Options](interfaces/options.md)
 * [RawListResponse](interfaces/rawlistresponse.md)
 * [RawResponse](interfaces/rawresponse.md)
+* [RequestBuilderOptions](interfaces/requestbuilderoptions.md)
 
 ### Type aliases
 

@@ -16,12 +16,11 @@
 
 ### Methods
 
+* [delete](jsonapiclient.md#delete)
 * [get](jsonapiclient.md#get)
-* [getList](jsonapiclient.md#getlist)
 * [patch](jsonapiclient.md#patch)
 * [post](jsonapiclient.md#post)
 * [put](jsonapiclient.md#put)
-* [remove](jsonapiclient.md#remove)
 
 ## Constructors
 
@@ -45,9 +44,9 @@ Name | Type |
 
 ## Methods
 
-###  get
+###  delete
 
-▸ **get**<**D**, **M**>(`uri`: string): *[GetBuilder](getbuilder.md)‹[RawResponse](../interfaces/rawresponse.md)‹D, M››*
+▸ **delete**<**D**, **M**>(`uri`: string): *[RequestBuilder](requestbuilder.md)‹D, M›*
 
 **Type parameters:**
 
@@ -61,19 +60,19 @@ Name | Type |
 ------ | ------ |
 `uri` | string |
 
-**Returns:** *[GetBuilder](getbuilder.md)‹[RawResponse](../interfaces/rawresponse.md)‹D, M››*
+**Returns:** *[RequestBuilder](requestbuilder.md)‹D, M›*
 
 ___
 
-###  getList
+###  get
 
-▸ **getList**<**D**, **M**>(`uri`: string): *[GetListBuilder](getlistbuilder.md)‹[RawListResponse](../interfaces/rawlistresponse.md)‹D, M›, object›*
+▸ **get**<**D**, **M**>(`uri`: string): *[RequestBuilder](requestbuilder.md)‹D, M›*
 
 **Type parameters:**
 
 ▪ **D**: *[AnyData](../README.md#anydata)*
 
-▪ **M**: *[ListMetaData](../interfaces/listmetadata.md)*
+▪ **M**: *object*
 
 **Parameters:**
 
@@ -81,13 +80,13 @@ Name | Type |
 ------ | ------ |
 `uri` | string |
 
-**Returns:** *[GetListBuilder](getlistbuilder.md)‹[RawListResponse](../interfaces/rawlistresponse.md)‹D, M›, object›*
+**Returns:** *[RequestBuilder](requestbuilder.md)‹D, M›*
 
 ___
 
 ###  patch
 
-▸ **patch**<**D**, **M**>(`uri`: string): *[UpdateBuilder](updatebuilder.md)‹[RawResponse](../interfaces/rawresponse.md)‹D, M››*
+▸ **patch**<**D**, **M**>(`uri`: string): *[CreationalRequestBuilder](creationalrequestbuilder.md)‹D, M›*
 
 **Type parameters:**
 
@@ -101,13 +100,13 @@ Name | Type |
 ------ | ------ |
 `uri` | string |
 
-**Returns:** *[UpdateBuilder](updatebuilder.md)‹[RawResponse](../interfaces/rawresponse.md)‹D, M››*
+**Returns:** *[CreationalRequestBuilder](creationalrequestbuilder.md)‹D, M›*
 
 ___
 
 ###  post
 
-▸ **post**<**D**, **M**>(`uri`: string): *[PostBuilder](postbuilder.md)‹[RawResponse](../interfaces/rawresponse.md)‹D, M››*
+▸ **post**<**D**, **M**>(`uri`: string): *[CreationalRequestBuilder](creationalrequestbuilder.md)‹D, M›*
 
 **Type parameters:**
 
@@ -121,13 +120,13 @@ Name | Type |
 ------ | ------ |
 `uri` | string |
 
-**Returns:** *[PostBuilder](postbuilder.md)‹[RawResponse](../interfaces/rawresponse.md)‹D, M››*
+**Returns:** *[CreationalRequestBuilder](creationalrequestbuilder.md)‹D, M›*
 
 ___
 
 ###  put
 
-▸ **put**<**D**, **M**>(`uri`: string): *[UpdateBuilder](updatebuilder.md)‹[RawResponse](../interfaces/rawresponse.md)‹D, M››*
+▸ **put**<**D**, **M**>(`uri`: string): *[CreationalRequestBuilder](creationalrequestbuilder.md)‹D, M›*
 
 **Type parameters:**
 
@@ -141,24 +140,4 @@ Name | Type |
 ------ | ------ |
 `uri` | string |
 
-**Returns:** *[UpdateBuilder](updatebuilder.md)‹[RawResponse](../interfaces/rawresponse.md)‹D, M››*
-
-___
-
-###  remove
-
-▸ **remove**<**D**, **M**>(`uri`: string): *[RemoveBuilder](removebuilder.md)‹[RawResponse](../interfaces/rawresponse.md)‹D, M››*
-
-**Type parameters:**
-
-▪ **D**: *[AnyData](../README.md#anydata)*
-
-▪ **M**: *object*
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`uri` | string |
-
-**Returns:** *[RemoveBuilder](removebuilder.md)‹[RawResponse](../interfaces/rawresponse.md)‹D, M››*
+**Returns:** *[CreationalRequestBuilder](creationalrequestbuilder.md)‹D, M›*

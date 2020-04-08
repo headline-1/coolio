@@ -1,5 +1,7 @@
 # Interface: RawListResponse <**D, M**>
 
+This interface covers JSON API response for multiple elements.
+
 ## Type parameters
 
 ▪ **D**: *[AnyData](../README.md#anydata)*
@@ -46,6 +48,8 @@ ___
 * **next**? : *undefined | string*
 
 * **prev**? : *undefined | string*
+
+* **self**? : *undefined | string*
 
 ___
 
