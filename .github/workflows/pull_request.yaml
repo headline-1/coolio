@@ -7,31 +7,49 @@ on:
     - next
 
 jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12
+    - name: Install dependencies
+      run: yarn
+    - name: Lint code
+      run: yarn lint
+    - name: Audit packages
+      run: yarn audit --groups dependencies
+    - name: Build packages
+      run: yarn compile
+    - name: Upload built packages
+      uses: actions/upload-artifact@v2-preview
+      with:
+        name: dist
+        path: ./packages/*/dist/
   test:
     name: Test
+    needs: build
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         node_version: [8, 10, 12]
         os: [ubuntu-latest, windows-latest]
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
     - name: Install dependencies
       run: yarn
-    - name: Build packages
-      run: yarn compile
+    - name: Download built packages
+      uses: actions/download-artifact@v2-preview
+      with:
+        name: dist
     - name: Run tests
       run: yarn test
-    - name: Lint code
-      run: yarn lint
-    - name: Audit packages
-      run: yarn audit --groups dependencies
     - name: Upload coverage to Codecov
-      if: matrix.os != 'windows-latest'
-      uses: codecov/codecov-action@v1.0.2
-      with:
-        token: ${{secrets.CODECOV_TOKEN}}
+      if: matrix.os == 'ubuntu-latest' && matrix.node_version
+      uses: codecov/codecov-action@v1
