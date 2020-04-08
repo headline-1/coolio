@@ -52,7 +52,7 @@ jobs:
       uses: actions/download-artifact@v2-preview
       with: { name: dist, path: ./packages/ }
     - run: yarn lint
-    - run: 'find packages | sed -e "s/[^-][^\/]*\//  |/g" -e "s/|\([^ ]\)/|-\1/"'
+    - run: cat ./packages/http/dist/types/index.d.ts
       if: matrix.os == 'ubuntu-latest'
     - run: yarn test
     - name: Upload coverage to Codecov
