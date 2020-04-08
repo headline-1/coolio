@@ -17,8 +17,6 @@ jobs:
         node-version: 12
     - name: Install dependencies
       run: yarn
-    - name: Lint code
-      run: yarn lint
     - name: Audit packages
       run: yarn audit --groups dependencies
     - name: Build packages
@@ -48,6 +46,8 @@ jobs:
       uses: actions/download-artifact@v2-preview
       with:
         name: dist
+    - name: Lint code
+      run: yarn lint
     - name: Run tests
       run: yarn test
     - name: Upload coverage to Codecov
