@@ -43,7 +43,7 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-yarn-
     - run: yarn
-    - uses: actions/download-artifact@v2-preview
+    - uses: actions/download-artifact@v1 # TODO: Change to v2 when gzip is fixed
       with: { name: dist, path: ./packages/ }
     - run: yarn test
     - name: Upload coverage to Codecov
@@ -63,7 +63,7 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-yarn-
     - run: yarn
-    - uses: actions/download-artifact@v2-preview
+    - uses: actions/download-artifact@v1 # TODO: Change to v2 when gzip is fixed
       with: { name: dist, path: ./packages/ }
     - name: Checkout Hack (Push Ability)
       run: |
@@ -93,7 +93,7 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-yarn-
     - run: yarn
-    - uses: actions/download-artifact@v2-preview
+    - uses: actions/download-artifact@v1 # TODO: Change to v2 when gzip is fixed
       with: { name: dist, path: ./packages/ }
     - name: Checkout Hack (Attach Head)
       run: git checkout "${GITHUB_REF:11}"
