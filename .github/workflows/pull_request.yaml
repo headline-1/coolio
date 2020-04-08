@@ -11,21 +11,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Use Node.js
-      uses: actions/setup-node@v1
+    - uses: actions/setup-node@v1
+      with: { node-version: 12 }
+    - name: Yarn Cache
+      uses: actions/cache@v1
       with:
-        node-version: 12
-    - name: Install dependencies
-      run: yarn
-    - name: Audit packages
-      run: yarn audit --groups dependencies
-    - name: Build packages
-      run: yarn compile
+        path: ~/.cache/yarn
+        key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-yarn-
+    - run: yarn
+    - run: yarn audit --groups dependencies
+    - run: yarn compile
     - name: Upload built packages
       uses: actions/upload-artifact@v2-preview
-      with:
-        name: dist
-        path: ./packages/*/dist/
+      with: { name: dist, path: ./packages/*/dist/ }
   test:
     name: Test
     needs: build
@@ -40,16 +40,19 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: Install dependencies
-      run: yarn
+    - name: Yarn Cache
+      uses: actions/cache@v1
+      with:
+        path: ~/.cache/yarn
+        key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-yarn-
+    - run: yarn
     - name: Download built packages
       uses: actions/download-artifact@v2-preview
-      with:
-        name: dist
-    - name: Lint code
-      run: yarn lint
-    - name: Run tests
-      run: yarn test
+      with: { name: dist, path: ./packages/ }
+    - run: yarn lint
+    - run: yarn test
     - name: Upload coverage to Codecov
       if: matrix.os == 'ubuntu-latest' && matrix.node_version
       uses: codecov/codecov-action@v1

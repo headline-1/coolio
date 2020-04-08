@@ -13,15 +13,20 @@ jobs:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v1
       with: { node-version: 12 }
+    - name: Yarn Cache
+      uses: actions/cache@v1
+      with:
+        path: ~/.cache/yarn
+        key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-yarn-
     - name: Install dependencies
       run: yarn
     - name: Build packages
       run: yarn compile
     - name: Upload built packages
       uses: actions/upload-artifact@v2-preview
-      with:
-        name: dist
-        path: ./packages/*/dist/
+      with: { name: dist, path: ./packages/*/dist/ }
   coverage:
     name: Test Coverage
     needs: build
@@ -30,9 +35,16 @@ jobs:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v1
       with: { node-version: 12 }
+    - name: Yarn Cache
+      uses: actions/cache@v1
+      with:
+        path: ~/.cache/yarn
+        key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-yarn-
     - run: yarn
     - uses: actions/download-artifact@v2-preview
-      with: { name: dist }
+      with: { name: dist, path: ./packages/ }
     - run: yarn test
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v1
@@ -43,9 +55,16 @@ jobs:
     - uses: actions/checkout@v1
     - uses: actions/setup-node@v1
       with: { node-version: 12 }
+    - name: Yarn Cache
+      uses: actions/cache@v1
+      with:
+        path: ~/.cache/yarn
+        key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-yarn-
     - run: yarn
     - uses: actions/download-artifact@v2-preview
-      with: { name: dist }
+      with: { name: dist, path: ./packages/ }
     - name: Checkout Hack (Push Ability)
       run: |
         git config --global user.name "Headline1 Automation"
@@ -66,9 +85,16 @@ jobs:
     - uses: actions/checkout@v1
     - uses: actions/setup-node@v1
       with: { node-version: 12 }
+    - name: Yarn Cache
+      uses: actions/cache@v1
+      with:
+        path: ~/.cache/yarn
+        key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-yarn-
     - run: yarn
     - uses: actions/download-artifact@v2-preview
-      with: { name: dist }
+      with: { name: dist, path: ./packages/ }
     - name: Checkout Hack (Attach Head)
       run: git checkout "${GITHUB_REF:11}"
       env:
