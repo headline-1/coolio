@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.1](https://github.com/headline-1/coolio/compare/v3.0.0...v3.0.1) (2020-04-09)
+
+
+### Bug Fixes
+
+* **dev vulnerability:** minimist ([6473890](https://github.com/headline-1/coolio/commit/647389076935d273d126e38c63519e9e273d48a2))
+
+
+
+
+
 # [3.0.0](https://github.com/headline-1/coolio/compare/v2.1.5...v3.0.0) (2020-04-08)
 
 
