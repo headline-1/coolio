@@ -74,7 +74,7 @@
     "ts-jest": "^25.2.1",
     "ts-loader": "^6.2.1",
     "tsc-watch": "^4.2.3",
-    "typedoc": "^0.17.1",
+    "typedoc": "^0.17.4",
     "typedoc-plugin-markdown": "^2.2.17",
     "typescript": "^3.7.5",
     "whatwg-fetch": "^3.0.0"
