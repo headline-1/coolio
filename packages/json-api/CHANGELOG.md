@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.1.0](https://github.com/headline-1/coolio/compare/v3.0.1...v3.1.0) (2020-06-19)
+
+
+### Features
+
+* **json-api:** query params can be any object or array ([287b3af](https://github.com/headline-1/coolio/commit/287b3afa03fbcc74d63bef97e167c53d4b32dba9))
+
+
+
+
+
 ## [3.0.1](https://github.com/headline-1/coolio/compare/v3.0.0...v3.0.1) (2020-04-09)
 
 **Note:** Version bump only for package @coolio/json-api

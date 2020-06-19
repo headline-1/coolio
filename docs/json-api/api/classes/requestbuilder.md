@@ -80,14 +80,14 @@ ___
 
 ###  filter
 
-▸ **filter**(`key`: string | string[], `value`: string | number | boolean | undefined): *this*
+▸ **filter**(`key`: string | string[], `value`: any): *this*
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
 `key` | string &#124; string[] |
-`value` | string &#124; number &#124; boolean &#124; undefined |
+`value` | any |
 
 **Returns:** *this*
 
@@ -148,14 +148,14 @@ ___
 
 ###  parameter
 
-▸ **parameter**(`key`: string, `value`: string | number | boolean | undefined): *this*
+▸ **parameter**(`key`: string, `value`: any): *this*
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
 `key` | string |
-`value` | string &#124; number &#124; boolean &#124; undefined |
+`value` | any |
 
 **Returns:** *this*
 

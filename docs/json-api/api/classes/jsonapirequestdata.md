@@ -74,7 +74,7 @@ ___
 
 ###  query
 
-• **query**: *Record‹string, string›*
+• **query**: *Record‹string, any›*
 
 ___
 
