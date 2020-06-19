@@ -51,6 +51,16 @@ describe('JSON API RequestBuilder', () => {
     });
   });
 
+  it('produces correct request for filters with array of elements', async () => {
+    const client = new JsonApiClient(mock.httpClient);
+    await client.get<Data<{}>>(GetMock.uri)
+      .filter('key1', ['value1', 'value2', 'value3'])
+      .filter(['something', 'nested'], ['v1', 'v2', 'v3', 'v4'])
+      .expectOne()
+      .send();
+    expect(mock.requestHandler.lastRequest().url).toEqual('https://example.com/list/123?filter[key1][0]=value1&filter[key1][1]=value2&filter[key1][2]=value3&filter[something][nested][0]=v1&filter[something][nested][1]=v2&filter[something][nested][2]=v3&filter[something][nested][3]=v4');
+  });
+
   it('produces correct request for list of resources', async () => {
     const result = await new JsonApiClient(mock.httpClient)
       .get<Data<{}>>(GetListMock.uri)
