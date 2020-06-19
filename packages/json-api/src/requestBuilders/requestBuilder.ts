@@ -23,17 +23,17 @@ export class RequestBuilder<D extends AnyData, M extends {} = {}> {
 
   parameter(
     key: string,
-    value: string | number | boolean | undefined,
+    value: any,
   ): this {
     if (key && !isNil(value)) {
-      this.requestData.query[key] = value.toString();
+      this.requestData.query[key] = value;
     }
     return this;
   }
 
   filter(
     key: string | string[],
-    value: string | number | boolean | undefined,
+    value: any,
   ): this {
     const queryKey = Array.isArray(key)
       ? (key.length ? `filter[${key.join('][')}]` : '')

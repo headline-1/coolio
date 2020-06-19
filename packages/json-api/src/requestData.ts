@@ -11,7 +11,7 @@ export interface RequestBuilderOptions {
 }
 
 export class JsonApiRequestData {
-  query: Record<string, string> = {};
+  query: Record<string, any> = {};
   sort: string[] = [];
   body: any;
   limit = DEFAULT_RESOURCE_LIMIT;
