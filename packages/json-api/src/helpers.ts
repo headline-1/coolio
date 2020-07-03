@@ -27,13 +27,20 @@ export const mergeElementData = <D extends AnyData>(
     },
     data.relationships && mapValues(
     data.relationships,
-    (rel: Relationship | RelationshipArray | ResolvedRelationship | ResolvedRelationshipArray) => rel.data
-      ? Array.isArray(rel.data)
-        ? (rel.data[0] && isData(rel.data[0]))
-          ? (rel as ResolvedRelationshipArray).data.map(mergeElementData)
-          : (rel as RelationshipArray).data.map(data => data.id)
-        : isData(rel.data) ? mergeElementData(rel.data) : rel.data.id
-      : undefined,
+    (rel: Relationship | RelationshipArray | ResolvedRelationship | ResolvedRelationshipArray) => {
+      if(!rel.data){
+        return undefined;
+      }
+      if(!Array.isArray(rel.data)){
+        // Complex objects are normalized, simple objects (without attributes) are converted to simple id
+        return isData(rel.data) ? mergeElementData(rel.data) : rel.data.id;
+      }
+      // If array of relationships contains at least one complex object - return everything as normalized objects
+      // Otherwise return simple ids
+      return rel.data.some(isData)
+        ? (rel as ResolvedRelationshipArray).data.map(mergeElementData)
+        : (rel as RelationshipArray).data.map(data => data.id)
+      },
     ),
     data.attributes,
   );
