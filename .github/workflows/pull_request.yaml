@@ -21,7 +21,7 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-yarn-
     - run: yarn
-    - run: yarn audit --groups dependencies
+    - run: yarn audit:ci
     - run: yarn compile
     - name: Upload built packages
       uses: actions/upload-artifact@v2-preview
