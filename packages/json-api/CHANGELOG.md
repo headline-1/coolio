@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.1.1](https://github.com/headline-1/coolio/compare/v3.1.0...v3.1.1) (2020-07-03)
+
+
+### Bug Fixes
+
+* **json-api:** resolve relationship arrays correctly ([6961365](https://github.com/headline-1/coolio/commit/696136522a21dfb029c541c1fd4bdfa918e6b970))
+
+
+
+
+
 # [3.1.0](https://github.com/headline-1/coolio/compare/v3.0.1...v3.1.0) (2020-06-19)
 
 
