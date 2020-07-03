@@ -12,6 +12,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
+    "audit:ci": "./scripts/audit.sh",
     "postinstall": "lerna bootstrap && yarn link:all && yarn generate",
     "compile:watch": "lerna exec --parallel 'yarn compile:watch'",
     "generate": "yarn generate:tsconfig && yarn generate:bindings",
