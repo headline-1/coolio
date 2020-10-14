@@ -14,7 +14,7 @@ describe('JSON API RequestBuilder', () => {
 
   it('produces correct request for single resource', async () => {
     const client = new JsonApiClient(mock.httpClient);
-    const result = await client.get<Data<{}>>(GetMock.uri)
+    const result = await client.get<Data<any>>(GetMock.uri)
       .filter('element', 'value')
       .filter(['elementEq', 'EQ'], 'valueEq')
       .filter(['elementNeq', 'NEQ'], 'valueNeq')
@@ -53,7 +53,7 @@ describe('JSON API RequestBuilder', () => {
 
   it('produces correct request for filters with array of elements', async () => {
     const client = new JsonApiClient(mock.httpClient);
-    await client.get<Data<{}>>(GetMock.uri)
+    await client.get<Data<any>>(GetMock.uri)
       .filter('key1', ['value1', 'value2', 'value3'])
       .filter(['something', 'nested'], ['v1', 'v2', 'v3', 'v4'])
       .expectOne()
@@ -63,7 +63,7 @@ describe('JSON API RequestBuilder', () => {
 
   it('produces correct request for list of resources', async () => {
     const result = await new JsonApiClient(mock.httpClient)
-      .get<Data<{}>>(GetListMock.uri)
+      .get<Data<any>>(GetListMock.uri)
       .filter('element', 'value')
       .filter(['elementEq', 'EQ'], 'valueEq')
       .filter(['elementNeq', 'NEQ'], 'valueNeq')
@@ -126,7 +126,7 @@ describe('JSON API RequestBuilder', () => {
       status: HttpCode.OK,
       body: JSON.stringify(GetListMock.raw),
     }), 1, 0, {});
-    const result = await new JsonApiClient(mock.httpClient).get<Data<{}, {}>>(GetListMock.uri)
+    const result = await new JsonApiClient(mock.httpClient).get<Data<any>>(GetListMock.uri)
       .pageLimit(1)
       .pageOffset(1)
       .expectMany()

@@ -6,7 +6,7 @@ const defaultHeaders = (_host = '') => ({
   'Content-Type': ContentType.JSON,
 });
 
-const toUrlEncoded = (obj: object) => {
+const toUrlEncoded = (obj: Record<string, string|number|boolean>) => {
   const str = [];
   for (const p in obj) {
     if (obj.hasOwnProperty(p) && !isNil(obj[p])) {

@@ -1,17 +1,17 @@
 import { HttpClient } from '@coolio/http';
 import { RequestBuilder } from './requestBuilder';
-import { AnyData } from '../types';
 import { RequestBuilderOptions } from '../requestData';
+import { AnyData } from '../types';
 
 /**
  * This RequestBuilder adds possibility to form a body for JSON API requests.
  * Besides filling in query and filter options offered by {@link RequestBuilder},
  * one can create a POST, PUT or PATCH request with JSON API-shaped body.
  */
-export class CreationalRequestBuilder<D extends AnyData, M extends {} = {}> extends RequestBuilder<D, M> {
+export class CreationalRequestBuilder<D extends AnyData, M extends Record<string, unknown> = Record<never, never>> extends RequestBuilder<D, M> {
   type?: string;
   id?: string;
-  attributes?: object;
+  attributes?: Record<string, unknown>;
   relationships?: Record<string, { data: { id: string; type: string } }>;
 
   constructor(
@@ -32,7 +32,7 @@ export class CreationalRequestBuilder<D extends AnyData, M extends {} = {}> exte
     return this;
   }
 
-  withAttributes(attributes: object): this {
+  withAttributes(attributes: Record<string, unknown>): this {
     this.attributes = attributes;
     return this;
   }

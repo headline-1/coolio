@@ -7,7 +7,7 @@ export abstract class JsonApiSender {
   protected constructor(private httpClient: HttpClient, protected requestData: JsonApiRequestData) {
   }
 
-  request<T>(options?: HttpOptions){
+  request<T>(options?: HttpOptions) {
     return this.httpClient.request<T>(this.requestData.uri, this.requestData.getRequestOptions(options));
   }
 

@@ -5,7 +5,7 @@ import { resolveRelationships } from '../helpers';
 import { JsonApiRequestData } from '../requestData';
 import { JsonApiSender } from './jsonApi.sender';
 
-export class JsonApiOneSender<D extends AnyData, M extends {}> extends JsonApiSender {
+export class JsonApiOneSender<D extends AnyData, M extends Record<string, unknown>> extends JsonApiSender {
   constructor(httpClient: HttpClient, requestData: JsonApiRequestData) {
     super(httpClient, requestData);
   }

@@ -12,7 +12,7 @@ export const urlDestruct = (url: string, options?: qs.IParseOptions): {
   };
 };
 
-export const urlCombine = (sourceUrl: string, sourceQuery?: object, options?: qs.IStringifyOptions) => {
+export const urlCombine = (sourceUrl: string, sourceQuery?: Record<string, unknown>, options?: qs.IStringifyOptions) => {
   const { url, query } = urlDestruct(sourceUrl);
   const queryString = urlEncode(merge(sourceQuery, query), {
     ...options,
@@ -25,4 +25,5 @@ export const urlEncode = (value: any, options?: qs.IStringifyOptions) => qs.stri
   encodeValuesOnly: true,
   ...options,
 });
-export const urlDecode = <T = any>(value: string, options?: qs.IParseOptions): T => qs.parse(value, options);
+
+export const urlDecode = <T extends Record<string, unknown> = Record<never, never>>(value: string, options?: qs.IParseOptions): T => qs.parse(value, options) as T;

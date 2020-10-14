@@ -3,7 +3,7 @@ import mapValues from 'lodash/mapValues';
 import { mergeElementData } from '../helpers';
 import { IncludedGroups, MergedData, RawListResponse } from '../types';
 
-export class JsonListResponse<Raw extends RawListResponse<any, any>, I extends IncludedGroups = {}> {
+export class JsonListResponse<Raw extends RawListResponse<any, any>, I extends IncludedGroups = Record<never, never>> {
 
   constructor(
     readonly raw: Raw,
