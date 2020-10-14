@@ -33,7 +33,7 @@ export type OptionalRels = Relationships | undefined;
 
 export type IncludedRelationships<D extends AnyData = AnyData> = D[];
 
-export interface Data<Attrs extends Attributes, Rels extends OptionalRels = {}> {
+export interface Data<Attrs extends Attributes, Rels extends OptionalRels = Record<never, never>> {
   id: string;
   type: string;
   attributes: Attrs;
@@ -113,7 +113,7 @@ export type MergedIncludedGroups<G extends IncludedGroups<any>> = { [k in keyof 
 /**
  * This interface covers JSON API response for single element.
  */
-export interface RawResponse<D extends AnyData, M extends {} = {}> {
+export interface RawResponse<D extends AnyData, M extends Record<string, unknown> = Record<never, never>> {
   data: D;
   meta?: M;
   included?: IncludedRelationships;

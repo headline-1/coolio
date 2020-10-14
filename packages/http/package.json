@@ -56,12 +56,12 @@
     "url": "https://github.com/headline-1/coolio/issues"
   },
   "dependencies": {
-    "@types/qs": "^6.9.1",
-    "buffer": "^5.5.0",
+    "@types/qs": "^6.9.5",
+    "buffer": "^5.6.0",
     "combined-stream": "^1.0.8",
-    "lodash": "^4.17.15",
-    "mime": "^2.4.4",
-    "qs": "^6.9.1"
+    "lodash": "^4.17.20",
+    "mime": "^2.4.6",
+    "qs": "^6.9.4"
   },
   "gitHead": "df3e4ca748cf0eba95323a60ae934ac5afed495b"
 }

@@ -10,7 +10,7 @@ import { JsonApiRequestData, RequestBuilderOptions } from '../requestData';
  * You can configure filters, sorting methods, pagination and then call {@link expectMany} or {@link expectOne}
  * in order to send specify response processing params and finally send the request.
  */
-export class RequestBuilder<D extends AnyData, M extends {} = {}> {
+export class RequestBuilder<D extends AnyData, M extends Record<string, unknown> = Record<never, never>> {
   protected readonly requestData: JsonApiRequestData;
 
   constructor(
