@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.1.6](https://github.com/headline-1/coolio/compare/v3.1.5...v3.1.6) (2021-05-07)
+
+**Note:** Version bump only for package @coolio/http
+
+
+
+
+
 ## [3.1.5](https://github.com/headline-1/coolio/compare/v3.1.4...v3.1.5) (2021-04-15)
 
 **Note:** Version bump only for package @coolio/http
