@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.1.8](https://github.com/headline-1/coolio/compare/v3.1.7...v3.1.8) (2021-06-26)
+
+**Note:** Version bump only for package @coolio/json-api
+
+
+
+
+
 ## [3.1.7](https://github.com/headline-1/coolio/compare/v3.1.6...v3.1.7) (2021-05-20)
 
 **Note:** Version bump only for package @coolio/json-api
