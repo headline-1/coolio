@@ -1,6 +1,7 @@
-import { createHttpResponse } from '../httpResponse';
-import { ContentType } from '../contentType';
-import { encodeText } from '../helpers/encoder.helper';
+import {createHttpResponse} from '../httpResponse';
+import {ContentType} from '../contentType';
+import {encodeText} from '../helpers/encoder.helper';
+import {BodyCasing, deepKeyMap} from '../helpers';
 
 describe('bodyParser', () => {
   it('parses response with JSON body', async () => {
@@ -78,5 +79,35 @@ describe('bodyParser', () => {
     const body = String.fromCharCode(...new Uint8Array(buffer));
 
     expect(body).toEqual('some stream');
+  });
+
+  it('parses response using selected body casing', async () => {
+    const response = createHttpResponse({
+      headers: { 'content-type': ContentType.JSON },
+      body: JSON.stringify({ fooBarBaz: 'abc', }),
+      status: 200,
+      bodyParserOptions: {
+        bodyCasing: BodyCasing.SCREAMING_SNAKE_CASE,
+      },
+    });
+    const body = await response.parsedBody();
+
+    expect(body).toEqual({ FOO_BAR_BAZ: 'abc' });
+  });
+
+  it('parses response using custom case converter if provided', async () => {
+    const customCaseConverter = (object: any) => deepKeyMap(object, key => key.split('').reverse().join(''));
+
+    const response = createHttpResponse({
+      headers: { 'content-type': ContentType.JSON },
+      body: JSON.stringify({ fooBarBaz: 'abc', }),
+      status: 200,
+      bodyParserOptions: {
+        customCaseConverter: customCaseConverter,
+      },
+    });
+    const body = await response.parsedBody();
+
+    expect(body).toEqual({ zaBraBoof: 'abc' });
   });
 });

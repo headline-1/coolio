@@ -1,5 +1,5 @@
 import { HttpHeaders, HttpResponse, RawHttpResponse } from './httpClient.types';
-import { bodyParser } from './bodyParser';
+import { bodyParser, BodyParserOptions } from './bodyParser';
 import { encodeArrayBuffer, encodeText } from './helpers/encoder.helper';
 import { HttpStatusText } from './httpCodes';
 import { HttpResponseHeaders } from './httpResponseHeaders';
@@ -10,6 +10,7 @@ interface HttpResponseOptions {
   headers?: HttpHeaders;
   status: number;
   body?: TypedArray | string;
+  bodyParserOptions?: BodyParserOptions;
 }
 
 export const createHttpResponse = ({
@@ -17,6 +18,7 @@ export const createHttpResponse = ({
   headers,
   body,
   status,
+  bodyParserOptions = {},
 }: HttpResponseOptions): HttpResponse => {
   const arrayBuffer = encodeArrayBuffer(body);
   const rawResponse: RawHttpResponse = {
@@ -32,5 +34,5 @@ export const createHttpResponse = ({
     headers: new HttpResponseHeaders(headers),
     ok: status < 400,
   };
-  return bodyParser()(rawResponse);
+  return bodyParser(bodyParserOptions)(rawResponse);
 };
