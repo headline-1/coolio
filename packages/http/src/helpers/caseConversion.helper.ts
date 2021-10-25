@@ -35,6 +35,8 @@ export const deepKeyMap = (object: any, mapper: (key: string) => string): any =>
   return object;
 };
 
+export type CaseConverter = (object: any) => any;
+
 export const toCamelCase = (object: any) => deepKeyMap(object, key => splitWords(key)
   .map((word, index) => index > 0
     ? word[0].toUpperCase() + word.slice(1).toLowerCase()

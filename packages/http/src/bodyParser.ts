@@ -1,4 +1,4 @@
-import { BodyCasing, getBoundaryFromContentTypeHeader, getCaseConverter, processMultipartBody } from './helpers';
+import { BodyCasing, CaseConverter, getBoundaryFromContentTypeHeader, getCaseConverter, processMultipartBody } from './helpers';
 import { BodyParser, HttpResponse, RawHttpResponse } from './httpClient.types';
 import { urlDecode } from './helpers/urlEncoding.helper';
 import { ContentTypeMap, switchContentType } from './contentType';
@@ -7,14 +7,16 @@ type BodyParserImplementation = (rawResponse: RawHttpResponse) => Promise<any>;
 
 export interface BodyParserOptions {
   bodyCasing?: BodyCasing;
+  customCaseConverter?: CaseConverter;
   defaultParser?: BodyParserImplementation;
 }
 
 export const bodyParser = ({
   bodyCasing,
+  customCaseConverter,
   defaultParser = raw => raw.arrayBuffer(),
 }: BodyParserOptions = {}): BodyParser<any> => {
-  const caseConverter = getCaseConverter(bodyCasing);
+  const caseConverter = customCaseConverter ?? getCaseConverter(bodyCasing);
 
   const getContentType = (rawResponse: RawHttpResponse) => (rawResponse.headers.get('content-type') || '')
     .split(';')
