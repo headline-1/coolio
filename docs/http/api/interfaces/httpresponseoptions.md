@@ -9,6 +9,7 @@
 ### Properties
 
 * [body](httpresponseoptions.md#optional-body)
+* [bodyParserOptions](httpresponseoptions.md#optional-bodyparseroptions)
 * [headers](httpresponseoptions.md#optional-headers)
 * [status](httpresponseoptions.md#status)
 * [url](httpresponseoptions.md#optional-url)
@@ -18,6 +19,12 @@
 ### `Optional` body
 
 • **body**? : *[TypedArray](../README.md#typedarray) | string*
+
+___
+
+### `Optional` bodyParserOptions
+
+• **bodyParserOptions**? : *[BodyParserOptions](bodyparseroptions.md)*
 
 ___
 

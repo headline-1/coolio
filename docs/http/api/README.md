@@ -49,6 +49,7 @@
 * [BodySerializer](README.md#bodyserializer)
 * [BufferEncoding](README.md#bufferencoding)
 * [CFormDataValue](README.md#cformdatavalue)
+* [CaseConverter](README.md#caseconverter)
 * [ContentTypeMap](README.md#contenttypemap)
 * [HttpBody](README.md#httpbody)
 * [HttpFetch](README.md#httpfetch)
@@ -188,6 +189,22 @@ ___
 ###  CFormDataValue
 
 Ƭ **CFormDataValue**: *string | Blob | Readable*
+
+___
+
+###  CaseConverter
+
+Ƭ **CaseConverter**: *function*
+
+#### Type declaration:
+
+▸ (`object`: any): *any*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`object` | any |
 
 ___
 
@@ -351,6 +368,7 @@ ___
 Name | Type |
 ------ | ------ |
 `bodyCasing` | undefined &#124; [CAMEL_CASE](enums/bodycasing.md#camel_case) &#124; [SNAKE_CASE](enums/bodycasing.md#snake_case) &#124; [SCREAMING_SNAKE_CASE](enums/bodycasing.md#screaming_snake_case) &#124; [PASCAL_CASE](enums/bodycasing.md#pascal_case) &#124; [KEBAB_CASE](enums/bodycasing.md#kebab_case) |
+`customCaseConverter` | undefined &#124; function |
 `defaultParser` |  |
 
 **Returns:** *[BodyParser](README.md#bodyparser)‹any›*
@@ -434,6 +452,7 @@ ___
 Name | Type | Default |
 ------ | ------ | ------ |
 `body` | undefined &#124; string &#124; Uint8Array‹› &#124; Uint8ClampedArray‹› &#124; Uint16Array‹› &#124; Uint32Array‹› &#124; Int8Array‹› &#124; Int16Array‹› &#124; Int32Array‹› &#124; Float32Array‹› &#124; Float64Array‹› | - |
+`bodyParserOptions` | [BodyParserOptions](interfaces/bodyparseroptions.md) | - |
 `headers` | undefined &#124; object | - |
 `status` | number | - |
 `url` | string | "" |

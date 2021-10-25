@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.2.0](https://github.com/headline-1/coolio/compare/v3.1.11...v3.2.0) (2021-10-25)
+
+
+### Features
+
+* **http:** custom case conversion ([5b83a39](https://github.com/headline-1/coolio/commit/5b83a39367e80722049ff5f9249c41a458315d5b))
+
+
+
+
+
 ## [3.1.11](https://github.com/headline-1/coolio/compare/v3.1.10...v3.1.11) (2021-09-21)
 
 **Note:** Version bump only for package coolio
