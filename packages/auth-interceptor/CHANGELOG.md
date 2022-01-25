@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.2.1](https://github.com/headline-1/coolio/compare/v3.2.0...v3.2.1) (2022-01-25)
+
+**Note:** Version bump only for package @coolio/auth-interceptor
+
+
+
+
+
 # [3.2.0](https://github.com/headline-1/coolio/compare/v3.1.11...v3.2.0) (2021-10-25)
 
 **Note:** Version bump only for package @coolio/auth-interceptor
